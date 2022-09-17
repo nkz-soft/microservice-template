@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.5" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="Xunit.Extensions.Ordering" Version="1.4.5" />
+        <PackageReference Include="Xunit.DependencyInjection" Version="8.5.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.1.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="FluentAssertions" Version="6.7.0" />
+        <PackageReference Include="Moq" Version="4.18.1" />
+        <PackageReference Include="Respawn" Version="4.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\NKZSoft.Template.Application\NKZSoft.Template.Application.csproj" />
+        <ProjectReference Include="..\..\src\NKZSoft.Template.Infrastructure.Core\NKZSoft.Template.Infrastructure.Core.csproj" />
+        <ProjectReference Include="..\..\src\NKZSoft.Template.Persistence.PostgreSQL\NKZSoft.Template.Persistence.PostgreSQL.csproj" />
+        <ProjectReference Include="..\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj" />
+    </ItemGroup>
+
+</Project>

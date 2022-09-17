@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>NKZSoft.Template.Domain.UnitTests</RootNamespace>
+        <IsPackable>false</IsPackable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <PackageId>NKZSoft.Template.Domain.Tests</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+        <PackageReference Include="Microsoft.NETCore.Platforms" Version="6.0.3" />
+        <PackageReference Include="Moq" Version="4.18.1" />
+        <PackageReference Include="Shouldly" Version="4.0.3" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

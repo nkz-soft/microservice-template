@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Application\NKZSoft.Template.Application.csproj" />
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Infrastructure.Core\NKZSoft.Template.Infrastructure.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Moq" Version="4.18.1" />
+    </ItemGroup>
+
+</Project>

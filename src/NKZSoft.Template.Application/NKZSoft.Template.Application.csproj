@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
+        <PackageReference Include="FluentResults" Version="3.5.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.4" />
+        <PackageReference Include="Mapster" Version="7.3.0" />
+        <PackageReference Include="Mapster.Async" Version="2.0.0" />
+        <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+    </ItemGroup>
+
+    
+  <ItemGroup>
+    <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
+    <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <Generated Include="**\*.g.cs" />
+    </ItemGroup>
+    <Target Name="CleanGenerated">
+        <Delete Files="@(Generated)" />
+    </Target>
+    
+</Project>

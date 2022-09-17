@@ -1,0 +1,25 @@
+version: '3.9'
+
+volumes:
+  postgres:
+
+services:
+
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 0.0.0.0:5432:5432
+    networks:
+      - dev-network
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "PGPASSWORD=postgres pg_isready -U postgres -h postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+
+networks:
+  dev-network:
