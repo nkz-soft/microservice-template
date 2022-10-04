@@ -3,6 +3,8 @@ using NKZSoft.Template.Application.TodoItems.Queries.Get;
 
 namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
 
+using Domain.AggregatesModel.ToDoAggregates.Entities;
+
 [Collection("QueryCollection")]
 public class GetToDoItemTests : TestBase
 {
@@ -10,11 +12,12 @@ public class GetToDoItemTests : TestBase
     {
     }
 
-    [Theory]
-    [InlineData(1)]
-    public async Task ShouldReturnItem(int id)
+    [Fact]
+    public async Task ShouldReturnItem()
     {
-        var command = new GetTodoItemQuery(id);
+        var firstEntity = Context.Set<ToDoItem>().First();
+
+        var command = new GetTodoItemQuery(firstEntity.Id);
         var result = await Mediator.Send(command);
 
         result.Should().NotBeNull();

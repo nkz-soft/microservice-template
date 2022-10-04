@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Models;
 
+using Result;
+
 internal static class ResultDtoHelpers
 {
     public static ResultDto<Unit> CreateFromErrors(string errors, HttpStatusCode statusCode)

@@ -15,11 +15,11 @@ public sealed class QueryTestFixture : IDisposable
 
     public SeedDataContext SeedDataContext { get; set; } = new SeedDataContext();
 
-    public QueryTestFixture(ICurrentUserService currentUserService, IMediator mediator)
+    public QueryTestFixture(IApplicationDbContext context, ICurrentUserService currentUserService, IMediator mediator)
     {
+        Context = context.ThrowIfNull();
         Mediator = mediator.ThrowIfNull();
         CurrentUserService = currentUserService.ThrowIfNull();
-        Context = ApplicationDbContextFactory.CreateAsync().GetAwaiter().GetResult();
     }
 
     public void Dispose() => ApplicationDbContextFactory.Destroy(Context);

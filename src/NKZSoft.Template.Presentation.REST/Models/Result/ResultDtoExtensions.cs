@@ -1,5 +1,7 @@
 namespace NKZSoft.Template.Presentation.REST.Models;
 
+using Result;
+
 public static class ResultDtoExtensions
 {
     public static ResultDto<T> ToResultDto<T>(this Result<T> result) =>

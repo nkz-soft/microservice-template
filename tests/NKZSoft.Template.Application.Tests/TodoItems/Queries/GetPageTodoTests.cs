@@ -5,6 +5,8 @@ using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 
 namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
 
+using Domain.AggregatesModel.ToDoAggregates.Entities;
+
 [Collection("QueryCollection")]
 public class GetPageTodoTests : TestBase
 {
@@ -28,11 +30,13 @@ public class GetPageTodoTests : TestBase
     }
 
     [Theory]
-    [InlineData(1, 10, 1)]
-    public async Task ShouldReturnItemPageById(int pageIndex, int pageSize, int id)
+    [InlineData(1, 10)]
+    public async Task ShouldReturnItemPageById(int pageIndex, int pageSize)
     {
+        var firstEntity = Context.Set<ToDoItem>().First();
+
         var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>
-            (pageIndex, pageSize, ToDoItemFilter.CreateBuilder().Id(id).Build()));
+            (pageIndex, pageSize, ToDoItemFilter.CreateBuilder().Id(firstEntity.Id).Build()));
 
         var result = await Mediator.Send(command);
 
@@ -41,7 +45,7 @@ public class GetPageTodoTests : TestBase
         result.Value.Should().NotBeNull();
         result.Value.Data.FirstOrDefault().Should().NotBeNull();
         result.Value.Data.Count().Should().Be(1);
-        result.Value.Data.First().Id.Should().Be(1);
+        result.Value.Data.First().Id.Should().Be(firstEntity.Id);
     }
 
     [Theory]

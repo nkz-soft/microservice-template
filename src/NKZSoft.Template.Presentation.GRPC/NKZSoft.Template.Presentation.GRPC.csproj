@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NKZSoft.Template.Application\NKZSoft.Template.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.21.7" />
+      <PackageReference Include="protobuf-net" Version="3.1.22" />
+      <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.177" />
+      <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.0.177" />
+      <PackageReference Include="protobuf-net.Reflection" Version="3.1.22" />
+      <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+    </ItemGroup>
+
+</Project>

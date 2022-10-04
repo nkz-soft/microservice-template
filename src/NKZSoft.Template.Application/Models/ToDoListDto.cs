@@ -1,6 +1,3 @@
-using NKZSoft.Template.Application.Common.Models;
-using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
 namespace NKZSoft.Template.Application.Models;
 
 using Common.Models;

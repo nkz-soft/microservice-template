@@ -1,24 +1,25 @@
-﻿using DotNet.Testcontainers.Builders;
+﻿namespace NKZSoft.Template.Common.Tests;
+
+using DotNet.Testcontainers.Builders;
 using DotNet.Testcontainers.Configurations;
 using DotNet.Testcontainers.Containers;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Common.Tests;
+using Serilog;
+using Xunit;
 
-namespace NKZSoft.Template.Presentation.REST.Tests.Common;
-
-using Persistence.PostgreSQL;
-using SeedData;
-
-public sealed class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
+public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
 {
-    private const string EnvironmentName = "Test";
+    protected const string EnvironmentName = "Test";
     private const string Database = "template_db";
     private const string Username = "postgres";
     private const string Password = "postgres";
     public TestcontainerDatabase Container { get; }
 
-    public CustomWebApplicationFactory()
+    public BaseWebApplicationFactory()
     {
         TestcontainersSettings.ResourceReaperEnabled = false;
         Container = new TestcontainersBuilder<PostgreSqlTestcontainer>()
@@ -29,7 +30,6 @@ public sealed class CustomWebApplicationFactory<TStartup> : WebApplicationFactor
                 Password = Password
             })
             .WithImage("postgres:14")
-            .WithName("postgres")
             .WithPortBinding(5432, 5432)
             .WithAutoRemove(true)
             .WithCleanUp(true)
@@ -41,21 +41,6 @@ public sealed class CustomWebApplicationFactory<TStartup> : WebApplicationFactor
         base.CreateHostBuilder()
             .UseSerilog(((ctx, lc) => lc
                 .WriteTo.Console()));
-
-    protected override void ConfigureWebHost(IWebHostBuilder builder)
-    {
-        builder.UseEnvironment(EnvironmentName);
-        builder.ConfigureServices((_, services) =>
-        {
-            services
-                .Remove<IApplicationDbContext>()
-                .AddDbContext<ApplicationDbContext>()
-                .AddScoped<IApplicationDbContext, ApplicationDbContext>()
-                .AddScoped<IDbInitializer, SeedDataContext>()
-                .Remove<ICurrentUserService>()
-                .AddTransient(p => AppMockFactory.CreateCurrentUserServiceMock());
-        });
-    }
 
     public async Task InitializeAsync()
     {

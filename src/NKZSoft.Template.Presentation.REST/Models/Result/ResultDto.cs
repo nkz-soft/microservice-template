@@ -1,4 +1,4 @@
-namespace NKZSoft.Template.Presentation.REST.Models;
+namespace NKZSoft.Template.Presentation.REST.Models.Result;
 
 public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
 {

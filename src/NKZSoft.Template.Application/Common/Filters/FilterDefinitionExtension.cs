@@ -1,8 +1,10 @@
 ﻿namespace NKZSoft.Template.Application.Common.Filters;
 
+using System.Diagnostics.CodeAnalysis;
+
 public static class FilterDefinitionExtension
 {
-    public static bool HasValue<T>(this FilterFieldDefinition<T>? testValue)
+    public static bool HasValue<T>([NotNullWhen(true)] this FilterFieldDefinition<T>? testValue)
     {
         return testValue switch
         {

@@ -1,20 +1,13 @@
-﻿using Ardalis.Specification.EntityFrameworkCore;
-using Mapster;
-using Microsoft.EntityFrameworkCore;
+﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetPage;
+
 using NKZSoft.Template.Application.Models;
-using NKZSoft.Template.Application.TodoItems.Models;
-using NKZSoft.Template.Application.TodoItems.Specifications;
-using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.TodoItems.Queries.GetPage;
-
-using Application.Models;
+using Specifications;
+using Domain.AggregatesModel.ToDoAggregates.Entities;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Paging;
-using Specifications;
 
-public sealed class GetPageTodoQueryHandler : 
+public sealed class GetPageTodoQueryHandler :
     PagingQueryHandler<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>
 {
     public GetPageTodoQueryHandler(IApplicationDbContext context,
@@ -26,12 +19,19 @@ public sealed class GetPageTodoQueryHandler :
         CancellationToken cancellationToken)
     {
         var specification = ToDoItemSpecification.Create(request.PageContext);
-        
+
         var entities = await ContextDb.Set<ToDoItem>()
+            .AsNoTracking()
             .WithSpecification(specification)
-            .ToListAsync(cancellationToken);
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
+
+        var dtoItems = await entities
+            .BuildAdapter(Mapper.Config)
+            .AdaptToTypeAsync<List<ToDoItemDto>>()
+            .ConfigureAwait(false);
 
         return Result.Ok(new CollectionViewModel<ToDoItemDto>(
-            entities.Adapt<IEnumerable<ToDoItemDto>>(), entities.Count));
+            dtoItems, dtoItems.Count));
     }
 }

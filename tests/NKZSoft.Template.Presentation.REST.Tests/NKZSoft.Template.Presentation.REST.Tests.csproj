@@ -10,24 +10,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.5" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
-        <PackageReference Include="Testcontainers" Version="2.0.1" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="Xunit.Extensions.Ordering" Version="1.4.5" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.1.2">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="FluentAssertions" Version="6.7.0" />
         <PackageReference Include="Moq" Version="4.18.1" />
-        <PackageReference Include="Serilog" Version="2.10.0" />
-        <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj" />
     </ItemGroup>
 

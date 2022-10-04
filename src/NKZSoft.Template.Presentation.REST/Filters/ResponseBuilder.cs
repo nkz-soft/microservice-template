@@ -1,6 +1,7 @@
 namespace NKZSoft.Template.Presentation.REST.Filters;
 
 using Models;
+using Models.Result;
 using NKZSoft.Template.Application.Common.Exceptions;
 using Results;
 
@@ -31,5 +32,4 @@ public static class ResultFactory
     private static IActionResult? CreatedResult<T>(string error, HttpStatusCode statusCode)
         where T : ObjectResult =>
             (T?)Activator.CreateInstance(typeof(T), ResultDto<Unit>.CreateFromErrors(error, statusCode));
-
 }

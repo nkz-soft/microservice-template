@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -14,8 +13,7 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                 name: "ToDoLists",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
@@ -31,11 +29,10 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                 name: "ToDoItems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
                     Note = table.Column<string>(type: "character varying(512)", maxLength: 512, nullable: true),
-                    ToDoListId = table.Column<int>(type: "integer", nullable: true),
+                    ToDoListId = table.Column<Guid>(type: "uuid", nullable: true),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),

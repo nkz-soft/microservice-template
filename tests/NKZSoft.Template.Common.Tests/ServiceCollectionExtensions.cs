@@ -1,6 +1,8 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Tests.Common;
+﻿namespace NKZSoft.Template.Common.Tests;
 
-internal static class ServiceCollectionExtensions
+using Microsoft.Extensions.DependencyInjection;
+
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection Remove<TService>(this IServiceCollection services)
     {

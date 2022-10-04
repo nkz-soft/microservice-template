@@ -21,8 +21,10 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build -c Release --no-restore
-      - name: Test
+      - name: Application Test
         run:  dotnet test ./tests/NKZSoft.Template.Application.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+#      - name: REST Test
+#        run:  dotnet test ./tests/NKZSoft.Template.Presentation.REST.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:

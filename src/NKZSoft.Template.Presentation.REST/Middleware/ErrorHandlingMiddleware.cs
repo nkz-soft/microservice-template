@@ -1,26 +1,31 @@
-using NKZSoft.Template.Common.Http;
-using NKZSoft.Template.Presentation.REST.Models;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace NKZSoft.Template.Presentation.REST.Middleware;
 
 using Models;
+using Models.Result;
+using Newtonsoft.Json;
 
 public class ErrorHandlingMiddleware
 {
     private readonly RequestDelegate _next;
+    private readonly ILogger<ErrorHandlingMiddleware> _logger;
 
-    public ErrorHandlingMiddleware(RequestDelegate next) => _next = next;
+    public ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
+    {
+        _next = next;
+        _logger = logger;
+    }
 
-    public async Task Invoke(HttpContext context, ILogger<ErrorHandlingMiddleware> logger)
+    public async Task Invoke(HttpContext httpContext)
     {
         try
         {
-            await _next(context);
+            await _next(httpContext);
         }
         catch (Exception ex)
         {
-            await HandleExceptionAsync(context, logger, ex);
+            await HandleExceptionAsync(httpContext, _logger, ex);
         }
     }
 
@@ -31,6 +36,9 @@ public class ErrorHandlingMiddleware
         const HttpStatusCode code = HttpStatusCode.InternalServerError;
         var resultDto = new ResultDto<Unit>(Unit.Value, false, new[] { new ErrorDto(exception.Message, code.ToString()) });
 
-        await context.Response.UpdateResponse(resultDto, (int)code);
+        var result = JsonConvert.SerializeObject(resultDto);
+        context.Response.ContentType = "application/json";
+        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        await context.Response.WriteAsync(result);
     }
 }

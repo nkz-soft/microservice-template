@@ -17,11 +17,11 @@ public sealed record PageContext<T> : IPageContext<T>
         ListGroup = listGroup ?? Enumerable.Empty<GroupDescriptor>();
     }
 
-    public int PageIndex { get; }
+    public int PageIndex { get; set; }
 
-    public int PageSize { get; }
+    public int PageSize { get; set; }
 
-    public T Filter { get; }
+    public T Filter { get; set; }
 
     public IEnumerable<SortDescriptor> ListSort { get; init; }
 
@@ -31,5 +31,21 @@ public sealed record PageContext<T> : IPageContext<T>
     {
         return PageIndex > 0 && PageSize > 0 &&
                Filter != null && ListSort != null;
+    }
+
+    public static PageContext<T> operator++ (PageContext<T> obj) => Increment(obj);
+
+    public static PageContext<T> operator-- (PageContext<T> obj) => Decrement(obj);
+
+    public static PageContext<T> Increment(PageContext<T> obj)
+    {
+        obj.PageIndex++;
+        return obj;
+    }
+
+    public static PageContext<T> Decrement(PageContext<T> obj)
+    {
+        obj.PageIndex--;
+        return obj;
     }
 }

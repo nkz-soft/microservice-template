@@ -13,13 +13,13 @@ public static class MediatorExtension
         var domainEvents = enumerable
             .SelectMany(x => x.Entity.DomainEvents)
             .ToList();
-        
-        foreach (var domainEvent in domainEvents)
-        { 
-            await mediator.Publish(domainEvent);
-        }
 
         enumerable
             .ForEach(entity => entity.Entity.ClearDomainEvents());
+
+        foreach (var domainEvent in domainEvents)
+        {
+            await mediator.Publish(domainEvent);
+        }
     }
 }

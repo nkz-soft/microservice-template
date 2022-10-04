@@ -4,8 +4,8 @@ namespace NKZSoft.Template.Domain.Common;
 
 public interface IEntity
 {
-    int Id { get; set; }
-    
+    Guid Id { get; set; }
+
     bool IsNew { get; set; }
 
     IReadOnlyCollection<INotification> DomainEvents { get; }

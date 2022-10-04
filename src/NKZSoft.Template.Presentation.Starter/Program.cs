@@ -1,4 +1,5 @@
-namespace NKZSoft.Template.Presentation.REST;
+namespace NKZSoft.Template.Presentation.Starter;
+
 using NKZSoft.Template.Application.Common.Interfaces;
 
 public class Program

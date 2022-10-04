@@ -8,7 +8,9 @@ using NKZSoft.Template.Presentation.REST.Models;
 
 namespace NKZSoft.Template.Presentation.REST.Controllers.Version10;
 
+using System.Threading;
 using Models;
+using Models.Result;
 
 [ApiVersion(VersionController.Version10)]
 [Route("api/v{version:apiVersion}/to-do-items")]
@@ -24,8 +26,10 @@ public class ToDoItemController : BaseController
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<CollectionViewModel<ToDoItemDto>>>> Page(PageContext<ToDoItemFilter> pageContext)
-        => (await Mediator.Send(GetPageTodoItemsQuery.Create(pageContext))).ToResultDto();
+    public async Task<ActionResult<ResultDto<CollectionViewModel<ToDoItemDto>>>> Page(
+        [FromBody]PageContext<ToDoItemFilter> pageContext,
+        CancellationToken cancellationToken)
+        => (await Mediator.Send(GetPageTodoItemsQuery.Create(pageContext), cancellationToken)).ToResultDto();
 
     [HttpGet]
     [Route("{id}")]
@@ -33,7 +37,7 @@ public class ToDoItemController : BaseController
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<ToDoItemDto>>> Get(int id)
-        => (await Mediator.Send(new GetTodoItemQuery(id))).ToResultDto();
+    public async Task<ActionResult<ResultDto<ToDoItemDto>>> Get(Guid id, CancellationToken cancellationToken)
+        => (await Mediator.Send(new GetTodoItemQuery(id), cancellationToken)).ToResultDto();
 
 }

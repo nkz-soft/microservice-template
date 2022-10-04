@@ -10,9 +10,9 @@ public partial record ToDoItemFilter
 
         public ToDoItemFilterBuilder() => _filter = new ToDoItemFilter();
 
-        public ToDoItemFilterBuilder Id(int id)
+        public ToDoItemFilterBuilder Id(Guid id)
         {
-            _filter.Id = new FilterFieldDefinition<int>() { Value = id };
+            _filter.Id = new FilterFieldDefinition<Guid>() { Value = id };
             return this;
         }
 

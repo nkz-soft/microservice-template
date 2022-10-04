@@ -10,7 +10,7 @@ using Models;
 
 public sealed class GetPageTodoItemsQuery : PagingQuery<Result<CollectionViewModel<ToDoItemDto>>, ToDoItemFilter>
 {
-    public GetPageTodoItemsQuery(IPageContext<ToDoItemFilter> pageContext) : base(pageContext)
+    public GetPageTodoItemsQuery(PageContext<ToDoItemFilter> pageContext) : base(pageContext)
     {
     }
 

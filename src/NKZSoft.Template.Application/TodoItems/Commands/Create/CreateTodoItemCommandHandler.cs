@@ -4,13 +4,13 @@ namespace NKZSoft.Template.Application.TodoItems.Commands.Create;
 
 using Common.Interfaces;
 
-public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToВoItemCommand, IResult<int>>
+public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToВoItemCommand, IResult<Guid>>
 {
     private readonly IApplicationDbContext _context;
 
     public CreateTodoItemCommandHandler(IApplicationDbContext context) => _context = context;
 
-    public async Task<IResult<int>> Handle(CreateToВoItemCommand request, CancellationToken cancellationToken)
+    public async Task<IResult<Guid>> Handle(CreateToВoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = new ToDoItem(request.Title);
 
