@@ -22,7 +22,7 @@ I would like this project to help you find simplified and effortless solutions.
 - [x] REST API samples
 - [x] GRPC API samples
 - [x] Improve integration tests to use Testcontainers
-- [ ] GraphQL API samples
+- [x] GraphQL API samples
 - [ ] OpenTelemetry
 - [ ] HealthCheck
 - [ ] Add caching for EF Core  
@@ -47,3 +47,5 @@ I would like this project to help you find simplified and effortless solutions.
 [FluentAssertions](https://github.com/fluentassertions/fluentassertions): A very extensive set of extension methods that allow you to more naturally specify the expected outcome of a TDD or BDD-style unit tests.
 
 [protobuf-net](https://github.com/protobuf-net/protobuf-net): protobuf-net is a contract based serializer for .NET code, that happens to write data in the "protocol buffers" serialization format engineered by Google.
+
+[hotchocolate](https://github.com/ChilliCream/hotchocolate): A GraphQL server to create GraphQL endpoints and merge schemas.

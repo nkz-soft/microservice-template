@@ -18,3 +18,5 @@ global using NKZSoft.Template.Application.Common.Filters;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Common.Handlers;
 global using NKZSoft.Template.Application.Common.Interfaces;
+
+global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;

@@ -3,7 +3,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Common.Behaviours;
-using Mapper;
 
 public static class DependencyInjection
 {

@@ -1,15 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.Starter;
 
+using GraphQL.Extensions;
 using GRPC.Extensions;
-using GRPC.Services;
-using Microsoft.AspNetCore.Builder;
-using NKZSoft.Service.Configuration.Logger;
-using NKZSoft.Template.Application;
-using NKZSoft.Template.Application.Common.Handlers;
-using NKZSoft.Template.Infrastructure.Core;
-using NKZSoft.Template.Persistence.PostgreSQL;
-using NKZSoft.Template.Presentation.REST.Extensions;
-using ProtoBuf.Grpc.Server;
 
 public class Startup
 {
@@ -23,16 +15,16 @@ public class Startup
 
     public IWebHostEnvironment Environment { get; }
 
-    public void ConfigureServices(IServiceCollection services)
-    {
+    public void ConfigureServices(IServiceCollection services) =>
         services.AddLogging(Configuration)
             .AddOptions()
             .AddPersistence(Configuration)
             .AddApplication()
             .AddCoreInfrastructure()
+            //TODO Scan assemblies and map all presenters through one interface.
             .AddRestPresentation(Configuration, Environment)
-            .AddGrpcPresentation(Configuration);
-    }
+            .AddGrpcPresentation(Configuration)
+            .AddGraphQLPresentation();
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
@@ -52,6 +44,7 @@ public class Startup
             //TODO Scan assemblies and map all endpoints through one interface.
             endpoints.MapRestEndpoints();
             endpoints.MapGrpcEndpoints();
+            endpoints.MapGraphQLEndpoints();
         });
     }
 }

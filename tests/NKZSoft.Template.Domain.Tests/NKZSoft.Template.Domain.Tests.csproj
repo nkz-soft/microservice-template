@@ -2,13 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>NKZSoft.Template.Domain.UnitTests</RootNamespace>
-        <IsPackable>false</IsPackable>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisLevel>latest</AnalysisLevel>
-        <PackageId>NKZSoft.Template.Domain.Tests</PackageId>
     </PropertyGroup>
 
     <ItemGroup>

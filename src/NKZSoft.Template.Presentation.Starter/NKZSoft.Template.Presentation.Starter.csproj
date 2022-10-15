@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Version>1.0.1</Version>
+        <Version>1.1.1</Version>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -13,6 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NKZSoft.Template.Presentation.GraphQL\NKZSoft.Template.Presentation.GraphQL.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Presentation.GRPC\NKZSoft.Template.Presentation.GRPC.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
     </ItemGroup>

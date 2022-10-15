@@ -1,8 +1,4 @@
-﻿using NKZSoft.Template.Application.Models;
-using NKZSoft.Template.Application.TodoItems.Models;
-using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.TodoItems.Queries.GetPage;
+﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 
 using Application.Models;
 using Common.Paging;
