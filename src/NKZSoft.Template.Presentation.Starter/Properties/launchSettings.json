@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "TG.Template.Presentation.Starter": {
+    "NKZSoft.Template.Presentation.Starter": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
