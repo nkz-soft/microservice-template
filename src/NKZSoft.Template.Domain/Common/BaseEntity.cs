@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using MediatR;
-
-namespace NKZSoft.Template.Domain.Common;
+﻿namespace NKZSoft.Template.Domain.Common;
 
 public abstract class BaseEntity : IEntity
 {
@@ -15,18 +12,9 @@ public abstract class BaseEntity : IEntity
     [NotMapped]
     public IReadOnlyCollection<INotification> DomainEvents => _domainEvents.AsReadOnly();
 
-    public void AddDomainEvent(INotification domainEvent)
-    {
-        _domainEvents.Add(domainEvent);
-    }
+    public void AddDomainEvent(INotification domainEvent) => _domainEvents.Add(domainEvent);
 
-    public void RemoveDomainEvent(INotification domainEvent)
-    {
-        _domainEvents.Remove(domainEvent);
-    }
+    public void RemoveDomainEvent(INotification domainEvent) => _domainEvents.Remove(domainEvent);
 
-    public void ClearDomainEvents()
-    {
-        _domainEvents.Clear();
-    }
+    public void ClearDomainEvents() => _domainEvents.Clear();
 }

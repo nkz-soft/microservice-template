@@ -1,17 +1,12 @@
-﻿namespace NKZSoft.Template.Common.Tests
+﻿namespace NKZSoft.Template.Common.Tests;
+
+public class JsonContent<T> : StringContent
+    where T : class
 {
-    using System.Net.Http;
-    using System.Text;
-    using Newtonsoft.Json;
+    private static JsonSerializerSettings Settings { get; } = new() { TypeNameHandling = TypeNameHandling.All };
 
-    public class JsonContent<T> : StringContent
-        where T : class
+    public JsonContent(T obj)
+        : base(JsonConvert.SerializeObject(obj, Settings), Encoding.UTF8, "application/json")
     {
-        private static JsonSerializerSettings Settings { get; } = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-
-        public JsonContent(T obj)
-            : base(JsonConvert.SerializeObject(obj, Settings), Encoding.UTF8, "application/json")
-        {
-        }
     }
 }

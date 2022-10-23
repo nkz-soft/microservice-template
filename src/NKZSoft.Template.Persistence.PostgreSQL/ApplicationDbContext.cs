@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Common;
-using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-using NKZSoft.Template.Domain.Common;
-using NKZSoft.Template.Persistence.PostgreSQL.Common;
+﻿using NKZSoft.Template.Persistence.PostgreSQL.Common;
 using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 
 namespace NKZSoft.Template.Persistence.PostgreSQL;
@@ -29,8 +24,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         : base(options)
     {
         _dbInitializer = dbInitializer.ThrowIfNull();
-        _currentUserService = currentUserService.ThrowIfNull();;
-        _dateTime = dateTime.ThrowIfNull();;
+        _currentUserService = currentUserService.ThrowIfNull();
+        _dateTime = dateTime.ThrowIfNull();
         _mediator = mediator.ThrowIfNull();
     }
 

@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Infrastructure.Core.Services;
-
-namespace NKZSoft.Template.Infrastructure.Core;
+﻿namespace NKZSoft.Template.Infrastructure.Core;
 
 using Services;
 

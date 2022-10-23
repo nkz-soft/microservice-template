@@ -23,10 +23,12 @@ I would like this project to help you find simplified and effortless solutions.
 - [x] GRPC API samples
 - [x] Improve integration tests to use Testcontainers
 - [x] GraphQL API samples
+- [x] Add MassTransit and RabbitMq
 - [ ] OpenTelemetry
 - [ ] HealthCheck
 - [ ] Add caching for EF Core  
 - [ ] MongoDB data provider
+- [ ] MassTransit and RabbitMQ
 
 ## Technologies used
 
@@ -49,3 +51,7 @@ I would like this project to help you find simplified and effortless solutions.
 [protobuf-net](https://github.com/protobuf-net/protobuf-net): protobuf-net is a contract based serializer for .NET code, that happens to write data in the "protocol buffers" serialization format engineered by Google.
 
 [hotchocolate](https://github.com/ChilliCream/hotchocolate): A GraphQL server to create GraphQL endpoints and merge schemas.
+
+[MassTransit](https://github.com/MassTransit/MassTransit): MassTransit is a free, open-source distributed application framework for .NET.
+
+[FluentResults](https://github.com/altmann/FluentResults): FluentResults is a lightweight .NET library developed to solve a common problem. It returns an object indicating success or failure of an operation instead of throwing/using exceptions.

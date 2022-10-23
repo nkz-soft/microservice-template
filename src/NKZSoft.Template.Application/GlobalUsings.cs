@@ -11,12 +11,10 @@ global using MapsterMapper;
 global using System.Linq.Expressions;
 global using Ardalis.Specification;
 global using Ardalis.Specification.EntityFrameworkCore;
-
+global using MassTransit;
 global using NKZSoft.Template.Common;
-global using NKZSoft.Template.Application.Common.Exceptions;
-global using NKZSoft.Template.Application.Common.Filters;
-global using NKZSoft.Template.Application.Common.Paging;
-global using NKZSoft.Template.Application.Common.Handlers;
-global using NKZSoft.Template.Application.Common.Interfaces;
 
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
+global using NKZSoft.Template.Domain.Events;
+global using NKZSoft.Template.Events.Event.ToDoItem.Create;
+global using NKZSoft.Template.Events.Event.ToDoItem.Update;

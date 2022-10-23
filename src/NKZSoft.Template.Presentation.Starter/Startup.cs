@@ -2,6 +2,7 @@
 
 using GraphQL.Extensions;
 using GRPC.Extensions;
+using MessageBrokers.RabbitMq.Extensions;
 
 public class Startup
 {
@@ -24,7 +25,8 @@ public class Startup
             //TODO Scan assemblies and map all presenters through one interface.
             .AddRestPresentation(Configuration, Environment)
             .AddGrpcPresentation(Configuration)
-            .AddGraphQLPresentation();
+            .AddGraphQLPresentation()
+            .AddMessageBroker(Configuration);
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {

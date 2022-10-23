@@ -1,10 +1,10 @@
-using ILogger = Microsoft.Extensions.Logging.ILogger;
-
 namespace NKZSoft.Template.Presentation.REST.Middleware;
 
 using Models;
 using Models.Result;
 using Newtonsoft.Json;
+
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 public class ErrorHandlingMiddleware
 {

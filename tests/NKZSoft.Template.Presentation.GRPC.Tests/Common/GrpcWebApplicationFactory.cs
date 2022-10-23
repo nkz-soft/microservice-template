@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.GRPC.Tests.Common;
 
+using DotNet.Testcontainers.Containers;
 using SeedData;
 
 public class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
@@ -24,7 +25,7 @@ public class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TSt
                 .Remove<ApplicationDbContext>()
                 .AddDbContext<ApplicationDbContext>(options =>
                 {
-                    options.UseNpgsql(Container.ConnectionString);
+                    options.UseNpgsql(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
                 })
                 .AddScoped<IApplicationDbContext, ApplicationDbContext>()
                 .AddScoped<IDbInitializer, SeedDataContext>()

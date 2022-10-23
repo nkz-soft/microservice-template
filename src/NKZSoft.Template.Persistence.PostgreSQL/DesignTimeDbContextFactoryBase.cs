@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using NKZSoft.Template.Persistence.PostgreSQL.Configurations;
-
-namespace NKZSoft.Template.Persistence.PostgreSQL;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL;
 
 using Configurations;
 
@@ -21,7 +18,6 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
 
     private TContext Create(string basePath, string? environmentName)
     {
-
         var configuration = new ConfigurationBuilder()
             .SetBasePath(basePath)
             .AddJsonFile("appsettings.json")

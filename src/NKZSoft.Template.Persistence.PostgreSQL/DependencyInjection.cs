@@ -1,8 +1,6 @@
 namespace NKZSoft.Template.Persistence.PostgreSQL;
 
 using Configurations;
-using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Common;
 
 public static class DependencyInjection
 {

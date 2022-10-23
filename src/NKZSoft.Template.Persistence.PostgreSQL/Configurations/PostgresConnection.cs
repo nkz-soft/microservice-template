@@ -1,7 +1,5 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Configurations;
 
-using System.Diagnostics.CodeAnalysis;
-
 public sealed record PostgresConnection
 {
     [NotNull]

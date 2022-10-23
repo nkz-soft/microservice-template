@@ -1,8 +1,7 @@
-﻿using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.TodoItems.Specifications;
+﻿namespace NKZSoft.Template.Application.TodoItems.Specifications;
 
 using Common.Exceptions;
+using Common.Filters;
 using Common.Paging;
 using Models;
 

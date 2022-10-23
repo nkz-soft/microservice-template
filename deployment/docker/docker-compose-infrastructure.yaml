@@ -2,6 +2,7 @@ version: '3.9'
 
 volumes:
   postgres:
+  rabbitmq:
 
 services:
 
@@ -18,7 +19,25 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "PGPASSWORD=postgres pg_isready -U postgres -h postgres"]
       interval: 10s
-      timeout: 5s
+      timeout: 30s
+      retries: 15
+
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+    ports:
+      - 0.0.0.0:5672:5672
+      - 0.0.0.0:15672:15672
+    networks:
+      - dev-network
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 30s
       retries: 15
 
 networks:

@@ -2,7 +2,6 @@
 
 using NKZSoft.Template.Application.Models;
 using Specifications;
-using Domain.AggregatesModel.ToDoAggregates.Entities;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Paging;

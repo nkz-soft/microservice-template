@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
-namespace NKZSoft.Template.Persistence.PostgreSQL.Extensions;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 
 public static class ModelBuilderExtension
 {

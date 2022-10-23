@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using NKZSoft.Template.Domain.Common;
-
-namespace NKZSoft.Template.Persistence.PostgreSQL.Common;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Common;
 
 public static class MediatorExtension
 {
@@ -19,7 +16,7 @@ public static class MediatorExtension
 
         foreach (var domainEvent in domainEvents)
         {
-            await mediator.Publish(domainEvent);
+            await mediator.Publish(domainEvent).ConfigureAwait(false);
         }
     }
 }

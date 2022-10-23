@@ -1,5 +1,3 @@
-using NKZSoft.Template.Common;
-
 namespace NKZSoft.Template.Presentation.REST.Filters;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]

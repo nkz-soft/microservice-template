@@ -1,6 +1,4 @@
-﻿using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.Mapper;
+﻿namespace NKZSoft.Template.Application.Mapper;
 
 using Models;
 
@@ -10,5 +8,7 @@ public class MappingConfig : IRegister
     {
         config.NewConfig<ToDoItem, ToDoItemDto>();
         config.NewConfig<ToDoList, ToDoListDto>();
+
+        config.NewConfig<ToDoItemCreatedDomainEvent, ToDoItemCreatedIntegrationEvent>();
     }
 }

@@ -1,5 +1,3 @@
-using NKZSoft.Template.Common;
-
 namespace NKZSoft.Template.Presentation.REST.Controllers;
 
 [ApiController]

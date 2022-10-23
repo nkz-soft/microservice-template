@@ -1,50 +1,30 @@
 ﻿namespace NKZSoft.Template.Common.Tests;
 
-using DotNet.Testcontainers.Builders;
-using DotNet.Testcontainers.Configurations;
-using DotNet.Testcontainers.Containers;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using NKZSoft.Template.Application.Common.Interfaces;
-using Serilog;
-using Xunit;
-
 public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
 {
     protected const string EnvironmentName = "Test";
-    private const string Database = "template_db";
-    private const string Username = "postgres";
-    private const string Password = "postgres";
-    public TestcontainerDatabase Container { get; }
 
-    public BaseWebApplicationFactory()
+    private  IReadOnlyDictionary<Type, ITestcontainersContainer> Containers { get; }
+
+    protected BaseWebApplicationFactory()
     {
         TestcontainersSettings.ResourceReaperEnabled = false;
-        Container = new TestcontainersBuilder<PostgreSqlTestcontainer>()
-            .WithDatabase(new PostgreSqlTestcontainerConfiguration
+        Containers = new Dictionary<Type, ITestcontainersContainer>()
+        {
             {
-                Database = Database,
-                Username = Username,
-                Password = Password
-            })
-            .WithImage("postgres:14")
-            .WithPortBinding(5432, 5432)
-            .WithAutoRemove(true)
-            .WithCleanUp(true)
-            .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
-            .Build();
-    }
+                typeof(PostgreSqlTestcontainer), ContainerFactory.Create<PostgreSqlTestcontainer>()
+            },
+            {
+                typeof(RabbitMqTestcontainer), ContainerFactory.Create<RabbitMqTestcontainer>()
+            }
+        };
 
-    protected override IHostBuilder CreateHostBuilder() =>
-        base.CreateHostBuilder()
-            .UseSerilog(((ctx, lc) => lc
-                .WriteTo.Console()));
+    }
 
     public async Task InitializeAsync()
     {
-        await Container.StartAsync();
+        await Task.WhenAll(Containers.Select(c => c.Value.StartAsync()));
 
         using var scope = Services.CreateScope();
         var scopedServices = scope.ServiceProvider;
@@ -53,5 +33,21 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         await context.SeedAsync();
     }
 
-    public new async Task DisposeAsync() => await Container.DisposeAsync();
+    public new async Task DisposeAsync() =>
+        await Task.WhenAll(Containers.Select(c => c.Value.DisposeAsync().AsTask()));
+
+    protected T GetContainer<T>() where T : class
+    {
+        if (!Containers.TryGetValue(typeof(T), out var container))
+        {
+            throw new ArgumentException($"Couldn't find any container of {nameof(T)}");
+        }
+
+        return (container as T)!;
+    }
+
+    protected override IHostBuilder CreateHostBuilder() =>
+        base.CreateHostBuilder()
+            .UseSerilog(((ctx, lc) => lc
+                .WriteTo.Console()));
 }

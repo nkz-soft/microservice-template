@@ -1,8 +1,4 @@
-﻿using NKZSoft.Template.Application.Common.Interfaces;
-
-namespace NKZSoft.Template.Infrastructure.Core.Services;
-
-using System.Diagnostics.CodeAnalysis;
+﻿namespace NKZSoft.Template.Infrastructure.Core.Services;
 
 public sealed class CurrentUser : ICurrentUser
 {

@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
+using DotNet.Testcontainers.Containers;
 using SeedData;
 
 public class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
@@ -14,7 +15,7 @@ public class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationFactory<
                 .Remove<ApplicationDbContext>()
                 .AddDbContext<ApplicationDbContext>(options =>
                 {
-                    options.UseNpgsql(Container.ConnectionString);
+                    options.UseNpgsql(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
                 })
                 .AddScoped<IApplicationDbContext, ApplicationDbContext>()
                 .AddScoped<IDbInitializer, SeedDataContext>()

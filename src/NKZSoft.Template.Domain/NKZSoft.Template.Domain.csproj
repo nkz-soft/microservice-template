@@ -18,4 +18,8 @@
       <Folder Include="Exceptions" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\NKZSoft.Template.Events\NKZSoft.Template.Events.csproj" />
+    </ItemGroup>
+
 </Project>

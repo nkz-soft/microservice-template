@@ -1,9 +1,4 @@
-﻿using MediatR;
-using Moq;
-using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Infrastructure.Core.Services;
-
-namespace NKZSoft.Template.Common.Tests;
+﻿namespace NKZSoft.Template.Common.Tests;
 
 public static class AppMockFactory
 {

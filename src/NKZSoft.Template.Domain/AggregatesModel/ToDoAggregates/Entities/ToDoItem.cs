@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 
 using Common;
+using Events;
 
 public sealed class ToDoItem : BaseAuditableEntity, IAggregateRoot
 {
@@ -15,8 +16,11 @@ public sealed class ToDoItem : BaseAuditableEntity, IAggregateRoot
 
     public ToDoItem(string title, string? note)
     {
+        Id = Guid.NewGuid();
         Title = title;
         Note = note;
+
+        AddCreateDomainEvent();
     }
 
     public string Title { get; set; }
@@ -27,5 +31,11 @@ public sealed class ToDoItem : BaseAuditableEntity, IAggregateRoot
     {
         Title = title;
         Note = note;
+    }
+
+    private void AddCreateDomainEvent()
+    {
+        var createEvent = new ToDoItemCreatedDomainEvent(Id, Title, Note);
+        AddDomainEvent(createEvent);
     }
 }

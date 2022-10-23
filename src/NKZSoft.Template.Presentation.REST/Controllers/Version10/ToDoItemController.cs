@@ -1,22 +1,13 @@
-using NKZSoft.Template.Application.Common.Paging;
-using NKZSoft.Template.Application.Models;
-using NKZSoft.Template.Application.TodoItems.Models;
-using NKZSoft.Template.Application.TodoItems.Queries.Get;
-using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
-using NKZSoft.Template.Common;
-using NKZSoft.Template.Presentation.REST.Models;
-
 namespace NKZSoft.Template.Presentation.REST.Controllers.Version10;
 
-using System.Threading;
 using Models;
 using Models.Result;
 
 [ApiVersion(VersionController.Version10)]
 [Route("api/v{version:apiVersion}/to-do-items")]
-public class ToDoItemController : BaseController
+public class ToDoItemControllerV1 : BaseController
 {
-    public ToDoItemController(IMediator mediator) : base(mediator)
+    public ToDoItemControllerV1(IMediator mediator) : base(mediator)
     {
     }
 

@@ -1,7 +1,5 @@
 ﻿namespace NKZSoft.Template.Common.Tests;
 
-using Microsoft.Extensions.DependencyInjection;
-
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection Remove<TService>(this IServiceCollection services)

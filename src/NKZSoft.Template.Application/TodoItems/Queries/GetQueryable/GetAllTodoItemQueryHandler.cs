@@ -1,5 +1,8 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetQueryable;
 
+using Common.Handlers;
+using Common.Interfaces;
+
 public class GetQueryableQueryHandler : HandlerQueryBase<GetQueryableQuery, IQueryable<ToDoItem>>
 {
     public GetQueryableQueryHandler(IApplicationDbContext applicationDbContext, IMapper mapper, ICurrentUserService currentUserService)

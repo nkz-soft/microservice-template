@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace NKZSoft.Template.Domain.Common;
+﻿namespace NKZSoft.Template.Domain.Common;
 
 public interface IEntity
 {
@@ -10,9 +8,9 @@ public interface IEntity
 
     IReadOnlyCollection<INotification> DomainEvents { get; }
 
-    void AddDomainEvent(INotification eventItem);
+    void AddDomainEvent(INotification domainEvent);
 
-    void RemoveDomainEvent(INotification eventItem);
+    void RemoveDomainEvent(INotification domainEvent);
 
     void ClearDomainEvents();
 }

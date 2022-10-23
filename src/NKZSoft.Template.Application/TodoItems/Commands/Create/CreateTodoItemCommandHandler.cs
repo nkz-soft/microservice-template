@@ -1,22 +1,23 @@
-﻿using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.TodoItems.Commands.Create;
+﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Create;
 
 using Common.Interfaces;
 
-public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToВoItemCommand, IResult<Guid>>
+public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToВoItemCommand, Result<Guid>>
 {
     private readonly IApplicationDbContext _context;
 
     public CreateTodoItemCommandHandler(IApplicationDbContext context) => _context = context;
 
-    public async Task<IResult<Guid>> Handle(CreateToВoItemCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Guid>> Handle(CreateToВoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = new ToDoItem(request.Title);
 
-        await _context.Set<ToDoItem>().AddAsync(entity, cancellationToken);
+        await _context.Set<ToDoItem>()
+            .AddAsync(entity, cancellationToken)
+            .ConfigureAwait(false);
 
-        await _context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken)
+            .ConfigureAwait(false);
 
         return Result.Ok(entity.Id);
     }

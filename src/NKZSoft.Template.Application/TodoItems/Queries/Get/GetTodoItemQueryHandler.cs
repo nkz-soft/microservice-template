@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Queries.Get;
 
-using Domain.AggregatesModel.ToDoAggregates.Entities;
 using Application.Models;
 using Common.Exceptions;
 using Common.Handlers;

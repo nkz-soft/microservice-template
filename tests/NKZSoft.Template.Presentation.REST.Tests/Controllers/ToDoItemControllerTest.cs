@@ -1,36 +1,36 @@
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
+[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
+
 namespace NKZSoft.Template.Presentation.REST.Tests.Controllers;
 
+using Application.TodoItems.Commands.Create;
 using Common;
 
 public class ToDoItemControllerTest : IClassFixture<RestWebApplicationFactory<Startup>>
 {
-    private const string ApiUrlBase = "api/v1/to-do-items";
+    private const string ApiUrlBaseV1 = "api/v1/to-do-items";
+    private const string ApiUrlBaseV2 = "api/v2/to-do-items";
 
     private readonly RestWebApplicationFactory<Startup> _factory;
-    private readonly ITestOutputHelper _testOutputHelper;
 
-    public ToDoItemControllerTest(RestWebApplicationFactory<Startup> factory, ITestOutputHelper testOutputHelper)
-    {
-        _factory = factory;
-        _testOutputHelper = testOutputHelper;
-    }
+    public ToDoItemControllerTest(RestWebApplicationFactory<Startup> factory, ITestOutputHelper testOutputHelper) => _factory = factory;
 
     private static class Get
     {
-        public static string GetToDoItem(Guid id) => $"{ApiUrlBase}/{id}";
+        public static string GetToDoItem(Guid id) => $"{ApiUrlBaseV1}/{id}";
 
     }
 
     private static class Post
     {
-        public static string GetPageToDoItem() => $"{ApiUrlBase}/page";
+        public static string GetPageToDoItem() => $"{ApiUrlBaseV1}/page";
+        public static string CreateToDoItem() => $"{ApiUrlBaseV2}";
     }
 
     [Fact, Order(1)]
     public async Task<ResultDto<CollectionViewModel<ToDoItemDto>>> GetPageTestAsync()
     {
-        _testOutputHelper.WriteLine(_factory.Container.ConnectionString);
-
         var client = _factory.CreateClient();
 
         var command = new PageContext<ToDoItemFilter>(1, 10) ;
@@ -54,8 +54,6 @@ public class ToDoItemControllerTest : IClassFixture<RestWebApplicationFactory<St
     [Fact, Order(2)]
     public async Task GetByIdTestAsync()
     {
-        _testOutputHelper.WriteLine(_factory.Container.ConnectionString);
-
         var items = await GetPageTestAsync();
         var firstItem = items.Data.Data.First();
 
@@ -76,7 +74,7 @@ public class ToDoItemControllerTest : IClassFixture<RestWebApplicationFactory<St
         content.Data.Note.Should().Be(firstItem.Note);
     }
 
-    [Fact]
+    [Fact, Order(3)]
     public async Task GetByIdNotFoundTestAsync()
     {
         var client = _factory.CreateClient();
@@ -90,5 +88,23 @@ public class ToDoItemControllerTest : IClassFixture<RestWebApplicationFactory<St
         content.Should().NotBeNull();
         content.Should().BeOfType<ResultDto<Unit>>();
         content!.IsSuccess.Should().BeFalse();
+    }
+
+    [Fact, Order(4)]
+    public async Task CreateTestAsync()
+    {
+        var client = _factory.CreateClient();
+
+        var command = new CreateToВoItemCommand("TestNote", null) ;
+
+        var response = await client.PostAsync(Post.CreateToDoItem(),
+            new JsonContent<CreateToВoItemCommand>(command));
+
+        response.EnsureSuccessStatusCode();
+        var content = await response.GetContentAsync<ResultDto<Guid>>();
+
+        content.Should().NotBeNull();
+        content.Should().BeOfType<ResultDto<Guid>>();
+        content!.IsSuccess.Should().BeTrue();
     }
 }

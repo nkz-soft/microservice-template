@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
     <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
+    <ProjectReference Include="..\NKZSoft.Template.MessageBrokers.RabbitMq\NKZSoft.Template.MessageBrokers.RabbitMq.csproj" />
   </ItemGroup>
 
     <ItemGroup>

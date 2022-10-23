@@ -1,7 +1,4 @@
-﻿using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Common;
-
-namespace NKZSoft.Template.Infrastructure.Core.Services;
+﻿namespace NKZSoft.Template.Infrastructure.Core.Services;
 
 public sealed class CurrentUserService : ICurrentUserService
 {

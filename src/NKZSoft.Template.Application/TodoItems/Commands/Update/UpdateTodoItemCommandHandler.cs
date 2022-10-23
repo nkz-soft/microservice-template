@@ -1,6 +1,4 @@
-﻿using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
-namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
+﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
 
 using Common.Exceptions;
 using Common.Interfaces;
@@ -17,7 +15,8 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
     public async Task<Unit> Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = await _context.Set<ToDoItem>()
-            .FindAsync(new object[] { request.Id }, cancellationToken);
+            .FindAsync(new object[] { request.Id }, cancellationToken)
+            .ConfigureAwait(false);
 
         if (entity == null)
         {
@@ -26,7 +25,8 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
 
         entity.Update(request.Title, request.Description);
 
-        await _context.SaveChangesAsync(cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken)
+            .ConfigureAwait(false);
 
         return Unit.Value;
     }

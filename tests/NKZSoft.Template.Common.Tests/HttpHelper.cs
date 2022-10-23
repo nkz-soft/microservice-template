@@ -1,8 +1,5 @@
 ﻿namespace NKZSoft.Template.Common.Tests;
 
-using System.Text;
-using Newtonsoft.Json;
-
 public static class HttpHelper
 {
     private const string MediaType = "application/json";
