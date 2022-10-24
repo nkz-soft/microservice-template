@@ -15,7 +15,7 @@ If you're using this repository for your learning, samples or your project, plea
 
 ## The aim of the project
 
-I would like this project to help you find simplified and effortless solutions. 
+I would like this project to help you find simplified and effortless solutions. You can treat it as a modular project and reuse the modules in your projects.
 
 ## Plan
 
@@ -23,12 +23,11 @@ I would like this project to help you find simplified and effortless solutions.
 - [x] GRPC API samples
 - [x] Improve integration tests to use Testcontainers
 - [x] GraphQL API samples
-- [x] Add MassTransit and RabbitMq
+- [x] MassTransit and RabbitMq
 - [ ] OpenTelemetry
 - [ ] HealthCheck
 - [ ] Add caching for EF Core  
 - [ ] MongoDB data provider
-- [ ] MassTransit and RabbitMQ
 
 ## Technologies used
 
@@ -55,3 +54,5 @@ I would like this project to help you find simplified and effortless solutions.
 [MassTransit](https://github.com/MassTransit/MassTransit): MassTransit is a free, open-source distributed application framework for .NET.
 
 [FluentResults](https://github.com/altmann/FluentResults): FluentResults is a lightweight .NET library developed to solve a common problem. It returns an object indicating success or failure of an operation instead of throwing/using exceptions.
+
+[Specification](https://github.com/ardalis/Specification): Base class with tests for adding specifications to a DDD model. Also includes a default generic Repository base class with support for EF6 and EF Core.
