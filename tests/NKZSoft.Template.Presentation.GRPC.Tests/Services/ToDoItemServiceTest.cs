@@ -1,15 +1,15 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
+﻿[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
+[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
 
-public class ToDoItemServiceTest  : IClassFixture<GrpcWebApplicationFactory<Startup>>
+namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
+
+[Collection(nameof(GrpcCollection))]
+public class ToDoItemServiceTest  //: EfCoreCollection<GrpcWebApplicationFactory<Program>>
 {
-    private readonly GrpcWebApplicationFactory<Startup> _factory;
-    private readonly ITestOutputHelper _testOutputHelper;
+    private readonly GrpcWebApplicationFactory<Program> _factory;
 
-    public ToDoItemServiceTest(GrpcWebApplicationFactory<Startup> factory, ITestOutputHelper testOutputHelper)
-    {
-        _factory = factory;
-        _testOutputHelper = testOutputHelper;
-    }
+    public ToDoItemServiceTest(GrpcWebApplicationFactory<Program> factory) => _factory = factory;
 
     [Fact, Order(1)]
     public async Task GetItemsTestAsync()
@@ -33,8 +33,6 @@ public class ToDoItemServiceTest  : IClassFixture<GrpcWebApplicationFactory<Star
 
         await foreach(var item in service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
         {
-            _testOutputHelper.WriteLine(item.Items.First().Id.ToString());
-
             var response = await service.GetToDoItemById(new GetTodoItemRequest
             {
                 Id = item.Items.First().Id

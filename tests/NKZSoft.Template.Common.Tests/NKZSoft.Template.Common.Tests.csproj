@@ -22,8 +22,6 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.5" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
       <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
-      <PackageReference Include="Serilog" Version="2.10.0" />
-      <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
     </ItemGroup>
 
 </Project>

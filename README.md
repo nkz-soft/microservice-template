@@ -24,6 +24,7 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Improve integration tests to use Testcontainers
 - [x] GraphQL API samples
 - [x] MassTransit and RabbitMq
+- [x] Minimal hosting model
 - [ ] OpenTelemetry
 - [ ] HealthCheck
 - [ ] Add caching for EF Core  

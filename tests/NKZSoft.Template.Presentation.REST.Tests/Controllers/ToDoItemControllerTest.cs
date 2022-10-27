@@ -7,14 +7,15 @@ namespace NKZSoft.Template.Presentation.REST.Tests.Controllers;
 using Application.TodoItems.Commands.Create;
 using Common;
 
-public class ToDoItemControllerTest : IClassFixture<RestWebApplicationFactory<Startup>>
+[Collection(nameof(RestCollection))]
+public class ToDoItemControllerTest //: EfCoreCollection<RestWebApplicationFactory<Program>>
 {
     private const string ApiUrlBaseV1 = "api/v1/to-do-items";
     private const string ApiUrlBaseV2 = "api/v2/to-do-items";
 
-    private readonly RestWebApplicationFactory<Startup> _factory;
+    private readonly RestWebApplicationFactory<Program> _factory;
 
-    public ToDoItemControllerTest(RestWebApplicationFactory<Startup> factory, ITestOutputHelper testOutputHelper) => _factory = factory;
+    public ToDoItemControllerTest(RestWebApplicationFactory<Program> factory) => _factory = factory;
 
     private static class Get
     {

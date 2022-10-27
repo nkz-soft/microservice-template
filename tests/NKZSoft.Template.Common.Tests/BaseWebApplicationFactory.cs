@@ -19,7 +19,6 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
                 typeof(RabbitMqTestcontainer), ContainerFactory.Create<RabbitMqTestcontainer>()
             }
         };
-
     }
 
     public async Task InitializeAsync()
@@ -29,6 +28,10 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         using var scope = Services.CreateScope();
         var scopedServices = scope.ServiceProvider;
         var context = scopedServices.GetRequiredService<IApplicationDbContext>();
+
+        //The local machine may still have old volumes
+        await context.AppDbContext.Database.EnsureDeletedAsync();
+
         await context.MigrateAsync();
         await context.SeedAsync();
     }
@@ -45,9 +48,4 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 
         return (container as T)!;
     }
-
-    protected override IHostBuilder CreateHostBuilder() =>
-        base.CreateHostBuilder()
-            .UseSerilog(((ctx, lc) => lc
-                .WriteTo.Console()));
 }

@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
-using DotNet.Testcontainers.Containers;
 using SeedData;
 
 public class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class

@@ -1,9 +1,5 @@
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
-using System.Globalization;
-using System.Text;
-using Newtonsoft.Json;
-
 public class ClientQueryRequest
 {
     [JsonProperty("id")]

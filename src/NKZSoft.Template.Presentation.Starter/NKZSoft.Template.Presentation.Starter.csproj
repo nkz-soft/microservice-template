@@ -22,4 +22,10 @@
       <PackageReference Include="Scrutor" Version="4.2.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GraphQL.Tests" />
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.REST.Tests" />
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GRPC.Tests" />
+    </ItemGroup>
+
 </Project>

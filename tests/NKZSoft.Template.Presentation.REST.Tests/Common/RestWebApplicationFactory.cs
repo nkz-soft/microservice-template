@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Tests.Common;
 
-using DotNet.Testcontainers.Containers;
 using SeedData;
 
 public class RestWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class

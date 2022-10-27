@@ -1,57 +1,55 @@
-namespace NKZSoft.Template.Presentation.Starter;
+var builder = WebApplication.CreateBuilder(args);
 
-using NKZSoft.Template.Application.Common.Interfaces;
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddCommandLine(args)
+    .AddEnvironmentVariables()
+    .Build();
 
-public class Program
+var configuration = builder.Configuration;
+var environment = builder.Environment;
+
+builder.Services
+    .AddLogging(configuration)
+    .AddOptions()
+    .AddPersistence(configuration)
+    .AddApplication()
+    .AddCoreInfrastructure()
+    .AddRestPresentation(configuration, builder.Environment)
+    .AddGrpcPresentation(configuration)
+    .AddGraphQLPresentation()
+    .AddMessageBroker(configuration);
+
+var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
 {
-    public static async Task Main(string[] args)
+    try
     {
-        var host = CreateHostBuilder(args).Build();
-        using (var scope = host.Services.CreateScope())
-        {
-            var services = scope.ServiceProvider;
-
-            try
-            {
-                var context = services.GetRequiredService<IApplicationDbContext>();
-                await context.MigrateAsync();
-                await context.SeedAsync();
-            }
-            catch (Exception ex)
-            {
-                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-                logger.LogError(ex, "An error occurred while migrating or initializing the database.");
-            }
-        }
-
-        await host.RunAsync();
+        var context = scope.ServiceProvider.GetRequiredService<IApplicationDbContext>();
+        await context.MigrateAsync();
+        await context.SeedAsync();
     }
-
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    var env = hostingContext.HostingEnvironment;
-
-                    config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                    .AddJsonFile($"appsettings.Local.json", optional: true, reloadOnChange: true)
-                    .AddJsonFile("/app/appsettings.json", optional: true, reloadOnChange: true);
-
-                    if (env.IsDevelopment())
-                    {
-                        var appAssembly = Assembly.Load(new AssemblyName(env.ApplicationName));
-                        if (appAssembly != null)
-                        {
-                            config.AddUserSecrets(appAssembly, optional: true);
-                        }
-                    }
-
-                    config.AddEnvironmentVariables();
-                });
-
-                webBuilder.UseStartup<Startup>();
-            });
+    catch (Exception ex)
+    {
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while migrating or initializing the database.");
+    }
 }
+
+app.UseRestPresentation(configuration, environment)
+    .UseRouting();
+
+app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRestEndpoints();
+    endpoints.MapGrpcEndpoints();
+    endpoints.MapGraphQLEndpoints();
+});
+app.Run();
+
+//We need public access to the class for tests
+public partial class Program {}

@@ -1,14 +1,19 @@
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
+[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
+
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 
 using Common;
 
-public class ToDoItemControllerTest : IClassFixture<GraphQLWebApplicationFactory<Startup>>
+[Collection(nameof(GraphQlCollection))]
+public class ToDoItemControllerTest //: EfCoreCollection<GraphQLWebApplicationFactory<Program>>
 {
     private const string GraphqlUrlBase = "/graphql";
 
-    private readonly GraphQLWebApplicationFactory<Startup> _factory;
+    private readonly GraphQLWebApplicationFactory<Program> _factory;
 
-    public ToDoItemControllerTest(GraphQLWebApplicationFactory<Startup> factory) =>
+    public ToDoItemControllerTest(GraphQLWebApplicationFactory<Program> factory) =>
         _factory = factory;
 
     [Fact, Order(1)]
