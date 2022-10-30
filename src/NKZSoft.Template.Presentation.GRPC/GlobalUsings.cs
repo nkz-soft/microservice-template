@@ -3,6 +3,7 @@ global using System.ServiceModel;
 global using System.Threading.Tasks;
 global using System.Collections.Generic;
 global using System.Linq;
+global using System.Reflection;
 global using System.Runtime.CompilerServices;
 
 global using Microsoft.AspNetCore.Builder;
@@ -19,6 +20,7 @@ global using ProtoBuf.Grpc.Server;
 global using MediatR;
 
 global using NKZSoft.Template.Application.Common.Paging;
+global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.TodoItems.Models;
 global using NKZSoft.Template.Application.TodoItems.Queries.Get;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;

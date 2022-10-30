@@ -1,10 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.GRPC.Mapper;
 
-using Application.Common.Paging;
-using Application.Models;
-using Application.TodoItems.Queries.Get;
-using FluentResults;
-using Mapster;
 using Models;
 using Models.Result;
 using Models.ToDoItem;

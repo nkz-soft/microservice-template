@@ -1,7 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.GRPC.Extensions;
 
-using System.Reflection;
-using Mapster;
 using Mapper = MapsterMapper.Mapper;
 
 public static class ServiceCollectionExtension

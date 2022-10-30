@@ -17,10 +17,10 @@
         <PackageReference Include="Mapster.Async" Version="2.0.0" />
         <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     </ItemGroup>
 
-    
+
   <ItemGroup>
     <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
     <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
@@ -33,5 +33,5 @@
     <Target Name="CleanGenerated">
         <Delete Files="@(Generated)" />
     </Target>
-    
+
 </Project>
