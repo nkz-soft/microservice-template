@@ -11,7 +11,7 @@
 
     <ItemGroup>
         <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
-        <PackageReference Include="FluentResults" Version="3.5.0" />
+        <PackageReference Include="FluentResults" Version="3.14.0" />
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.4" />
         <PackageReference Include="Mapster" Version="7.3.0" />
         <PackageReference Include="Mapster.Async" Version="2.0.0" />
