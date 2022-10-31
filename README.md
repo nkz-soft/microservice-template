@@ -3,6 +3,18 @@ Template for microservice based on DDD and Clean Architecture with .NET
 
 The main aim of this project is to provide a means for building microservices with the latest technology and architecture.
 
+# Installing as a template
+
+```bash
+dotnet new install  .\ 
+```
+
+Creating a new application
+
+```bash
+dotnet new nkz-template -o My.NewApp
+```
+
 ## ⭐ Give a star
 
 If you're using this repository for your learning, samples or your project, please give a star. Thanks :+1:
