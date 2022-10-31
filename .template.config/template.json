@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NKZSoft",
+  "classifications": [ "WebAPI", "gRPC", "GraphQL","ApplicationServer" ],
+  "name": "Microservice Boilerplate & Starter Kit",
+  "defaultName": "NKZSoft Template",
+  "description": "Template for Microservice",
+  "identity": "NKZSoft.Template",
+  "groupIdentity": "NKZSoft.Template",
+  "shortName": "nkz-template",
+  "tags": {
+    "language": "C#",
+    "type":"project"
+  },
+  "sourceName": "NKZSoft.Template",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".template.config/**",
+        ".vs/**",
+        ".git/**",
+        ".idea/**"
+      ]
+    }
+  ]
+}
