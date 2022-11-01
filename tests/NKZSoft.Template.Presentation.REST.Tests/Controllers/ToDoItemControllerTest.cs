@@ -96,10 +96,10 @@ public class ToDoItemControllerTest //: EfCoreCollection<RestWebApplicationFacto
     {
         var client = _factory.CreateClient();
 
-        var command = new CreateToВoItemCommand("TestNote", null) ;
+        var command = new CreateToDoItemCommand("TestNote", null) ;
 
         var response = await client.PostAsync(Post.CreateToDoItem(),
-            new JsonContent<CreateToВoItemCommand>(command));
+            new JsonContent<CreateToDoItemCommand>(command));
 
         response.EnsureSuccessStatusCode();
         var content = await response.GetContentAsync<ResultDto<Guid>>();

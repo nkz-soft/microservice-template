@@ -17,7 +17,7 @@ public class ToDoItemControllerV2 : BaseController
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
     [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<ResultDto<Guid>>> Create(
-        [FromBody] CreateToВoItemCommand command,
+        [FromBody] CreateToDoItemCommand command,
         CancellationToken cancellationToken)
         => (await Mediator.Send(command, cancellationToken)).ToResultDto();
 }

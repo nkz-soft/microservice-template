@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Create;
 
-public sealed class CreateTodoItemCommandValidator : AbstractValidator<CreateToВoItemCommand>
+public sealed class CreateTodoItemCommandValidator : AbstractValidator<CreateToDoItemCommand>
 {
     public CreateTodoItemCommandValidator()
     {

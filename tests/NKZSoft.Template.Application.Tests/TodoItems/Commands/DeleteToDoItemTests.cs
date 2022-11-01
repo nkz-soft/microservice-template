@@ -15,7 +15,7 @@ public class DeleteToDoItemTests : TestBase
     [Fact]
     public async Task ShouldDeleteTodoItem()
     {
-        var createCommand = new CreateToВoItemCommand(ToDoItemTitle, null);
+        var createCommand = new CreateToDoItemCommand(ToDoItemTitle, null);
         var createResult = await Mediator.Send(createCommand);
 
         createResult.Should().NotBeNull();

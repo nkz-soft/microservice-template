@@ -18,7 +18,9 @@ public static class ServiceCollectionExtension
             .AddType<QueryType<ToDoItem>>()
             .AddProjections()
             .AddFiltering()
-            .AddSorting();
+            .AddSorting()
+            .AddMutationType<Mutation>()
+            .AddMutationConventions();
 
         return services;
     }

@@ -36,8 +36,11 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         await context.SeedAsync();
     }
 
-    public new async Task DisposeAsync() =>
+    public new async Task DisposeAsync()
+    {
+        await base.DisposeAsync();
         await Task.WhenAll(Containers.Select(c => c.Value.DisposeAsync().AsTask()));
+    }
 
     protected T GetContainer<T>() where T : class
     {

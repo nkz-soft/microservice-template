@@ -15,7 +15,7 @@ public class CreateToDoItemTests : TestBase
     [Fact]
     public async Task ShouldCreateTodoItem()
     {
-        var command = new CreateToВoItemCommand(ToDoItemTitle, null);
+        var command = new CreateToDoItemCommand(ToDoItemTitle, null);
         var result = await Mediator.Send(command);
 
         result.Should().NotBeNull();

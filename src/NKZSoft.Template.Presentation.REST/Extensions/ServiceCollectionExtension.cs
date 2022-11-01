@@ -1,7 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Extensions;
 
 using Filters;
-using Service.Configuration.Swagger;
 
 public static class ServiceCollectionExtension
 {
@@ -12,7 +11,7 @@ public static class ServiceCollectionExtension
 
         services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
         {
-            builder.WithOrigins(corsParams.Where(x => x != null).ToArray())
+            builder.WithOrigins(corsParams.ToArray())
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials();

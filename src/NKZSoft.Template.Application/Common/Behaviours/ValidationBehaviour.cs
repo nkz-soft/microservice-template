@@ -1,6 +1,4 @@
-﻿using ValidationException = NKZSoft.Template.Application.Common.Exceptions.ValidationException;
-
-namespace NKZSoft.Template.Application.Common.Behaviours;
+﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
 using Exceptions;
 
@@ -9,10 +7,7 @@ public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TReque
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators)
-    {
-        _validators = validators;
-    }
+    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators) => _validators = validators;
 
     public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
     {

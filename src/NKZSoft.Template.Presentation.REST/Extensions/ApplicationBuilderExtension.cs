@@ -2,7 +2,6 @@
 
 using Microsoft.AspNetCore.Builder;
 using Middleware;
-using Service.Configuration.Swagger;
 
 public static class ApplicationBuilderExtension
 {

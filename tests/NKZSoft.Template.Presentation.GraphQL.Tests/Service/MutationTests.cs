@@ -1,27 +1,30 @@
+﻿[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
+[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
+
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 
 using Common;
 
 [Collection(nameof(GraphQlCollection))]
-public class QueryTest
+public class MutationTests
 {
     private const string GraphqlUrlBase = "/graphql";
 
     private readonly GraphQLWebApplicationFactory<Program> _factory;
 
-    public QueryTest(GraphQLWebApplicationFactory<Program> factory) =>
+    public MutationTests(GraphQLWebApplicationFactory<Program> factory) =>
         _factory = factory;
 
+
     [Fact, Order(1)]
-    public async Task GetTodoItemsTestAsync()
+    public async Task CreateToDoItemsTestAsync()
     {
         var client = _factory.CreateClient();
 
-        const string query = @"
-            query {
-                todoItems {
-                    id,
-                    note
+        const string query = @"mutation {
+              createToDoItem(input: {title: ""Test"", listId: null}) {
+                    uUID
                 }
             }";
 

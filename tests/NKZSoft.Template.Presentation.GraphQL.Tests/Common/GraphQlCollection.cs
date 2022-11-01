@@ -3,5 +3,4 @@
 [CollectionDefinition(nameof(GraphQlCollection))]
 public class GraphQlCollection : CoreCollection<GraphQLWebApplicationFactory<Program>>
 {
-
 }

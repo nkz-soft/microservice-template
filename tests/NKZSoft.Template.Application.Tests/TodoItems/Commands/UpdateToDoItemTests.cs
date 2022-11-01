@@ -17,7 +17,7 @@ public class UpdateToDoItemTests : TestBase
     [Fact]
     public async Task ShouldUpdateTodoItem()
     {
-        var createCommand = new CreateToВoItemCommand(ToDoItemTitle, null);
+        var createCommand = new CreateToDoItemCommand(ToDoItemTitle, null);
         var createResult = await Mediator.Send(createCommand);
 
         createResult.Should().NotBeNull();

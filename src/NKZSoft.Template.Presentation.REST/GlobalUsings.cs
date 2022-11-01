@@ -16,6 +16,7 @@ global using Microsoft.AspNetCore.Mvc.Filters;
 
 global using MediatR;
 global using FluentResults;
+global using NKZSoft.Service.Configuration.Swagger;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.TodoItems.Commands.Create;

@@ -2,13 +2,13 @@
 
 using Common.Interfaces;
 
-public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToВoItemCommand, Result<Guid>>
+public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToDoItemCommand, Result<Guid>>
 {
     private readonly IApplicationDbContext _context;
 
     public CreateTodoItemCommandHandler(IApplicationDbContext context) => _context = context;
 
-    public async Task<Result<Guid>> Handle(CreateToВoItemCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Guid>> Handle(CreateToDoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = new ToDoItem(request.Title);
 
