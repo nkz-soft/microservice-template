@@ -5,4 +5,4 @@ EXPOSE 81
 WORKDIR /app
 COPY . ./publish/app
 
-ENTRYPOINT ["dotnet", "NKZSoft.Template.Presentation.REST.dll"]
+ENTRYPOINT ["dotnet", "NKZSoft.Template.Presentation.Starter.dll"]
