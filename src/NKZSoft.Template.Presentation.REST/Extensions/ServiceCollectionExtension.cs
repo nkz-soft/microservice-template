@@ -19,6 +19,7 @@ public static class ServiceCollectionExtension
 
         services.AddHttpContextAccessor()
             .AddSwagger(configuration, Assembly.GetExecutingAssembly())
+            .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(ServiceLifetime.Scoped, null, true)
             .AddControllers(options => options.Filters.Add<CustomExceptionFilterAttribute>())
             .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
