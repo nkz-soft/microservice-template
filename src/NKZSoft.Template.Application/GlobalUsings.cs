@@ -15,6 +15,7 @@ global using Ardalis.Specification.EntityFrameworkCore;
 global using MassTransit;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
+global using NKZSoft.Template.Application.TodoItems.Specifications;
 global using NKZSoft.Template.Common;
 
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;

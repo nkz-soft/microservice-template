@@ -37,6 +37,7 @@ public sealed class ToDoItemSpecification : Specification<ToDoItem>
             specificationBuilder.Take(pageContext.PageSize);
         }
 
+        specificationBuilder.AsNoTracking();
         return specification;
     }
 

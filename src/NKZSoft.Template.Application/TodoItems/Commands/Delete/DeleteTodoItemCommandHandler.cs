@@ -1,18 +1,18 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Delete;
 
 using Common.Exceptions;
-using Common.Interfaces;
+using Common.Repositories;
 
 public sealed class DeleteTodoItemCommandHandler : IRequestHandler<DeleteTodoItemCommand>
 {
-    private readonly IApplicationDbContext _context;
+    private readonly IToDoItemRepository _repository;
 
-    public DeleteTodoItemCommandHandler(IApplicationDbContext context) => _context = context;
+    public DeleteTodoItemCommandHandler(IToDoItemRepository repository) => _repository = repository;
 
     public async Task<Unit> Handle(DeleteTodoItemCommand request, CancellationToken cancellationToken)
     {
-        var entity = await _context.Set<ToDoItem>()
-            .FindAsync(new object[] { request.Id }, cancellationToken)
+        var entity = await _repository
+            .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id), cancellationToken)
             .ConfigureAwait(false);
 
         if (entity == null)
@@ -20,8 +20,8 @@ public sealed class DeleteTodoItemCommandHandler : IRequestHandler<DeleteTodoIte
             throw new NotFoundException(nameof(ToDoItem), request.Id);
         }
 
-        _context.Set<ToDoItem>().Remove(entity);
-        await _context.SaveChangesAsync(cancellationToken)
+        await _repository.DeleteAsync(entity, cancellationToken).ConfigureAwait(false);
+        await _repository.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(false);
 
         return Unit.Value;

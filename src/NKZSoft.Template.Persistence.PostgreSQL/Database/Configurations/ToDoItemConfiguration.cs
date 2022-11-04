@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations;
 
-public class ThingConfiguration : AuditableConfiguration<ToDoItem>, IEntityTypeConfiguration<ToDoItem>
+public class ToDoItemConfiguration : AuditableConfiguration<ToDoItem>, IEntityTypeConfiguration<ToDoItem>
 {
     public override void Configure(EntityTypeBuilder<ToDoItem> builder)
     {

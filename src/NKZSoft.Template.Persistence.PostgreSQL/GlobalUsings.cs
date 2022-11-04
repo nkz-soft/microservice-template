@@ -1,6 +1,8 @@
 ﻿global using System;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
+global using Ardalis.Specification;
+global using Ardalis.Specification.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.EntityFrameworkCore.Design;

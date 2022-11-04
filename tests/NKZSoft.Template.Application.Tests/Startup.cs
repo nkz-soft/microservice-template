@@ -7,10 +7,13 @@ namespace NKZSoft.Template.Application.Tests;
 
 internal sealed class Startup
 {
-    public static async void ConfigureServices(IServiceCollection services)
+    public static async Task ConfigureServices(IServiceCollection services)
     {
         services.AddApplication();
         services.TryAddSingleton(AppMockFactory.CreateCurrentUserServiceMock());
         services.TryAddSingleton(await ApplicationDbContextFactory.CreateAsync());
+
+        services.TryAddScoped<IToDoItemRepository, ToDoItemRepository>();
+        services.TryAddScoped<IToDoListRepository, ToDoListRepository>();
     }
 }

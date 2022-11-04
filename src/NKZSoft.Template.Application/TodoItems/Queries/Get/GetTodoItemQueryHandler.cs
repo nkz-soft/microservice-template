@@ -4,22 +4,24 @@ using Application.Models;
 using Common.Exceptions;
 using Common.Handlers;
 using Common.Interfaces;
+using Common.Repositories;
 
 public sealed class GetTodoItemQueryHandler : HandlerQueryBase<GetTodoItemQuery, Result<ToDoItemDto>>
 {
-    public GetTodoItemQueryHandler(IApplicationDbContext applicationDbContext,
+    private readonly IToDoItemRepository _repository;
+
+    public GetTodoItemQueryHandler(
+        IToDoItemRepository repository,
+        IApplicationDbContext applicationDbContext,
         ICurrentUserService currentUserService,
         IMapper mapper)
-        : base(applicationDbContext, mapper, currentUserService)
-    {
-    }
+        : base(applicationDbContext, mapper, currentUserService) =>
+        _repository = repository.ThrowIfNull();
 
     public override async Task<Result<ToDoItemDto>> Handle(GetTodoItemQuery request, CancellationToken cancellationToken)
     {
-        var entity = await ContextDb.Set<ToDoItem>()
-            .AsNoTracking()
-            .Where(e => e.Id == request.Id)
-            .SingleOrDefaultAsync(cancellationToken)
+        var entity = await _repository
+            .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id, true), cancellationToken)
             .ConfigureAwait(false);
 
         entity.ThrowIfNull(new NotFoundException());
