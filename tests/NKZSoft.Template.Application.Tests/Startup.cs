@@ -12,5 +12,8 @@ internal sealed class Startup
         services.AddApplication();
         services.TryAddSingleton(AppMockFactory.CreateCurrentUserServiceMock());
         services.TryAddSingleton(await ApplicationDbContextFactory.CreateAsync());
+
+        services.TryAddScoped<IToDoItemRepository, ToDoItemRepository>();
+        services.TryAddScoped<IToDoListRepository, ToDoListRepository>();
     }
 }

@@ -41,6 +41,7 @@ I would like this project to help you find simplified and effortless solutions. 
 - [ ] HealthCheck
 - [ ] Add caching for EF Core  
 - [ ] MongoDB data provider
+- [ ] Migrate to .NET 7
 
 ## Technologies used
 
@@ -69,3 +70,5 @@ I would like this project to help you find simplified and effortless solutions. 
 [FluentResults](https://github.com/altmann/FluentResults): FluentResults is a lightweight .NET library developed to solve a common problem. It returns an object indicating success or failure of an operation instead of throwing/using exceptions.
 
 [Specification](https://github.com/ardalis/Specification): Base class with tests for adding specifications to a DDD model. Also includes a default generic Repository base class with support for EF6 and EF Core.
+
+[Scrutor](https://github.com/khellang/Scrutor): Assembly scanning and decoration extensions for Microsoft.Extensions.DependencyInjection.

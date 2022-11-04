@@ -29,6 +29,13 @@ public static class DependencyInjection
         });
         services.AddScoped<IDbInitializer, DbInitializer>();
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
+        services.Scan(scan => scan
+            .FromAssemblies(Assembly.GetExecutingAssembly())
+            .AddClasses(classes => classes.AssignableTo(typeof(RepositoryBase<>)))
+            .AsMatchingInterface()
+            .WithScopedLifetime());
+
         services.AddMediatR(Assembly.GetExecutingAssembly());
         return services;
     }

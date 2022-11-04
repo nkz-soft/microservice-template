@@ -1,21 +1,18 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
 
 using Common.Exceptions;
-using Common.Interfaces;
+using Common.Repositories;
 
 public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemCommand>
 {
-    private readonly IApplicationDbContext _context;
+    private readonly IToDoItemRepository _repository;
 
-    public UpdateTodoItemCommandHandler(IApplicationDbContext context)
-    {
-        _context = context;
-    }
+    public UpdateTodoItemCommandHandler(IToDoItemRepository repository) => _repository = repository.ThrowIfNull();
 
     public async Task<Unit> Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
     {
-        var entity = await _context.Set<ToDoItem>()
-            .FindAsync(new object[] { request.Id }, cancellationToken)
+        var entity = await _repository
+            .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id), cancellationToken)
             .ConfigureAwait(false);
 
         if (entity == null)
@@ -25,7 +22,7 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
 
         entity.Update(request.Title, request.Description);
 
-        await _context.SaveChangesAsync(cancellationToken)
+        await _repository.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(false);
 
         return Unit.Value;
