@@ -7,7 +7,7 @@ namespace NKZSoft.Template.Application.Tests;
 
 internal sealed class Startup
 {
-    public static async Task ConfigureServices(IServiceCollection services)
+    public static async void ConfigureServices(IServiceCollection services)
     {
         services.AddApplication();
         services.TryAddSingleton(AppMockFactory.CreateCurrentUserServiceMock());
