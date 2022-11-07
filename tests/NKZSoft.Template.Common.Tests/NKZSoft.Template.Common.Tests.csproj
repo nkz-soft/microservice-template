@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -15,13 +15,12 @@
 
     <ItemGroup>
       <PackageReference Include="Moq" Version="4.18.2" />
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
       <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
-      <PackageReference Include="Testcontainers" Version="2.0.1" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.10" />
-      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
-      <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+      <PackageReference Include="Testcontainers" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.0-rc.2.22476.2" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0-preview-20221003-04" />
+      <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
     </ItemGroup>
 
 </Project>

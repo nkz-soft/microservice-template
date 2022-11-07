@@ -1,20 +1,23 @@
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
+using System.Text.Json.Serialization;
+using System.Text.Json;
+
 public class ClientQueryRequest
 {
-    [JsonProperty("id")]
+    [JsonPropertyName("id")]
     public string? Id { get; set; }
 
-    [JsonProperty("operationName")]
+    [JsonPropertyName("operationName")]
     public string? OperationName { get; set; }
 
-    [JsonProperty("query")]
+    [JsonPropertyName("query")]
     public string? Query { get; set; }
 
-    [JsonProperty("variables")]
+    [JsonPropertyName("variables")]
     public Dictionary<string, object?>? Variables { get; set; }
 
-    [JsonProperty("extensions")]
+    [JsonPropertyName("extensions")]
     public Dictionary<string, object?>? Extensions { get; set; }
 
     public override string ToString()
@@ -45,12 +48,12 @@ public class ClientQueryRequest
 
         if (Variables is not null)
         {
-            query.Append("&variables=" + JsonConvert.SerializeObject(Variables));
+            query.Append("&variables=" + JsonSerializer.Serialize(Variables));
         }
 
         if (Extensions is not null)
         {
-            query.Append("&extensions=" + JsonConvert.SerializeObject(Extensions));
+            query.Append("&extensions=" + JsonSerializer.Serialize(Extensions));
         }
 
         return query.ToString();

@@ -4,11 +4,12 @@
 
 namespace NKZSoft.Template.Presentation.REST.Tests.Controllers;
 
+using System.Text.Json;
 using Application.TodoItems.Commands.Create;
 using Common;
 
-[Collection(nameof(RestCollection))]
-public class ToDoItemControllerTest //: EfCoreCollection<RestWebApplicationFactory<Program>>
+[Collection(nameof(RestCollectionDefinition))]
+public class ToDoItemControllerTest
 {
     private const string ApiUrlBaseV1 = "api/v1/to-do-items";
     private const string ApiUrlBaseV2 = "api/v2/to-do-items";
@@ -36,11 +37,19 @@ public class ToDoItemControllerTest //: EfCoreCollection<RestWebApplicationFacto
 
         var command = new PageContext<ToDoItemFilter>(1, 10) ;
 
-        var response = await client.PostAsync(Post.GetPageToDoItem(),
-            new JsonContent<PageContext<ToDoItemFilter>>(command));
+        var jsonContent = new JsonContent<PageContext<ToDoItemFilter>>(command);
+
+        var response = await client.PostAsync(Post.GetPageToDoItem(), jsonContent);
 
         response.EnsureSuccessStatusCode();
-        var content = await response.GetContentAsync<ResultDto<CollectionViewModel<ToDoItemDto>>>();
+        //var content = await response.GetContentAsync<ResultDto<CollectionViewModel<ToDoItemDto>>>();
+
+
+        var stringResponse = await response.Content.ReadAsStringAsync();
+        var content =
+            JsonSerializer.Deserialize<ResultDto<CollectionViewModel<ToDoItemDto>>>(stringResponse, JsonSerializerOptions.Default);
+
+
 
         content.Should().NotBeNull();
         content.Should().BeOfType<ResultDto<CollectionViewModel<ToDoItemDto>>>();

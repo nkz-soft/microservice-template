@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Extensions;
+namespace NKZSoft.Template.Presentation.REST.Extensions;
 
 using Filters;
 
@@ -8,6 +8,8 @@ public static class ServiceCollectionExtension
         this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
     {
         var corsParams = configuration.GetSection("Cors").Get<List<string>>();
+
+        ArgumentNullException.ThrowIfNull(corsParams);
 
         services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
         {
@@ -21,8 +23,6 @@ public static class ServiceCollectionExtension
             .AddSwagger(configuration, Assembly.GetExecutingAssembly())
             .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(ServiceLifetime.Scoped, null, true)
             .AddControllers(options => options.Filters.Add<CustomExceptionFilterAttribute>())
-            .AddNewtonsoftJson(options =>
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
             .AddApplicationPart(Assembly.GetExecutingAssembly());
 
         return services;

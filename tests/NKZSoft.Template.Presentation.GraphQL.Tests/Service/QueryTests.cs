@@ -2,7 +2,7 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 
 using Common;
 
-[Collection(nameof(GraphQlCollection))]
+[Collection(nameof(GraphQlCollectionDefinition))]
 public class QueryTest
 {
     private const string GraphqlUrlBase = "/graphql";

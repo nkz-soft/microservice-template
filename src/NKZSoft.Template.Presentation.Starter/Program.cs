@@ -43,12 +43,10 @@ app.UseRestPresentation(configuration, environment)
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapRestEndpoints();
-    endpoints.MapGrpcEndpoints();
-    endpoints.MapGraphQLEndpoints();
-});
+app.MapRestEndpoints();
+app.MapGrpcEndpoints();
+app.MapGraphQLEndpoints();
+
 app.Run();
 
 //We need public access to the class for tests

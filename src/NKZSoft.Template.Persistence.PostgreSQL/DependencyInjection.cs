@@ -11,7 +11,7 @@ public static class DependencyInjection
         var currentConfiguration = configuration.GetSection(DbConfigurationSection.SectionName)
             .Get<DbConfigurationSection>();
 
-        currentConfiguration.ThrowIfNull(nameof(currentConfiguration));
+        ArgumentNullException.ThrowIfNull(currentConfiguration);
         currentConfiguration.PostgresConnection.ThrowIfNull(nameof(currentConfiguration.PostgresConnection));
         currentConfiguration.PostgresConnection?.ConnectionString.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.ConnectionString));
         currentConfiguration.PostgresConnection?.Database.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.Database));

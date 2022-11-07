@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Common.Tests;
+namespace NKZSoft.Template.Common.Tests;
 
 public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
@@ -10,6 +10,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
     protected BaseWebApplicationFactory()
     {
         TestcontainersSettings.ResourceReaperEnabled = false;
+        /*
         Containers = new Dictionary<Type, ITestcontainersContainer>()
         {
             {
@@ -19,10 +20,12 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
                 typeof(RabbitMqTestcontainer), ContainerFactory.Create<RabbitMqTestcontainer>()
             }
         };
+        */
     }
 
     public async Task InitializeAsync()
     {
+        /*
         await Task.WhenAll(Containers.Select(c => c.Value.StartAsync()));
 
         using var scope = Services.CreateScope();
@@ -34,12 +37,13 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 
         await context.MigrateAsync();
         await context.SeedAsync();
+        */
     }
 
     public new async Task DisposeAsync()
     {
         await base.DisposeAsync();
-        await Task.WhenAll(Containers.Select(c => c.Value.DisposeAsync().AsTask()));
+        //await Task.WhenAll(Containers.Select(c => c.Value.DisposeAsync().AsTask()));
     }
 
     protected T GetContainer<T>() where T : class

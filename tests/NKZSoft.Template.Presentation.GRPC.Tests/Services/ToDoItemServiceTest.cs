@@ -4,8 +4,8 @@
 
 namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
 
-[Collection(nameof(GrpcCollection))]
-public class ToDoItemServiceTest  //: EfCoreCollection<GrpcWebApplicationFactory<Program>>
+[Collection(nameof(GrpcCollectionDefinition))]
+public class ToDoItemServiceTest
 {
     private readonly GrpcWebApplicationFactory<Program> _factory;
 
