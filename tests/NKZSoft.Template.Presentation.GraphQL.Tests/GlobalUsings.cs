@@ -1,10 +1,9 @@
-﻿global using System.Globalization;
+global using System.Globalization;
 global using System.Text;
 global using DotNet.Testcontainers.Containers;
 global using Microsoft.AspNetCore.Hosting;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.EntityFrameworkCore;
-global using Newtonsoft.Json;
 global using Xunit;
 global using Xunit.Extensions.Ordering;
 

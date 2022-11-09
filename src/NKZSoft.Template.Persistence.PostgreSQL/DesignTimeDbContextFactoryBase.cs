@@ -28,6 +28,9 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
 
         var currentConfiguration = configuration.GetSection(DbConfigurationSection.SectionName)
             .Get<PostgresConnection>();
+
+        ArgumentNullException.ThrowIfNull(currentConfiguration);
+
         var connectionString = $"{currentConfiguration.ConnectionString}Database=${currentConfiguration.Database}";
 
         return Create(connectionString);

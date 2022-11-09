@@ -2,7 +2,6 @@ namespace NKZSoft.Template.Presentation.REST.Middleware;
 
 using Models;
 using Models.Result;
-using Newtonsoft.Json;
 
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
@@ -36,7 +35,7 @@ public class ErrorHandlingMiddleware
         const HttpStatusCode code = HttpStatusCode.InternalServerError;
         var resultDto = new ResultDto<Unit>(Unit.Value, false, new[] { new ErrorDto(exception.Message, code.ToString()) });
 
-        var result = JsonConvert.SerializeObject(resultDto);
+        var result = JsonSerializer.Serialize(resultDto);
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
         await context.Response.WriteAsync(result);

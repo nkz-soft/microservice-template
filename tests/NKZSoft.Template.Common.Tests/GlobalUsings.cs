@@ -1,6 +1,6 @@
 ﻿global using System.Net.Http;
 global using System.Text;
-
+global using System.Text.Json;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.AspNetCore.Mvc.Testing;
 global using Microsoft.Extensions.Hosting;
@@ -8,8 +8,6 @@ global using Microsoft.Extensions.Hosting;
 global using Xunit;
 global using MediatR;
 global using Moq;
-global using Newtonsoft.Json;
-global using Serilog;
 global using DotNet.Testcontainers.Builders;
 global using DotNet.Testcontainers.Configurations;
 global using DotNet.Testcontainers.Containers;

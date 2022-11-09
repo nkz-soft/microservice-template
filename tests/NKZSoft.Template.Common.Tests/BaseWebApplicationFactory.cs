@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Common.Tests;
+namespace NKZSoft.Template.Common.Tests;
 
 public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
@@ -10,6 +10,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
     protected BaseWebApplicationFactory()
     {
         TestcontainersSettings.ResourceReaperEnabled = false;
+
         Containers = new Dictionary<Type, ITestcontainersContainer>()
         {
             {
