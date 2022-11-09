@@ -7,6 +7,7 @@ namespace NKZSoft.Template.Presentation.REST.Tests.Controllers;
 using System.Text.Json;
 using Application.TodoItems.Commands.Create;
 using Common;
+using NKZSoft.Template.Presentation.REST.Models.Result;
 
 [Collection(nameof(RestCollectionDefinition))]
 public class ToDoItemControllerTest
@@ -35,21 +36,15 @@ public class ToDoItemControllerTest
     {
         var client = _factory.CreateClient();
 
-        var command = new PageContext<ToDoItemFilter>(1, 10) ;
+        var command = new PageContext<ToDoItemFilter>(1, 10);
 
         var jsonContent = new JsonContent<PageContext<ToDoItemFilter>>(command);
 
         var response = await client.PostAsync(Post.GetPageToDoItem(), jsonContent);
 
         response.EnsureSuccessStatusCode();
-        //var content = await response.GetContentAsync<ResultDto<CollectionViewModel<ToDoItemDto>>>();
 
-
-        var stringResponse = await response.Content.ReadAsStringAsync();
-        var content =
-            JsonSerializer.Deserialize<ResultDto<CollectionViewModel<ToDoItemDto>>>(stringResponse, JsonSerializerOptions.Default);
-
-
+        var content = await response.GetContentAsync<ResultDto<CollectionViewModel<ToDoItemDto>>>();
 
         content.Should().NotBeNull();
         content.Should().BeOfType<ResultDto<CollectionViewModel<ToDoItemDto>>>();
@@ -111,6 +106,7 @@ public class ToDoItemControllerTest
             new JsonContent<CreateToDoItemCommand>(command));
 
         response.EnsureSuccessStatusCode();
+
         var content = await response.GetContentAsync<ResultDto<Guid>>();
 
         content.Should().NotBeNull();

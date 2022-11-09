@@ -1,5 +1,8 @@
 namespace NKZSoft.Template.Presentation.REST.Models.Result;
 
+using System.Text.Json.Serialization;
+
+[JsonDerivedType(typeof(ResultDto<>), "ResultDto")]
 public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
 {
     public static ResultDto<Unit> CreateFromErrors(IList<KeyValuePair<string, string>> errors)
@@ -22,5 +25,20 @@ public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
     }
 }
 
-public sealed record ResultDto<T>(T Data, bool IsSuccess, IEnumerable<ErrorDto> Errors) :
-    ResultDtoBase(IsSuccess, Errors);
+public sealed record ResultDto<T> : ResultDtoBase
+{
+    [JsonConstructor]
+    public ResultDto(T Data, bool IsSuccess, IEnumerable<ErrorDto> Errors) : base(IsSuccess, Errors)
+    {
+        this.Data = Data;
+    }
+
+    public T Data { get; init; }
+
+    public void Deconstruct(out T Data, out bool IsSuccess, out IEnumerable<ErrorDto> Errors)
+    {
+        Data = this.Data;
+        IsSuccess = this.IsSuccess;
+        Errors = this.Errors;
+    }
+}
