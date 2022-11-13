@@ -1,10 +1,7 @@
-﻿using NKZSoft.Template.Application.Tests.Common;
-using NKZSoft.Template.Application.TodoItems.Commands.Create;
-
-namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
 [Collection("QueryCollection")]
-public class CreateToDoItemTests : TestBase
+public sealed class CreateToDoItemTests : TestBase
 {
     private const string ToDoItemTitle = "Title";
 

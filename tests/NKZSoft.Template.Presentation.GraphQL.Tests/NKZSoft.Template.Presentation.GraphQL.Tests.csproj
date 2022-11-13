@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0-preview-20221003-04" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="Xunit.Extensions.Ordering" Version="1.4.5" />

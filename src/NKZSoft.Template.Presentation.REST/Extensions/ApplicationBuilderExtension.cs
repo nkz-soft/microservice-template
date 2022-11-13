@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Extensions;
 
-using Microsoft.AspNetCore.Builder;
 using Middleware;
 
 public static class ApplicationBuilderExtension

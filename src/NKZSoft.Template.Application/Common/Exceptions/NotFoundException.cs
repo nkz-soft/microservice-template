@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.Common.Exceptions;
 
-public class NotFoundException : Exception
+[Serializable]
+public sealed class NotFoundException : Exception
 {
     public NotFoundException()
         : base()
@@ -19,6 +20,11 @@ public class NotFoundException : Exception
 
     public NotFoundException(string name, object key)
         : base($"Entity \"{name}\" ({key}) was not found.")
+    {
+    }
+
+    private NotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext)
+        : base(serializationInfo, streamingContext)
     {
     }
 }

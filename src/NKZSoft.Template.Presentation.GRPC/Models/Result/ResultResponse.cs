@@ -18,10 +18,10 @@ public record ResultResponse
     }
 
     [ProtoMember(3)]
-    public bool IsSuccess { get; init; }
+    public bool IsSuccess { get; }
 
 
     [ProtoMember(4)]
-    public ErrorResponse[] Errors { get; init; }
+    public ErrorResponse[] Errors { get; } = Array.Empty<ErrorResponse>();
 }
 

@@ -1,10 +1,16 @@
-namespace NKZSoft.Template.Persistence.PostgreSQL;
+namespace NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 
 using Configurations;
 
-public static class DependencyInjection
+public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    /// <summary>
+    /// Add PostgresSQL as a persistence layer
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection"/> to add the MassTransits to.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> containing settings to be used.</param>
+    /// <returns>The <see cref="IServiceCollection"/>.</returns>
+    public static IServiceCollection AddNgpSqlPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         configuration.ThrowIfNull(nameof(configuration));
 
@@ -12,14 +18,16 @@ public static class DependencyInjection
             .Get<DbConfigurationSection>();
 
         ArgumentNullException.ThrowIfNull(currentConfiguration);
-        currentConfiguration.PostgresConnection.ThrowIfNull(nameof(currentConfiguration.PostgresConnection));
-        currentConfiguration.PostgresConnection?.ConnectionString.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.ConnectionString));
-        currentConfiguration.PostgresConnection?.Database.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.Database));
+        ArgumentNullException.ThrowIfNull(currentConfiguration.PostgresConnection);
+        currentConfiguration.PostgresConnection.ConnectionString.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.ConnectionString));
+        currentConfiguration.PostgresConnection.Database.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.Database));
+
+        var connectionString = $"{currentConfiguration.PostgresConnection.ConnectionString}" +
+                               $"Database={currentConfiguration.PostgresConnection.Database}";
 
         services.AddDbContext<ApplicationDbContext>(options =>
         {
-            options.UseNpgsql($"{currentConfiguration.PostgresConnection?.ConnectionString}" +
-                              $"Database={currentConfiguration.PostgresConnection?.Database}");
+            options.UseNpgsql(connectionString);
 
             var hasDbLogging = configuration.GetValue<bool>("Serilog:EnableDbLogging");
             if (hasDbLogging)
@@ -27,6 +35,7 @@ public static class DependencyInjection
                 options.EnableDbLogging();
             }
         });
+
         services.AddScoped<IDbInitializer, DbInitializer>();
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
@@ -37,6 +46,12 @@ public static class DependencyInjection
             .WithScopedLifetime());
 
         services.AddMediatR(Assembly.GetExecutingAssembly());
+
+        if (currentConfiguration.PostgresConnection.HealthCheckEnabled)
+        {
+            services.AddHealthChecks().AddNpgSql(connectionString);
+        }
+
         return services;
     }
     private static DbContextOptionsBuilder EnableDbLogging(this DbContextOptionsBuilder builder) => builder

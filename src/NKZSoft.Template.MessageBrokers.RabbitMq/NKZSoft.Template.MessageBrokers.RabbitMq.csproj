@@ -11,13 +11,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
       <PackageReference Include="MassTransit" Version="8.0.8" />
       <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
       <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
       <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.8" />
-      <PackageReference Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.0.0" />
+      <PackageReference Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,10 +1,9 @@
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
-using System.Text.Json.Serialization;
-using System.Text.Json;
-
-public class ClientQueryRequest
+internal sealed class ClientQueryRequest
 {
+    public const string GraphqlUrlBase = "/graphql";
+
     [JsonPropertyName("id")]
     public string? Id { get; set; }
 

@@ -7,10 +7,8 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 using Common;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
-public class MutationTests
+public sealed class MutationTests
 {
-    private const string GraphqlUrlBase = "/graphql";
-
     private readonly GraphQLWebApplicationFactory<Program> _factory;
 
     public MutationTests(GraphQLWebApplicationFactory<Program> factory) =>
@@ -20,7 +18,7 @@ public class MutationTests
     [Fact, Order(1)]
     public async Task CreateToDoItemsTestAsync()
     {
-        var client = _factory.CreateClient();
+        var client = new RestClient(_factory.CreateClient());
 
         const string query = @"mutation {
               createToDoItem(input: {title: ""Test"", listId: null}) {
@@ -28,11 +26,12 @@ public class MutationTests
                 }
             }";
 
-        var content = new JsonContent<ClientQueryRequest>(
-            new ClientQueryRequest { Query = query });
+        var command = new ClientQueryRequest { Query = query };
 
-        var response = await client.PostAsync(GraphqlUrlBase, content);
+        var response = await client.PostAsync(
+            new RestRequest(ClientQueryRequest.GraphqlUrlBase)
+                .AddJsonBody(command));
 
-        response.EnsureSuccessStatusCode();
+        response.IsSuccessStatusCode.Should().BeTrue();
     }
 }

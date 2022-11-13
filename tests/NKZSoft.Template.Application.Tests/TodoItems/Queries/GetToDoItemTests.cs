@@ -1,12 +1,9 @@
-﻿using NKZSoft.Template.Application.Tests.Common;
-using NKZSoft.Template.Application.TodoItems.Queries.Get;
-
-namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
 
 using Domain.AggregatesModel.ToDoAggregates.Entities;
 
 [Collection("QueryCollection")]
-public class GetToDoItemTests : TestBase
+public sealed class GetToDoItemTests : TestBase
 {
     public GetToDoItemTests(QueryTestFixture fixture) : base(fixture)
     {

@@ -1,11 +1,7 @@
-﻿using NKZSoft.Template.Application.Tests.Common;
-using NKZSoft.Template.Application.TodoItems.Commands.Create;
-using NKZSoft.Template.Application.TodoItems.Commands.Delete;
-
-namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
 [Collection("QueryCollection")]
-public class DeleteToDoItemTests : TestBase
+public sealed class DeleteToDoItemTests : TestBase
 {
     private const string ToDoItemTitle = "DeleteTitle";
     public DeleteToDoItemTests(QueryTestFixture fixture) : base(fixture)
@@ -22,6 +18,6 @@ public class DeleteToDoItemTests : TestBase
         createResult.IsSuccess.Should().BeTrue();
 
         var deleteCommand = new DeleteTodoItemCommand(createResult.Value);
-        var deleteResult = await Mediator.Send(deleteCommand);
+        await Mediator.Send(deleteCommand);
     }
 }

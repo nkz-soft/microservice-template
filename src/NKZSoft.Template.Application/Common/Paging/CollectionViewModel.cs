@@ -1,11 +1,8 @@
 ﻿namespace NKZSoft.Template.Application.Common.Paging;
 
-public class CollectionViewModel<T>
+public sealed class CollectionViewModel<T>
 {
-    public CollectionViewModel()
-    {
-        Data = new HashSet<T>();
-    }
+    public CollectionViewModel() => Data = new HashSet<T>();
 
     public CollectionViewModel(IEnumerable<T> list, int count)
     {

@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.Common.Exceptions;
 
-public class UnauthorizedException : Exception
+[Serializable]
+public sealed class UnauthorizedException : Exception
 {
     public UnauthorizedException(string message)
         : base(message)
@@ -9,4 +10,9 @@ public class UnauthorizedException : Exception
 
     public static UnauthorizedException Response(string message)
         => new UnauthorizedException(message);
+
+    private UnauthorizedException(SerializationInfo serializationInfo, StreamingContext streamingContext)
+        : base(serializationInfo, streamingContext)
+    {
+    }
 }
