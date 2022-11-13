@@ -1,11 +1,9 @@
-﻿using NKZSoft.Template.Application.Tests.Common;
-using NKZSoft.Template.Application.TodoItems.Commands.Create;
-using NKZSoft.Template.Application.TodoItems.Commands.Update;
+﻿using NKZSoft.Template.Application.TodoItems.Commands.Update;
 
 namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
 [Collection("QueryCollection")]
-public class UpdateToDoItemTests : TestBase
+public sealed class UpdateToDoItemTests : TestBase
 {
     private const string ToDoItemTitle = "UpdateTitle";
     private const string ToDoItemUpdatedTitle = "UpdatedTitle";
@@ -24,6 +22,6 @@ public class UpdateToDoItemTests : TestBase
         createResult.IsSuccess.Should().BeTrue();
 
         var updateCommand = new UpdateTodoItemCommand(createResult.Value, ToDoItemUpdatedTitle, ToDoItemUpdatedTitle);
-        var updateResult = await Mediator.Send(updateCommand);
+        await Mediator.Send(updateCommand);
     }
 }

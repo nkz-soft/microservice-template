@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using NKZSoft.Template.Application.Tests.Common;
 using NKZSoft.Template.Common.Tests;
 
 namespace NKZSoft.Template.Application.Tests;

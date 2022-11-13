@@ -37,11 +37,11 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] GraphQL API samples
 - [x] MassTransit and RabbitMq
 - [x] Minimal hosting model
+- [x] Migrate to .NET 7
+- [x] HealthCheck
 - [ ] OpenTelemetry
-- [ ] HealthCheck
 - [ ] Add caching for EF Core  
 - [ ] MongoDB data provider
-- [ ] Migrate to .NET 7
 
 ## Technologies used
 
@@ -72,3 +72,5 @@ I would like this project to help you find simplified and effortless solutions. 
 [Specification](https://github.com/ardalis/Specification): Base class with tests for adding specifications to a DDD model. Also includes a default generic Repository base class with support for EF6 and EF Core.
 
 [Scrutor](https://github.com/khellang/Scrutor): Assembly scanning and decoration extensions for Microsoft.Extensions.DependencyInjection.
+
+[RestSharp](https://github.com/restsharp/RestSharp) RestSharp is a lightweight HTTP client library. It's a wrapper around HttpClient, not a full-fledged client on its own.

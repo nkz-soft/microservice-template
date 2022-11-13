@@ -1,6 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Models;
-
-using Result;
+﻿namespace NKZSoft.Template.Presentation.REST.Models.Result;
 
 internal static class ResultDtoHelpers
 {

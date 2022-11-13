@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Tests.Common;
 
 [CollectionDefinition(nameof(RestCollectionDefinition))]
-public class RestCollectionDefinition : CoreCollectionDefinition<RestWebApplicationFactory<Program>>
+public sealed class RestCollectionDefinition : CoreCollectionDefinition<RestWebApplicationFactory<Program>>
 {
 }

@@ -5,7 +5,7 @@
 namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
 
 [Collection(nameof(GrpcCollectionDefinition))]
-public class ToDoItemServiceTest
+public sealed class ToDoItemServiceTest
 {
     private readonly GrpcWebApplicationFactory<Program> _factory;
 
@@ -26,7 +26,7 @@ public class ToDoItemServiceTest
         count.Should().Be(2);
     }
 
-    [Fact, Order(1)]
+    [Fact, Order(2)]
     public async Task GetItemByIdTestAsync()
     {
         var service = _factory.CreateGrpcService<IToDoItemService>();
@@ -44,5 +44,19 @@ public class ToDoItemServiceTest
             response.Item.Should().NotBeNull();
             response.Item!.Id.Should().Be(item.Items.First().Id);
         }
+    }
+
+    [Fact, Order(3)]
+    public async Task GetItemByNoIdTestAsync()
+    {
+        var service = _factory.CreateGrpcService<IToDoItemService>();
+
+        var response = await service.GetToDoItemById(new GetTodoItemRequest
+        {
+            Id = Guid.NewGuid()
+        });
+
+        response.IsSuccess.Should().BeFalse();
+        response.Errors.Length.Should().BeGreaterThan(0);
     }
 }

@@ -1,7 +1,5 @@
 namespace NKZSoft.Template.Presentation.REST.Models.Result;
 
-using System.Text.Json.Serialization;
-
 [JsonDerivedType(typeof(ResultDto<>), "ResultDto")]
 public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
 {

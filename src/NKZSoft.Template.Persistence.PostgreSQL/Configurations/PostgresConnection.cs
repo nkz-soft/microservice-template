@@ -7,4 +7,6 @@ public sealed record PostgresConnection
 
     [NotNull]
     public string? Database { get; init; }
+
+    public bool HealthCheckEnabled { get; init; } = true;
 }

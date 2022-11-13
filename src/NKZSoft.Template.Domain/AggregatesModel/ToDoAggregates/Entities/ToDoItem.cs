@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 
-using System.Diagnostics.CodeAnalysis;
 using Common;
 using Events;
 
@@ -24,7 +23,7 @@ public sealed class ToDoItem : BaseAuditableEntity, IAggregateRoot
         AddCreateDomainEvent();
     }
 
-    public string Title { get; private set; }
+    public string Title { get; private set; }  = default!;
 
     public string? Note { get; private set; }
 

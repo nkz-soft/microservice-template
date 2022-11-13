@@ -3,10 +3,8 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 using Common;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
-public class QueryTest
+public sealed class QueryTest
 {
-    private const string GraphqlUrlBase = "/graphql";
-
     private readonly GraphQLWebApplicationFactory<Program> _factory;
 
     public QueryTest(GraphQLWebApplicationFactory<Program> factory) =>
@@ -15,7 +13,7 @@ public class QueryTest
     [Fact, Order(1)]
     public async Task GetTodoItemsTestAsync()
     {
-        var client = _factory.CreateClient();
+        var client = new RestClient(_factory.CreateClient());
 
         const string query = @"
             query {
@@ -25,11 +23,11 @@ public class QueryTest
                 }
             }";
 
-        var content = new JsonContent<ClientQueryRequest>(
-            new ClientQueryRequest { Query = query });
+        var command = new ClientQueryRequest { Query = query };
+        var response = await client.PostAsync(
+            new RestRequest(ClientQueryRequest.GraphqlUrlBase)
+                .AddJsonBody(command));
 
-        var response = await client.PostAsync(GraphqlUrlBase, content);
-
-        response.EnsureSuccessStatusCode();
+        response.IsSuccessStatusCode.Should().BeTrue();
     }
 }

@@ -3,7 +3,7 @@
 using DotNet.Testcontainers.Containers;
 using SeedData;
 
-public class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
+public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
 {
     public T CreateGrpcService<T>() where T : class
     {

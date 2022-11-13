@@ -1,14 +1,9 @@
-﻿using NKZSoft.Template.Application.Common.Paging;
-using NKZSoft.Template.Application.Tests.Common;
-using NKZSoft.Template.Application.TodoItems.Models;
-using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
-
-namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
 
 using Domain.AggregatesModel.ToDoAggregates.Entities;
 
 [Collection("QueryCollection")]
-public class GetPageTodoTests : TestBase
+public sealed class GetPageTodoTests : TestBase
 {
     private const string TestItemTitle = "TestItem_1";
 

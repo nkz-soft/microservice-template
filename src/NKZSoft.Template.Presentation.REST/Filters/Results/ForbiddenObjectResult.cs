@@ -1,8 +1,8 @@
 ﻿namespace NKZSoft.Template.Presentation.REST.Filters.Results;
 
-public class ForbiddenObjectResult : ObjectResult
+public sealed class ForbiddenObjectResult : ObjectResult
 {
-    public ForbiddenObjectResult(object value) : base(value)
+    public ForbiddenObjectResult(object? value) : base(value)
     {
     }
 }

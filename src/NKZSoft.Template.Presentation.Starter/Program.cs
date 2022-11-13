@@ -1,3 +1,7 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration
@@ -13,13 +17,14 @@ var environment = builder.Environment;
 builder.Services
     .AddLogging(configuration)
     .AddOptions()
-    .AddPersistence(configuration)
+    .AddNgpSqlPersistence(configuration)
     .AddApplication()
     .AddCoreInfrastructure()
     .AddRestPresentation(configuration, builder.Environment)
     .AddGrpcPresentation(configuration)
     .AddGraphQLPresentation()
-    .AddMessageBroker(configuration);
+    .AddMessageBroker(configuration)
+    .AddHealthChecks();
 
 var app = builder.Build();
 
@@ -34,7 +39,9 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+#pragma warning disable CA1848
         logger.LogError(ex, "An error occurred while migrating or initializing the database.");
+#pragma warning restore CA1848
     }
 }
 
@@ -46,6 +53,13 @@ app.UseAuthorization();
 app.MapRestEndpoints();
 app.MapGrpcEndpoints();
 app.MapGraphQLEndpoints();
+app.MapHealthChecks("/healthz");
+
+app.MapHealthChecks("/healthz-ex", new HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
 

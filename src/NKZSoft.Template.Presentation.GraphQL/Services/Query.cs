@@ -11,6 +11,8 @@ public sealed class Query
     [UseProjection]
     [UseFiltering]
     [UseSorting]
+#pragma warning disable CA1822
     public async Task<IQueryable<ToDoItem>> GetTodoItems([Service] IMediator mediator, CancellationToken token) =>
         await mediator.Send(new GetQueryableQuery(), token);
+#pragma warning restore CA1822
 }

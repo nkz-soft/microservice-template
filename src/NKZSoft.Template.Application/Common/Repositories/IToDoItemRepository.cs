@@ -2,5 +2,4 @@
 
 public interface IToDoItemRepository : IRepositoryBase<ToDoItem>
 {
-
 }
