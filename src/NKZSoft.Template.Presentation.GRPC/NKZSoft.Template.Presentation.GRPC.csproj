@@ -17,7 +17,7 @@
     <ItemGroup>
       <PackageReference Include="Google.Protobuf" Version="3.21.9" />
       <PackageReference Include="protobuf-net" Version="3.1.22" />
-      <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.177" />
+      <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
       <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.0.177" />
       <PackageReference Include="protobuf-net.Reflection" Version="3.1.22" />
       <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
