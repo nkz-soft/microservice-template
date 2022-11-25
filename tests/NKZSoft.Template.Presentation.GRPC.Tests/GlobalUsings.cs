@@ -5,8 +5,6 @@ global using ProtoBuf.Grpc.Client;
 global using Microsoft.EntityFrameworkCore;
 global using Grpc.Net.Client;
 global using Xunit;
-global using Xunit.Abstractions;
-global using Xunit.Extensions.Ordering;
 global using FluentAssertions;
 
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;

@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Version>1.4.0</Version>
+        <Version>1.5.0</Version>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -16,11 +16,13 @@
       <ProjectReference Include="..\NKZSoft.Template.Presentation.GraphQL\NKZSoft.Template.Presentation.GraphQL.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Presentation.GRPC\NKZSoft.Template.Presentation.GRPC.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
+      <ProjectReference Include="..\NKZSoft.Template.Presentation.SignalR\NKZSoft.Template.Presentation.SignalR.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
       <PackageReference Include="Scrutor" Version="4.2.0" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -29,4 +31,8 @@
       <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GRPC.Tests" />
     </ItemGroup>
 
+    <Target Name="Clean" AfterTargets="Clean"> <!-- common vars https://msdn.microsoft.com/en-us/library/c02as0cs.aspx?f=255&MSPPError=-2147217396 -->
+      <RemoveDir Directories="$(TargetDir)" /> <!-- bin -->
+      <RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" /> <!-- obj -->
+    </Target>
 </Project>

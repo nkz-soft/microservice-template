@@ -4,6 +4,8 @@
 
 namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
 
+using Xunit.Extensions.Ordering;
+
 [Collection(nameof(GrpcCollectionDefinition))]
 public sealed class ToDoItemServiceTest
 {

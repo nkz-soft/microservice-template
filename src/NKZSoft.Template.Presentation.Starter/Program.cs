@@ -1,7 +1,3 @@
-using HealthChecks.UI.Client;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration
@@ -23,6 +19,7 @@ builder.Services
     .AddRestPresentation(configuration, builder.Environment)
     .AddGrpcPresentation(configuration)
     .AddGraphQLPresentation()
+    .AddSignalRPresentation()
     .AddMessageBroker(configuration)
     .AddHealthChecks();
 
@@ -53,6 +50,8 @@ app.UseAuthorization();
 app.MapRestEndpoints();
 app.MapGrpcEndpoints();
 app.MapGraphQLEndpoints();
+app.MapHubEndpoints();
+
 app.MapHealthChecks("/healthz");
 
 app.MapHealthChecks("/healthz-ex", new HealthCheckOptions
