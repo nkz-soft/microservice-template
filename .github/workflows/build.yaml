@@ -35,7 +35,7 @@ jobs:
       - name: Merge test results
         run: |
             dotnet tool install -g dotnet-reportgenerator-globaltool
-            reportgenerator "-reports: ./coverage/**/coverage.cobertura.xml" "-targetdir: ./coverage/result" -reporttypes:Cobertura
+            reportgenerator "-reports:coverage/**/coverage.cobertura.xml" "-targetdir:coverage/result" -reporttypes:Cobertura
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
