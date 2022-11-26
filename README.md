@@ -39,13 +39,15 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Minimal hosting model
 - [x] Migrate to .NET 7
 - [x] HealthCheck
+- [x] Websocket (SignalR) 
 - [ ] OpenTelemetry
-- [ ] Add caching for EF Core  
+- [ ] Add caching for EF Core
+- [ ] GRPC Error handling in interceptors
 - [ ] MongoDB data provider
 
 ## Technologies used
 
-[NET Core 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) : .NET Core, including ASP.NET Core
+[NET Core 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) : .NET Core, including ASP.NET Core
 
 [EntityFrameworkCore](https://github.com/dotnet/efcore): EF Core is a modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations.
 
@@ -73,4 +75,6 @@ I would like this project to help you find simplified and effortless solutions. 
 
 [Scrutor](https://github.com/khellang/Scrutor): Assembly scanning and decoration extensions for Microsoft.Extensions.DependencyInjection.
 
-[RestSharp](https://github.com/restsharp/RestSharp) RestSharp is a lightweight HTTP client library. It's a wrapper around HttpClient, not a full-fledged client on its own.
+[RestSharp](https://github.com/restsharp/RestSharp): RestSharp is a lightweight HTTP client library. It's a wrapper around HttpClient, not a full-fledged client on its own.
+
+[SignalR](https://github.com/dotnet/aspnetcore/tree/main/src/SignalR): ASP.NET Core SignalR is a library for ASP.NET Core developers that makes it incredibly simple to add real-time web functionality to your applications.

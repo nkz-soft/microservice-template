@@ -10,24 +10,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Grpc.Net.ClientFactory" Version="2.50.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.0" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0-preview-20221003-04" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.0"/>
+      <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
       <PackageReference Include="xunit" Version="2.4.2" />
       <PackageReference Include="Xunit.Extensions.Ordering" Version="1.4.5" />
       <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-          <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
       </PackageReference>
       <PackageReference Include="coverlet.collector" Version="3.2.0">
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-          <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
       </PackageReference>
       <PackageReference Include="FluentAssertions" Version="6.8.0" />
       <PackageReference Include="Moq" Version="4.18.2" />
       <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
-
+  
     <ItemGroup>
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.SignalR\NKZSoft.Template.Presentation.SignalR.csproj" />
       <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj" />
     </ItemGroup>

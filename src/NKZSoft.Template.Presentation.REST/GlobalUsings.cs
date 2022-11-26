@@ -22,7 +22,6 @@ global using FluentValidation;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Mvc.ModelBinding;
 global using Microsoft.AspNetCore.Routing;
-global using NKZSoft.Service.Configuration.Swagger;
 global using NKZSoft.Template.Application.Common.Interfaces;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Models;
@@ -31,6 +30,7 @@ global using NKZSoft.Template.Application.TodoItems.Models;
 global using NKZSoft.Template.Application.TodoItems.Queries.Get;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using NKZSoft.Template.Common;
+global using NKZSoft.Service.Configuration.Swagger;
 global  using Serilog;
 
 
