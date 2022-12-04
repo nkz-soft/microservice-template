@@ -13,8 +13,7 @@ public static class ServiceCollectionExtension
         services.TryAddSingleton<IMapper>(new Mapper(typeAdapterConfig));
         services.TryAddSingleton<IMapper, ServiceMapper>();
 
-        services.AddCodeFirstGrpcReflection()
-            .AddCodeFirstGrpc();
+        services.AddGrpcServer();
 
         return services;
     }
