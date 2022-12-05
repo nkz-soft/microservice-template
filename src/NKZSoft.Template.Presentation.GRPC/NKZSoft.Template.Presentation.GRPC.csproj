@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.21.9" />
+      <PackageReference Include="Google.Protobuf" Version="3.21.10" />
       <PackageReference Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
       <PackageReference Include="protobuf-net" Version="3.1.25" />
       <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
