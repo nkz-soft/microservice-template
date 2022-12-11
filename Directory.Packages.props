@@ -72,5 +72,6 @@
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.0.1" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.1" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.1" />
+    <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
   </ItemGroup>
 </Project>
