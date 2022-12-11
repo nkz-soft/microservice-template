@@ -14,3 +14,4 @@ global using NKZSoft.Template.Common.Tests;
 global using NKZSoft.Template.Presentation.GRPC.Services;
 global using NKZSoft.Template.Presentation.GRPC.Models;
 global using NKZSoft.Template.Presentation.GRPC.Tests.Common;
+global using Xunit.Extensions.Ordering;

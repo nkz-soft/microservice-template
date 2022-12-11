@@ -4,22 +4,26 @@
 
 namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
 
-using Xunit.Extensions.Ordering;
+using Grpc.Core;
 
 [Collection(nameof(GrpcCollectionDefinition))]
 public sealed class ToDoItemServiceTest
 {
     private readonly GrpcWebApplicationFactory<Program> _factory;
+    private readonly IToDoItemService _service;
 
-    public ToDoItemServiceTest(GrpcWebApplicationFactory<Program> factory) => _factory = factory;
+    public ToDoItemServiceTest(GrpcWebApplicationFactory<Program> factory)
+    {
+        _factory = factory;
+        _service = _factory.CreateGrpcService<IToDoItemService>();
+    }
 
     [Fact, Order(1)]
     public async Task GetItemsTestAsync()
     {
         var count = 0;
-        var service = _factory.CreateGrpcService<IToDoItemService>();
 
-        await foreach (var response in service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
+        await foreach (var response in _service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
         {
             response.Items.Should().HaveCount(2);
             ++count;
@@ -31,37 +35,28 @@ public sealed class ToDoItemServiceTest
     [Fact, Order(2)]
     public async Task GetItemByIdTestAsync()
     {
-        var service = _factory.CreateGrpcService<IToDoItemService>();
-
-        await foreach(var item in service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
+        await foreach(var item in _service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
         {
-            var response = await service.GetToDoItemById(new GetTodoItemRequest
+            var response = await _service.GetToDoItemById(new GetTodoItemRequest
             {
                 Id = item.Items.First().Id
             });
 
             response.Should().NotBeNull();
-            response.IsSuccess.Should().Be(true);
 
             response.Item.Should().NotBeNull();
             response.Item!.Id.Should().Be(item.Items.First().Id);
         }
     }
 
-
-/*  We need proper error handling here
     [Fact, Order(3)]
     public async Task GetItemByNoIdTestAsync()
     {
-        var service = _factory.CreateGrpcService<IToDoItemService>();
-
-        var response = await service.GetToDoItemById(new GetTodoItemRequest
+        async Task Act() =>  await _service.GetToDoItemById(new GetTodoItemRequest
         {
             Id = Guid.NewGuid()
         });
 
-        response.IsSuccess.Should().BeFalse();
-        response.Errors.Length.Should().BeGreaterThan(0);
+        await Assert.ThrowsAsync<RpcException>(Act);
     }
-*/
 }

@@ -15,7 +15,7 @@
       <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" />
       <PackageReference Include="protobuf-net.Reflection" />
       <PackageReference Include="System.ServiceModel.Primitives" />
-      <PackageReference Update="Microsoft.SourceLink.GitHub" />
+      <PackageReference Include="NKZSoft.Service.Configuration.Grpc" />
     </ItemGroup>
 
 </Project>
