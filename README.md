@@ -39,8 +39,9 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Minimal hosting model
 - [x] Migrate to .NET 7
 - [x] HealthCheck
-- [x] Websocket (SignalR)
+- [x] Websocket (SignalR) 
 - [x] GRPC Error handling in interceptors
+- [x] Enabling Central Package Management
 - [ ] OpenTelemetry
 - [ ] Add caching for EF Core
 - [ ] MongoDB data provider

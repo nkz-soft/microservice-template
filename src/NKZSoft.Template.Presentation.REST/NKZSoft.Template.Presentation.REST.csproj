@@ -1,19 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Version>1.1.4</Version>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisLevel>latest</AnalysisLevel>
+    <Version>1.1.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
-    <PackageReference Include="NKZSoft.Service.Configuration.Logger" Version="1.0.1" />
-    <PackageReference Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.1" />
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="NKZSoft.Service.Configuration.Logger" />
+    <PackageReference Include="NKZSoft.Service.Configuration.Swagger" />
   </ItemGroup>
 
   <ItemGroup>

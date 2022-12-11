@@ -1,13 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-      <TargetFramework>net7.0</TargetFramework>
-      <Version>1.1.0</Version>
-      <LangVersion>latest</LangVersion>
-      <ImplicitUsings>enable</ImplicitUsings>
-      <Nullable>enable</Nullable>
-      <EnableNETAnalyzers>true</EnableNETAnalyzers>
-      <AnalysisLevel>latest</AnalysisLevel>
+      <Version>1.0.4</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,18 +9,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.21.9" />
-      <PackageReference Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
-      <PackageReference Include="protobuf-net" Version="3.1.25" />
-      <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
-      <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.0.179" />
-      <PackageReference Include="protobuf-net.Reflection" Version="3.1.25" />
-      <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.0" />
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Models\Result" />
+      <PackageReference Include="Google.Protobuf" />
+      <PackageReference Include="protobuf-net" />
+      <PackageReference Include="protobuf-net.Grpc.AspNetCore" />
+      <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" />
+      <PackageReference Include="protobuf-net.Reflection" />
+      <PackageReference Include="System.ServiceModel.Primitives" />
+      <PackageReference Include="NKZSoft.Service.Configuration.Grpc" />
     </ItemGroup>
 
 </Project>
