@@ -40,6 +40,7 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Migrate to .NET 7
 - [x] HealthCheck
 - [x] Websocket (SignalR) 
+- [x] Enabling Central Package Management
 - [ ] OpenTelemetry
 - [ ] Add caching for EF Core
 - [ ] GRPC Error handling in interceptors
