@@ -42,6 +42,7 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Websocket (SignalR) 
 - [x] GRPC Error handling in interceptors
 - [x] Enabling Central Package Management
+- [x] Uses Chiseled Ubuntu image
 - [ ] OpenTelemetry
 - [ ] Add caching for EF Core
 - [ ] MongoDB data provider

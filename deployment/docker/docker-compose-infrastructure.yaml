@@ -11,7 +11,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
     ports:
-      - 0.0.0.0:5432:5432
+      - "0.0.0.0:5432:5432"
     networks:
       - dev-network
     volumes:
@@ -28,8 +28,8 @@ services:
       RABBITMQ_DEFAULT_USER: rabbitmq
       RABBITMQ_DEFAULT_PASS: rabbitmq
     ports:
-      - 0.0.0.0:5672:5672
-      - 0.0.0.0:15672:15672
+      - "0.0.0.0:5672:5672"
+      - "0.0.0.0:15672:15672"
     networks:
       - dev-network
     volumes:
@@ -39,6 +39,23 @@ services:
       interval: 10s
       timeout: 30s
       retries: 15
+
+  template:
+    build:
+      context: ./../../
+      dockerfile: Dockerfile
+    environment:
+        ASPNETCORE_ENVIRONMENT: Docker
+    ports:
+      - "0.0.0.0:8080:5055"
+      - "0.0.0.0:8081:5056"
+    networks:
+      - dev-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
 
 networks:
   dev-network:

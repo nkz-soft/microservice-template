@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+FROM mcr.microsoft.com/dotnet/nightly/aspnet:7.0-jammy-chiseled
 EXPOSE 80
 EXPOSE 81
 
