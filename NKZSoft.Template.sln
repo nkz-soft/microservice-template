@@ -50,6 +50,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{27533508-5FAD-4228-ADB9-10DD5CFA00F0}"
 	ProjectSection(SolutionItems) = preProject
 		deployment\docker\docker-compose-infrastructure.yaml = deployment\docker\docker-compose-infrastructure.yaml
+		deployment\docker\docker-compose-app.yaml = deployment\docker\docker-compose-app.yaml
+		deployment\docker\docker-compose.sh = deployment\docker\docker-compose.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.GRPC", "src\NKZSoft.Template.Presentation.GRPC\NKZSoft.Template.Presentation.GRPC.csproj", "{FA32F3BD-A075-426D-9B69-81AF72021801}"

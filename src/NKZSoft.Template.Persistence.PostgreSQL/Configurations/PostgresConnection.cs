@@ -9,4 +9,6 @@ public sealed record PostgresConnection
     public string? Database { get; init; }
 
     public bool HealthCheckEnabled { get; init; } = true;
+
+    public bool LoggingEnabled { get; init; } = false;
 }

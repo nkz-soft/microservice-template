@@ -7,7 +7,7 @@ using NKZSoft.Template.Persistence.PostgreSQL;
 
 namespace NKZSoft.Template.Application.Tests.Common;
 
-public sealed class ApplicationDbContextFactory
+public static class ApplicationDbContextFactory
 {
     public static async Task<IApplicationDbContext> CreateAsync()
     {
@@ -15,12 +15,12 @@ public sealed class ApplicationDbContextFactory
             .UseInMemoryDatabase(Guid.NewGuid().ToString())
             .Options;
 
-        var context = new ApplicationDbContext(
-            options,
+        var context = new ApplicationDbContext(options);
+        context.InitContext(
             AppMockFactory.CreateCurrentUserServiceMock(),
+            new SeedDataContext(),
             new MachineDateTime(),
-            AppMockFactory.CreateMediatorMock(),
-            new SeedDataContext());
+            AppMockFactory.CreateMediatorMock());
 
         await context.Database.EnsureCreatedAsync();
         await context.SeedAsync();

@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
+using Persistence.PostgreSQL.Extensions;
 using SeedData;
 
 public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
@@ -11,15 +12,9 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
         builder.ConfigureServices((_, services) =>
         {
             services
-                .Remove<ApplicationDbContext>()
-                .AddDbContext<ApplicationDbContext>(options =>
-                {
-                    options.UseNpgsql(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
-                })
-                .AddScoped<IApplicationDbContext, ApplicationDbContext>()
-                .AddScoped<IDbInitializer, SeedDataContext>()
-                .Remove<ICurrentUserService>()
-                .AddTransient(p => AppMockFactory.CreateCurrentUserServiceMock());
+                .Replace<IDbInitializer, SeedDataContext>()
+                .Replace<ICurrentUserService>(p => AppMockFactory.CreateCurrentUserServiceMock())
+                .ConfigureDbContextFactory(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
         });
     }
 }
