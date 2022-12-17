@@ -5,23 +5,17 @@ namespace NKZSoft.Template.Persistence.PostgreSQL;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
-    private readonly ICurrentUserService _currentUserService = null!;
-    private readonly IDateTime _dateTime = null!;
-    private readonly IMediator _mediator = null!;
-    private readonly IDbInitializer _dbInitializer = null!;
+    private ICurrentUserService _currentUserService = null!;
+    private IDateTime _dateTime = null!;
+    private IMediator _mediator = null!;
+    private IDbInitializer _dbInitializer = null!;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
 
-    public ApplicationDbContext(
-        DbContextOptions<ApplicationDbContext> options,
-        ICurrentUserService currentUserService,
-        IDateTime dateTime,
-        IMediator mediator,
-        IDbInitializer dbInitializer)
-        : base(options)
+    public void InitContext(ICurrentUserService currentUserService, IDbInitializer dbInitializer, IDateTime dateTime, IMediator mediator)
     {
         _dbInitializer = dbInitializer.ThrowIfNull();
         _currentUserService = currentUserService.ThrowIfNull();
@@ -93,10 +87,5 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         modelBuilder.DataTimeConfigure();
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
     }
 }

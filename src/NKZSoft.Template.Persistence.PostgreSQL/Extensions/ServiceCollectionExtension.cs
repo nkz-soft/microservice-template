@@ -1,6 +1,7 @@
 namespace NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 
 using Configurations;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtension
 {
@@ -25,19 +26,13 @@ public static class ServiceCollectionExtension
         var connectionString = $"{currentConfiguration.PostgresConnection.ConnectionString}" +
                                $"Database={currentConfiguration.PostgresConnection.Database}";
 
-        services.AddDbContext<ApplicationDbContext>(options =>
-        {
-            options.UseNpgsql(connectionString);
+        ConfigureDbContextFactory(services, connectionString, currentConfiguration.PostgresConnection.LoggingEnabled);
 
-            var hasDbLogging = configuration.GetValue<bool>("Serilog:EnableDbLogging");
-            if (hasDbLogging)
-            {
-                options.EnableDbLogging();
-            }
-        });
+        services.TryAddScoped<IDbInitializer, DbInitializer>();
+        services.TryAddScoped<ApplicationDbContextFactory>();
 
-        services.AddScoped<IDbInitializer, DbInitializer>();
-        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+        services.TryAddScoped<IApplicationDbContext>(p =>
+            p.GetRequiredService<ApplicationDbContextFactory>().CreateDbContext());
 
         services.Scan(scan => scan
             .FromAssemblies(Assembly.GetExecutingAssembly())
@@ -54,6 +49,21 @@ public static class ServiceCollectionExtension
 
         return services;
     }
+
+    public static IServiceCollection ConfigureDbContextFactory(this IServiceCollection services,
+        string? connectionString, bool enableDbLogging = true) =>
+        services.AddEntityFrameworkNpgsql()
+            .AddPooledDbContextFactory<ApplicationDbContext>(optionsAction: (provider, options) =>
+            {
+                options.UseInternalServiceProvider(provider);
+                options.UseNpgsql(connectionString);
+
+                if (enableDbLogging)
+                {
+                    options.EnableDbLogging();
+                }
+            });
+
     private static DbContextOptionsBuilder EnableDbLogging(this DbContextOptionsBuilder builder) => builder
             .LogTo(
                 msg => Log.Logger.Information(msg),

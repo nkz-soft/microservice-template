@@ -17,5 +17,6 @@ global using NKZSoft.Template.Application.Common.Interfaces;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.TodoItems.Commands.Create;
 global using NKZSoft.Template.Application.TodoItems.Models;
+global using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 global using NKZSoft.Template.Presentation.REST.Models.Result;
 
