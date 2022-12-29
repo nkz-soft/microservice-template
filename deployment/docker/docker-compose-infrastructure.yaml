@@ -40,5 +40,17 @@ services:
       timeout: 30s
       retries: 15
 
+  redis:
+    image: redis:7.0
+    ports:
+      - "0.0.0.0:6379:6379"
+    networks:
+      - dev-network
+    healthcheck:
+      test: redis-cli ping
+      interval: 10s
+      timeout: 30s
+      retries: 15
+
 networks:
   dev-network:

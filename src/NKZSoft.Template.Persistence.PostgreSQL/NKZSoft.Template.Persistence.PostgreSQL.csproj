@@ -3,6 +3,7 @@
   <ItemGroup>
     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" />
     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" />
     <PackageReference Include="MediatR" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
@@ -30,6 +31,7 @@
     <ProjectReference Include="..\NKZSoft.Template.Application\NKZSoft.Template.Application.csproj" />
     <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
     <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
+    <ProjectReference Include="..\NKZSoft.Template.EFCore.Caching.Redis\NKZSoft.Template.EFCore.Caching.Redis.csproj" />
     <ProjectReference Include="..\NKZSoft.Template.Infrastructure.Core\NKZSoft.Template.Infrastructure.Core.csproj" />
   </ItemGroup>
 

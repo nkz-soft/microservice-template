@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Configurations;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Configuration;
 
 public class DbConfigurationSection
 {

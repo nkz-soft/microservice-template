@@ -24,7 +24,7 @@ public sealed class ToDoItemSpecification : Specification<ToDoItem>
 
         var specificationBuilder = specification.Query;
 
-        specification.Filter(specificationBuilder, pageContext.Filter);
+        Filter(specificationBuilder, pageContext.Filter);
         specification.Sort(specificationBuilder, pageContext.ListSort);
 
         if (pageContext.PageIndex != 0)
@@ -41,7 +41,7 @@ public sealed class ToDoItemSpecification : Specification<ToDoItem>
         return specification;
     }
 
-    private void Filter(ISpecificationBuilder<ToDoItem> specificationBuilder, ToDoItemFilter filter)
+    private static void Filter(ISpecificationBuilder<ToDoItem> specificationBuilder, ToDoItemFilter filter)
     {
         if (filter.Title.HasValue())
         {

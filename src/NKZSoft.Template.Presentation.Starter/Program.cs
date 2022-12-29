@@ -1,3 +1,7 @@
+using EFCoreSecondLevelCacheInterceptor;
+using NKZSoft.Template.EFCore.Caching.Redis;
+using NKZSoft.Template.EFCore.Caching.Redis.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration
@@ -13,7 +17,9 @@ var environment = builder.Environment;
 builder.Services
     .AddLogging(configuration)
     .AddOptions()
-    .AddNgpSqlPersistence(configuration)
+    .AddNgpSqlPersistence(configuration, (provider, optionsBuilder)
+        => optionsBuilder.AddInterceptors(provider.GetRequiredService<SecondLevelCacheInterceptor>()))
+        .AddEFCoreRedisCache(configuration)
     .AddApplication()
     .AddCoreInfrastructure()
     .AddRestPresentation(configuration, builder.Environment)

@@ -18,6 +18,9 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
             },
             {
                 typeof(RabbitMqTestcontainer), ContainerFactory.Create<RabbitMqTestcontainer>()
+            },
+            {
+                typeof(RedisTestcontainer), ContainerFactory.Create<RedisTestcontainer>()
             }
         };
     }

@@ -11,15 +11,14 @@ public static class ContainerFactory
 
     public static ITestcontainersContainer Create<T>() where T : ITestcontainersContainer
     {
-        if (typeof(T).IsAssignableFrom(typeof(PostgreSqlTestcontainer)))
+        var type = typeof(T);
+        return type switch
         {
-            return CreatePostgreSql();
-        }
-        if (typeof(T).IsAssignableFrom(typeof(RabbitMqTestcontainer)))
-        {
-            return CreateRabbitMq();
-        }
-        throw new ArgumentException($"Couldn't create a container of {nameof(T)}");
+            not null when type.IsAssignableFrom(typeof(PostgreSqlTestcontainer)) => CreatePostgreSql(),
+            not null when type.IsAssignableFrom(typeof(RabbitMqTestcontainer)) => CreateRabbitMq(),
+            not null when type.IsAssignableFrom(typeof(RedisTestcontainer)) => CreateRedis(),
+            _ => throw new ArgumentException($"Couldn't create a container of {nameof(T)}")
+        };
     }
 
     private static ITestcontainersContainer CreatePostgreSql() =>
@@ -49,5 +48,14 @@ public static class ContainerFactory
             .WithAutoRemove(true)
             .WithCleanUp(true)
             .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5672))
+            .Build();
+
+    private static ITestcontainersContainer CreateRedis() =>
+        new TestcontainersBuilder<RedisTestcontainer>()
+            .WithImage("redis:7.0")
+            .WithPortBinding(6379, 6379)
+            .WithAutoRemove(true)
+            .WithCleanUp(true)
+            .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(6379))
             .Build();
 }
