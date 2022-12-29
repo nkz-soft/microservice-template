@@ -43,13 +43,13 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] GRPC Error handling in interceptors
 - [x] Enabling Central Package Management
 - [x] Uses Chiseled Ubuntu image
+- [x] Adding Layer 2 caching for EF Core
 - [ ] OpenTelemetry
-- [ ] Add caching for EF Core
 - [ ] MongoDB data provider
 
 ## Technologies used
 
-[NET Core 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) : .NET Core, including ASP.NET Core
+[NET Core 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0): .NET Core, including ASP.NET Core
 
 [EntityFrameworkCore](https://github.com/dotnet/efcore): EF Core is a modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations.
 
@@ -80,3 +80,7 @@ I would like this project to help you find simplified and effortless solutions. 
 [RestSharp](https://github.com/restsharp/RestSharp): RestSharp is a lightweight HTTP client library. It's a wrapper around HttpClient, not a full-fledged client on its own.
 
 [SignalR](https://github.com/dotnet/aspnetcore/tree/main/src/SignalR): ASP.NET Core SignalR is a library for ASP.NET Core developers that makes it incredibly simple to add real-time web functionality to your applications.
+
+[EF Core Second Level Cache Interceptor](https://github.com/VahidN/EFCoreSecondLevelCacheInterceptor): Second level caching is a query cache. The results of EF commands will be stored in the cache, so that the same EF commands will retrieve their data from the cache rather than executing them against the database again.
+
+[EasyCaching](https://github.com/dotnetcore/EasyCaching): EasyCaching is an open source caching library that contains basic usages and some advanced usages of caching which can help us to handle caching more easily!

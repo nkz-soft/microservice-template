@@ -1,7 +1,6 @@
 namespace NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 
-using Configurations;
-using Microsoft.Extensions.DependencyInjection.Extensions;
+using Configuration;
 
 public static class ServiceCollectionExtension
 {
@@ -11,7 +10,9 @@ public static class ServiceCollectionExtension
     /// <param name="services">The <see cref="IServiceCollection"/> to add the MassTransits to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing settings to be used.</param>
     /// <returns>The <see cref="IServiceCollection"/>.</returns>
-    public static IServiceCollection AddNgpSqlPersistence(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddNgpSqlPersistence(this IServiceCollection services,
+        IConfiguration configuration,
+        Action<IServiceProvider, DbContextOptionsBuilder> optionsBuilder = null)
     {
         configuration.ThrowIfNull(nameof(configuration));
 
@@ -21,12 +22,11 @@ public static class ServiceCollectionExtension
         ArgumentNullException.ThrowIfNull(currentConfiguration);
         ArgumentNullException.ThrowIfNull(currentConfiguration.PostgresConnection);
         currentConfiguration.PostgresConnection.ConnectionString.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.ConnectionString));
-        currentConfiguration.PostgresConnection.Database.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.Database));
 
-        var connectionString = $"{currentConfiguration.PostgresConnection.ConnectionString}" +
-                               $"Database={currentConfiguration.PostgresConnection.Database}";
+        var connectionString = currentConfiguration.PostgresConnection.ConnectionString;
 
-        ConfigureDbContextFactory(services, connectionString, currentConfiguration.PostgresConnection.LoggingEnabled);
+        ConfigureDbContextFactory(services, connectionString,
+            currentConfiguration.PostgresConnection.LoggingEnabled, optionsBuilder);
 
         services.TryAddScoped<IDbInitializer, DbInitializer>();
         services.TryAddScoped<ApplicationDbContextFactory>();
@@ -51,10 +51,14 @@ public static class ServiceCollectionExtension
     }
 
     public static IServiceCollection ConfigureDbContextFactory(this IServiceCollection services,
-        string? connectionString, bool enableDbLogging = true) =>
+        string? connectionString,
+        bool enableDbLogging = true,
+        Action<IServiceProvider, DbContextOptionsBuilder>? optionsBuilder = null) =>
         services.AddEntityFrameworkNpgsql()
             .AddPooledDbContextFactory<ApplicationDbContext>(optionsAction: (provider, options) =>
             {
+                optionsBuilder?.Invoke(provider, options);
+
                 options.UseInternalServiceProvider(provider);
                 options.UseNpgsql(connectionString);
 

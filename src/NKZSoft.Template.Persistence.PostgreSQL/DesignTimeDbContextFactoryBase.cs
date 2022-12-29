@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL;
 
-using Configurations;
+using Configuration;
 
 public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext>
     where TContext : DbContext
@@ -31,9 +31,7 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
 
         ArgumentNullException.ThrowIfNull(currentConfiguration);
 
-        var connectionString = $"{currentConfiguration.ConnectionString}Database=${currentConfiguration.Database}";
-
-        return Create(connectionString);
+        return Create(currentConfiguration.ConnectionString);
     }
 
     private TContext Create(string connectionString)
