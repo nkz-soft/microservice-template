@@ -73,7 +73,7 @@
     <PackageVersion Include="Shouldly" Version="4.1.0" />
     <PackageVersion Include="RestSharp" Version="108.0.3" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.0.1" />
-    <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.1" />
+    <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.2" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.1" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.7.0" />
