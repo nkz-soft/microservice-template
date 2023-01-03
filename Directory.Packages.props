@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="6.0.4" />
-    <PackageVersion Include="EasyCaching.CSRedis" Version="1.7.0" />
+    <PackageVersion Include="EasyCaching.CSRedis" Version="1.8.0" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
