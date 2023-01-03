@@ -1,10 +1,10 @@
 ﻿namespace NKZSoft.Template.Domain.Common;
 
-public abstract class BaseEntity : IEntity
+public abstract class BaseEntity<TKey> : IPkEntity<TKey>
 {
     private readonly List<INotification> _domainEvents = new();
 
-    public Guid Id { get; set; }
+    public TKey Id { get; protected set; }
 
     [NotMapped]
     public bool IsNew { get; set; }

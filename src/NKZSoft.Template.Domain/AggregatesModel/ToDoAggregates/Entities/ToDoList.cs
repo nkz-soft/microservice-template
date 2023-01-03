@@ -2,7 +2,7 @@
 
 using Common;
 
-public sealed class ToDoList : BaseAuditableEntity
+public sealed class ToDoList : BaseAuditableEntity<Guid, string>
 {
     private readonly List<ToDoItem> _toDoItems = new();
 

@@ -1,12 +1,12 @@
 ﻿namespace NKZSoft.Template.Domain.Common;
 
-public abstract class BaseAuditableEntity : BaseEntity, IBaseAuditableEntity
+public abstract class BaseAuditableEntity<TPKey, TUserPKey> : BaseEntity<TPKey>, IBaseAuditableEntity<TUserPKey>
 {
     public DateTime? Created { get; set; }
 
-    public string? CreatedBy { get; set; }
+    public TUserPKey? CreatedBy { get; set; }
 
     public DateTime? Modified { get; set; }
 
-    public string? ModifiedBy { get; set; }
+    public TUserPKey? ModifiedBy { get; set; }
 }
