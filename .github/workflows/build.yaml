@@ -6,7 +6,13 @@ on:
     - main
     - f/*
     - fix/*
-
+    paths-ignore:
+      - "README.md"
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "README.md"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +29,7 @@ jobs:
         with:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props') }}
           restore-keys: |
             ${{ runner.os }}-nuget
       - name: Restore Dependencies
@@ -56,3 +62,18 @@ jobs:
           indicators: true
           output: both
           thresholds: '30 40'
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          recreate: true
+          path: code-coverage-results.md          
+#      - name: Create badge
+#        uses: schneegans/dynamic-badges-action@v1.6.0
+#        with:
+#          auth: ${{ secrets.GIST_SECRET }}
+#          gistID: 7fa58d77450b2a406ba5cf1b3fd258a8
+#          filename: microservice-template.json
+#          label: coverage
+#          message: 50
+
