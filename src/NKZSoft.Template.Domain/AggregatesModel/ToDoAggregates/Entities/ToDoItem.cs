@@ -3,7 +3,7 @@
 using Common;
 using Events;
 
-public sealed class ToDoItem : BaseAuditableEntity, IAggregateRoot
+public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
 {
     public ToDoItem()
     {

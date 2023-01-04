@@ -59,13 +59,13 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         var domainEntities = ChangeTracker
             .Entries<IEntity>()
-            .Where(x => x.Entity.DomainEvents != null && x.Entity.DomainEvents.Any());
+            .Where(x => x.Entity.DomainEvents.Any());
         await _mediator.DispatchDomainEventsAsync(domainEntities);
     }
 
     private void UpdateEntities(ICurrentUser currentUser)
     {
-        foreach (var entry in ChangeTracker.Entries<IBaseAuditableEntity>())
+        foreach (var entry in ChangeTracker.Entries<IBaseAuditableEntity<string>>())
         {
             UpdateState(entry);
 

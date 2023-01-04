@@ -1,12 +1,12 @@
 ﻿namespace NKZSoft.Template.Domain.Common;
 
-public interface IBaseAuditableEntity : IEntity
+public interface IBaseAuditableEntity<TKey> : IEntity
 {
     DateTime? Created { get; set; }
 
-    string? CreatedBy { get; set; }
+    TKey? CreatedBy { get; set; }
 
     DateTime? Modified { get; set; }
 
-    string? ModifiedBy { get; set; }
+    TKey? ModifiedBy { get; set; }
 }

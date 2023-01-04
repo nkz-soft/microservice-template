@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations;
 
-public class AuditableConfiguration<T> where T : class, IBaseAuditableEntity
+public class AuditableConfiguration<T> where T : class, IBaseAuditableEntity<string>
 {
     public virtual void Configure(EntityTypeBuilder<T> builder)
     {

@@ -2,8 +2,6 @@
 
 public interface IEntity
 {
-    Guid Id { get; set; }
-
     bool IsNew { get; set; }
 
     IReadOnlyCollection<INotification> DomainEvents { get; }
