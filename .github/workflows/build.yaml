@@ -67,4 +67,13 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           recreate: true
-          path: code-coverage-results.md
+          path: code-coverage-results.md          
+#      - name: Create badge
+#        uses: schneegans/dynamic-badges-action@v1.6.0
+#        with:
+#          auth: ${{ secrets.GIST_SECRET }}
+#          gistID: 7fa58d77450b2a406ba5cf1b3fd258a8
+#          filename: microservice-template.json
+#          label: coverage
+#          message: 50
+
