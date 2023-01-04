@@ -1,4 +1,9 @@
 # microservice-template
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/nkz-soft/microservice-template?style=flat-square)
+![license](https://img.shields.io/github/license/nkz-soft/microservice-template?style=flat-square)
+![build](https://img.shields.io/github/actions/workflow/status/nkz-soft/microservice-template/build-container.yaml?branch=main&style=flat-square)
+
 Template for microservice based on DDD and Clean Architecture with .NET
 
 The main aim of this project is to provide a means for building microservices with the latest technology and architecture.
