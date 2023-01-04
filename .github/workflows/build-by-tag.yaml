@@ -1,4 +1,4 @@
-name: build-container
+name: build-by-tag
 
 on:
   push:
