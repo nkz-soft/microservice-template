@@ -46,15 +46,6 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this);
 
-    private static void UpdateState<T>(EntityEntry<T> entry)
-        where T : class, IEntity
-    {
-        if (entry.Entity.IsNew)
-        {
-            entry.State = EntityState.Added;
-        }
-    }
-
     private async Task DispatchDomainEventsAsync()
     {
         var domainEntities = ChangeTracker
@@ -67,7 +58,10 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         foreach (var entry in ChangeTracker.Entries<IBaseAuditableEntity<string>>())
         {
-            UpdateState(entry);
+            if (entry.Entity.IsNew)
+            {
+                entry.State = EntityState.Added;
+            }
 
             switch (entry.State)
             {

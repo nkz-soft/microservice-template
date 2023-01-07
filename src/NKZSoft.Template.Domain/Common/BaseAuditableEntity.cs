@@ -9,4 +9,8 @@ public abstract class BaseAuditableEntity<TPKey, TUserPKey> : BaseEntity<TPKey>,
     public DateTime? Modified { get; set; }
 
     public TUserPKey? ModifiedBy { get; set; }
+
+    protected BaseAuditableEntity(TPKey id) : base(id)
+    {
+    }
 }
