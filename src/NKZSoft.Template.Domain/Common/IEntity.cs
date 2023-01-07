@@ -2,7 +2,7 @@
 
 public interface IEntity
 {
-    bool IsNew { get; set; }
+    bool IsNew { get; }
 
     IReadOnlyCollection<INotification> DomainEvents { get; }
 

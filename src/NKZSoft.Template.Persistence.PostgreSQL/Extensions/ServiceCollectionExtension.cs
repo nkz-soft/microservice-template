@@ -12,7 +12,7 @@ public static class ServiceCollectionExtension
     /// <returns>The <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection AddNgpSqlPersistence(this IServiceCollection services,
         IConfiguration configuration,
-        Action<IServiceProvider, DbContextOptionsBuilder> optionsBuilder = null)
+        Action<IServiceProvider, DbContextOptionsBuilder>? optionsBuilder = null)
     {
         configuration.ThrowIfNull(nameof(configuration));
 

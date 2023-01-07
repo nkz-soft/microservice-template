@@ -24,7 +24,6 @@ public static class ApplicationDbContextFactory
 
         await context.Database.EnsureCreatedAsync();
         await context.SeedAsync();
-        await context.SaveChangesAsync();
 
         return context;
     }

@@ -4,10 +4,12 @@ public abstract class BaseEntity<TKey> : IPkEntity<TKey>
 {
     private readonly List<INotification> _domainEvents = new();
 
-    public TKey Id { get; protected set; }
+    protected BaseEntity(TKey id) => Id = id;
+
+    public TKey Id { get; }
 
     [NotMapped]
-    public bool IsNew { get; set; }
+    public bool IsNew => EqualityComparer<TKey>.Default.Equals(Id, default(TKey));
 
     [NotMapped]
     public IReadOnlyCollection<INotification> DomainEvents => _domainEvents.AsReadOnly();
