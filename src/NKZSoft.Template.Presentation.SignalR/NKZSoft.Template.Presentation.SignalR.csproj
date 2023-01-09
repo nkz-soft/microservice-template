@@ -6,7 +6,6 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.SignalR" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     </ItemGroup>
 
     <ItemGroup>
