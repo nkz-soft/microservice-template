@@ -1,10 +1,10 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "NKZSoft",
-  "classifications": [ "WebAPI", "gRPC", "GraphQL","ApplicationServer" ],
+  "classifications": [ "C#", "Linux", "MacOS", "Windows", "Cloud", "Service", "Web" ],
   "name": "Microservice Boilerplate & Starter Kit",
   "defaultName": "NKZSoft Template",
-  "description": "Template for Microservice",
+  "description": "A project template for creating an ASP.NET Core microservice.",
   "identity": "NKZSoft.Template",
   "groupIdentity": "NKZSoft.Template",
   "shortName": "nkz-template",
