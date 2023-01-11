@@ -7,7 +7,6 @@
       <PackageReference Include="MassTransit" />
       <PackageReference Include="MassTransit.AspNetCore" />
       <PackageReference Include="MassTransit.Extensions.DependencyInjection" />
-      <PackageReference Include="MassTransit.RabbitMQ" />
       <PackageReference Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" />
     </ItemGroup>
 
