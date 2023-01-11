@@ -3,9 +3,9 @@ name: build
 on:
   push:
     branches:
-    - main
-    - f/*
-    - fix/*
+      - main
+      - f/*
+      - fix/*
     paths-ignore:
       - "README.md"
   pull_request:
@@ -67,7 +67,9 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           recreate: true
-          path: code-coverage-results.md          
+          path: code-coverage-results.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - name: Create badge
 #        uses: schneegans/dynamic-badges-action@v1.6.0
 #        with:
