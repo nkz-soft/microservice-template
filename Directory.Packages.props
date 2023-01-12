@@ -10,7 +10,7 @@
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
     <PackageVersion Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.1" />
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
@@ -47,7 +47,7 @@
     <PackageVersion Include="HotChocolate.AspNetCore" Version="12.15.2" />
     <PackageVersion Include="HotChocolate.Data" Version="12.15.2" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="12.15.2" />
-    <PackageVersion Include="Google.Protobuf" Version="3.21.11" />
+    <PackageVersion Include="Google.Protobuf" Version="3.21.12" />
     <PackageVersion Include="protobuf-net" Version="3.1.25" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.0.179" />
@@ -63,7 +63,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
-    <PackageVersion Include="Xunit.DependencyInjection" Version="8.6.1" />
+    <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageVersion Include="xunit.extensibility.core" Version="2.4.2" />
     <PackageVersion Include="coverlet.collector" Version="3.2.0" />
