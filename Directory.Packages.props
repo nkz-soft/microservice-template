@@ -14,7 +14,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.2" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
@@ -73,7 +73,7 @@
     <PackageVersion Include="Testcontainers" Version="2.3.0" />
     <PackageVersion Include="Shouldly" Version="4.1.0" />
     <PackageVersion Include="RestSharp" Version="108.0.3" />
-    <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.0.1" />
+    <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0-alpha" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.2" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.1" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
