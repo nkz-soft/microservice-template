@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.Rest\NKZSoft.Template.Presentation.Rest.csproj" />
       <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj" />
     </ItemGroup>
