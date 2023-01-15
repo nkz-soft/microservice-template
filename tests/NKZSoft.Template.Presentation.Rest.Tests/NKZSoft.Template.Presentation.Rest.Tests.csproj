@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <AssemblyName>NKZSoft.Template.Presentation.Rest.Tests</AssemblyName>
+      <RootNamespace>NKZSoft.Template.Presentation.Rest.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="RestSharp" />
+        <PackageReference Include="Serilog.AspNetCore" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="Xunit.Extensions.Ordering" />
+        <PackageReference Include="xunit.runner.visualstudio">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="FluentAssertions" />
+        <PackageReference Include="Moq" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
+      <ProjectReference Include="..\..\src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj" />
+      <ProjectReference Include="..\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj" />
+    </ItemGroup>
+
+</Project>
