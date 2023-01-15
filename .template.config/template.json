@@ -14,6 +14,26 @@
   },
   "sourceName": "NKZSoft.Template",
   "preferNameDirectory": true,
+  "symbols": {
+    "EnableGraphQL": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "true",
+      "displayName": "Enable GraphQL API"
+    },
+    "EnableGrpc": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "true",
+      "displayName": "Enable Grpc API"
+    },
+    "EnableSignalR": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "true",
+      "displayName": "Enable Websocket API"
+    }
+  },
   "sources": [
     {
       "source": "./",
@@ -23,7 +43,77 @@
         ".vs/**",
         ".git/**",
         ".idea/**"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!EnableGraphQL)",
+          "exclude": [
+            "src/NKZSoft.Template.Presentation.GraphQL/**",
+	    "tests/NKZSoft.Template.Presentation.GraphQL.Tests/**"
+          ]
+        },
+        {
+          "condition": "(!EnableGrpc)",
+          "exclude": [
+            "src/NKZSoft.Template.Presentation.Grpc/**",
+	    "tests/NKZSoft.Template.Presentation.Grpc.Tests/**"
+          ]
+        },
+        {
+          "condition": "(!EnableSignalR)",
+          "exclude": [
+            "src/NKZSoft.Template.Presentation.SignalR/**",
+	    "tests/NKZSoft.Template.Presentation.SignalR.Tests/**"
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "SpecialCustomOperations": {
+    "**/*.cs": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": ["//#if"],
+            "else": ["//#else"],
+            "elseif": ["//#elseif", "//#elif"],
+            "endif": ["//#endif"],
+            "trim" : "true",
+            "wholeLine": "true",
+          }
+        }
+      ]
+    },
+   "**/*.csproj": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": ["<!--#if"],
+            "else": ["<!--#else"],
+            "elseif": ["<!--#elseif", "<!--#elif"],
+            "endif": ["<!--#endif"],
+            "trim" : "true",
+            "wholeLine": "true",
+          }
+        }
+      ]
+    },
+   "**/*.snl": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "if": ["#if"],
+            "else": ["#else"],
+            "elseif": ["#elseif", "#elif"],
+            "endif": ["#endif"],
+            "trim" : "true",
+            "wholeLine": "true",
+          }
+        }
+      ]
+    }
+  }
 }

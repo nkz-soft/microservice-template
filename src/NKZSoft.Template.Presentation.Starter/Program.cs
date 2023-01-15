@@ -1,5 +1,4 @@
 using EFCoreSecondLevelCacheInterceptor;
-using NKZSoft.Template.EFCore.Caching.Redis;
 using NKZSoft.Template.EFCore.Caching.Redis.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,9 +22,15 @@ builder.Services
     .AddApplication()
     .AddCoreInfrastructure()
     .AddRestPresentation(configuration, builder.Environment)
+//#if (EnableGrpc)
     .AddGrpcPresentation(configuration)
+//#endif
+//#if (EnableGraphQL)
     .AddGraphQLPresentation()
+//#endif
+//#if (EnableSignalR)
     .AddSignalRPresentation()
+//#endif
     .AddMessageBroker(configuration)
     .AddHealthChecks();
 
@@ -54,9 +59,15 @@ app.UseRestPresentation(configuration, environment)
 app.UseAuthorization();
 
 app.MapRestEndpoints();
+//#if (EnableGrpc)
 app.MapGrpcEndpoints();
+//#endif
+//#if (EnableGraphQL)
 app.MapGraphQLEndpoints();
+//#endif
+//#if (EnableSignalR)
 app.MapHubEndpoints();
+//#endif
 
 app.MapHealthChecks("/healthz");
 
