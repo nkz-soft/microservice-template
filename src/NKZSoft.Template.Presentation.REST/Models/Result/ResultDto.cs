@@ -1,4 +1,4 @@
-namespace NKZSoft.Template.Presentation.REST.Models.Result;
+namespace NKZSoft.Template.Presentation.Rest.Models.Result;
 
 [JsonDerivedType(typeof(ResultDto<>), "ResultDto")]
 public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)

@@ -1,6 +1,5 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Controllers.Version20;
+﻿namespace NKZSoft.Template.Presentation.Rest.Controllers.Version20;
 
-using Models;
 using Models.Result;
 
 [ApiVersion(VersionController.Version20)]

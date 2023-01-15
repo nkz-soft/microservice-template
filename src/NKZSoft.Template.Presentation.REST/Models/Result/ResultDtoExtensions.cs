@@ -1,4 +1,4 @@
-namespace NKZSoft.Template.Presentation.REST.Models.Result;
+namespace NKZSoft.Template.Presentation.Rest.Models.Result;
 
 public static class ResultDtoExtensions
 {

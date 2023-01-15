@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Models.Result;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Models.Result;
 
 public static class ErrorResponseExtensions
 {

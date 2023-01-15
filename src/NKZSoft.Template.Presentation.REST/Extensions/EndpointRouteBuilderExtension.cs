@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Extensions;
+﻿namespace NKZSoft.Template.Presentation.Rest.Extensions;
 
 public static class EndpointRouteBuilderExtension
 {

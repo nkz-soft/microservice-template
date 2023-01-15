@@ -1,8 +1,8 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Services;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Services;
 
-using Common;
 using Models;
 using Models.ToDoItem;
+using NKZSoft.Template.Common;
 
 public class ToDoItemService : IToDoItemService
 {

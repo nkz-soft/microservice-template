@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Models;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Models;
 
 [ProtoContract]
 [ProtoInclude(1, typeof(GetTodoItemsRequest))]

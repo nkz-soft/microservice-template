@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Extensions;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Extensions;
 
 using Services;
 

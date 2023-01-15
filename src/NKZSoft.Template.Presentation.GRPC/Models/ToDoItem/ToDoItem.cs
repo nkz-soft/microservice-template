@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Models.ToDoItem;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Models.ToDoItem;
 
 [ProtoContract (SkipConstructor = true)]
 public sealed record ToDoItem

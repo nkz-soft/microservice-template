@@ -1,8 +1,6 @@
-namespace NKZSoft.Template.Presentation.REST.Middleware;
+namespace NKZSoft.Template.Presentation.Rest.Middleware;
 
-using Models;
 using Models.Result;
-
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 public class ErrorHandlingMiddleware

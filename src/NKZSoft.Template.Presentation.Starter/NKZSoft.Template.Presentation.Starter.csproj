@@ -1,15 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <Version>1.9.0</Version>
+        <Version>1.10.0</Version>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NKZSoft.Template.Presentation.Rest\NKZSoft.Template.Presentation.Rest.csproj" />
+<!--#if (EnableGraphQL)-->
       <ProjectReference Include="..\NKZSoft.Template.Presentation.GraphQL\NKZSoft.Template.Presentation.GraphQL.csproj" />
-      <ProjectReference Include="..\NKZSoft.Template.Presentation.GRPC\NKZSoft.Template.Presentation.GRPC.csproj" />
-      <ProjectReference Include="..\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj" />
+<!--#endif-->
+<!--#if (EnableGrpc)-->
+      <ProjectReference Include="..\NKZSoft.Template.Presentation.Grpc\NKZSoft.Template.Presentation.Grpc.csproj" />
+<!--#endif-->
+<!--#if (EnableSignalR)-->
       <ProjectReference Include="..\NKZSoft.Template.Presentation.SignalR\NKZSoft.Template.Presentation.SignalR.csproj" />
+<!--#endif-->
     </ItemGroup>
 
     <ItemGroup>
@@ -18,9 +24,16 @@
     </ItemGroup>
 
     <ItemGroup>
+<!--#if (EnableGraphQL)-->
       <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GraphQL.Tests" />
-      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.REST.Tests" />
-      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GRPC.Tests" />
+<!--#endif-->
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.Rest.Tests" />
+<!--#if (EnableGrpc)-->
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.Grpc.Tests" />
+<!--#endif-->
+<!--#if (EnableSignalR)-->
+      <InternalsVisibleTo Include="NKZSoft.Template.Presentation.SignalR.Tests" />
+<!--#endif-->
     </ItemGroup>
 
     <Target Name="Clean" AfterTargets="Clean"> <!-- common vars https://msdn.microsoft.com/en-us/library/c02as0cs.aspx?f=255&MSPPError=-2147217396 -->

@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+    <PropertyGroup>
+      <AssemblyName>NKZSoft.Template.Presentation.Grpc.Tests</AssemblyName>
+      <RootNamespace>NKZSoft.Template.Presentation.Grpc.Tests</RootNamespace>
+    </PropertyGroup>
+
     <ItemGroup>
       <PackageReference Include="Grpc.Net.ClientFactory" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" />

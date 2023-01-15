@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Tests.SeedData;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Tests.SeedData;
 
 internal sealed partial class SeedDataContext
 {

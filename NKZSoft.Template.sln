@@ -27,13 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Common", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{808677B7-C2E6-4178-A799-62A6C8D689F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Presentation.REST", "src\NKZSoft.Template.Presentation.REST\NKZSoft.Template.Presentation.REST.csproj", "{E07CAA3C-7DB0-4FEE-B9EB-385BDA6043F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Presentation.Rest", "src\NKZSoft.Template.Presentation.Rest\NKZSoft.Template.Presentation.Rest.csproj", "{E07CAA3C-7DB0-4FEE-B9EB-385BDA6043F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Infrastructure.Core", "src\NKZSoft.Template.Infrastructure.Core\NKZSoft.Template.Infrastructure.Core.csproj", "{462F0A42-1237-4DED-BB96-38A7A9E46E5A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Application.Tests", "tests\NKZSoft.Template.Application.Tests\NKZSoft.Template.Application.Tests.csproj", "{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Presentation.REST.Tests", "tests\NKZSoft.Template.Presentation.REST.Tests\NKZSoft.Template.Presentation.REST.Tests.csproj", "{910736CD-FD22-4447-B99E-A65AFC25DDF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Presentation.Rest.Tests", "tests\NKZSoft.Template.Presentation.Rest.Tests\NKZSoft.Template.Presentation.Rest.Tests.csproj", "{910736CD-FD22-4447-B99E-A65AFC25DDF1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Common.Tests", "tests\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj", "{9A0A4214-A590-4411-ADEE-28B47D3DEB16}"
 EndProject
@@ -54,23 +54,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{275335
 		deployment\docker\docker-compose.sh = deployment\docker\docker-compose.sh
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.GRPC", "src\NKZSoft.Template.Presentation.GRPC\NKZSoft.Template.Presentation.GRPC.csproj", "{FA32F3BD-A075-426D-9B69-81AF72021801}"
+#if (EnableGrpc)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Grpc", "src\NKZSoft.Template.Presentation.Grpc\NKZSoft.Template.Presentation.Grpc.csproj", "{FA32F3BD-A075-426D-9B69-81AF72021801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Starter", "src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj", "{6693D52E-B1D4-45B8-8330-631E6023FBB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Grpc.Tests", "tests\NKZSoft.Template.Presentation.Grpc.Tests\NKZSoft.Template.Presentation.Grpc.Tests.csproj", "{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.GRPC.Tests", "tests\NKZSoft.Template.Presentation.GRPC.Tests\NKZSoft.Template.Presentation.GRPC.Tests.csproj", "{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}"
-EndProject
+#endif
+#if (EnableGraphQL)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.GraphQL", "src\NKZSoft.Template.Presentation.GraphQL\NKZSoft.Template.Presentation.GraphQL.csproj", "{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.GraphQL.Tests", "tests\NKZSoft.Template.Presentation.GraphQL.Tests\NKZSoft.Template.Presentation.GraphQL.Tests.csproj", "{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Events", "src\NKZSoft.Template.Events\NKZSoft.Template.Events.csproj", "{D02A6791-818B-4BFA-A958-65D933FC7F2E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.MessageBrokers.RabbitMq", "src\NKZSoft.Template.MessageBrokers.RabbitMq\NKZSoft.Template.MessageBrokers.RabbitMq.csproj", "{748E8208-2140-40FB-BDD2-145F27C762BC}"
-EndProject
+#endif
+#if (EnableSignalR)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.SignalR", "src\NKZSoft.Template.Presentation.SignalR\NKZSoft.Template.Presentation.SignalR.csproj", "{69A8CB59-91D9-4550-B94B-803A9BF2CE1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.SignalR.Tests", "tests\NKZSoft.Template.Presentation.SignalR.Tests\NKZSoft.Template.Presentation.SignalR.Tests.csproj", "{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}"
+EndProject
+#endif
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Starter", "src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj", "{6693D52E-B1D4-45B8-8330-631E6023FBB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Events", "src\NKZSoft.Template.Events\NKZSoft.Template.Events.csproj", "{D02A6791-818B-4BFA-A958-65D933FC7F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.MessageBrokers.RabbitMq", "src\NKZSoft.Template.MessageBrokers.RabbitMq\NKZSoft.Template.MessageBrokers.RabbitMq.csproj", "{748E8208-2140-40FB-BDD2-145F27C762BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.EFCore.Caching.Redis", "src\NKZSoft.Template.EFCore.Caching.Redis\NKZSoft.Template.EFCore.Caching.Redis.csproj", "{0509FB5A-2A63-4FF5-B27A-BD3241869286}"
 EndProject
@@ -120,34 +126,27 @@ Global
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Release|Any CPU.Build.0 = Release|Any CPU
+#if (EnableGrpc)
 		{FA32F3BD-A075-426D-9B69-81AF72021801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA32F3BD-A075-426D-9B69-81AF72021801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA32F3BD-A075-426D-9B69-81AF72021801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA32F3BD-A075-426D-9B69-81AF72021801}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8}.Release|Any CPU.Build.0 = Release|Any CPU		
+#endif
+#if (EnableGraphQL)
 		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92}.Release|Any CPU.Build.0 = Release|Any CPU		
 		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU		
 		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{748E8208-2140-40FB-BDD2-145F27C762BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{748E8208-2140-40FB-BDD2-145F27C762BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{748E8208-2140-40FB-BDD2-145F27C762BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{748E8208-2140-40FB-BDD2-145F27C762BC}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
+#if (EnableSignalR)
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -156,6 +155,19 @@ Global
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}.Release|Any CPU.Build.0 = Release|Any CPU
+#endif
+		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6693D52E-B1D4-45B8-8330-631E6023FBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02A6791-818B-4BFA-A958-65D933FC7F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{748E8208-2140-40FB-BDD2-145F27C762BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748E8208-2140-40FB-BDD2-145F27C762BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748E8208-2140-40FB-BDD2-145F27C762BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748E8208-2140-40FB-BDD2-145F27C762BC}.Release|Any CPU.Build.0 = Release|Any CPU		
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -181,15 +193,21 @@ Global
 		{910736CD-FD22-4447-B99E-A65AFC25DDF1} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{27533508-5FAD-4228-ADB9-10DD5CFA00F0} = {6DA7A25E-9209-433F-AEE3-74F91D6C6DA1}
+#if (EnableGrpc)				
 		{FA32F3BD-A075-426D-9B69-81AF72021801} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
-		{6693D52E-B1D4-45B8-8330-631E6023FBB5} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
-		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
+		{D62D0A2D-B69C-40AE-AC5C-94E9A6D5F5E8} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}		
+#endif
+#if (EnableGraphQL)
 		{4DA2FA43-758F-4BB1-B34B-EF652DBDFE92} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{EBF07FE3-4F11-4EF2-AF4E-5F748BAB5AA1} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
-		{D02A6791-818B-4BFA-A958-65D933FC7F2E} = {D707344C-5732-4DE6-92B5-16B0FCE6016F}
-		{748E8208-2140-40FB-BDD2-145F27C762BC} = {315E54AD-1A73-4CBD-8322-59C226A38724}
+#endif
+#if (EnableSignalR)
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
+#endif
+		{6693D52E-B1D4-45B8-8330-631E6023FBB5} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
+		{D02A6791-818B-4BFA-A958-65D933FC7F2E} = {D707344C-5732-4DE6-92B5-16B0FCE6016F}
+		{748E8208-2140-40FB-BDD2-145F27C762BC} = {315E54AD-1A73-4CBD-8322-59C226A38724}			
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286} = {315E54AD-1A73-4CBD-8322-59C226A38724}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

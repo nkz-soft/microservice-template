@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.REST.Filters.Results;
+﻿namespace NKZSoft.Template.Presentation.Rest.Filters.Results;
 
 public sealed class ForbiddenObjectResult : ObjectResult
 {

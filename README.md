@@ -19,6 +19,13 @@ Creating a new application
 ```bash
 dotnet new nkz-template -o My.NewApp
 ```
+Also you can change the contents of the generated application by using the parameters.
+
+```bash
+dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false --EnableSignalR false 
+```
+
+![image](https://raw.githubusercontent.com/nkz-soft/microservice-template/main/.github/images/2023-01-15_13-32-15.png)
 
 ## ⭐ Give a star
 

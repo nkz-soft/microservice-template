@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Presentation.GRPC.Mapper;
+﻿namespace NKZSoft.Template.Presentation.Grpc.Mapper;
 
 using Models;
 using Models.Result;

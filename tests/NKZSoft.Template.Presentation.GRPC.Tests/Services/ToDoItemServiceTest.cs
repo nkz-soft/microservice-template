@@ -2,9 +2,12 @@
 [assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
 [assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
 
-namespace NKZSoft.Template.Presentation.GRPC.Tests.Services;
+namespace NKZSoft.Template.Presentation.Grpc.Tests.Services;
 
-using Grpc.Core;
+using Common;
+using global::Grpc.Core;
+using NKZSoft.Template.Presentation.Grpc.Models;
+using NKZSoft.Template.Presentation.Grpc.Services;
 
 [Collection(nameof(GrpcCollectionDefinition))]
 public sealed class ToDoItemServiceTest

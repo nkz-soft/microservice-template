@@ -2,10 +2,10 @@
 [assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
 [assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
 
-namespace NKZSoft.Template.Presentation.REST.Tests.Controllers;
+namespace NKZSoft.Template.Presentation.Rest.Tests.Controllers;
 
 using Common;
-using Models.Result;
+using NKZSoft.Template.Presentation.Rest.Models.Result;
 using RestSharp;
 
 [Collection(nameof(RestCollectionDefinition))]

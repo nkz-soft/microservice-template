@@ -1,6 +1,5 @@
-namespace NKZSoft.Template.Presentation.REST.Filters;
+namespace NKZSoft.Template.Presentation.Rest.Filters;
 
-using Models;
 using Models.Result;
 using NKZSoft.Template.Application.Common.Exceptions;
 using Results;

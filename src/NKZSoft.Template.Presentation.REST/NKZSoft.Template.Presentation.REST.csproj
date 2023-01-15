@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <Version>1.1.5</Version>
+    <AssemblyName>NKZSoft.Template.Presentation.Rest</AssemblyName>
+    <RootNamespace>NKZSoft.Template.Presentation.Rest</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
