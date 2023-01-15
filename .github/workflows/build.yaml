@@ -39,13 +39,13 @@ jobs:
       - name: Application Test
         run:  dotnet test ./tests/NKZSoft.Template.Application.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: REST Test
-        run:  dotnet test ./tests/NKZSoft.Template.Presentation.REST.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        run:  dotnet test ./tests/NKZSoft.Template.Presentation.Rest.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: GraphQL Test
         run:  dotnet test ./tests/NKZSoft.Template.Presentation.GraphQL.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: SignalR Test
         run:  dotnet test ./tests/NKZSoft.Template.Presentation.SignalR.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: GRPC Test
-        run:  dotnet test ./tests/NKZSoft.Template.Presentation.GRPC.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        run:  dotnet test ./tests/NKZSoft.Template.Presentation.Grpc.Tests --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       - name: Merge test results
         run: |
             dotnet tool install -g dotnet-reportgenerator-globaltool
