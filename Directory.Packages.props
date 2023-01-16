@@ -5,7 +5,7 @@
   <ItemGroup>
     <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="6.0.4" />
     <PackageVersion Include="EasyCaching.CSRedis" Version="1.8.0" />
-    <PackageVersion Include="HotChocolate.Abstractions" Version="12.15.2" />
+    <PackageVersion Include="HotChocolate.Abstractions" Version="12.16.0" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
@@ -45,8 +45,8 @@
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="12.16.0" />
-    <PackageVersion Include="HotChocolate.Data" Version="12.15.2" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="12.15.2" />
+    <PackageVersion Include="HotChocolate.Data" Version="12.16.0" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="12.16.0" />
     <PackageVersion Include="Google.Protobuf" Version="3.21.12" />
     <PackageVersion Include="protobuf-net" Version="3.1.25" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
