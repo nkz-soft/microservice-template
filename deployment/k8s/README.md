@@ -16,5 +16,5 @@ cd ./deployment/k8s/infrastructure/
 ### Install service
 ```bash
 cd ./deployment/k8s/.helm/
-./install.sh
+helm upgrade template-service -i .
 ```
