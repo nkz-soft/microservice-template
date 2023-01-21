@@ -7,8 +7,22 @@
 Template for microservice based on DDD and Clean Architecture with .NET
 
 The main aim of this project is to provide a means for building microservices with the latest technology and architecture.
+I would like this project to help you find simplified and effortless solutions. You can treat it as a modular project and reuse the modules in your projects.
 
-# Installing as a template
+### ⭐ Give a star
+
+If you're using this repository for your learning, samples or your project, please give a star. Thanks :+1:
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Deployment](#deployment)
+- [Plan](#plan)
+- [Technologies - Libraries](#technologies-used)
+
+## Installation
+
+### Installing as a template
 
 ```bash
 dotnet new install  .\ 
@@ -27,19 +41,9 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 
 ![image](https://raw.githubusercontent.com/nkz-soft/microservice-template/main/.github/images/2023-01-15_13-32-15.png)
 
-## ⭐ Give a star
+## Deployment
 
-If you're using this repository for your learning, samples or your project, please give a star. Thanks :+1:
-
-## Table of Contents
-
-- [The aim of the project](#the-aim-of-this-project)
-- [Plan](#plan)
-- [Technologies - Libraries](#technologies-used)
-
-## The aim of the project
-
-I would like this project to help you find simplified and effortless solutions. You can treat it as a modular project and reuse the modules in your projects.
+[Deploy To Local Kubernetes](./deployment/k8s/README.md)
 
 ## Plan
 
@@ -56,7 +60,9 @@ I would like this project to help you find simplified and effortless solutions. 
 - [x] Enabling Central Package Management
 - [x] Uses Chiseled Ubuntu image
 - [x] Adding Layer 2 caching for EF Core
+- [x] Creating a Helm chart
 - [ ] OpenTelemetry
+- [ ] Redis data provider
 - [ ] MongoDB data provider
 
 ## Technologies used
@@ -96,3 +102,5 @@ I would like this project to help you find simplified and effortless solutions. 
 [EF Core Second Level Cache Interceptor](https://github.com/VahidN/EFCoreSecondLevelCacheInterceptor): Second level caching is a query cache. The results of EF commands will be stored in the cache, so that the same EF commands will retrieve their data from the cache rather than executing them against the database again.
 
 [EasyCaching](https://github.com/dotnetcore/EasyCaching): EasyCaching is an open source caching library that contains basic usages and some advanced usages of caching which can help us to handle caching more easily!
+
+[Helm](https://github.com/helm/helm): Helm is a tool for managing Charts. Charts are packages of pre-configured Kubernetes resources.

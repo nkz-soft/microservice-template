@@ -1,0 +1,63 @@
+﻿apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "template-service.fullname" . }}
+  labels:
+    {{- include "template-service.labels" . | nindent 4 }}
+data:
+  appsettings.json: |
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Debug",
+          "System": "Debug",
+          "Microsoft": "Debug"
+        }
+      },
+      "Serilog": {
+        "MinimumLevel": {
+          "Default": "Verbose",
+          "Override": {
+            "System.Net.Http": "Verbose"
+          }
+        },
+        "EnableDbLogging": true
+      },
+      "Kestrel": {
+        "endpoints": {
+          "http": {
+            "url": "http://0.0.0.0:80"
+          },
+          "http2": {
+            "Protocols": "Http2",
+            "url": "http://0.0.0.0:81"
+          }
+        }
+      },
+      "ConnectionStrings": {
+        "PostgresConnection": {
+          "ConnectionString": "Host=localhost;Port=5432;Uid=postgres;Password=postgres;Database=template_db;",
+          "HealthCheckEnabled" : true,
+          "LoggingEnabled": true
+        },
+        "RabbitMqConnection": {
+          "ConnectionString": "rabbitmq://rabbitmq:rabbitmq@localhost:5672",
+          "HealthCheckEnabled" : true
+        },
+        "RedisConnection": {
+          "ConnectionString": "localhost,ssl=False,abortConnect=False",
+          "HealthCheckEnabled" : true
+        }
+      },
+      "Services": {
+        "IdentityService": "https://localhost:5001/api/v1/"
+      },
+      "Cors": [
+        "http://localhost:9000",
+        "http://localhost:5055"
+      ],
+      "Swagger":{
+        "Enabled": true,
+        "AuthorizationEnabled": false
+      }
+    }
