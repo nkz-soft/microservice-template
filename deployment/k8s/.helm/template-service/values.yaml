@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/nkz-soft/microservice-template/microservice-template
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "v1.10.0-alpha"
 
 imagePullSecrets: []
 nameOverride: ""

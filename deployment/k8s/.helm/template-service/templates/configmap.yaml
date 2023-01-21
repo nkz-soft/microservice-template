@@ -26,11 +26,11 @@ data:
       "Kestrel": {
         "endpoints": {
           "http": {
-            "url": "http://0.0.0.0:5055"
+            "url": "http://0.0.0.0:80"
           },
           "http2": {
             "Protocols": "Http2",
-            "url": "http://0.0.0.0:5056"
+            "url": "http://0.0.0.0:81"
           }
         }
       },
