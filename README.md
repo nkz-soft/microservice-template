@@ -9,6 +9,10 @@ Template for microservice based on DDD and Clean Architecture with .NET
 The main aim of this project is to provide a means for building microservices with the latest technology and architecture.
 I would like this project to help you find simplified and effortless solutions. You can treat it as a modular project and reuse the modules in your projects.
 
+### ⭐ Give a star
+
+If you're using this repository for your learning, samples or your project, please give a star. Thanks :+1:
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -40,10 +44,6 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 ## Deployment
 
 [Deploy To Local Kubernetes](./deployment/k8s/README.md)
-
-## ⭐ Give a star
-
-If you're using this repository for your learning, samples or your project, please give a star. Thanks :+1:
 
 ## Plan
 

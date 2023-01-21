@@ -1,6 +1,6 @@
 # Kubernetes deployment
 
-This folder contains the files required to deploy eShopOnContainers to a Kubernetes cluster.
+This folder contains the files required to deploy to a Kubernetes cluster.
 
 ## Install microservice-template using Helm
 
