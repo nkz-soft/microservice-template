@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddJsonFile("appsettings.secrets.json", optional: true, reloadOnChange: true)
     .AddCommandLine(args)
     .AddEnvironmentVariables()
     .Build();
@@ -69,9 +70,11 @@ app.MapGraphQLEndpoints();
 app.MapHubEndpoints();
 //#endif
 
-app.MapHealthChecks("/healthz");
+app.MapHealthChecks("/health/startup");
+app.MapHealthChecks("/healthz", new HealthCheckOptions { Predicate = _ => false });
+app.MapHealthChecks("/ready", new HealthCheckOptions { Predicate = _ => false });
 
-app.MapHealthChecks("/healthz-ex", new HealthCheckOptions
+app.MapHealthChecks("/health/info", new HealthCheckOptions
 {
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
