@@ -48,7 +48,7 @@
     <PackageVersion Include="HotChocolate.Data" Version="12.16.0" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="12.16.0" />
     <PackageVersion Include="Google.Protobuf" Version="3.21.12" />
-    <PackageVersion Include="protobuf-net" Version="3.1.25" />
+    <PackageVersion Include="protobuf-net" Version="3.1.26" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.0.179" />
     <PackageVersion Include="protobuf-net.Reflection" Version="3.1.25" />
