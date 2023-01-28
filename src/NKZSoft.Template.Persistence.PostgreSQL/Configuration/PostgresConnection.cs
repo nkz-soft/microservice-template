@@ -1,8 +1,9 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Configuration;
 
-public sealed record PostgresConnection
+internal sealed record PostgresConnection
 {
-    public string ConnectionString { get; init; } = default!;
+    [NotNull]
+    public string? ConnectionString { get; init; }
 
     public bool HealthCheckEnabled { get; init; } = true;
 

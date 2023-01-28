@@ -20,13 +20,8 @@ public static class ServiceCollectionExtension
         services.ThrowIfNull();
         configuration.ThrowIfNull();
 
-        var cacheConfigProvider = CacheConfigProvider.Create(configuration);
-
-        var cacheConfigurationSection = cacheConfigProvider.GetConfig();
-
-        //TODO We need a smarter validation here
-        ArgumentNullException.ThrowIfNull(cacheConfigurationSection.RedisConnection);
-        ArgumentNullException.ThrowIfNull(cacheConfigurationSection.RedisConnection.ConnectionString);
+        services.AddWithValidation<RedisConnection, RedisConnectionValidator>(
+            configuration.GetSection(CacheConfigurationSection.SectionName));
 
         services.AddEFSecondLevelCache(options =>
             options.UseEasyCachingCoreProvider(SerializerName, isHybridCache: false)
@@ -37,6 +32,9 @@ public static class ServiceCollectionExtension
 
         services.AddEasyCaching(option =>
         {
+            using var serviceProvider = services.BuildServiceProvider();
+            var options = serviceProvider.GetRequiredService<IOptions<RedisConnection>>();
+
             option.WithJson(SerializerName);
             option.UseCSRedis(config =>
             {
@@ -44,17 +42,16 @@ public static class ServiceCollectionExtension
                 {
                     ConnectionStrings = new List<string>(1)
                     {
-                        cacheConfigurationSection.RedisConnection.ConnectionString
+                        options.Value.ConnectionString!
                     }
                 };
             }, SerializerName);
+
+            if (options.Value.HealthCheckEnabled)
+            {
+                services.AddHealthChecks().AddRedis(options.Value.ConnectionString!);
+            }
         });
-
-        if (cacheConfigurationSection.RedisConnection.HealthCheckEnabled)
-        {
-            services.AddHealthChecks().AddRedis(cacheConfigurationSection.RedisConnection.ConnectionString);
-        }
-
         return services;
     }
 }

@@ -4,6 +4,7 @@
     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" />
     <PackageReference Include="AspNetCore.HealthChecks.NpgSql" />
     <PackageReference Include="EFCoreSecondLevelCacheInterceptor" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
     <PackageReference Include="MediatR" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
@@ -18,6 +19,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="NKZSoft.FluentValidation.Options" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
     <PackageReference Include="Scrutor" />
@@ -35,6 +37,19 @@
     <ProjectReference Include="..\NKZSoft.Template.Infrastructure.Core\NKZSoft.Template.Infrastructure.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!--#if (EnableGraphQL)-->
+    <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GraphQL.Tests" />
+    <!--#endif-->
+    <InternalsVisibleTo Include="NKZSoft.Template.Presentation.Rest.Tests" />
+    <!--#if (EnableGrpc)-->
+    <InternalsVisibleTo Include="NKZSoft.Template.Presentation.Grpc.Tests" />
+    <!--#endif-->
+    <!--#if (EnableSignalR)-->
+    <InternalsVisibleTo Include="NKZSoft.Template.Presentation.SignalR.Tests" />
+    <!--#endif-->
+  </ItemGroup>
+  
   <ItemGroup>
     <Folder Include="Migrations" />
   </ItemGroup>

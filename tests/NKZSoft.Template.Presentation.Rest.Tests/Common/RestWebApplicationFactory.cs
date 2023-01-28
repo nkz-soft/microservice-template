@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.Rest.Tests.Common;
 
+using Microsoft.Extensions.Options;
+using Persistence.PostgreSQL.Configuration;
 using SeedData;
 
 public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
@@ -13,7 +15,13 @@ public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFact
             services
                 .Replace<IDbInitializer, SeedDataContext>()
                 .Replace<ICurrentUserService>(p => AppMockFactory.CreateCurrentUserServiceMock())
-                .ConfigureDbContextFactory(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
+                .Replace<IOptions<PostgresConnection>>(p =>
+                    Options.Create(new PostgresConnection()
+                    {
+                        ConnectionString = GetContainer<PostgreSqlTestcontainer>().ConnectionString,
+                        HealthCheckEnabled = false,
+                        LoggingEnabled = true
+                    }));
         });
     }
 }

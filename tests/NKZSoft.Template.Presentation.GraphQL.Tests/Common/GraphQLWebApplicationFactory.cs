@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Tests.Common;
 
+using Microsoft.Extensions.Options;
+using Persistence.PostgreSQL.Configuration;
 using Persistence.PostgreSQL.Extensions;
 using SeedData;
 
@@ -14,7 +16,13 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
             services
                 .Replace<IDbInitializer, SeedDataContext>()
                 .Replace<ICurrentUserService>(p => AppMockFactory.CreateCurrentUserServiceMock())
-                .ConfigureDbContextFactory(GetContainer<PostgreSqlTestcontainer>().ConnectionString);
+                .Replace<IOptions<PostgresConnection>>(p =>
+                    Options.Create(new PostgresConnection()
+                    {
+                        ConnectionString = GetContainer<PostgreSqlTestcontainer>().ConnectionString,
+                        HealthCheckEnabled = false,
+                        LoggingEnabled = true
+                    }));
         });
     }
 }
