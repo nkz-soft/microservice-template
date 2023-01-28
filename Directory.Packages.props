@@ -5,7 +5,9 @@
   <ItemGroup>
     <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="6.0.4" />
     <PackageVersion Include="EasyCaching.CSRedis" Version="1.8.0" />
+    <PackageVersion Include="FluentValidation" Version="11.4.0" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="12.16.0" />
+    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.1" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />

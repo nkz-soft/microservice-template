@@ -1,8 +1,8 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Configuration;
 
-public class DbConfigurationSection
+internal sealed record DbConfigurationSection
 {
-    public const string SectionName = "ConnectionStrings";
+    public const string SectionName = "ConnectionStrings:PostgresConnection";
 
     public DbConfigurationSection()
     {}

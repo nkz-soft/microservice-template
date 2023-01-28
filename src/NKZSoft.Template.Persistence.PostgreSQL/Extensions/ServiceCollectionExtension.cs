@@ -16,17 +16,12 @@ public static class ServiceCollectionExtension
     {
         configuration.ThrowIfNull(nameof(configuration));
 
-        var currentConfiguration = configuration.GetSection(DbConfigurationSection.SectionName)
-            .Get<DbConfigurationSection>();
+        services.AddWithValidation<PostgresConnection, PostgresConnectionValidator>(
+            configuration.GetSection(DbConfigurationSection.SectionName));
 
-        ArgumentNullException.ThrowIfNull(currentConfiguration);
-        ArgumentNullException.ThrowIfNull(currentConfiguration.PostgresConnection);
-        currentConfiguration.PostgresConnection.ConnectionString.ThrowIfNull(nameof(currentConfiguration.PostgresConnection.ConnectionString));
+        services.AddScoped<IValidator<PostgresConnection>, PostgresConnectionValidator>();
 
-        var connectionString = currentConfiguration.PostgresConnection.ConnectionString;
-
-        ConfigureDbContextFactory(services, connectionString,
-            currentConfiguration.PostgresConnection.LoggingEnabled, optionsBuilder);
+        ConfigureDbContextFactory(services,optionsBuilder);
 
         services.TryAddScoped<IDbInitializer, DbInitializer>();
         services.TryAddScoped<ApplicationDbContextFactory>();
@@ -42,31 +37,37 @@ public static class ServiceCollectionExtension
 
         services.AddMediatR(Assembly.GetExecutingAssembly());
 
-        if (currentConfiguration.PostgresConnection.HealthCheckEnabled)
-        {
-            services.AddHealthChecks().AddNpgSql(connectionString);
-        }
-
         return services;
     }
 
-    public static IServiceCollection ConfigureDbContextFactory(this IServiceCollection services,
-        string? connectionString,
-        bool enableDbLogging = true,
-        Action<IServiceProvider, DbContextOptionsBuilder>? optionsBuilder = null) =>
+    private static IServiceCollection ConfigureDbContextFactory(this IServiceCollection services,
+        Action<IServiceProvider, DbContextOptionsBuilder>? optionsBuilder = null)
+    {
+        using var serviceProvider = services.BuildServiceProvider();
+        var config = serviceProvider.GetRequiredService<IOptions<PostgresConnection>>();
+
         services.AddEntityFrameworkNpgsql()
             .AddPooledDbContextFactory<ApplicationDbContext>(optionsAction: (provider, options) =>
             {
                 optionsBuilder?.Invoke(provider, options);
 
-                options.UseInternalServiceProvider(provider);
-                options.UseNpgsql(connectionString);
 
-                if (enableDbLogging)
+                options.UseInternalServiceProvider(provider);
+                options.UseNpgsql(config.Value.ConnectionString);
+
+                if (config.Value.LoggingEnabled)
                 {
                     options.EnableDbLogging();
                 }
             });
+
+        if (config.Value.HealthCheckEnabled)
+        {
+            services.AddHealthChecks().AddNpgSql(config.Value.ConnectionString);
+        }
+
+        return services;
+    }
 
     private static DbContextOptionsBuilder EnableDbLogging(this DbContextOptionsBuilder builder) => builder
             .LogTo(

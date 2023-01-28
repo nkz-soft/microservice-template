@@ -2,8 +2,8 @@
 
 internal sealed record RedisConnection
 {
-    [DisallowNull]
+    [NotNull]
     public string? ConnectionString { get; init; }
 
-    public bool HealthCheckEnabled { get; set; }
+    public bool HealthCheckEnabled { get; init; }
 }
