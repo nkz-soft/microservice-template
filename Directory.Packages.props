@@ -31,7 +31,7 @@
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.2" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.2" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="4.0.1" />
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
     <PackageVersion Include="Scrutor" Version="4.2.0" />
