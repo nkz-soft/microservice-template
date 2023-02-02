@@ -4,8 +4,6 @@
       <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-      <PackageReference Include="MassTransit.AspNetCore" />
-      <PackageReference Include="MassTransit.Extensions.DependencyInjection" />
       <PackageReference Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" />
     </ItemGroup>
 
