@@ -28,7 +28,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.1" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
-    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.2" />
+    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.3" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.2" />
@@ -41,7 +41,7 @@
     <PackageVersion Include="MassTransit.AspNetCore" Version="7.3.1" />
     <PackageVersion Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
     <PackageVersion Include="MassTransit.RabbitMQ" Version="8.0.10" />
-    <PackageVersion Include="FluentResults" Version="3.15.1" />
+    <PackageVersion Include="FluentResults" Version="3.15.2" />
     <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
     <PackageVersion Include="Mapster" Version="7.3.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
@@ -51,7 +51,7 @@
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="12.16.0" />
     <PackageVersion Include="Google.Protobuf" Version="3.21.12" />
     <PackageVersion Include="protobuf-net" Version="3.1.26" />
-    <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.0.179" />
+    <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Reflection" Version="3.1.33" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.51.0" />
@@ -72,7 +72,7 @@
     <PackageVersion Include="FluentAssertions" Version="6.9.0" />
     <PackageVersion Include="Respawn" Version="6.0.0" />
     <PackageVersion Include="Moq" Version="4.18.4" />
-    <PackageVersion Include="Testcontainers" Version="2.3.0" />
+    <PackageVersion Include="Testcontainers" Version="2.4.0" />
     <PackageVersion Include="Shouldly" Version="4.1.0" />
     <PackageVersion Include="RestSharp" Version="108.0.3" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0" />
