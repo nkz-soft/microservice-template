@@ -104,3 +104,5 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 [EasyCaching](https://github.com/dotnetcore/EasyCaching): EasyCaching is an open source caching library that contains basic usages and some advanced usages of caching which can help us to handle caching more easily!
 
 [Helm](https://github.com/helm/helm): Helm is a tool for managing Charts. Charts are packages of pre-configured Kubernetes resources.
+
+[OpenTelemetry .NET](https://github.com/open-telemetry/opentelemetry-dotnet): The .NET OpenTelemetry client.

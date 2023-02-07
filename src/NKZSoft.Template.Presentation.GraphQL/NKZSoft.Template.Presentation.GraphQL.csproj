@@ -8,6 +8,7 @@
       <PackageReference Include="HotChocolate.AspNetCore" />
       <PackageReference Include="HotChocolate.Data" />
       <PackageReference Include="HotChocolate.Data.EntityFramework" />
+      <PackageReference Include="HotChocolate.Diagnostics" />
     </ItemGroup>
 
     <ItemGroup>

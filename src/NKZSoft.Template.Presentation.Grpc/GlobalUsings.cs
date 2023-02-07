@@ -21,4 +21,5 @@ global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.TodoItems.Models;
 global using NKZSoft.Template.Application.TodoItems.Queries.Get;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
+global using OpenTelemetry.Trace;
 

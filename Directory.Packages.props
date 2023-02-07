@@ -7,7 +7,19 @@
     <PackageVersion Include="EasyCaching.CSRedis" Version="1.8.0" />
     <PackageVersion Include="FluentValidation" Version="11.4.0" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="12.16.0" />
+    <PackageVersion Include="HotChocolate.Diagnostics" Version="12.16.0" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.1" />
+    <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.1" />
+    <PackageVersion Include="OpenTelemetry" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9.12" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.4" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9.12" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.MassTransit" Version="1.0.0-beta.3" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.12" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />

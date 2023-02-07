@@ -1,5 +1,9 @@
+using System.Reflection;
 using EFCoreSecondLevelCacheInterceptor;
 using NKZSoft.Template.EFCore.Caching.Redis.Extensions;
+using OpenTelemetry;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +38,26 @@ builder.Services
 //#endif
     .AddMessageBroker(configuration)
     .AddHealthChecks();
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(builder => builder
+        .AddService(
+            serviceName: Assembly.GetExecutingAssembly().GetName().Name!,
+            serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString(),
+            serviceInstanceId: Environment.MachineName))
+    .WithTracing(builder => builder
+        .AddAspNetCoreInstrumentation(options =>
+        {
+            options.EnableGrpcAspNetCoreSupport = true;
+            options.RecordException = true;
+        })
+        .AddRestOpenTelemetry()
+        .AddNgpSqlPersistenceOpenTelemetry()
+        .AddMassTransitOpenTelemetry()
+        .AddOtlpExporter()
+        .AddConsoleExporter()
+    )
+    .StartWithHost();
 
 var app = builder.Build();
 
