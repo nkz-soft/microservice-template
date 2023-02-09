@@ -10,6 +10,8 @@
     <PackageReference Include="FluentValidation.AspNetCore" />
     <PackageReference Include="NKZSoft.Service.Configuration.Logger" />
     <PackageReference Include="NKZSoft.Service.Configuration.Swagger" />
+    <PackageReference Include="OpenTelemetry.Api" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
   </ItemGroup>
 
   <ItemGroup>

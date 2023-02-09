@@ -31,6 +31,7 @@ global using NKZSoft.Template.Application.TodoItems.Queries.Get;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using NKZSoft.Template.Common;
 global using NKZSoft.Service.Configuration.Swagger;
+global using OpenTelemetry.Trace;
 global  using Serilog;
 
 

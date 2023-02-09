@@ -52,5 +52,16 @@ services:
       timeout: 30s
       retries: 15
 
+  jaeger:
+    image: jaegertracing/all-in-one:1.41
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+      - LOG_LEVEL=debug
+    ports:
+      - "0.0.0.0:16686:16686"
+      - "0.0.0.0:4317:4317"
+    networks:
+      - dev-network
+
 networks:
   dev-network:

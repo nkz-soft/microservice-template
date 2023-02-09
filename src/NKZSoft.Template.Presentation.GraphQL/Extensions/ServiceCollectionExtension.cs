@@ -20,7 +20,8 @@ public static class ServiceCollectionExtension
             .AddFiltering()
             .AddSorting()
             .AddMutationType<Mutation>()
-            .AddMutationConventions();
+            .AddMutationConventions()
+            .AddInstrumentation();
 
         return services;
     }

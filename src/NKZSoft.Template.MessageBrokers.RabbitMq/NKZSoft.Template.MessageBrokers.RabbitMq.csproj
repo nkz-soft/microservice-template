@@ -5,6 +5,7 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
       <PackageReference Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" />
+      <PackageReference Include="OpenTelemetry.Api" />
     </ItemGroup>
 
     <ItemGroup>

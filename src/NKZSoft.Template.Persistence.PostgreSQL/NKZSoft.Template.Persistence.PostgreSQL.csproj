@@ -22,6 +22,9 @@
     <PackageReference Include="NKZSoft.FluentValidation.Options" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" />
+    <PackageReference Include="Npgsql.OpenTelemetry" />
+    <PackageReference Include="OpenTelemetry.Api" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" />
     <PackageReference Include="Scrutor" />
     <PackageReference Include="Serilog" />
     <PackageReference Include="Serilog.Extensions.Logging" />
@@ -49,7 +52,7 @@
     <InternalsVisibleTo Include="NKZSoft.Template.Presentation.SignalR.Tests" />
     <!--#endif-->
   </ItemGroup>
-  
+
   <ItemGroup>
     <Folder Include="Migrations" />
   </ItemGroup>
