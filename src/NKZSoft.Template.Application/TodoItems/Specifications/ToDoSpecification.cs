@@ -5,7 +5,7 @@ using Common.Filters;
 using Common.Paging;
 using Models;
 
-public sealed class ToDoItemSpecification : Specification<ToDoItem>
+internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
     private static readonly IDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
         new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)

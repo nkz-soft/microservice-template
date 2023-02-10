@@ -9,7 +9,7 @@ public static class ContainerFactory
     private const string RabbitMqUsername = "rabbitmq";
     private const string RabbitMqPassword = "rabbitmq";
 
-    public static ITestcontainersContainer Create<T>() where T : ITestcontainersContainer
+    public static IContainer Create<T>() where T : IContainer
     {
         var type = typeof(T);
         return type switch
@@ -21,9 +21,11 @@ public static class ContainerFactory
         };
     }
 
-    private static ITestcontainersContainer CreatePostgreSql() =>
-        new TestcontainersBuilder<PostgreSqlTestcontainer>()
-        .WithDatabase(new PostgreSqlTestcontainerConfiguration
+    private static IContainer CreatePostgreSql() =>
+#pragma warning disable CS0618
+        new ContainerBuilder<PostgreSqlTestcontainer>()
+#pragma warning restore CS0618
+            .WithDatabase(new PostgreSqlTestcontainerConfiguration
         {
             Database = Database,
             Username = Username,
@@ -36,8 +38,10 @@ public static class ContainerFactory
             .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
             .Build();
 
-    private static ITestcontainersContainer CreateRabbitMq() =>
-        new TestcontainersBuilder<RabbitMqTestcontainer>()
+    private static IContainer CreateRabbitMq() =>
+#pragma warning disable CS0618
+        new ContainerBuilder<RabbitMqTestcontainer>()
+#pragma warning restore CS0618
             .WithMessageBroker(new RabbitMqTestcontainerConfiguration()
             {
                 Username = RabbitMqUsername,
@@ -50,8 +54,8 @@ public static class ContainerFactory
             .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5672))
             .Build();
 
-    private static ITestcontainersContainer CreateRedis() =>
-        new TestcontainersBuilder<RedisTestcontainer>()
+    private static IContainer CreateRedis() =>
+        new ContainerBuilder()
             .WithImage("redis:7.0")
             .WithPortBinding(6379, 6379)
             .WithAutoRemove(true)

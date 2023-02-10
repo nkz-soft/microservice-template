@@ -1,10 +1,10 @@
-﻿namespace NKZSoft.Template.Application.TodoItems.Queries.Get;
+﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetItem;
 
-using Application.Models;
 using Common.Exceptions;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Repositories;
+using NKZSoft.Template.Application.Models;
 
 public sealed class GetTodoItemQueryHandler : HandlerQueryBase<GetTodoItemQuery, Result<ToDoItemDto>>
 {

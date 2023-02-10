@@ -12,31 +12,14 @@
         <PackageReference Update="Microsoft.SourceLink.GitHub" />
     </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
-    <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
-    <ProjectReference Include="..\NKZSoft.Template.MessageBrokers.RabbitMq\NKZSoft.Template.MessageBrokers.RabbitMq.csproj" />
-  </ItemGroup>
-
     <ItemGroup>
-        <Generated Include="**\*.g.cs" />
-        <Generated Remove="obj\**" />
+      <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
+      <ProjectReference Include="..\NKZSoft.Template.Domain\NKZSoft.Template.Domain.csproj" />
+      <ProjectReference Include="..\NKZSoft.Template.MessageBrokers.RabbitMq\NKZSoft.Template.MessageBrokers.RabbitMq.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="obj\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="obj\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="obj\**" />
-    </ItemGroup>
+  
     <Target Name="CleanGenerated">
         <Delete Files="@(Generated)" />
     </Target>
-
+  
 </Project>

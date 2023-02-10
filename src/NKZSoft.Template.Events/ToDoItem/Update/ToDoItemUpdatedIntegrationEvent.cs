@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Events.Event.ToDoItem.Update;
+﻿namespace NKZSoft.Template.Events.ToDoItem.Update;
 
 using Interfaces;
 

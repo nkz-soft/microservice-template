@@ -1,5 +1,8 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.EventHandlers;
 
+using Events.ToDoItem.Create;
+using Template.Common.Extensions;
+
 public sealed class ToDoItemCreatedDomainEventBusHandler : INotificationHandler<ToDoItemCreatedDomainEvent>
 {
     private readonly ILogger<ToDoItemCreatedDomainEventBusHandler> _logger;
@@ -16,7 +19,7 @@ public sealed class ToDoItemCreatedDomainEventBusHandler : INotificationHandler<
 
     public async Task Handle(ToDoItemCreatedDomainEvent notification, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Domain Event: {DomainEvent}", notification.GetType().Name);
+        _logger.RaiseIntegrationEvent(notification.GetType().Name);
 
         var createEvent = await notification
             .BuildAdapter(_mapper.Config)

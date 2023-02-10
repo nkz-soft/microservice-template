@@ -107,4 +107,6 @@ app.MapHealthChecks("/health/info", new HealthCheckOptions
 app.Run();
 
 //We need public access to the class for tests
+#pragma warning disable CS1591
 public partial class Program {}
+#pragma warning restore CS1591

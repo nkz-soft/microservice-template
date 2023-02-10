@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Events.Event.ToDoItem.Create;
+﻿namespace NKZSoft.Template.Events.ToDoItem.Create;
 
 using Interfaces;
 

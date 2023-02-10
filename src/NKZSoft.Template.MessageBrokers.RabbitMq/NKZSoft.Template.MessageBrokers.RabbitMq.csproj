@@ -9,7 +9,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
       <ProjectReference Include="..\NKZSoft.Template.Events\NKZSoft.Template.Events.csproj" />
     </ItemGroup>
-
+  
 </Project>

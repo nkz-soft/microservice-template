@@ -6,7 +6,7 @@ using Common.Interfaces;
 using Common.Paging;
 using Common.Repositories;
 
-public sealed class GetPageTodoQueryHandler :
+internal sealed class GetPageTodoQueryHandler :
     PagingQueryHandler<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>
 {
     private readonly IToDoItemRepository _repository;

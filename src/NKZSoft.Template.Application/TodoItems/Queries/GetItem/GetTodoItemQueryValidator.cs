@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Application.TodoItems.Queries.Get;
+﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetItem;
 
 public sealed class GetTodoItemQueryValidator : AbstractValidator<GetTodoItemQuery>
 {

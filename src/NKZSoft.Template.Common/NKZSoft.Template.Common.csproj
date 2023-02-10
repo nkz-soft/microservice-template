@@ -3,5 +3,11 @@
     <ItemGroup>
       <PackageReference Include="Ardalis.GuardClauses" />
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <InternalsVisibleTo Include="NKZSoft.Template.MessageBrokers.RabbitMq" />
+      <InternalsVisibleTo Include="NKZSoft.Template.Application" />
     </ItemGroup>
 </Project>

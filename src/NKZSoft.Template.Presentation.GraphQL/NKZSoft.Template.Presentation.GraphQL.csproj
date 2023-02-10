@@ -15,4 +15,6 @@
       <ProjectReference Include="..\NKZSoft.Template.Application\NKZSoft.Template.Application.csproj" />
     </ItemGroup>
 
+
+
 </Project>

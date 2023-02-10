@@ -1,4 +1,5 @@
 ﻿global using System.Collections.Generic;
+global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
 
@@ -15,6 +16,7 @@ global using Ardalis.Specification;
 global using Ardalis.Specification.EntityFrameworkCore;
 global using FluentValidation.Results;
 global using MassTransit;
+global using MediatR.Pipeline;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using NKZSoft.Template.Application.TodoItems.Specifications;
@@ -22,5 +24,3 @@ global using NKZSoft.Template.Common;
 
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 global using NKZSoft.Template.Domain.Events;
-global using NKZSoft.Template.Events.Event.ToDoItem.Create;
-global using NKZSoft.Template.Events.Event.ToDoItem.Update;

@@ -2,7 +2,7 @@
 
 using Common.Filters;
 
-public partial record ToDoItemFilter
+public sealed partial record ToDoItemFilter
 {
     public FilterFieldDefinition<Guid>? Id { get; set; }
 
