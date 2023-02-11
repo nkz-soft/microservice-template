@@ -16,4 +16,8 @@
       <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="NKZSoft.Template.Application" />
+  </ItemGroup>
+
 </Project>

@@ -29,6 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <InternalsVisibleTo Include="NKZSoft.Template.Application" />
 <!--#if (EnableGraphQL)-->
       <InternalsVisibleTo Include="NKZSoft.Template.Presentation.GraphQL.Tests" />
 <!--#endif-->

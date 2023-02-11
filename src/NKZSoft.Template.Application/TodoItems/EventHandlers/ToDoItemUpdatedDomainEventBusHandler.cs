@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.EventHandlers;
 
+using Template.Common.Extensions;
+
 public sealed class ToDoItemUpdatedDomainEventBusHandler : INotificationHandler<ToDoItemUpdatedDomainEvent>
 {
     private readonly ILogger<ToDoItemUpdatedDomainEventBusHandler> _logger;
@@ -8,7 +10,7 @@ public sealed class ToDoItemUpdatedDomainEventBusHandler : INotificationHandler<
 
     public async Task Handle(ToDoItemUpdatedDomainEvent notification, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("CleanArchitecture Domain Event: {DomainEvent}", notification.GetType().Name);
+        _logger.RaiseIntegrationEvent(notification.GetType().Name);
 
         await Task.CompletedTask;
     }

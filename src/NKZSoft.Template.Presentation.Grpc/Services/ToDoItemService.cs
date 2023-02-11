@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Services;
 
+using Application.TodoItems.Queries.GetItem;
 using Models;
 using Models.ToDoItem;
 using NKZSoft.Template.Common;

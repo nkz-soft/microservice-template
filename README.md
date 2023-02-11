@@ -61,7 +61,7 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 - [x] Uses Chiseled Ubuntu image
 - [x] Adding Layer 2 caching for EF Core
 - [x] Creating a Helm chart
-- [ ] OpenTelemetry
+- [x] OpenTelemetry
 - [ ] Redis data provider
 - [ ] MongoDB data provider
 
@@ -106,3 +106,5 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 [Helm](https://github.com/helm/helm): Helm is a tool for managing Charts. Charts are packages of pre-configured Kubernetes resources.
 
 [OpenTelemetry .NET](https://github.com/open-telemetry/opentelemetry-dotnet): The .NET OpenTelemetry client.
+
+[Jaeger](https://github.com/jaegertracing/jaeger): Jaeger, is a distributed tracing platform created by Uber Technologies and donated to Cloud Native Computing Foundation. It can be used for monitoring microservices-based distributed systems.

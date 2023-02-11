@@ -1,5 +1,8 @@
 ﻿namespace NKZSoft.Template.MessageBrokers.RabbitMq.Consumers;
 
+using Common.Extensions;
+using Events.ToDoItem.Create;
+
 public sealed class ToDoItemCreatedIntegrationEventConsumer : IConsumer<ToDoItemCreatedIntegrationEvent>
 {
     private readonly ILogger<ToDoItemCreatedIntegrationEventConsumer> _logger;
@@ -9,7 +12,7 @@ public sealed class ToDoItemCreatedIntegrationEventConsumer : IConsumer<ToDoItem
 
     public Task Consume(ConsumeContext<ToDoItemCreatedIntegrationEvent> context)
     {
-        _logger.LogInformation($"Consume Integration Event: {context.Message}");
+        _logger.ConsumeIntegrationEvent(context.Message.ToString());
         return Task.CompletedTask;
     }
 }

@@ -1,6 +1,9 @@
 ﻿namespace NKZSoft.Template.Application.Common.Paging;
 
-public sealed record PageContext<T> : IPageContext<T>
+using System.Numerics;
+
+public sealed record PageContext<T> : IPageContext<T>,
+    IIncrementOperators<PageContext<T>>, IDecrementOperators<PageContext<T>>
     where T : class, new()
 {
     public PageContext(
@@ -17,33 +20,25 @@ public sealed record PageContext<T> : IPageContext<T>
         ListGroup = listGroup ?? Enumerable.Empty<GroupDescriptor>();
     }
 
-    public int PageIndex { get; set; }
+    public int PageIndex { get; private set; }
 
-    public int PageSize { get; set; }
+    public int PageSize { get; }
 
-    public T Filter { get; set; }
+    public T Filter { get; }
 
-    public IEnumerable<SortDescriptor> ListSort { get; init; }
+    public IEnumerable<SortDescriptor> ListSort { get; }
 
-    public IEnumerable<GroupDescriptor> ListGroup { get; init; }
+    public IEnumerable<GroupDescriptor> ListGroup { get; }
 
-    public bool IsValid()
-    {
-        return PageIndex > 0 && PageSize > 0 &&
-               Filter != null && ListSort != null;
-    }
+    public bool IsValid() => PageIndex > 0 && PageSize > 0;
 
-    public static PageContext<T> operator++ (PageContext<T> obj) => Increment(obj);
-
-    public static PageContext<T> operator-- (PageContext<T> obj) => Decrement(obj);
-
-    public static PageContext<T> Increment(PageContext<T> obj)
+    public static PageContext<T> operator ++(PageContext<T> obj)
     {
         obj.PageIndex++;
         return obj;
     }
 
-    public static PageContext<T> Decrement(PageContext<T> obj)
+    public static PageContext<T> operator --(PageContext<T> obj)
     {
         obj.PageIndex--;
         return obj;

@@ -54,11 +54,46 @@ public abstract class Enumeration : IComparable
     {
         var matchingItem = GetAll<T>().FirstOrDefault(predicate);
 
-        if (matchingItem == null)
+        if (matchingItem is null)
             throw new InvalidOperationException($"'{value}' is not a valid {description} in {typeof(T)}");
 
         return matchingItem;
     }
 
     public int CompareTo(object? obj) => Id.CompareTo((((Enumeration)obj!)!).Id);
+
+    public static bool operator ==(Enumeration left, Enumeration right)
+    {
+        if (ReferenceEquals(left, null))
+        {
+            return ReferenceEquals(right, null);
+        }
+
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(Enumeration left, Enumeration right)
+    {
+        return !(left == right);
+    }
+
+    public static bool operator <(Enumeration left, Enumeration right)
+    {
+        return ReferenceEquals(left, null) ? !ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+    }
+
+    public static bool operator <=(Enumeration left, Enumeration right)
+    {
+        return ReferenceEquals(left, null) || left.CompareTo(right) <= 0;
+    }
+
+    public static bool operator >(Enumeration left, Enumeration right)
+    {
+        return !ReferenceEquals(left, null) && left.CompareTo(right) > 0;
+    }
+
+    public static bool operator >=(Enumeration left, Enumeration right)
+    {
+        return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.CompareTo(right) >= 0;
+    }
 }

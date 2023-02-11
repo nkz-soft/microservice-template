@@ -3,11 +3,11 @@
 using Exceptions;
 
 public sealed class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-     where TRequest : notnull, IRequest<TResponse>
+     where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators) => _validators = validators;
+    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators) => _validators = validators.ThrowIfNull();
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
@@ -25,7 +25,9 @@ public sealed class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior
                 .ToList();
 
             if (failures.Any())
+            {
                 throw new ValidationException(failures);
+            }
         }
         return await next();
     }

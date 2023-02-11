@@ -5,13 +5,13 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 {
     protected const string EnvironmentName = "Test";
 
-    private  IReadOnlyDictionary<Type, ITestcontainersContainer> Containers { get; }
+    private  IReadOnlyDictionary<Type, IContainer> Containers { get; }
 
     protected BaseWebApplicationFactory()
     {
         TestcontainersSettings.ResourceReaperEnabled = false;
 
-        Containers = new Dictionary<Type, ITestcontainersContainer>()
+        Containers = new Dictionary<Type, IContainer>()
         {
             {
                 typeof(PostgreSqlTestcontainer), ContainerFactory.Create<PostgreSqlTestcontainer>()

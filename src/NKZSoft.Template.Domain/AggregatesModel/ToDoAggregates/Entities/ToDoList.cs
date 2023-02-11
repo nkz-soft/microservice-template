@@ -16,7 +16,7 @@ public sealed class ToDoList : BaseAuditableEntity<Guid, string>
         Title = title;
     }
 
-    public string Title { get; }
+    public string Title { get; } = default!;
 
     public IReadOnlyCollection<ToDoItem> ToDoItems => _toDoItems;
 

@@ -27,7 +27,6 @@ global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.TodoItems.Commands.Create;
 global using NKZSoft.Template.Application.TodoItems.Models;
-global using NKZSoft.Template.Application.TodoItems.Queries.Get;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using NKZSoft.Template.Common;
 global using NKZSoft.Service.Configuration.Swagger;
