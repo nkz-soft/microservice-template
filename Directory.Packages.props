@@ -11,7 +11,7 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.1" />
-    <PackageVersion Include="OpenTelemetry" Version="1.4.0-rc.3" />
+    <PackageVersion Include="OpenTelemetry" Version="1.4.0-rc.4" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0-rc.3" />
     <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.4.0-rc.3" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.4.0-rc.3" />
