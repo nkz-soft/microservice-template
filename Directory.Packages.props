@@ -7,7 +7,7 @@
     <PackageVersion Include="EasyCaching.CSRedis" Version="1.8.0" />
     <PackageVersion Include="FluentValidation" Version="11.4.0" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="12.16.0" />
-    <PackageVersion Include="HotChocolate.Diagnostics" Version="12.16.0" />
+    <PackageVersion Include="HotChocolate.Diagnostics" Version="13.0.2" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.1" />
