@@ -56,8 +56,7 @@ builder.Services.AddOpenTelemetry()
         .AddMassTransitOpenTelemetry()
         .AddOtlpExporter()
         .AddConsoleExporter()
-    )
-    .StartWithHost();
+    );
 
 var app = builder.Build();
 
