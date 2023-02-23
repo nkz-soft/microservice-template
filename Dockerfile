@@ -3,6 +3,6 @@ EXPOSE 80
 EXPOSE 81
 
 WORKDIR /app
-COPY ./publish/app .
+COPY ./src/NKZSoft.Template.Presentation.Starter/publish/app .
 
 ENTRYPOINT ["dotnet", "NKZSoft.Template.Presentation.Starter.dll"]

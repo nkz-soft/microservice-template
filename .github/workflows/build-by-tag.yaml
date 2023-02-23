@@ -19,11 +19,11 @@ jobs:
     - name: Restore Dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build -c Release --no-restore
+      run: dotnet build -c Release /p:PublishDir=./publish/app --no-restore
     - name: Test
       run:  dotnet test ./tests/NKZSoft.Template.Application.Tests --configuration Release --no-build
     - name: Publish
-      run: dotnet publish -c Release -o ./publish/app --no-restore --no-build
+      run: dotnet publish -c Release -p:PublishDir=./publish/app --no-restore --no-build
     - name: Docker meta
       id: meta
       uses: docker/metadata-action@v4
