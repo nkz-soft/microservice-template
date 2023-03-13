@@ -66,7 +66,7 @@
     <PackageVersion Include="protobuf-net" Version="3.1.33" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
-    <PackageVersion Include="protobuf-net.Reflection" Version="3.1.33" />
+    <PackageVersion Include="protobuf-net.Reflection" Version="3.2.12" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.51.0" />
     <PackageVersion Include="Serilog" Version="2.12.0" />
     <PackageVersion Include="Serilog.Extensions.Logging" Version="3.1.0" />
