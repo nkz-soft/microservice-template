@@ -61,7 +61,7 @@
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="13.0.4" />
     <PackageVersion Include="HotChocolate.Data" Version="13.0.5" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.0.4" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.0.5" />
     <PackageVersion Include="Google.Protobuf" Version="3.22.0" />
     <PackageVersion Include="protobuf-net" Version="3.1.33" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
