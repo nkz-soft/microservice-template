@@ -5,13 +5,14 @@ using Common.Handlers;
 using Common.Interfaces;
 using Common.Paging;
 using Common.Repositories;
+using Common.Repositories.PostgreSql;
 
-internal sealed class GetPageTodoQueryHandler :
-    PagingQueryHandler<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>
+internal sealed class GetPageTodoDbQueryHandler :
+    PagingDbQueryHandlerDb<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>
 {
     private readonly IToDoItemRepository _repository;
 
-    public GetPageTodoQueryHandler(
+    public GetPageTodoDbQueryHandler(
         IToDoItemRepository repository,
         IApplicationDbContext context,
         ICurrentUserService currentUserService, IMapper mapper) : base(context, mapper, currentUserService) =>

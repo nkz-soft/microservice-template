@@ -1,5 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Queries.GetQueryable;
 
-public class GetQueryableQuery : IRequest<IQueryable<ToDoItem>>
+public sealed record GetQueryableQuery : IRequest<IQueryable<ToDoItem>>
 {
 }

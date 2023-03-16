@@ -2,7 +2,7 @@
 
 internal sealed record CacheConfigurationSection
 {
-    public const string SectionName = "ConnectionStrings:RedisConnection";
+    public const string SectionName = "ConnectionStrings:RedisCacheConnection";
 
     public RedisConnection? RedisConnection { get; init; }
 }

@@ -72,6 +72,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.SignalR.Tests", "tests\NKZSoft.Template.Presentation.SignalR.Tests\NKZSoft.Template.Presentation.SignalR.Tests.csproj", "{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}"
 EndProject
 #endif
+#if (EnableRedisStorage)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Persistence.Redis", "src\NKZSoft.Template.Persistence.Redis\NKZSoft.Template.Persistence.Redis.csproj", "{7C8EF475-EC67-4774-8AE6-76135ED3143B}"
+EndProject
+#endif
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Starter", "src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj", "{6693D52E-B1D4-45B8-8330-631E6023FBB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Events", "src\NKZSoft.Template.Events\NKZSoft.Template.Events.csproj", "{D02A6791-818B-4BFA-A958-65D933FC7F2E}"
@@ -210,6 +214,10 @@ Global
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +250,9 @@ Global
 #if (EnableSignalR)
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
+#endif
+#if (EnableRedisStorage)
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B} = {315E54AD-1A73-4CBD-8322-59C226A38724}
 #endif
 		{6693D52E-B1D4-45B8-8330-631E6023FBB5} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{D02A6791-818B-4BFA-A958-65D933FC7F2E} = {D707344C-5732-4DE6-92B5-16B0FCE6016F}

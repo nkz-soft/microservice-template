@@ -5,8 +5,10 @@ using Configuration;
 
 public static class ServiceCollectionExtension
 {
-    private const string EfPrefix = "EF_";
+    private const string ProviderName = "EFCoreCahce";
     private const string SerializerName = "proto";
+
+    private const string EfPrefix = "EF_";
 
     /// <summary>
     /// Adds EFCore second level caching
@@ -24,7 +26,7 @@ public static class ServiceCollectionExtension
             configuration.GetSection(CacheConfigurationSection.SectionName));
 
         services.AddEFSecondLevelCache(options =>
-            options.UseEasyCachingCoreProvider(SerializerName, isHybridCache: false)
+            options.UseEasyCachingCoreProvider(ProviderName, isHybridCache: false)
                 .CacheAllQueries(CacheExpirationMode.Absolute, TimeSpan.FromMinutes(30))
                 .DisableLogging(false)
                 .UseCacheKeyPrefix(EfPrefix)
@@ -36,20 +38,16 @@ public static class ServiceCollectionExtension
             var options = serviceProvider.GetRequiredService<IOptions<RedisConnection>>();
 
             option.WithJson(SerializerName);
-            option.UseCSRedis(config =>
+            option.UseRedis(config =>
             {
-                config.DBConfig = new CSRedisDBOptions
-                {
-                    ConnectionStrings = new List<string>(1)
-                    {
-                        options.Value.ConnectionString!
-                    }
-                };
-            }, SerializerName);
+                config.DBConfig.ConfigurationOptions
+                    = ConfigurationOptions.Parse(options.Value.ConnectionString);
+                config.SerializerName = SerializerName;
+            }, ProviderName);
 
             if (options.Value.HealthCheckEnabled)
             {
-                services.AddHealthChecks().AddRedis(options.Value.ConnectionString!);
+                services.AddHealthChecks().AddRedis(options.Value.ConnectionString!, ProviderName);
             }
         });
         return services;

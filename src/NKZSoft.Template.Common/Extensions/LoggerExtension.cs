@@ -1,7 +1,5 @@
 namespace NKZSoft.Template.Common.Extensions;
 
-using Microsoft.Extensions.Logging;
-
 internal static class LoggerExtension
 {
     private static readonly Action<ILogger, string, Exception?> _consumeIntegrationEvent = LoggerMessage.Define<string>(

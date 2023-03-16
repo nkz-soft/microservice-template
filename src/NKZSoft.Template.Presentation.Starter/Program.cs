@@ -1,6 +1,7 @@
 using System.Reflection;
 using EFCoreSecondLevelCacheInterceptor;
 using NKZSoft.Template.EFCore.Caching.Redis.Extensions;
+using NKZSoft.Template.Persistence.Redis.Extensions;
 using OpenTelemetry;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -35,6 +36,9 @@ builder.Services
 //#endif
 //#if (EnableSignalR)
     .AddSignalRPresentation()
+//#endif
+//#if (EnableRedisStorage)
+    .AddRedisPersistence(configuration)
 //#endif
     .AddMessageBroker(configuration)
     .AddHealthChecks();

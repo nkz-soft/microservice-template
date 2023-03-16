@@ -2,6 +2,7 @@
 
 using Common.Exceptions;
 using Common.Repositories;
+using Common.Repositories.PostgreSql;
 
 public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemCommand>
 {

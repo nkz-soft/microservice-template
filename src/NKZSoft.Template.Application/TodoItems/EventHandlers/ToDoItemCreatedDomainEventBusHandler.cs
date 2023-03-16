@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.EventHandlers;
 
-using Events.ToDoItem.Create;
 using Template.Common.Extensions;
 
 public sealed class ToDoItemCreatedDomainEventBusHandler : INotificationHandler<ToDoItemCreatedDomainEvent>

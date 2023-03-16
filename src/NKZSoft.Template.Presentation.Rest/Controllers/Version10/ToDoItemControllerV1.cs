@@ -1,8 +1,5 @@
 namespace NKZSoft.Template.Presentation.Rest.Controllers.Version10;
 
-using Application.TodoItems.Queries.GetItem;
-using Models.Result;
-
 [ApiVersion(VersionController.Version10)]
 [Route("api/v{version:apiVersion}/to-do-items")]
 public class ToDoItemControllerV1 : BaseController

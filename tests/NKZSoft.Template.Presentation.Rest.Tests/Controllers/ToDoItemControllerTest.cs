@@ -13,6 +13,7 @@ public sealed class ToDoItemControllerTest
 {
     private const string ApiUrlBaseV1 = "api/v1/to-do-items";
     private const string ApiUrlBaseV2 = "api/v2/to-do-items";
+    private const string ApiUrlBaseV3 = "api/v3/to-do-items";
 
     private readonly RestWebApplicationFactory<Program> _factory;
 
@@ -21,12 +22,14 @@ public sealed class ToDoItemControllerTest
     private static class Get
     {
         public static string GetToDoItem(Guid id) => $"{ApiUrlBaseV1}/{id}";
+        public static string GetRedisToDoItem(Guid id) => $"{ApiUrlBaseV3}/{id}";
     }
 
     private static class Post
     {
         public static string GetPageToDoItem() => $"{ApiUrlBaseV1}/page";
         public static string CreateToDoItem() => $"{ApiUrlBaseV2}";
+        public static string CreateRedisToDoItem() => $"{ApiUrlBaseV3}";
     }
 
     [Fact, Order(1)]
@@ -95,5 +98,39 @@ public sealed class ToDoItemControllerTest
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDto<Guid>>();
         response!.IsSuccess.Should().BeTrue();
+    }
+
+    [Fact, Order(5)]
+    public async Task<Guid> CreateRedisTestAsync()
+    {
+        var client = new RestClient(_factory.CreateClient());
+
+        var command = new CreateToDoItemCommand("TestRedisNote", null) ;
+
+        var response = await client.PostAsync<ResultDto<Guid>>(
+            new RestRequest(Post.CreateRedisToDoItem()).AddJsonBody(command));
+
+        response.Should().NotBeNull();
+        response.Should().BeOfType<ResultDto<Guid>>();
+        response!.IsSuccess.Should().BeTrue();
+        return response.Data;
+    }
+
+    [Fact, Order(6)]
+    public async Task GetByIdRedisTestAsync()
+    {
+        var id = await CreateRedisTestAsync();
+
+        var client = new RestClient(_factory.CreateClient());
+
+        var response = await client.GetAsync<ResultDto<ToDoItemDto>>(
+            new RestRequest(Get.GetRedisToDoItem(id)));
+
+        response.Should().NotBeNull();
+        response.Should().BeOfType<ResultDto<ToDoItemDto>>();
+        response!.IsSuccess.Should().BeTrue();
+
+        response.Data.Should().NotBeNull();
+        response.Data.Title.Should().Be("TestRedisNote");
     }
 }

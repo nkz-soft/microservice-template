@@ -32,6 +32,12 @@
       "dataType":"bool",
       "defaultValue": "true",
       "displayName": "Enable Websocket API"
+    },
+    "EnableRedisStorage": {
+      "type": "parameter",
+      "dataType":"bool",
+      "defaultValue": "false",
+      "displayName": "Enable Redis Storage"
     }
   },
   "sources": [

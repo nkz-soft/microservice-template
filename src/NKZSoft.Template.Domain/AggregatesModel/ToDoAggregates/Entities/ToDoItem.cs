@@ -23,9 +23,9 @@ public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
         AddCreateDomainEvent();
     }
 
-    public string Title { get; private set; }  = default!;
+    public string Title { get; set; }  = default!;
 
-    public string? Note { get; private set; }
+    public string? Note { get; set; }
 
     public void Update(string title, string note)
     {
