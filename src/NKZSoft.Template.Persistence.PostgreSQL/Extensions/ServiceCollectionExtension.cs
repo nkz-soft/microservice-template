@@ -35,7 +35,8 @@ public static class ServiceCollectionExtension
             .AsMatchingInterface()
             .WithScopedLifetime());
 
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
         return services;
     }
