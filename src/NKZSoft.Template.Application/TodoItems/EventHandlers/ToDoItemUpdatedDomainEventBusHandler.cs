@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.EventHandlers;
 
-using Template.Common.Extensions;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class ToDoItemUpdatedDomainEventBusHandler : INotificationHandler<ToDoItemUpdatedDomainEvent>
 {

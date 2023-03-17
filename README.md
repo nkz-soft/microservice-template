@@ -36,10 +36,10 @@ dotnet new nkz-template -o My.NewApp
 Also you can change the contents of the generated application by using the parameters.
 
 ```bash
-dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false --EnableSignalR false 
+dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false --EnableSignalR false --EnableRedisStorage false 
 ```
 
-![image](https://raw.githubusercontent.com/nkz-soft/microservice-template/main/.github/images/2023-01-15_13-32-15.png)
+![image](https://raw.githubusercontent.com/nkz-soft/microservice-template/main/.github/images/wizard.png)
 
 ## Deployment
 
@@ -62,7 +62,7 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 - [x] Adding Layer 2 caching for EF Core
 - [x] Creating a Helm chart
 - [x] OpenTelemetry
-- [ ] Redis data provider
+- [x] Redis data provider
 - [ ] MongoDB data provider
 
 ## Technologies used

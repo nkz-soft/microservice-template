@@ -1,11 +1,3 @@
-using System.Reflection;
-using EFCoreSecondLevelCacheInterceptor;
-using NKZSoft.Template.EFCore.Caching.Redis.Extensions;
-using NKZSoft.Template.Persistence.Redis.Extensions;
-using OpenTelemetry;
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration

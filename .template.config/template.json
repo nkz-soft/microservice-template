@@ -3,7 +3,7 @@
   "author": "NKZSoft",
   "classifications": [ "C#", "Linux", "MacOS", "Windows", "Cloud", "Service", "Web" ],
   "name": "Microservice Boilerplate & Starter Kit",
-  "defaultName": "NKZSoft Template",
+  "defaultName": "NKZSoftTemplate",
   "description": "A project template for creating an ASP.NET Core microservice.",
   "identity": "NKZSoft.Template",
   "groupIdentity": "NKZSoft.Template",
