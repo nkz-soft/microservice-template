@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
-using Template.Common.Extensions;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

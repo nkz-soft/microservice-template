@@ -33,8 +33,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Application.Tests", "tests\NKZSoft.Template.Application.Tests\NKZSoft.Template.Application.Tests.csproj", "{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Presentation.Rest.Tests", "tests\NKZSoft.Template.Presentation.Rest.Tests\NKZSoft.Template.Presentation.Rest.Tests.csproj", "{910736CD-FD22-4447-B99E-A65AFC25DDF1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NKZSoft.Template.Common.Tests", "tests\NKZSoft.Template.Common.Tests\NKZSoft.Template.Common.Tests.csproj", "{9A0A4214-A590-4411-ADEE-28B47D3DEB16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3E581D9-5225-4A24-AD40-C817DC3BDDF1}"
@@ -70,6 +68,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.SignalR", "src\NKZSoft.Template.Presentation.SignalR\NKZSoft.Template.Presentation.SignalR.csproj", "{69A8CB59-91D9-4550-B94B-803A9BF2CE1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.SignalR.Tests", "tests\NKZSoft.Template.Presentation.SignalR.Tests\NKZSoft.Template.Presentation.SignalR.Tests.csproj", "{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B}"
+EndProject
+#endif
+#if (EnableRedisStorage)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Persistence.Redis", "src\NKZSoft.Template.Persistence.Redis\NKZSoft.Template.Persistence.Redis.csproj", "{7C8EF475-EC67-4774-8AE6-76135ED3143B}"
 EndProject
 #endif
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Starter", "src\NKZSoft.Template.Presentation.Starter\NKZSoft.Template.Presentation.Starter.csproj", "{6693D52E-B1D4-45B8-8330-631E6023FBB5}"
@@ -118,6 +120,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 		deployment\k8s\infrastructure\install.sh = deployment\k8s\infrastructure\install.sh
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Rest.Tests", "tests\NKZSoft.Template.Presentation.Rest.Tests\NKZSoft.Template.Presentation.Rest.Tests.csproj", "{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -156,10 +160,6 @@ Global
 		{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{910736CD-FD22-4447-B99E-A65AFC25DDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{910736CD-FD22-4447-B99E-A65AFC25DDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{910736CD-FD22-4447-B99E-A65AFC25DDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{910736CD-FD22-4447-B99E-A65AFC25DDF1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -210,6 +210,14 @@ Global
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0509FB5A-2A63-4FF5-B27A-BD3241869286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -228,7 +236,6 @@ Global
 		{E07CAA3C-7DB0-4FEE-B9EB-385BDA6043F6} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{462F0A42-1237-4DED-BB96-38A7A9E46E5A} = {315E54AD-1A73-4CBD-8322-59C226A38724}
 		{B6375D0A-6A0B-41FF-AEEB-0A34F8580B78} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
-		{910736CD-FD22-4447-B99E-A65AFC25DDF1} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{9A0A4214-A590-4411-ADEE-28B47D3DEB16} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 		{27533508-5FAD-4228-ADB9-10DD5CFA00F0} = {6DA7A25E-9209-433F-AEE3-74F91D6C6DA1}
 #if (EnableGrpc)
@@ -243,6 +250,9 @@ Global
 		{69A8CB59-91D9-4550-B94B-803A9BF2CE1F} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{F1059472-8C5E-4DE2-9ED9-27FCB0F5352B} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 #endif
+#if (EnableRedisStorage)
+		{7C8EF475-EC67-4774-8AE6-76135ED3143B} = {315E54AD-1A73-4CBD-8322-59C226A38724}
+#endif
 		{6693D52E-B1D4-45B8-8330-631E6023FBB5} = {19AA42FA-3860-4D08-B5B0-9D26D751D5B8}
 		{D02A6791-818B-4BFA-A958-65D933FC7F2E} = {D707344C-5732-4DE6-92B5-16B0FCE6016F}
 		{748E8208-2140-40FB-BDD2-145F27C762BC} = {315E54AD-1A73-4CBD-8322-59C226A38724}
@@ -254,6 +264,7 @@ Global
 		{A03CF4B6-E29E-4DF7-9161-903671A0B6B4} = {6D8FBF6B-5347-44EC-AF8D-30602A5922E2}
 		{49407D4F-BFEB-4272-8992-81218217C84C} = {A03CF4B6-E29E-4DF7-9161-903671A0B6B4}
 		{6539155A-4C6F-4713-893B-DC90DF7B6B24} = {E16F58DB-B484-4111-891B-35B455E17BFD}
+		{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16} = {664D406C-2F83-48F0-BFC3-408D5CB53C65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3CB609D9-5D54-4C11-A371-DAAC8B74E430}

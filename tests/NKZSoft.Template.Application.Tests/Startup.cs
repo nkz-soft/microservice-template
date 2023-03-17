@@ -4,6 +4,8 @@ using NKZSoft.Template.Common.Tests;
 
 namespace NKZSoft.Template.Application.Tests;
 
+using Application.Common.Repositories.PostgreSql;
+
 internal sealed class Startup
 {
     public static async void ConfigureServices(IServiceCollection services)

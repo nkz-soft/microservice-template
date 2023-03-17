@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.Mapper;
 
-using Events.ToDoItem.Create;
 using Models;
 
 public class MappingConfig : IRegister

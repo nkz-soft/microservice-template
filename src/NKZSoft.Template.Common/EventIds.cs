@@ -1,7 +1,5 @@
 namespace NKZSoft.Template.Common;
 
-using Microsoft.Extensions.Logging;
-
 internal static class EventIds
 {
     public static readonly EventId ConsumeIntegrationEvent = new EventId(1, nameof(ConsumeIntegrationEvent));

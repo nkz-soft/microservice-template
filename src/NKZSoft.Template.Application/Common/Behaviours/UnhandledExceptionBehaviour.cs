@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
-using Template.Common.Extensions;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull, IRequest<TResponse>
 {

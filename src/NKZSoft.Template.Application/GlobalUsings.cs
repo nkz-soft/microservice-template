@@ -24,3 +24,4 @@ global using NKZSoft.Template.Common;
 
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 global using NKZSoft.Template.Domain.Events;
+global using NKZSoft.Template.Events.ToDoItem.Create;

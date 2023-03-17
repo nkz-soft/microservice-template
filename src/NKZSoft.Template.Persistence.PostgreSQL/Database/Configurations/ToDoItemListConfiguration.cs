@@ -1,22 +1,20 @@
-﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations;
+
+public class ToDoListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
 {
-    public class ToDoListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
+    public override void Configure(EntityTypeBuilder<ToDoList> builder)
     {
-        public override void Configure(EntityTypeBuilder<ToDoList> builder)
-        {
-            base.Configure(builder);
+        base.Configure(builder);
 
-            builder.ToTable("ToDoLists");
+        builder.ToTable("ToDoLists");
 
-            builder.HasKey(e => e.Id);
+        builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.Title)
-                .IsRequired()
-                .HasMaxLength(256);
+        builder.Property(e => e.Title)
+            .IsRequired()
+            .HasMaxLength(256);
 
-            var navigation = builder.Metadata.FindNavigation(nameof(ToDoList.ToDoItems));
-            navigation?.SetPropertyAccessMode(PropertyAccessMode.Field);
-
-        }
+        var navigation = builder.Metadata.FindNavigation(nameof(ToDoList.ToDoItems));
+        navigation?.SetPropertyAccessMode(PropertyAccessMode.Field);
     }
 }

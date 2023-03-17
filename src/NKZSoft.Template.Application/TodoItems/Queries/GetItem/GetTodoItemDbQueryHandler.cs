@@ -4,13 +4,14 @@ using Common.Exceptions;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Repositories;
+using Common.Repositories.PostgreSql;
 using NKZSoft.Template.Application.Models;
 
-public sealed class GetTodoItemQueryHandler : HandlerQueryBase<GetTodoItemQuery, Result<ToDoItemDto>>
+public sealed class GetTodoItemDbQueryHandler : HandlerDbQueryBase<GetTodoItemQuery, Result<ToDoItemDto>>
 {
     private readonly IToDoItemRepository _repository;
 
-    public GetTodoItemQueryHandler(
+    public GetTodoItemDbQueryHandler(
         IToDoItemRepository repository,
         IApplicationDbContext applicationDbContext,
         ICurrentUserService currentUserService,

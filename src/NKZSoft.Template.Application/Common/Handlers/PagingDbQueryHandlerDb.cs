@@ -3,11 +3,11 @@
 using Interfaces;
 using Paging;
 
-public abstract class PagingQueryHandler<TQ, TCM, TM> : HandlerQueryBase<TQ, TCM>
+public abstract class PagingDbQueryHandlerDb<TQ, TCM, TM> : HandlerDbQueryBase<TQ, TCM>
     where TQ : IRequest<TCM>
     where TCM : Result<CollectionViewModel<TM>>, new()
 {
-    protected PagingQueryHandler(IApplicationDbContext applicationDbContext, IMapper mapper,
+    protected PagingDbQueryHandlerDb(IApplicationDbContext applicationDbContext, IMapper mapper,
         ICurrentUserService currentUserService)
         : base(applicationDbContext, mapper, currentUserService)
     {

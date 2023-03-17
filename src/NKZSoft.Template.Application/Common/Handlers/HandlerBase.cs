@@ -5,15 +5,12 @@ using Interfaces;
 public abstract class HandlerBase<TQ, TM> : IRequestHandler<TQ, TM>
     where TQ : IRequest<TM>
 {
-    protected IApplicationDbContext ContextDb { get; }
-
     protected ICurrentUserService CurrentUserService { get; }
 
     protected IMapper Mapper { get; }
 
-    protected HandlerBase(IApplicationDbContext applicationDbContext, IMapper mapper, ICurrentUserService currentUserService)
+    protected HandlerBase(ICurrentUserService currentUserService, IMapper mapper)
     {
-        ContextDb = applicationDbContext.ThrowIfNull();
         CurrentUserService = currentUserService.ThrowIfNull();
         Mapper = mapper.ThrowIfNull();
     }

@@ -1,19 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
     <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.Redis" />
-      <PackageReference Include="EasyCaching.CSRedis" />
+      <PackageReference Include="EasyCaching.Redis" />
+      <PackageReference Include="EasyCaching.Serialization.Json" />
       <PackageReference Include="EFCoreSecondLevelCacheInterceptor" />
       <PackageReference Include="FluentValidation" />
       <PackageReference Include="FluentValidation.AspNetCore" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-      <PackageReference Include="EasyCaching.Serialization.Json" />
       <PackageReference Include="NKZSoft.FluentValidation.Options" />
     </ItemGroup>
-  
+
     <ItemGroup>
       <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
     </ItemGroup>
-  
+
+    <ItemGroup>
+      <PackageVersion Update="EasyCaching.Redis" Version="1.9.0" />
+    </ItemGroup>
+
 </Project>
