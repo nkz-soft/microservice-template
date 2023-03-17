@@ -9,7 +9,7 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
 
     public UpdateTodoItemCommandHandler(IToDoItemRepository repository) => _repository = repository.ThrowIfNull();
 
-    public async Task<Unit> Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
+    public async Task Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = await _repository
             .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id), cancellationToken)
@@ -24,7 +24,5 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
 
         await _repository.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(false);
-
-        return Unit.Value;
     }
 }
