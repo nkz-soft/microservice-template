@@ -11,7 +11,7 @@
     <PackageVersion Include="HotChocolate.Abstractions" Version="13.0.4" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="13.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.1" />
+    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.2" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.2" />
     <PackageVersion Include="OpenTelemetry" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0" />
