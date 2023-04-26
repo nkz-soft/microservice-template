@@ -4,6 +4,9 @@
       <PackageReference Include="Ardalis.GuardClauses" />
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+      <PackageReference Include="Testcontainers.PostgreSql" />
+      <PackageReference Include="Testcontainers.RabbitMq" />
+      <PackageReference Include="Testcontainers.Redis" />
     </ItemGroup>
 
     <ItemGroup>
