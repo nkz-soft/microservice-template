@@ -3,6 +3,7 @@
 using Microsoft.Extensions.Options;
 using Persistence.PostgreSQL.Configuration;
 using SeedData;
+using Testcontainers.PostgreSql;
 
 public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
 {
@@ -18,7 +19,7 @@ public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFact
                 .Replace<IOptions<PostgresConnection>>(p =>
                     Options.Create(new PostgresConnection()
                     {
-                        ConnectionString = GetContainer<PostgreSqlTestcontainer>().ConnectionString,
+                        ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
                         LoggingEnabled = true
                     }));

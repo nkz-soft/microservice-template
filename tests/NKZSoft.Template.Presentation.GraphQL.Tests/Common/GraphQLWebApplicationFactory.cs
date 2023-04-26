@@ -2,8 +2,8 @@
 
 using Microsoft.Extensions.Options;
 using Persistence.PostgreSQL.Configuration;
-using Persistence.PostgreSQL.Extensions;
 using SeedData;
+using Testcontainers.PostgreSql;
 
 public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationFactory<TStartup> where TStartup : class
 {
@@ -19,7 +19,7 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
                 .Replace<IOptions<PostgresConnection>>(p =>
                     Options.Create(new PostgresConnection()
                     {
-                        ConnectionString = GetContainer<PostgreSqlTestcontainer>().ConnectionString,
+                        ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
                         LoggingEnabled = true
                     }));

@@ -6,7 +6,7 @@
     <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="6.0.4" />
     <PackageVersion Include="EasyCaching.Core" Version="1.9.0" />
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
-    <PackageVersion Include="FluentValidation" Version="11.5.1" />
+    <PackageVersion Include="FluentValidation" Version="11.5.2" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="13.0.5" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="13.0.5" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="13.0.5" />
@@ -14,7 +14,7 @@
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.0.5" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.2" />
-    <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.2" />
+    <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.4" />
     <PackageVersion Include="OpenTelemetry" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.4.0" />
@@ -27,33 +27,33 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
     <PackageVersion Include="StackExchange.Redis" Version="2.6.104" />
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.0" />
-    <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.0" />
+    <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.2" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="6.0.2" />
-    <PackageVersion Include="Microsoft.NETCore.Platforms" Version="7.0.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.4" />
+    <PackageVersion Include="Microsoft.NETCore.Platforms" Version="7.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.3" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.4" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.5" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.4" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.8" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="4.0.1" />
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
     <PackageVersion Include="Scrutor" Version="4.2.2" />
@@ -64,7 +64,7 @@
     <PackageVersion Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
     <PackageVersion Include="MassTransit.RabbitMQ" Version="8.0.10" />
     <PackageVersion Include="FluentResults" Version="3.15.2" />
-    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     <PackageVersion Include="Mapster" Version="7.3.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
@@ -84,19 +84,22 @@
     <PackageVersion Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.0.0" />
+    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.0.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="3.0.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
-    <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.0" />
+    <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageVersion Include="xunit.extensibility.core" Version="2.4.2" />
     <PackageVersion Include="coverlet.collector" Version="3.2.0" />
-    <PackageVersion Include="FluentAssertions" Version="6.9.0" />
+    <PackageVersion Include="FluentAssertions" Version="6.11.0" />
     <PackageVersion Include="Respawn" Version="6.0.0" />
     <PackageVersion Include="Moq" Version="4.18.4" />
-    <PackageVersion Include="Testcontainers" Version="2.4.0" />
+    <PackageVersion Include="Testcontainers" Version="3.0.0" />
     <PackageVersion Include="Shouldly" Version="4.1.0" />
-    <PackageVersion Include="RestSharp" Version="110.0.0" />
+    <PackageVersion Include="RestSharp" Version="110.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.2" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.2" />

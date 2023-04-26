@@ -1,10 +1,14 @@
 ﻿namespace NKZSoft.Template.Common.Tests.Containers;
 
+using Testcontainers.PostgreSql;
+using Testcontainers.RabbitMq;
+using Testcontainers.Redis;
+
 public static class ContainerFactory
 {
     private const string Database = "template_db";
-    private const string Username = "postgres";
-    private const string Password = "postgres";
+    private const string PostgresUsername = "postgres";
+    private const string PostgresPassword = "postgres";
 
     private const string RabbitMqUsername = "rabbitmq";
     private const string RabbitMqPassword = "rabbitmq";
@@ -14,24 +18,19 @@ public static class ContainerFactory
         var type = typeof(T);
         return type switch
         {
-            not null when type.IsAssignableFrom(typeof(PostgreSqlTestcontainer)) => CreatePostgreSql(),
-            not null when type.IsAssignableFrom(typeof(RabbitMqTestcontainer)) => CreateRabbitMq(),
-            not null when type.IsAssignableFrom(typeof(RedisTestcontainer)) => CreateRedis(),
+            not null when type.IsAssignableFrom(typeof(PostgreSqlContainer)) => CreatePostgreSql(),
+            not null when type.IsAssignableFrom(typeof(RabbitMqContainer)) => CreateRabbitMq(),
+            not null when type.IsAssignableFrom(typeof(RedisContainer)) => CreateRedis(),
             _ => throw new ArgumentException($"Couldn't create a container of {nameof(T)}")
         };
     }
 
     private static IContainer CreatePostgreSql() =>
-#pragma warning disable CS0618
-        new ContainerBuilder<PostgreSqlTestcontainer>()
-#pragma warning restore CS0618
-            .WithDatabase(new PostgreSqlTestcontainerConfiguration
-        {
-            Database = Database,
-            Username = Username,
-            Password = Password
-        })
-        .WithImage("postgres:14")
+        new PostgreSqlBuilder()
+            .WithUsername(PostgresUsername)
+            .WithPassword(PostgresPassword)
+            .WithDatabase(Database)
+            .WithImage("postgres:14")
             .WithPortBinding(5432, 5432)
             .WithAutoRemove(true)
             .WithCleanUp(true)
@@ -39,14 +38,9 @@ public static class ContainerFactory
             .Build();
 
     private static IContainer CreateRabbitMq() =>
-#pragma warning disable CS0618
-        new ContainerBuilder<RabbitMqTestcontainer>()
-#pragma warning restore CS0618
-            .WithMessageBroker(new RabbitMqTestcontainerConfiguration()
-            {
-                Username = RabbitMqUsername,
-                Password = RabbitMqPassword
-            })
+        new RabbitMqBuilder()
+            .WithUsername(RabbitMqUsername)
+            .WithPassword(RabbitMqPassword)
             .WithImage("rabbitmq:3.11-management")
             .WithPortBinding(5672, 5672)
             .WithAutoRemove(true)

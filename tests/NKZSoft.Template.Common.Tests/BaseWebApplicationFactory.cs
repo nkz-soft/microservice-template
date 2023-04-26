@@ -1,5 +1,10 @@
 namespace NKZSoft.Template.Common.Tests;
 
+using Testcontainers;
+using Testcontainers.PostgreSql;
+using Testcontainers.RabbitMq;
+using Testcontainers.Redis;
+
 public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
 {
@@ -14,13 +19,13 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         Containers = new Dictionary<Type, IContainer>()
         {
             {
-                typeof(PostgreSqlTestcontainer), ContainerFactory.Create<PostgreSqlTestcontainer>()
+                typeof(PostgreSqlContainer ), ContainerFactory.Create<PostgreSqlContainer >()
             },
             {
-                typeof(RabbitMqTestcontainer), ContainerFactory.Create<RabbitMqTestcontainer>()
+                typeof(RabbitMqContainer), ContainerFactory.Create<RabbitMqContainer>()
             },
             {
-                typeof(RedisTestcontainer), ContainerFactory.Create<RedisTestcontainer>()
+                typeof(RedisContainer), ContainerFactory.Create<RedisContainer>()
             }
         };
     }
