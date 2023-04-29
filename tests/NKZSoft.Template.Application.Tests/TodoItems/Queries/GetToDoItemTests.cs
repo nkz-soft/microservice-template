@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Queries;
 
-using Application.TodoItems.Queries.GetItem;
+using Application.TodoItems.Features.Queries.GetItem.v1;
 using Domain.AggregatesModel.ToDoAggregates.Entities;
 
 [Collection("QueryCollection")]

@@ -1,7 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.EventHandlers;
 
-using NKZSoft.Template.Common.Extensions;
-
 public sealed class ToDoItemCreatedDomainEventBusHandler : INotificationHandler<ToDoItemCreatedDomainEvent>
 {
     private readonly ILogger<ToDoItemCreatedDomainEventBusHandler> _logger;

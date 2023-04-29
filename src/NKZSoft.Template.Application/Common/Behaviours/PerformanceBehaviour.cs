@@ -1,14 +1,12 @@
 ﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
-using NKZSoft.Template.Common.Extensions;
-
 public sealed class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {
     private readonly Stopwatch _timer;
-    private readonly ILogger<TRequest> _logger;
+    private readonly ILogger<PerformanceBehaviour<TRequest, TResponse>> _logger;
 
-    public PerformanceBehaviour(ILogger<TRequest> logger)
+    public PerformanceBehaviour(ILogger<PerformanceBehaviour<TRequest, TResponse>> logger)
     {
         _logger = logger.ThrowIfNull();
         _timer = new Stopwatch();

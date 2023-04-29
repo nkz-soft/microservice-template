@@ -1,7 +1,5 @@
 ﻿namespace NKZSoft.Template.Presentation.Rest.Controllers.Version30;
 
-using Application.TodoItems.Commands.CreateInRedis;
-
 [ApiVersion(VersionController.Version30)]
 [Route("api/v{version:apiVersion}/to-do-items")]
 public class ToDoItemControllerV3 : BaseController

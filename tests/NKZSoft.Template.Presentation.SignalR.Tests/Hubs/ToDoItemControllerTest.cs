@@ -4,6 +4,7 @@
 
 namespace NKZSoft.Template.Presentation.SignalR.Tests.Hubs;
 
+using Application.TodoItems.Models;
 using Common;
 
 [Collection(nameof(SignalRCollectionDefinition))]

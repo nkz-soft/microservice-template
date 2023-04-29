@@ -50,7 +50,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
-    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.8" />
+    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.9.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5" />
@@ -85,9 +85,9 @@
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
-    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.0.0" />
-    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.0.0" />
-    <PackageVersion Include="Testcontainers.Redis" Version="3.0.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="3.1.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
     <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.1" />
@@ -97,7 +97,7 @@
     <PackageVersion Include="FluentAssertions" Version="6.11.0" />
     <PackageVersion Include="Respawn" Version="6.0.0" />
     <PackageVersion Include="Moq" Version="4.18.4" />
-    <PackageVersion Include="Testcontainers" Version="3.0.0" />
+    <PackageVersion Include="Testcontainers" Version="3.1.0" />
     <PackageVersion Include="Shouldly" Version="4.1.0" />
     <PackageVersion Include="RestSharp" Version="110.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0" />

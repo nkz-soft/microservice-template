@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Services;
 
-using Application.TodoItems.Commands.Create;
+using Application.TodoItems.Features.Commands.Create.v1;
 
 public sealed class Mutation
 {

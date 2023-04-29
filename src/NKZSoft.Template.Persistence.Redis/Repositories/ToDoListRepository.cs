@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.Redis.Repositories;
 
+using Application.TodoItems.Repositories.Redis;
 using Common;
 using Configuration;
 using EasyCaching.Core.Serialization;

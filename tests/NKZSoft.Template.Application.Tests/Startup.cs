@@ -4,7 +4,7 @@ using NKZSoft.Template.Common.Tests;
 
 namespace NKZSoft.Template.Application.Tests;
 
-using Application.Common.Repositories.PostgreSql;
+using Application.TodoItems.Repositories.PostgreSql;
 
 internal sealed class Startup
 {

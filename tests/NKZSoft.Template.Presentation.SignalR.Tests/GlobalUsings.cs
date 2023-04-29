@@ -10,7 +10,6 @@ global using Microsoft.AspNetCore.SignalR.Client;
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 global using NKZSoft.Template.Persistence.PostgreSQL;
 global using NKZSoft.Template.Common.Tests;
-global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.Common.Interfaces;
 global using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
 global using NKZSoft.Template.Presentation.SignalR.Hubs;

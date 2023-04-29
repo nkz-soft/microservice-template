@@ -1,7 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Repositories;
 
-using Application.Common.Repositories;
-using Application.Common.Repositories.PostgreSql;
+using Application.TodoItems.Repositories.PostgreSql;
 
 public class ToDoListRepository : RepositoryBase<ToDoList>, IToDoListRepository
 {

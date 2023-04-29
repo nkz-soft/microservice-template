@@ -1,6 +1,7 @@
-﻿using NKZSoft.Template.Application.TodoItems.Commands.Update;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
-namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
+using Application.TodoItems.Features.Commands.Create.v1;
+using Application.TodoItems.Features.Commands.Update.v1;
 
 [Collection("QueryCollection")]
 public sealed class UpdateToDoItemTests : TestBase

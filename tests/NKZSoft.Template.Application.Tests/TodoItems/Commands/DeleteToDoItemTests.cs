@@ -1,5 +1,8 @@
 ﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
+using Application.TodoItems.Features.Commands.Create.v1;
+using Application.TodoItems.Features.Commands.Delete.v1;
+
 [Collection("QueryCollection")]
 public sealed class DeleteToDoItemTests : TestBase
 {

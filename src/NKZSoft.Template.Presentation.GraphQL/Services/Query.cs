@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.GraphQL.Services;
 
+using Application.TodoItems.Features.Queries.GetQueryable.v1;
+
 public sealed class Query
 {
     /// <summary>

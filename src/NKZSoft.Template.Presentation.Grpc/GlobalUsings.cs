@@ -17,8 +17,8 @@ global using ProtoBuf;
 global using MediatR;
 global using NKZSoft.Service.Configuration.Grpc.Extensions;
 global using NKZSoft.Template.Application.Common.Paging;
-global using NKZSoft.Template.Application.Models;
+global using NKZSoft.Template.Application.TodoItems.Features.Queries.GetItem.v1;
+global using NKZSoft.Template.Application.TodoItems.Features.Queries.GetPage.v1;
 global using NKZSoft.Template.Application.TodoItems.Models;
-global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using OpenTelemetry.Trace;
 

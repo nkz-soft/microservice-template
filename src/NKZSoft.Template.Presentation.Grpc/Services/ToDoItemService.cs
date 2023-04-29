@@ -1,11 +1,10 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Services;
 
-using Application.TodoItems.Queries.GetItem;
 using Models;
 using Models.ToDoItem;
-using NKZSoft.Template.Common;
+using Common;
 
-public class ToDoItemService : IToDoItemService
+public sealed class ToDoItemService : IToDoItemService
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;

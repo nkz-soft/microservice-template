@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
 
+using Application.TodoItems.Features.Commands.Create.v1;
+
 [Collection("QueryCollection")]
 public sealed class CreateToDoItemTests : TestBase
 {
