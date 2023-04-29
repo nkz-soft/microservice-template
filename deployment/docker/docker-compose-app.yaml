@@ -8,12 +8,14 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Docker
     ports:
-      - "0.0.0.0:8080:5055"
-      - "0.0.0.0:8081:5056"
+      - "0.0.0.0:8080:8080"
+      - "0.0.0.0:8081:8081"
     networks:
       - dev-network
     depends_on:
       postgres:
         condition: service_healthy
       rabbitmq:
+        condition: service_healthy
+      redis:
         condition: service_healthy
