@@ -1,7 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Models;
 
 [ProtoContract]
-[ProtoInclude(1, typeof(GetTodoItemsRequest))]
+[ProtoInclude(1, typeof(GetPageTodoItemsRequest))]
 public record PageContext
 {
     [ProtoMember(2)]

@@ -6,8 +6,7 @@ namespace NKZSoft.Template.Presentation.Grpc.Tests.Services;
 
 using Common;
 using global::Grpc.Core;
-using NKZSoft.Template.Presentation.Grpc.Models;
-using NKZSoft.Template.Presentation.Grpc.Services;
+using Models;
 
 [Collection(nameof(GrpcCollectionDefinition))]
 public sealed class ToDoItemServiceTest
@@ -22,11 +21,11 @@ public sealed class ToDoItemServiceTest
     }
 
     [Fact, Order(1)]
-    public async Task GetItemsTestAsync()
+    public async Task GetPageItemsTestAsync()
     {
         var count = 0;
 
-        await foreach (var response in _service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
+        await foreach (var response in _service.GetRageToDoItems(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
         {
             response.Items.Should().HaveCount(2);
             ++count;
@@ -36,9 +35,9 @@ public sealed class ToDoItemServiceTest
     }
 
     [Fact, Order(2)]
-    public async Task GetItemByIdTestAsync()
+    public async Task GetPageItemByIdTestAsync()
     {
-        await foreach(var item in _service.GetToDoItems(new GetTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
+        await foreach(var item in _service.GetRageToDoItems(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
         {
             var response = await _service.GetToDoItemById(new GetTodoItemRequest
             {
@@ -61,5 +60,19 @@ public sealed class ToDoItemServiceTest
         });
 
         await Assert.ThrowsAsync<RpcException>(Act);
+    }
+
+    [Fact, Order(4)]
+    public async Task GetItemsTestAsync()
+    {
+        var count = 0;
+
+        await foreach (var response in _service.GetToDoItems())
+        {
+            response.Should().NotBeNull();
+            ++count;
+        }
+
+        count.Should().Be(4);
     }
 }

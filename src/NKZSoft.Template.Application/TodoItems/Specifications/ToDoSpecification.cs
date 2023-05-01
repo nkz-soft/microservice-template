@@ -18,6 +18,16 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
     {
     }
 
+    public static Specification<ToDoItem> Create()
+    {
+        var specification =  new ToDoItemSpecification();
+
+        var specificationBuilder = specification.Query;
+
+        specificationBuilder.AsNoTracking();
+        return specification;
+    }
+
     public static Specification<ToDoItem> Create(IPageContext<ToDoItemFilter> pageContext)
     {
         var specification =  new ToDoItemSpecification();
