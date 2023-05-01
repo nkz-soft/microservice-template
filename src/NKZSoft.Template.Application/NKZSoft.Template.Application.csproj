@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <ItemGroup>
+        <PackageReference Include="Ardalis.Specification" />
         <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" />
         <PackageReference Include="FluentResults" />
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />

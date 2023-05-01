@@ -19,6 +19,7 @@ global using NKZSoft.Service.Configuration.Grpc.Extensions;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Models;
 global using NKZSoft.Template.Application.TodoItems.Models;
+global using NKZSoft.Template.Application.TodoItems.Queries.GetItem;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using OpenTelemetry.Trace;
 

@@ -1,9 +1,9 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Services;
 
-using Application.TodoItems.Queries.GetItem;
+using Application.TodoItems.Queries.GetStream;
 using Models;
 using Models.ToDoItem;
-using NKZSoft.Template.Common;
+using Common;
 
 public class ToDoItemService : IToDoItemService
 {
@@ -27,7 +27,20 @@ public class ToDoItemService : IToDoItemService
             .ConfigureAwait(false);
     }
 
-    public async IAsyncEnumerable<ToDoItemsResponse> GetToDoItems(GetTodoItemsRequest request, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    public async IAsyncEnumerable<ToDoItemResponse> GetToDoItems(
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        var stream =  _mediator.CreateStream(new GetStreamTodoItemsQuery(), cancellationToken);
+        await foreach (var item in stream.WithCancellation(cancellationToken))
+        {
+            yield return  await item.BuildAdapter(_mapper.Config)
+                .AdaptToTypeAsync<ToDoItemResponse>()
+                .ConfigureAwait(false);
+        }
+    }
+
+    public async IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItems(GetPageTodoItemsRequest request,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var pageContext = new PageContext<ToDoItemFilter>(request.PageIndex, request.PageSize);
 

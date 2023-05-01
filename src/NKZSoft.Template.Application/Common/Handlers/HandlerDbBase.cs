@@ -10,10 +10,8 @@ public abstract class HandlerDbBase<TQ, TM> : HandlerBase<TQ, TM>
     protected HandlerDbBase(ICurrentUserService currentUserService,
         IMapper mapper,
         IApplicationDbContext contextDb)
-        : base(currentUserService, mapper)
-    {
+        : base(currentUserService, mapper) =>
         ContextDb = contextDb.ThrowIfNull();
-    }
 
     public abstract override Task<TM> Handle(TQ request, CancellationToken cancellationToken);
 }
