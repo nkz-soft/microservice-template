@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageVersion Update="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.11" />
+      <PackageVersion Update="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
     </ItemGroup>
 
 </Project>
