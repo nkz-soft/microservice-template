@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-      <Version>1.0.4</Version>
+      <Version>1.1.0</Version>
       <AssemblyName>NKZSoft.Template.Presentation.Grpc</AssemblyName>
       <RootNamespace>NKZSoft.Template.Presentation.Grpc</RootNamespace>
     </PropertyGroup>
@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageVersion Update="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.11" />
+      <PackageVersion Update="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
     </ItemGroup>
 
 </Project>
