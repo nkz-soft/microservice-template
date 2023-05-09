@@ -14,7 +14,7 @@
     <PackageVersion Include="HotChocolate.Data" Version="13.0.5" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.0.5" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.2" />
+    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.0.3" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.4" />
     <PackageVersion Include="OpenTelemetry" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0" />
@@ -26,7 +26,7 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9.14" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.MassTransit" Version="1.0.0-beta.3" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
-    <PackageVersion Include="StackExchange.Redis" Version="2.6.104" />
+    <PackageVersion Include="StackExchange.Redis" Version="2.6.111" />
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.0" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="4.10.2" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
@@ -51,7 +51,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
-    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.8.8" />
+    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="3.9.1" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="6.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.5" />
@@ -69,7 +69,7 @@
     <PackageVersion Include="Mapster" Version="7.3.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
-    <PackageVersion Include="Google.Protobuf" Version="3.22.3" />
+    <PackageVersion Include="Google.Protobuf" Version="3.23.0" />
     <PackageVersion Include="protobuf-net" Version="3.2.16" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
@@ -83,9 +83,6 @@
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
-    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.0.0" />
-    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.0.0" />
-    <PackageVersion Include="Testcontainers.Redis" Version="3.0.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
     <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.1" />
@@ -96,6 +93,9 @@
     <PackageVersion Include="Respawn" Version="6.0.0" />
     <PackageVersion Include="Moq" Version="4.18.4" />
     <PackageVersion Include="Testcontainers" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="3.1.0" />
     <PackageVersion Include="Shouldly" Version="4.1.0" />
     <PackageVersion Include="RestSharp" Version="110.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0" />
