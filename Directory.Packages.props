@@ -9,10 +9,10 @@
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
     <PackageVersion Include="FluentValidation" Version="11.5.2" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="13.0.5" />
-    <PackageVersion Include="HotChocolate.Diagnostics" Version="13.0.5" />
-    <PackageVersion Include="HotChocolate.AspNetCore" Version="13.0.5" />
-    <PackageVersion Include="HotChocolate.Data" Version="13.0.5" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.0.5" />
+    <PackageVersion Include="HotChocolate.Diagnostics" Version="13.1.0" />
+    <PackageVersion Include="HotChocolate.AspNetCore" Version="13.1.0" />
+    <PackageVersion Include="HotChocolate.Data" Version="13.1.0" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.1.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.1.0" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.4" />
@@ -69,37 +69,40 @@
     <PackageVersion Include="Mapster" Version="7.3.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
-    <PackageVersion Include="Google.Protobuf" Version="3.23.0" />
+    <PackageVersion Include="Google.Protobuf" Version="3.23.1" />
     <PackageVersion Include="protobuf-net" Version="3.2.16" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Reflection" Version="3.2.12" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.53.0" />
     <PackageVersion Include="Serilog" Version="2.12.0" />
-    <PackageVersion Include="Serilog.Extensions.Logging" Version="3.1.0" />
-    <PackageVersion Include="Serilog.Extensions.Hosting" Version="5.0.1" />
+    <PackageVersion Include="Serilog.Extensions.Logging" Version="7.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="7.0.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="4.1.0" />
-    <PackageVersion Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="7.0.0" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
     <PackageVersion Include="Xunit.DependencyInjection" Version="8.7.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageVersion Include="xunit.extensibility.core" Version="2.4.2" />
-    <PackageVersion Include="coverlet.collector" Version="3.2.0" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageVersion>
     <PackageVersion Include="FluentAssertions" Version="6.11.0" />
     <PackageVersion Include="Respawn" Version="6.0.0" />
     <PackageVersion Include="Moq" Version="4.18.4" />
-    <PackageVersion Include="Testcontainers" Version="3.1.0" />
-    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.1.0" />
-    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.1.0" />
-    <PackageVersion Include="Testcontainers.Redis" Version="3.1.0" />
+    <PackageVersion Include="Testcontainers" Version="3.2.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.2.0" />
+    <PackageVersion Include="Testcontainers.RabbitMq" Version="3.2.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="3.2.0" />
     <PackageVersion Include="Shouldly" Version="4.2.1" />
     <PackageVersion Include="RestSharp" Version="110.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.1.0" />
-    <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.0.2" />
+    <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.2" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.0.0" />
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.9.0" />
