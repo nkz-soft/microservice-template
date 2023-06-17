@@ -11,13 +11,13 @@
     <PackageVersion Include="HotChocolate.Abstractions" Version="13.0.5" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="13.2.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="13.2.0" />
-    <PackageVersion Include="HotChocolate.Data" Version="13.2.0" />
+    <PackageVersion Include="HotChocolate.Data" Version="13.2.1" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.2.0" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.1.0" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="7.0.4" />
     <PackageVersion Include="OpenTelemetry" Version="1.4.0" />
-    <PackageVersion Include="OpenTelemetry.Api" Version="1.4.0" />
+    <PackageVersion Include="OpenTelemetry.Api" Version="1.5.0" />
     <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.4.0" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.4.0" />
@@ -26,7 +26,7 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9.14" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.MassTransit" Version="1.0.0-beta.3" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
-    <PackageVersion Include="StackExchange.Redis" Version="2.6.111" />
+    <PackageVersion Include="StackExchange.Redis" Version="2.6.116" />
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.0" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="6.0.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
@@ -41,7 +41,7 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -69,7 +69,7 @@
     <PackageVersion Include="Mapster" Version="7.3.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.0" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.0" />
-    <PackageVersion Include="Google.Protobuf" Version="3.23.2" />
+    <PackageVersion Include="Google.Protobuf" Version="3.23.3" />
     <PackageVersion Include="protobuf-net" Version="3.2.26" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
@@ -81,7 +81,7 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="4.1.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="7.0.0" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.5" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.7" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.1" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
