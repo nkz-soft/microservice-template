@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="7.0.0" />
-    <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="6.0.4" />
+    <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="7.0.0" />
     <PackageVersion Include="EasyCaching.Core" Version="1.9.0" />
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
     <PackageVersion Include="FluentValidation" Version="11.6.0" />
