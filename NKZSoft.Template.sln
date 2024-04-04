@@ -122,6 +122,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKZSoft.Template.Presentation.Rest.Tests", "tests\NKZSoft.Template.Presentation.Rest.Tests\NKZSoft.Template.Presentation.Rest.Tests.csproj", "{AAE70EBF-D9D3-4864-9EE7-A8C13EDDBD16}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci-cd", "ci-cd", "{0D102F2F-EFC8-4A6E-ABF8-763AC136F57E}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\images\wizard.png = .github\images\wizard.png
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
+		.github\release-drafter.yml = .github\release-drafter.yml
+		.github\workflows\build-by-branch.yaml = .github\workflows\build-by-branch.yaml
+		.github\workflows\build-by-tag.yaml = .github\workflows\build-by-tag.yaml
+		.github\workflows\cleanup.yaml = .github\workflows\cleanup.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
