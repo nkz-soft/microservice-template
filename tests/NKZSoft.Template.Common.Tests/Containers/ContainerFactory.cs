@@ -25,7 +25,7 @@ public static class ContainerFactory
         };
     }
 
-    private static IContainer CreatePostgreSql() =>
+    private static PostgreSqlContainer CreatePostgreSql() =>
         new PostgreSqlBuilder()
             .WithUsername(PostgresUsername)
             .WithPassword(PostgresPassword)
@@ -37,7 +37,7 @@ public static class ContainerFactory
             .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5432))
             .Build();
 
-    private static IContainer CreateRabbitMq() =>
+    private static RabbitMqContainer CreateRabbitMq() =>
         new RabbitMqBuilder()
             .WithUsername(RabbitMqUsername)
             .WithPassword(RabbitMqPassword)

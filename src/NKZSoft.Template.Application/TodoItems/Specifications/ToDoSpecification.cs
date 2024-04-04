@@ -7,7 +7,7 @@ using Models;
 
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
-    private static readonly IDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
+    private static readonly Dictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
         new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
         {
             { nameof(ToDoItemFilter.Id), c => c.Id },
@@ -69,7 +69,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
     {
         var sortDescriptors = sorts as SortDescriptor[] ?? sorts.ToArray();
 
-        if (sortDescriptors.Any())
+        if (sortDescriptors.Length != 0)
         {
             return sortDescriptors.Aggregate(specificationBuilder, Sort);
         }

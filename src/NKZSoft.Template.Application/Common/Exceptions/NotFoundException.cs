@@ -22,9 +22,4 @@ public sealed class NotFoundException : Exception
         : base($"Entity \"{name}\" ({key}) was not found.")
     {
     }
-
-    private NotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-        : base(serializationInfo, streamingContext)
-    {
-    }
 }

@@ -12,9 +12,4 @@ public sealed class UnprocessableEntityException : Exception
         : base(message)
     {
     }
-
-    private UnprocessableEntityException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-        : base(serializationInfo, streamingContext)
-    {
-    }
 }

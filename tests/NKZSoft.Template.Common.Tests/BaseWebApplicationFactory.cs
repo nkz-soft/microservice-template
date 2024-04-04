@@ -10,7 +10,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 {
     protected const string EnvironmentName = "Test";
 
-    private  IReadOnlyDictionary<Type, IContainer> Containers { get; }
+    private  Dictionary<Type, IContainer> Containers { get; }
 
     protected BaseWebApplicationFactory()
     {
