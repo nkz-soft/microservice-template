@@ -3,6 +3,8 @@
 using Common;
 using Configuration;
 using Repositories;
+using EasyCaching.Core;
+using EasyCaching.Core.Configurations;
 
 public static class ServiceCollectionExtension
 {

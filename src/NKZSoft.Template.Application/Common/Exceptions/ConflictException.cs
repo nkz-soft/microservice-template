@@ -12,9 +12,4 @@ public sealed class ConflictException : Exception
         : base(message)
     {
     }
-
-    private ConflictException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-        : base(serializationInfo, streamingContext)
-    {
-    }
 }

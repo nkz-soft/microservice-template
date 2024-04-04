@@ -53,7 +53,7 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 - [x] GraphQL API samples
 - [x] MassTransit and RabbitMq
 - [x] Minimal hosting model
-- [x] Migrate to .NET 7
+- [x] Migrate to .NET 8
 - [x] HealthCheck
 - [x] Websocket (SignalR) 
 - [x] GRPC Error handling in interceptors

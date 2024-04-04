@@ -113,7 +113,7 @@ public sealed class ToDoItemControllerTest
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDto<Guid>>();
         response!.IsSuccess.Should().BeTrue();
-        return response.Data;
+        return await Task.FromResult(response.Data);
     }
 
     [Fact, Order(6)]

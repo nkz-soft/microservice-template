@@ -1,15 +1,4 @@
 ﻿namespace NKZSoft.Template.Application.Common.Exceptions;
 
 [Serializable]
-public sealed class PermissionDeniedException : Exception
-{
-    public PermissionDeniedException(string message)
-        : base(message)
-    {
-    }
-
-    private PermissionDeniedException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-        : base(serializationInfo, streamingContext)
-    {
-    }
-}
+public sealed class PermissionDeniedException(string message) : Exception(message);

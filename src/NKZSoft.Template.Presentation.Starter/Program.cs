@@ -44,7 +44,6 @@ builder.Services.AddOpenTelemetry()
     .WithTracing(builder => builder
         .AddAspNetCoreInstrumentation(options =>
         {
-            options.EnableGrpcAspNetCoreSupport = true;
             options.RecordException = true;
         })
         .AddRestOpenTelemetry()
