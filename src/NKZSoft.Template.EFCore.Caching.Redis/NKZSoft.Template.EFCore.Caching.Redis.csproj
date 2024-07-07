@@ -17,8 +17,4 @@
       <ProjectReference Include="..\NKZSoft.Template.Common\NKZSoft.Template.Common.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageVersion Update="EasyCaching.Redis" Version="1.9.0" />
-    </ItemGroup>
-
 </Project>
