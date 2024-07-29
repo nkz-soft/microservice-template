@@ -15,7 +15,7 @@
     <PackageVersion Include="HotChocolate.Data" Version="13.9.7" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.9.7" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
-    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.1.0" />
+    <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.0" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.3" />
     <PackageVersion Include="OpenTelemetry" Version="1.9.0" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.9.0" />
