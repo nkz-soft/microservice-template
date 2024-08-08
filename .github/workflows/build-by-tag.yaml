@@ -26,7 +26,7 @@ jobs:
       run: dotnet publish -c Release -p:PublishDir=./publish/app --no-restore --no-build
     - name: Docker meta
       id: meta
-      uses: docker/metadata-action@v4
+      uses: docker/metadata-action@v5
       with:
         images: ghcr.io/nkz-soft/microservice-template/microservice-template
     - name: Login to Github Packages
