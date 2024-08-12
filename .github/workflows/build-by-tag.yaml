@@ -44,6 +44,6 @@ jobs:
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
     - name: Drafts release notes
-      uses: release-drafter/release-drafter@v5
+      uses: release-drafter/release-drafter@v6
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
