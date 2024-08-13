@@ -36,7 +36,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build image and push to GitHub Container Registry
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
