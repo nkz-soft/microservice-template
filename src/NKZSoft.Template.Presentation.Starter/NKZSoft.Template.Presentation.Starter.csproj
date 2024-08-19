@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.UI.Client" />
+      <PackageReference Include="Google.Protobuf" />
       <PackageReference Include="OpenTelemetry" />
       <PackageReference Include="OpenTelemetry.Exporter.Console" />
       <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
