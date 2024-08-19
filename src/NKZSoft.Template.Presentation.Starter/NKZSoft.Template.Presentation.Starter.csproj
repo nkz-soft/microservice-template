@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.UI.Client" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
       <PackageReference Include="OpenTelemetry" />
       <PackageReference Include="OpenTelemetry.Exporter.Console" />
       <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />

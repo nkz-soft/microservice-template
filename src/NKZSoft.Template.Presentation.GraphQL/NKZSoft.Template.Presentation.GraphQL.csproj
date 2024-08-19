@@ -9,6 +9,7 @@
       <PackageReference Include="HotChocolate.Data" />
       <PackageReference Include="HotChocolate.Data.EntityFramework" />
       <PackageReference Include="HotChocolate.Diagnostics" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
     </ItemGroup>
 
     <ItemGroup>

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
     <PackageReference Include="NKZSoft.Service.Configuration.Logger" />
     <PackageReference Include="NKZSoft.Service.Configuration.Swagger" />
     <PackageReference Include="OpenTelemetry.Api" />

@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <PackageReference Include="Google.Protobuf" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
       <PackageReference Include="OpenTelemetry" />
       <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" />
       <PackageReference Include="protobuf-net" />
