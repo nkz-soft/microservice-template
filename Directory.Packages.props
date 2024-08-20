@@ -12,8 +12,8 @@
     <PackageVersion Include="HotChocolate.Abstractions" Version="13.9.11" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="13.9.11" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="13.9.11" />
-    <PackageVersion Include="HotChocolate.Data" Version="13.9.9" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.9.9" />
+    <PackageVersion Include="HotChocolate.Data" Version="13.9.11" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.9.11" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.0" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.3" />
