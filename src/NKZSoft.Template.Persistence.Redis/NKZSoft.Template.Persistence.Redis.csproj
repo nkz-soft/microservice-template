@@ -5,6 +5,7 @@
       <PackageReference Include="EasyCaching.Redis" />
       <PackageReference Include="EasyCaching.Serialization.Json" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
       <PackageReference Include="NKZSoft.FluentValidation.Options" />
       <PackageReference Include="StackExchange.Redis" />
