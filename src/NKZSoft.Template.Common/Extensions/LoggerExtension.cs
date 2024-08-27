@@ -1,44 +1,25 @@
 namespace NKZSoft.Template.Common.Extensions;
 
-internal static class LoggerExtension
+public static partial class LoggerExtension
 {
-    private static readonly Action<ILogger, string, Exception?> _consumeIntegrationEvent = LoggerMessage.Define<string>(
-        LogLevel.Information,
-        EventIds.ConsumeIntegrationEvent,
-        "Integration event has been consumed: `{Message}`.");
+    [LoggerMessage(1, LogLevel.Information, "Integration event has been consumed: {Message}.")]
+    internal static partial void ConsumeIntegrationEvent(this ILogger logger, string message);
 
-    private static readonly Action<ILogger, string, Exception?> _raiseIntegrationEvent = LoggerMessage.Define<string>(
-        LogLevel.Information,
-        EventIds.RaiseIntegrationEvent,
-        "Domain event has been raised: `{Message}`.");
+    [LoggerMessage(2, LogLevel.Information, "Domain event has been raised: {Message}.")]
+    public static partial void RaiseIntegrationEvent(this ILogger logger, string message);
 
-    private static readonly Action<ILogger, long, string, Exception?> _longRunningRequest = LoggerMessage.Define<long, string>(
-        LogLevel.Warning,
-        EventIds.LongRunningRequest,
-        "Long running request: `{ElapsedMilliseconds}` milliseconds `{Request}.`");
+    [LoggerMessage(3, LogLevel.Warning, "Long running request: {ElapsedMilliseconds} milliseconds {Request}.")]
+    public static partial void LongRunningRequest(this ILogger logger, long elapsedMilliseconds, string request);
 
-    private static readonly Action<ILogger, string?, Exception?> _unhandledExceptionRequest = LoggerMessage.Define<string?>(
-        LogLevel.Error,
-        EventIds.UnhandledExceptionRequest,
-        "Unhandled exception has occured for request: `{Request}.`");
+    [LoggerMessage(4, LogLevel.Error, "Unhandled exception has occured for request: `{Request}.")]
+    public static partial void UnhandledExceptionRequest(this ILogger logger, string? request);
 
-    private static readonly Action<ILogger, string?, Exception?> _loggingRequest = LoggerMessage.Define<string?>(
-        LogLevel.Error,
-        EventIds.LoggingRequest,
-        "Request has executed: `{Request}.`");
+    [LoggerMessage(5, LogLevel.Error, "Request has executed: `{Request}.")]
+    public static partial void LoggingRequest(this ILogger logger, string? request);
 
-    public static void ConsumeIntegrationEvent(this ILogger logger, string message)
-        => _consumeIntegrationEvent(logger, message, null);
+    [LoggerMessage(6, LogLevel.Error, "An error occurred while migrating or initializing the database.")]
+    public static partial void MigrationError(this ILogger logger, Exception ex);
 
-    public static void RaiseIntegrationEvent(this ILogger logger, string message)
-        => _raiseIntegrationEvent(logger, message, null);
-
-    public static void LongRunningRequest(this ILogger logger, long elapsedMilliseconds, string request)
-        => _longRunningRequest(logger, elapsedMilliseconds, request, null);
-
-    public static void UnhandledExceptionRequest(this ILogger logger, string? request, Exception? ex)
-        => _unhandledExceptionRequest(logger, request, ex);
-
-    public static void LoggingRequest(this ILogger logger, string? request)
-        => _loggingRequest(logger, request, null);
+    [LoggerMessage(7, LogLevel.Error, "Application: An unhandled exception has occurred.")]
+    public static partial void ApplicationUnhandledException(this ILogger logger, Exception ex);
 }

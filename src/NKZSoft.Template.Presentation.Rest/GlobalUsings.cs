@@ -20,6 +20,7 @@ global using MediatR;
 global using FluentResults;
 global using FluentValidation;
 global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Diagnostics;
 global using Microsoft.AspNetCore.Mvc.ModelBinding;
 global using Microsoft.AspNetCore.Routing;
 global using NKZSoft.Template.Application.Common.Interfaces;

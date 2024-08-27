@@ -1,5 +1,6 @@
 namespace NKZSoft.Template.Presentation.Rest.Middleware;
 
+using Common.Extensions;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 public class ErrorHandlingMiddleware
@@ -27,9 +28,7 @@ public class ErrorHandlingMiddleware
 
     private static async Task HandleExceptionAsync(HttpContext context, ILogger log, Exception exception)
     {
-#pragma warning disable CA1848
-        log.LogError(exception, "Application: An unhandled exception has occurred");
-#pragma warning restore CA1848
+        log.ApplicationUnhandledException(exception);
 
         const HttpStatusCode code = HttpStatusCode.InternalServerError;
         var resultDto = new ResultDto<Unit>(Unit.Value, false, new[] { new ErrorDto(exception.Message, code.ToString()) });

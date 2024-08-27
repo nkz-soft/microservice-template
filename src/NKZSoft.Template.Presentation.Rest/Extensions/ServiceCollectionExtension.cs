@@ -1,6 +1,7 @@
 namespace NKZSoft.Template.Presentation.Rest.Extensions;
 
 using Filters;
+using Middleware;
 
 public static class ServiceCollectionExtension
 {
@@ -22,6 +23,8 @@ public static class ServiceCollectionExtension
         services.AddHttpContextAccessor()
             .AddSwagger(configuration, Assembly.GetExecutingAssembly())
             .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(ServiceLifetime.Scoped, null, true)
+            .AddExceptionHandler<GlobalExceptionHandler>()
+            .AddProblemDetails()
             .AddControllers(options => options.Filters.Add<CustomExceptionFilterAttribute>())
             .AddApplicationPart(Assembly.GetExecutingAssembly());
 
