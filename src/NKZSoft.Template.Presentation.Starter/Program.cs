@@ -1,3 +1,5 @@
+using NKZSoft.Template.Common.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration
@@ -36,12 +38,12 @@ builder.Services
     .AddHealthChecks();
 
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(builder => builder
+    .ConfigureResource(b => b
         .AddService(
             serviceName: Assembly.GetExecutingAssembly().GetName().Name!,
             serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString(),
             serviceInstanceId: Environment.MachineName))
-    .WithTracing(builder => builder
+    .WithTracing(b => b
         .AddAspNetCoreInstrumentation(options =>
         {
             options.RecordException = true;
@@ -66,9 +68,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-#pragma warning disable CA1848
-        logger.LogError(ex, "An error occurred while migrating or initializing the database.");
-#pragma warning restore CA1848
+        logger.MigrationError(ex);
     }
 }
 
