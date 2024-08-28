@@ -7,11 +7,11 @@ volumes:
 services:
 
   postgres:
-    image: postgres:16-alpine3.19
+    image: postgres:16-alpine
     environment:
       POSTGRES_PASSWORD: postgres
     ports:
-      - "0.0.0.0:5432:5432"
+      - "127.0.0.1:5432:5432"
     networks:
       - dev-network
     volumes:
@@ -23,13 +23,13 @@ services:
       retries: 15
 
   rabbitmq:
-    image: rabbitmq:3.4-management
+    image: rabbitmq:3.13-management
     environment:
       RABBITMQ_DEFAULT_USER: rabbitmq
       RABBITMQ_DEFAULT_PASS: rabbitmq
     ports:
-      - "0.0.0.0:5672:5672"
-      - "0.0.0.0:15672:15672"
+      - "127.0.0.1:5672:5672"
+      - "127.0.0.1:15672:15672"
     networks:
       - dev-network
     volumes:
@@ -41,9 +41,9 @@ services:
       retries: 15
 
   redis:
-    image: redis:7-alpine
+    image: redis:7.4-alpine
     ports:
-      - "0.0.0.0:6379:6379"
+      - "127.0.0.1:6379:6379"
     networks:
       - dev-network
     healthcheck:
@@ -53,13 +53,13 @@ services:
       retries: 15
 
   jaeger:
-    image: jaegertracing/all-in-one:1.55
+    image: jaegertracing/all-in-one:1.9
     environment:
       - COLLECTOR_OTLP_ENABLED=true
       - LOG_LEVEL=debug
     ports:
-      - "0.0.0.0:16686:16686"
-      - "0.0.0.0:4317:4317"
+      - "127.0.0.1:16686:16686"
+      - "127.0.0.1:4317:4317"
     networks:
       - dev-network
 

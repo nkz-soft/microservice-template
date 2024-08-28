@@ -30,7 +30,7 @@ public static class ContainerFactory
             .WithUsername(PostgresUsername)
             .WithPassword(PostgresPassword)
             .WithDatabase(Database)
-            .WithImage("postgres:14")
+            .WithImage("postgres:16-alpine")
             .WithPortBinding(5432, 5432)
             .WithAutoRemove(true)
             .WithCleanUp(true)
@@ -41,7 +41,7 @@ public static class ContainerFactory
         new RabbitMqBuilder()
             .WithUsername(RabbitMqUsername)
             .WithPassword(RabbitMqPassword)
-            .WithImage("rabbitmq:3.11-management")
+            .WithImage("rabbitmq:3.13-management")
             .WithPortBinding(5672, 5672)
             .WithAutoRemove(true)
             .WithCleanUp(true)
@@ -50,7 +50,7 @@ public static class ContainerFactory
 
     private static IContainer CreateRedis() =>
         new ContainerBuilder()
-            .WithImage("redis:7.0")
+            .WithImage("redis:7.4-alpine")
             .WithPortBinding(6379, 6379)
             .WithAutoRemove(true)
             .WithCleanUp(true)
