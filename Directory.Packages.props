@@ -98,10 +98,10 @@
     <PackageVersion Include="FluentAssertions" Version="6.12.1" />
     <PackageVersion Include="Respawn" Version="6.2.1" />
     <PackageVersion Include="Moq" Version="4.20.70" />
-    <PackageVersion Include="Testcontainers" Version="3.9.0" />
+    <PackageVersion Include="Testcontainers" Version="3.10.0" />
     <PackageVersion Include="Testcontainers.PostgreSql" Version="3.9.0" />
     <PackageVersion Include="Testcontainers.RabbitMq" Version="3.9.0" />
-    <PackageVersion Include="Testcontainers.Redis" Version="3.9.0" />
+    <PackageVersion Include="Testcontainers.Redis" Version="3.10.0" />
     <PackageVersion Include="Shouldly" Version="4.2.1" />
     <PackageVersion Include="RestSharp" Version="111.4.1" />
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.2.0" />
