@@ -1,5 +1,6 @@
 namespace NKZSoft.Template.Common.Tests;
 
+using System.Collections.Frozen;
 using Testcontainers;
 using Testcontainers.PostgreSql;
 using Testcontainers.RabbitMq;
@@ -10,7 +11,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 {
     protected const string EnvironmentName = "Test";
 
-    private  Dictionary<Type, IContainer> Containers { get; }
+    private  FrozenDictionary<Type, IContainer> Containers { get; }
 
     protected BaseWebApplicationFactory()
     {
@@ -27,7 +28,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
             {
                 typeof(RedisContainer), ContainerFactory.Create<RedisContainer>()
             }
-        };
+        }.ToFrozenDictionary();
     }
 
     public async Task InitializeAsync()
