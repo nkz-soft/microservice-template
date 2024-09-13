@@ -1,5 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Specifications;
 
+using System.Collections.Frozen;
 using Common.Exceptions;
 using Common.Filters;
 using Common.Paging;
@@ -7,12 +8,12 @@ using Models;
 
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
-    private static readonly Dictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
-        new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
+    private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
+        new Dictionary<string, Expression<Func<ToDoItem, object>>>
         {
             { nameof(ToDoItemFilter.Id), c => c.Id },
             { nameof(ToDoItemFilter.Title), c => c.Title },
-        };
+        }.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
 
     private ToDoItemSpecification()
     {

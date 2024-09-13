@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <Version>2.0.2</Version>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <Version>2.0.3</Version>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     </PropertyGroup>
 
     <ItemGroup>
