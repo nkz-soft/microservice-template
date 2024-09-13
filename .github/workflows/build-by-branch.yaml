@@ -56,20 +56,24 @@ jobs:
           indicators: true
           output: both
           thresholds: '30 40'
-#      - name: Add Coverage PR Comment
-#        uses: marocchino/sticky-pull-request-comment@v2
-#        if: github.event_name == 'pull_request'
-#        with:
-#          recreate: true
-#          path: code-coverage-results.md
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      - name: Create badge
-#        uses: schneegans/dynamic-badges-action@v1.6.0
-#        with:
-#          auth: ${{ secrets.GIST_SECRET }}
-#          gistID: 7fa58d77450b2a406ba5cf1b3fd258a8
-#          filename: microservice-template.json
-#          label: coverage
-#          message: 50
+      - name: Code Coverage Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage/result/*.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '50 60'
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          recreate: true
+          path: code-coverage-results.md
+
+
 
