@@ -9,11 +9,11 @@ using Models;
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
     private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
-        new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
+        new Dictionary<string, Expression<Func<ToDoItem, object>>>
         {
             { nameof(ToDoItemFilter.Id), c => c.Id },
             { nameof(ToDoItemFilter.Title), c => c.Title },
-        }.ToFrozenDictionary();
+        }.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
 
     private ToDoItemSpecification()
     {
