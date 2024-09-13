@@ -24,14 +24,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Caching dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          # Look to see if there is a cache hit for the corresponding requirements file
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
+          cache: true
+          cache-dependency-path: '**/packages.lock.json'
       - name: Restore Dependencies
         run: dotnet restore
       - name: Build
