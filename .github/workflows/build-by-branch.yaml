@@ -13,6 +13,10 @@ on:
       - main
     paths-ignore:
       - "**.md"
+
+permissions:
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
