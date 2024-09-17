@@ -2124,11 +2124,11 @@
           "EFCoreSecondLevelCacheInterceptor": "[4.7.1, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
-          "FluentValidation": "[11.9.2, )",
+          "FluentValidation": "[11.10.0, )",
           "FluentValidation.AspNetCore": "[11.3.0, )",
           "Microsoft.Extensions.Configuration.Abstractions": "[8.0.0, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[8.0.1, )",
-          "NKZSoft.FluentValidation.Options": "[1.2.0, )",
+          "NKZSoft.FluentValidation.Options": "[1.2.1, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
           "StackExchange.Redis": "[2.8.16, )"
         }
@@ -2170,7 +2170,7 @@
           "Microsoft.Extensions.Configuration.FileExtensions": "[8.0.1, )",
           "Microsoft.Extensions.Configuration.Json": "[8.0.0, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[8.0.1, )",
-          "NKZSoft.FluentValidation.Options": "[1.2.0, )",
+          "NKZSoft.FluentValidation.Options": "[1.2.1, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
           "NKZSoft.Template.Domain": "[1.0.0, )",
@@ -2195,7 +2195,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "[8.0.0, )",
           "Microsoft.Extensions.Configuration.FileExtensions": "[8.0.1, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[8.0.1, )",
-          "NKZSoft.FluentValidation.Options": "[1.2.0, )",
+          "NKZSoft.FluentValidation.Options": "[1.2.1, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
           "Scrutor": "[4.2.2, )",
@@ -2359,9 +2359,9 @@
       },
       "FluentValidation": {
         "type": "CentralTransitive",
-        "requested": "[11.9.2, )",
-        "resolved": "11.9.2",
-        "contentHash": "XeHp9LvFvu1fsQ/NvDCymV02GOCB1nz7ZUhfpI3uMhCcHTkV1K5bMkv+Nc/kuNYyAsX5+5bcmUanIEMd5QN+Eg=="
+        "requested": "[11.10.0, )",
+        "resolved": "11.10.0",
+        "contentHash": "qsJGSJDdZ8qiG+lVJ70PZfJHcEdq8UQZ/tZDXoj78/iHKG6lVKtMJsD11zyyv/IPc7rwqGqnFoFLTNzpo3IPYg=="
       },
       "FluentValidation.AspNetCore": {
         "type": "CentralTransitive",
@@ -2673,11 +2673,11 @@
       },
       "NKZSoft.FluentValidation.Options": {
         "type": "CentralTransitive",
-        "requested": "[1.2.0, )",
-        "resolved": "1.2.0",
-        "contentHash": "Uuw2WntjwzeVT1Zb7SHwQl7aD15LqR+CViWPfvgu/LpD9VOIbmHDkd61j7KzGWi0+pX7HxW+VdOlQTHAzj++Xg==",
+        "requested": "[1.2.1, )",
+        "resolved": "1.2.1",
+        "contentHash": "UA2+dJHMXM08cyBS2hRhh9rfcyIZhI4y5v1B2gNP3p+f3TFrr1u6jm62B/gAcOzdp58s6X76tCw1aos1mvChQA==",
         "dependencies": {
-          "FluentValidation": "11.9.2",
+          "FluentValidation": "11.10.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "Microsoft.Extensions.Hosting": "8.0.0",
           "Microsoft.Extensions.Options": "8.0.2",
