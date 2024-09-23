@@ -69,7 +69,7 @@
     <PackageVersion Include="Mapster" Version="7.4.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.1" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.1" />
-    <PackageVersion Include="Google.Protobuf" Version="3.28.1" />
+    <PackageVersion Include="Google.Protobuf" Version="3.28.2" />
     <PackageVersion Include="protobuf-net" Version="3.2.30" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
