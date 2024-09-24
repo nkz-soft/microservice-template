@@ -21,7 +21,7 @@ public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFact
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }

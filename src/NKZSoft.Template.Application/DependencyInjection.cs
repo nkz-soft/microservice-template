@@ -8,7 +8,7 @@ public static class DependencyInjection
     {
         services.ThrowIfNull();
 
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), ServiceLifetime.Scoped, null, true);
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), filter:null, includeInternalTypes:true);
         services.AddMediatR(cfg =>
             cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 

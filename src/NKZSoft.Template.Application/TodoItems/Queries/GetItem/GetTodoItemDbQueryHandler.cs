@@ -22,7 +22,7 @@ public sealed class GetTodoItemDbQueryHandler : HandlerDbQueryBase<GetTodoItemQu
     public override async Task<Result<ToDoItemDto>> Handle(GetTodoItemQuery request, CancellationToken cancellationToken)
     {
         var entity = await _repository
-            .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id, true), cancellationToken)
+            .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id, noTracking:true), cancellationToken)
             .ConfigureAwait(false);
 
         entity.ThrowIfNull(new NotFoundException());

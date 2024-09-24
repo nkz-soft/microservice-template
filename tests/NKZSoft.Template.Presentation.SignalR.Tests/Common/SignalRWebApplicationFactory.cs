@@ -21,7 +21,7 @@ public sealed class SignalRWebApplicationFactory<TStartup> : BaseWebApplicationF
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }
@@ -34,7 +34,8 @@ public sealed class SignalRWebApplicationFactory<TStartup> : BaseWebApplicationF
             o.HttpMessageHandlerFactory = _ => Server.CreateHandler();
         })
         .Build();
-        await connection.StartAsync();
+        await connection.StartAsync()
+            .ConfigureAwait(false);
         return connection;
     }
 }

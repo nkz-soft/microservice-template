@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations;
 
-public class ToDoListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
+public class ToDoItemListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
 {
     public override void Configure(EntityTypeBuilder<ToDoList> builder)
     {

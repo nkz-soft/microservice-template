@@ -10,7 +10,7 @@ public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
     public ToDoItem(): base(Guid.NewGuid())
     {}
 
-    public ToDoItem(string title) : this(title, null)
+    public ToDoItem(string title) : this(title, note: null)
     {
         Title = title;
     }

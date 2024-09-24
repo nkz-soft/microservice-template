@@ -6,5 +6,5 @@ using Result;
 public sealed record ToDoItemResponse : ResultResponse
 {
     [ProtoMember(1)]
-    public ToDoItem? Item { get; init; }
+    public ToDoItemDto? Item { get; init; }
 }

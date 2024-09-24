@@ -21,7 +21,7 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }

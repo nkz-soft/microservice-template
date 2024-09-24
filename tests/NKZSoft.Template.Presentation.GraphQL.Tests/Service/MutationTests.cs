@@ -20,11 +20,11 @@ public sealed class MutationTests
     {
         var client = new RestClient(_factory.CreateClient());
 
-        const string query = @"mutation {
-              createToDoItem(input: {title: ""Test"", listId: null}) {
-                    uUID
-                }
-            }";
+        const string query = "mutation {\r\n" +
+                             "              createToDoItem(input: {title: \"Test\", listId: null}) {\r\n" +
+                             "                    uUID\r\n" +
+                             "                }\r\n" +
+                             "            }";
 
         var command = new ClientQueryRequest { Query = query };
 

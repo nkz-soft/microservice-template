@@ -12,13 +12,13 @@ public sealed partial record ToDoItemFilter
 
         public ToDoItemFilterBuilder Id(Guid id)
         {
-            _filter.Id = new FilterFieldDefinition<Guid>() { Value = id };
+            _filter.Id = new FilterFieldDefinition<Guid> { Value = id };
             return this;
         }
 
         public ToDoItemFilterBuilder Title(string title)
         {
-            _filter.Title = new FilterFieldDefinition<string>() { Value = title };
+            _filter.Title = new FilterFieldDefinition<string> { Value = title };
             return this;
         }
 

@@ -12,7 +12,7 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
     {
         var basePath = Directory
             .GetDirectories($"{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}")
-            .FirstOrDefault(s => s.Contains("Starter"));
+            .FirstOrDefault(s => s.Contains("Starter", StringComparison.OrdinalIgnoreCase));
 
         ArgumentNullException.ThrowIfNull(basePath);
 

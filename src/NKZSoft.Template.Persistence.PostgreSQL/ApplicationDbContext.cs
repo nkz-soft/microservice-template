@@ -36,22 +36,23 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
         UpdateEntities(currentUser);
 
-        var result = await base.SaveChangesAsync(cancellationToken);
-        await DispatchDomainEventsAsync();
+        var result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        await DispatchDomainEventsAsync().ConfigureAwait(false);
 
         return result;
     }
 
-    public async Task MigrateAsync() => await AppDbContext.Database.MigrateAsync();
+    public async Task MigrateAsync() => await AppDbContext.Database.MigrateAsync().ConfigureAwait(false);
 
-    public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this);
+    public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this).ConfigureAwait(false);
 
     private async Task DispatchDomainEventsAsync()
     {
         var domainEntities = ChangeTracker
             .Entries<IEntity>()
             .Where(x => x.Entity.DomainEvents.Count != 0);
-        await _mediator.DispatchDomainEventsAsync(domainEntities);
+        await _mediator.DispatchDomainEventsAsync(domainEntities)
+            .ConfigureAwait(false);
     }
 
     private void UpdateEntities(ICurrentUser currentUser)

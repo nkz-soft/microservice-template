@@ -57,13 +57,14 @@ builder.Services.AddOpenTelemetry()
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+var scope = app.Services.CreateAsyncScope();
+await using (scope.ConfigureAwait(false))
 {
     try
     {
         var context = scope.ServiceProvider.GetRequiredService<IApplicationDbContext>();
-        await context.MigrateAsync();
-        await context.SeedAsync();
+        await context.MigrateAsync().ConfigureAwait(false);
+        await context.SeedAsync().ConfigureAwait(false);
     }
     catch (Exception ex)
     {
@@ -95,10 +96,10 @@ app.MapHealthChecks("/ready", new HealthCheckOptions { Predicate = _ => false })
 app.MapHealthChecks("/health/info", new HealthCheckOptions
 {
     Predicate = _ => true,
-    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
 });
 
-app.Run();
+await app.RunAsync().ConfigureAwait(false);
 
 //We need public access to the class for tests
 #pragma warning disable CS1591

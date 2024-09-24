@@ -1,16 +1,16 @@
-﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
+﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Delete;
 
 using Common.Exceptions;
 using Common.Repositories;
 using Common.Repositories.PostgreSql;
 
-public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemCommand>
+public sealed class DeleteToDoItemCommandHandler : IRequestHandler<DeleteToDoItemCommand>
 {
     private readonly IToDoItemRepository _repository;
 
-    public UpdateTodoItemCommandHandler(IToDoItemRepository repository) => _repository = repository.ThrowIfNull();
+    public DeleteToDoItemCommandHandler(IToDoItemRepository repository) => _repository = repository;
 
-    public async Task Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
+    public async Task Handle(DeleteToDoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = await _repository
             .SingleOrDefaultAsync(new ToDoItemByIdSpecification(request.Id), cancellationToken)
@@ -21,8 +21,7 @@ public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoIte
             throw new NotFoundException(nameof(ToDoItem), request.Id);
         }
 
-        entity.Update(request.Title, request.Description);
-
+        await _repository.DeleteAsync(entity, cancellationToken).ConfigureAwait(false);
         await _repository.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(false);
     }

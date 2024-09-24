@@ -1,11 +1,9 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
 
-public sealed class UpdateTodoItemCommandValidator : AbstractValidator<UpdateTodoItemCommand>
+public sealed class UpdateToDoItemCommandValidator : AbstractValidator<UpdateToDoItemCommand>
 {
-    public UpdateTodoItemCommandValidator()
-    {
+    public UpdateToDoItemCommandValidator() =>
         RuleFor(v => v.Title)
             .MaximumLength(200)
             .NotEmpty();
-    }
 }

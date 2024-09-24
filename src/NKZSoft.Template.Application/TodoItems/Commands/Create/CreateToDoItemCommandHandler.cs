@@ -2,11 +2,11 @@
 
 using Common.Repositories.PostgreSql;
 
-public sealed class CreateTodoItemCommandHandler : IRequestHandler<CreateToDoItemCommand, Result<Guid>>
+public sealed class CreateToDoItemCommandHandler : IRequestHandler<CreateToDoItemCommand, Result<Guid>>
 {
     private readonly IToDoItemRepository _repository;
 
-    public CreateTodoItemCommandHandler(IToDoItemRepository repository) => _repository = repository.ThrowIfNull();
+    public CreateToDoItemCommandHandler(IToDoItemRepository repository) => _repository = repository.ThrowIfNull();
 
     public async Task<Result<Guid>> Handle(CreateToDoItemCommand request, CancellationToken cancellationToken)
     {

@@ -4,5 +4,5 @@ public enum EnumSortDirection : byte
 {
     None,
     Asc,
-    Desc
+    Desc,
 }

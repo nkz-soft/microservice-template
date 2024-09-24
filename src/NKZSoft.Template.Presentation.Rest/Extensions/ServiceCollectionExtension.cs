@@ -22,7 +22,7 @@ public static class ServiceCollectionExtension
 
         services.AddHttpContextAccessor()
             .AddSwagger(configuration, Assembly.GetExecutingAssembly())
-            .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(ServiceLifetime.Scoped, null, true)
+            .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(filter:null, includeInternalTypes:true)
             .AddExceptionHandler<GlobalExceptionHandler>()
             .AddProblemDetails()
             .AddControllers(options => options.Filters.Add<CustomExceptionFilterAttribute>())

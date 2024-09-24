@@ -12,6 +12,6 @@ public sealed class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> 
     public async Task Process(TRequest request, CancellationToken cancellationToken)
     {
         _logger.LoggingRequest(request.ToString());
-        await Task.CompletedTask;
+        await Task.CompletedTask.ConfigureAwait(false);
     }
 }

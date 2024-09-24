@@ -9,7 +9,7 @@ using Models;
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
     private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
-        new Dictionary<string, Expression<Func<ToDoItem, object>>>
+        new Dictionary<string, Expression<Func<ToDoItem, object>>> (StringComparer.OrdinalIgnoreCase)
         {
             { nameof(ToDoItemFilter.Id), c => c.Id },
             { nameof(ToDoItemFilter.Title), c => c.Title },
@@ -36,7 +36,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
         var specificationBuilder = specification.Query;
 
         Filter(specificationBuilder, pageContext.Filter);
-        specification.Sort(specificationBuilder, pageContext.ListSort);
+        Sort(specificationBuilder, pageContext.ListSort);
 
         if (pageContext.PageIndex != 0)
         {
@@ -65,7 +65,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
         }
     }
 
-    private ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
+    private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         IEnumerable<SortDescriptor> sorts)
     {
         var sortDescriptors = sorts as SortDescriptor[] ?? sorts.ToArray();
@@ -78,7 +78,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
         return Sort(specificationBuilder, new SortDescriptor(nameof(ToDoItemFilter.Id)));
     }
 
-    private ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
+    private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         SortDescriptor sort)
     {
         if (SortExpressions.TryGetValue(sort.Field, out var se))

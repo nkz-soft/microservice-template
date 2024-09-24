@@ -3,6 +3,7 @@
 using Models;
 using Models.Result;
 using Models.ToDoItem;
+using ToDoItemDto = Application.Models.ToDoItemDto;
 
 public class MappingConfig : IRegister
 {
@@ -14,15 +15,15 @@ public class MappingConfig : IRegister
             .Map(dest => dest.IsSuccess, src => src.IsSuccess)
             .Map(dest => dest.Errors, src => src.Errors)
             .Map(dest => dest.Items, src => src.Value.Data)
-            .IgnoreNonMapped(true);
+            .IgnoreNonMapped(value:true);
 
         config.NewConfig<Result<ToDoItemDto>, ToDoItemResponse>()
             .Map(dest => dest.IsSuccess, src => src.IsSuccess)
             .Map(dest => dest.Errors, src => src.Errors)
             .Map(dest => dest.Item, src => src.Value)
-            .IgnoreNonMapped(true);
+            .IgnoreNonMapped(value:true);
 
-        config.NewConfig<ToDoItemDto, ToDoItem>()
+        config.NewConfig<ToDoItemDto, ToDoItemDto>()
             .Map(dest => dest.Id, src => src.Id)
             .Map(dest => dest.Title, src => src.Title)
             .Map(dest => dest.Note, src => src.Note)
@@ -31,10 +32,10 @@ public class MappingConfig : IRegister
             .Map(dest => dest.ModifiedBy, src => src.ModifiedBy)
             .Map(dest => dest.Modified, src => src.Modified)
             .Map(dest => dest.Deleted, src => src.Deleted)
-            .IgnoreNonMapped(true);
+            .IgnoreNonMapped(value:true);
 
         config.NewConfig<IError, ErrorResponse>()
-            .MapToConstructor(true)
+            .MapToConstructor(value:true)
             .ConstructUsing(x => new ErrorResponse(x.Message, TransformErrorCode(x)));
     }
 

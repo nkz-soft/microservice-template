@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
+#pragma warning disable MA0048
 
 namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
 {
@@ -18,7 +19,7 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true)
+                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -36,7 +37,7 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true)
+                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
                 },
                 constraints: table =>
                 {

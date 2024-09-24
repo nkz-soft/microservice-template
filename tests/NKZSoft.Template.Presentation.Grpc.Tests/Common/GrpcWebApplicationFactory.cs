@@ -12,7 +12,7 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
         var client = CreateClient();
         var grpcChannel =  GrpcChannel.ForAddress(client.BaseAddress!, new GrpcChannelOptions
         {
-            HttpClient = client
+            HttpClient = client,
         });
         return grpcChannel.CreateGrpcService<T>();
     }
@@ -31,7 +31,7 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }
