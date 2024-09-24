@@ -6,7 +6,7 @@ using Middleware;
 public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddRestPresentation(
-        this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
+        this IServiceCollection services, IConfiguration configuration)
     {
         var corsParams = configuration.GetSection("Cors").Get<List<string>>();
 

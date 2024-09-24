@@ -52,7 +52,6 @@ public static class ServiceCollectionExtension
             {
                 optionsBuilder?.Invoke(provider, options);
 
-
                 options.UseInternalServiceProvider(provider);
                 options.UseNpgsql(config.Value.ConnectionString);
 

@@ -27,5 +27,4 @@ public class ToDoItemControllerV1 : BaseController
     [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<ResultDtoBase<ToDoItemDto>>> Get(Guid id, CancellationToken cancellationToken)
         => (await Mediator.Send(new GetTodoItemQuery(id), cancellationToken)).ToResultDto();
-
 }

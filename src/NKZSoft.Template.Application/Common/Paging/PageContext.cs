@@ -32,15 +32,15 @@ public sealed record PageContext<T> : IPageContext<T>,
 
     public bool IsValid() => PageIndex > 0 && PageSize > 0;
 
-    public static PageContext<T> operator ++(PageContext<T> obj)
+    public static PageContext<T> operator ++(PageContext<T> value)
     {
-        obj.PageIndex++;
-        return obj;
+        value.PageIndex++;
+        return value;
     }
 
-    public static PageContext<T> operator --(PageContext<T> obj)
+    public static PageContext<T> operator --(PageContext<T> value)
     {
-        obj.PageIndex--;
-        return obj;
+        value.PageIndex--;
+        return value;
     }
 }

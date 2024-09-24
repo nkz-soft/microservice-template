@@ -14,7 +14,6 @@ public sealed class MutationTests
     public MutationTests(GraphQLWebApplicationFactory<Program> factory) =>
         _factory = factory;
 
-
     [Fact, Order(1)]
     public async Task CreateToDoItemsTestAsync()
     {

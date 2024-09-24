@@ -110,5 +110,6 @@
     <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.1.0" />
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.9.2" />
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.163" />
+    <PackageVersion Include="Roslynator.Analyzers" Version="4.12.5" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,5 @@
 ﻿namespace NKZSoft.Template.Common.Tests.Containers;
 
-using Testcontainers.PostgreSql;
-using Testcontainers.RabbitMq;
-using Testcontainers.Redis;
-
 public static class ContainerFactory
 {
     private const string Database = "template_db";

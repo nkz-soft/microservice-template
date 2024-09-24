@@ -29,6 +29,3 @@ global using NKZSoft.Template.Presentation.SignalR.Extensions;
 //#if (EnableRedisStorage)
 global using NKZSoft.Template.Persistence.Redis.Extensions;
 //#endif
-
-
-

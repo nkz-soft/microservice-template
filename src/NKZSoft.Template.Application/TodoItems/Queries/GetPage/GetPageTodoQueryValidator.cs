@@ -5,6 +5,4 @@ using Common.Paging;
 using Models;
 
 internal sealed class GetPageTodoQueryValidator
-    : PagingQueryValidator<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>,ToDoItemFilter>
-{
-}
+    : PagingQueryValidator<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>,ToDoItemFilter>;

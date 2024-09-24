@@ -21,10 +21,7 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ModifiedBy = table.Column<string>(type: "text", nullable: true),
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ToDoLists", x => x.Id);
-                });
+                constraints: table => table.PrimaryKey("PK_ToDoLists", x => x.Id));
 
             migrationBuilder.CreateTable(
                 name: "ToDoItems",

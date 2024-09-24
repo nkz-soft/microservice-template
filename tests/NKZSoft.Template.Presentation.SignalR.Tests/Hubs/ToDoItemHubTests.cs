@@ -19,10 +19,7 @@ public sealed class ToDoItemHubTests
         await using var connection = await _factory.CreateConnectionAsync(nameof(ToDoItemHub));
 
         ToDoItemDto? result = null;
-        connection.On<ToDoItemDto>(nameof(ToDoItemHub.ToDoItemUpdated), msg =>
-        {
-            result = msg;
-        });
+        connection.On<ToDoItemDto>(nameof(ToDoItemHub.ToDoItemUpdated), msg => result = msg);
 
         await connection.InvokeAsync(nameof(ToDoItemHub.ToDoItemUpdated),
             new ToDoItemDto(Guid.NewGuid(), "Test", "Description",

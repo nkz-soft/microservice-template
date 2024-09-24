@@ -21,9 +21,9 @@ builder.Services
         .AddEFCoreRedisCache(configuration)
     .AddApplication()
     .AddCoreInfrastructure()
-    .AddRestPresentation(configuration, builder.Environment)
+    .AddRestPresentation(configuration)
 //#if (EnableGrpc)
-    .AddGrpcPresentation(configuration)
+    .AddGrpcPresentation()
 //#endif
 //#if (EnableGraphQL)
     .AddGraphQLPresentation()
@@ -44,10 +44,7 @@ builder.Services.AddOpenTelemetry()
             serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString(),
             serviceInstanceId: Environment.MachineName))
     .WithTracing(b => b
-        .AddAspNetCoreInstrumentation(options =>
-        {
-            options.RecordException = true;
-        })
+        .AddAspNetCoreInstrumentation(options => options.RecordException = true)
         .AddRestOpenTelemetry()
         .AddNgpSqlPersistenceOpenTelemetry()
         .AddMassTransitOpenTelemetry()
@@ -103,5 +100,5 @@ await app.RunAsync().ConfigureAwait(false);
 
 //We need public access to the class for tests
 #pragma warning disable CS1591
-public partial class Program {}
+public partial class Program;
 #pragma warning restore CS1591

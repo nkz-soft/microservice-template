@@ -5,8 +5,10 @@ using Events;
 
 public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
 {
+    /// <summary>
     //for Hot Chocolate only
     //see https://stackoverflow.com/questions/56995658/in-graphql-hotchocolate-can-you-have-optional-parameters-or-use-a-constructor
+    /// </summary>
     public ToDoItem(): base(Guid.NewGuid())
     {}
 

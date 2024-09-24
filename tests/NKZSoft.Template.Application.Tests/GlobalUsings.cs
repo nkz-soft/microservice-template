@@ -2,9 +2,11 @@
 global using MediatR;
 global using Moq;
 global using FluentAssertions;
-
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using NKZSoft.Template.Application.Common.Paging;
 global using NKZSoft.Template.Application.Common.Repositories;
+global using NKZSoft.Template.Application.Common.Repositories.PostgreSql;
 global using NKZSoft.Template.Application.Tests.Common;
 global using NKZSoft.Template.Application.TodoItems.Commands.Create;
 global using NKZSoft.Template.Application.TodoItems.Commands.Delete;

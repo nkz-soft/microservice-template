@@ -26,7 +26,7 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
         var configuration = new ConfigurationBuilder()
             .SetBasePath(basePath)
             .AddJsonFile("appsettings.json")
-            .AddJsonFile($"appsettings.Development.json", optional: true)
+            .AddJsonFile("appsettings.Development.json", optional: true)
             .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
             .AddEnvironmentVariables()
             .Build();

@@ -5,7 +5,7 @@ using Mapper = MapsterMapper.Mapper;
 public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddGrpcPresentation(
-        this IServiceCollection services, IConfiguration configuration)
+        this IServiceCollection services)
     {
         var typeAdapterConfig = TypeAdapterConfig.GlobalSettings;
         typeAdapterConfig.Scan(Assembly.GetExecutingAssembly());

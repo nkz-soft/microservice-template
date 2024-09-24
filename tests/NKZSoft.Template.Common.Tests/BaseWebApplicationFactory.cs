@@ -1,11 +1,5 @@
 namespace NKZSoft.Template.Common.Tests;
 
-using System.Collections.Frozen;
-using Testcontainers;
-using Testcontainers.PostgreSql;
-using Testcontainers.RabbitMq;
-using Testcontainers.Redis;
-
 public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>, IAsyncLifetime
     where TStartup : class
 {

@@ -2,7 +2,6 @@
 
 public sealed class ToDoItemHub : Hub
 {
-
     public async Task<Guid> ToDoItemUpdated(ToDoItemDto toDoItemDto)
     {
         //see https://github.com/dotnet/aspnetcore/issues/11542

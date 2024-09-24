@@ -85,6 +85,12 @@
           "OpenTelemetry.Api.ProviderBuilderExtensions": "[1.9.0, 2.0.0)"
         }
       },
+      "Roslynator.Analyzers": {
+        "type": "Direct",
+        "requested": "[4.12.5, )",
+        "resolved": "4.12.5",
+        "contentHash": "yv7GB4pD7g9SH+hR/tXiahPij4WHicO8McJ63pFKYTT4jxPxiA3pUix8der+mt2QmtJc5yuaIAnnzV9t/T8i4g=="
+      },
       "Scrutor": {
         "type": "Direct",
         "requested": "[4.2.2, )",

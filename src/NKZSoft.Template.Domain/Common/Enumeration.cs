@@ -2,9 +2,9 @@ namespace NKZSoft.Template.Domain.Common;
 
 public abstract class Enumeration : IComparable
 {
-    public string Name { get; private set; }
+    public string Name { get; }
 
-    public int Id { get; private set; }
+    public int Id { get; }
 
     protected Enumeration(int id, string name) => (Id, Name) = (id, name);
 
@@ -34,22 +34,19 @@ public abstract class Enumeration : IComparable
 
     public static int AbsoluteDifference(Enumeration firstValue, Enumeration secondValue)
     {
-        var absoluteDifference = Math.Abs(firstValue.Id - secondValue.Id);
-        return absoluteDifference;
+        return Math.Abs(firstValue.Id - secondValue.Id);
     }
 
     public static T FromValue<T>(int value) where T : Enumeration
     {
-        var matchingItem = Parse<T, int>(value, "value", item => item.Id == value);
-        return matchingItem;
+        return Parse<T, int>(value, "value", item => item.Id == value);
     }
 
     public static T FromDisplayName<T>(string displayName) where T : Enumeration
     {
-        var matchingItem = Parse<T, string>(displayName,
+        return Parse<T, string>(displayName,
             "display name",
             item => item.Name.Equals(displayName, StringComparison.OrdinalIgnoreCase));
-        return matchingItem;
     }
 
     private static T Parse<T, K>(K value, string description, Func<T, bool> predicate) where T : Enumeration

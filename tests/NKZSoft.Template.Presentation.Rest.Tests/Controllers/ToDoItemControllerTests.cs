@@ -28,8 +28,8 @@ public sealed class ToDoItemControllerTests
     private static class Post
     {
         public static string GetPageToDoItem() => $"{ApiUrlBaseV1}/page";
-        public static string CreateToDoItem() => $"{ApiUrlBaseV2}";
-        public static string CreateRedisToDoItem() => $"{ApiUrlBaseV3}";
+        public static string CreateToDoItem() => ApiUrlBaseV2;
+        public static string CreateRedisToDoItem() => ApiUrlBaseV3;
     }
 
     [Fact, Order(1)]
