@@ -8,7 +8,7 @@ public class TestBase
     protected IApplicationDbContext Context { get; init; }
 
     protected ICurrentUserService CurrentUserService { get;init; }
-    
+
     protected SeedDataContext SeedDataContext { get; init; }
 
     protected IMediator Mediator { get; init; }

@@ -12,7 +12,7 @@ public static class AppMockFactory
             { Id = 1,
                 FirstName = "test",
                 LastName = "test",
-                MiddleName = "test"
+                MiddleName = "test",
             };
 
         return MockRepositoryInstance

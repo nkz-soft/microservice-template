@@ -12,4 +12,12 @@ public sealed class ConflictException : Exception
         : base(message)
     {
     }
+
+    public ConflictException()
+    {
+    }
+
+    public ConflictException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 }

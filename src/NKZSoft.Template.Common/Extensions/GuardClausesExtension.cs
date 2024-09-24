@@ -1,8 +1,8 @@
 ﻿namespace NKZSoft.Template.Common;
 
-public static class GuardExtension
+public static class GuardClausesExtension
 {
-    public static T ThrowIfNull<T>(this T param) where T : class? => Guard.Against.Null(param, nameof(param));
+    public static T ThrowIfNull<T>(this T param) where T : class? => Guard.Against.Null(param);
 
     public static T ThrowIfNull<T>(this T param, string paramName) where T : class?  => Guard.Against.Null(param, paramName);
 

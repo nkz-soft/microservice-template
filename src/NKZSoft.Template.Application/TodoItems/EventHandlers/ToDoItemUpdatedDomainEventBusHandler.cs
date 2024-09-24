@@ -12,6 +12,6 @@ public sealed class ToDoItemUpdatedDomainEventBusHandler : INotificationHandler<
     {
         _logger.RaiseIntegrationEvent(notification.GetType().Name);
 
-        await Task.CompletedTask;
+        await Task.CompletedTask.ConfigureAwait(false);
     }
 }

@@ -5,6 +5,7 @@ using Configuration;
 using Repositories;
 using EasyCaching.Core;
 using EasyCaching.Core.Configurations;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtension
 {
@@ -51,6 +52,8 @@ public static class ServiceCollectionExtension
             .AddClasses(classes => classes.AssignableTo(typeof(IRedisRepository)))
             .AsMatchingInterface()
             .WithScopedLifetime());
+
+        services.TryAddScoped<IToDoItemRedisRepository, ToDoListRedisRepository>();
 
         return services;
     }

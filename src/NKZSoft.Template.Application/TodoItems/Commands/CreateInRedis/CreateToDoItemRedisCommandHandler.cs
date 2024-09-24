@@ -2,11 +2,11 @@
 
 using Common.Repositories.Redis;
 
-public sealed class CreateTodoItemRedisCommandHandler : IRequestHandler<CreateToDoItemRedisCommand, Result<Guid>>
+public sealed class CreateToDoItemRedisCommandHandler : IRequestHandler<CreateToDoItemRedisCommand, Result<Guid>>
 {
     private readonly IToDoItemRedisRepository _repository;
 
-    public CreateTodoItemRedisCommandHandler(IToDoItemRedisRepository repository) => _repository = repository.ThrowIfNull();
+    public CreateToDoItemRedisCommandHandler(IToDoItemRedisRepository repository) => _repository = repository.ThrowIfNull();
 
     public async Task<Result<Guid>> Handle(CreateToDoItemRedisCommand request, CancellationToken cancellationToken)
     {

@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace NKZSoft.Template.Application.Tests;
+﻿namespace NKZSoft.Template.Application.Tests;
 
 public static class ServiceCollectionExtensions
 {

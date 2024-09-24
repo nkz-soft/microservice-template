@@ -17,7 +17,8 @@ public sealed class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior
 
             var validationResults = await Task.WhenAll(
                 _validators.Select(v =>
-                    v.ValidateAsync(context, cancellationToken)));
+                    v.ValidateAsync(context, cancellationToken)))
+                .ConfigureAwait(false);
 
             var failures = validationResults
                 .Where(r => r.Errors.Count != 0)
@@ -29,6 +30,6 @@ public sealed class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior
                 throw new ValidationException(failures);
             }
         }
-        return await next();
+        return await next().ConfigureAwait(false);
     }
 }

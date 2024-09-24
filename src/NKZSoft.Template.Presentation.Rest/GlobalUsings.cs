@@ -36,5 +36,3 @@ global using NKZSoft.Template.Application.TodoItems.Queries.GetItemFromRedis;
 global using NKZSoft.Template.Presentation.Rest.Models.Result;
 global using OpenTelemetry.Trace;
 global  using Serilog;
-
-

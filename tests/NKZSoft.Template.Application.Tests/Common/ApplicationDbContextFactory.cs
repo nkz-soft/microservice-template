@@ -22,8 +22,8 @@ public static class ApplicationDbContextFactory
             new MachineDateTime(),
             AppMockFactory.CreateMediatorMock());
 
-        await context.Database.EnsureCreatedAsync();
-        await context.SeedAsync();
+        await context.Database.EnsureCreatedAsync().ConfigureAwait(false);
+        await context.SeedAsync().ConfigureAwait(false);
 
         return context;
     }

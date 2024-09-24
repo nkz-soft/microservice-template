@@ -1,5 +1,3 @@
 ﻿namespace NKZSoft.Template.Domain.Common;
 
-public interface IAggregateRoot
-{
-}
+public interface IAggregateRoot;

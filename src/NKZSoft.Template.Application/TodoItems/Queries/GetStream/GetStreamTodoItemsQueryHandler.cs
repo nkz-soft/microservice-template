@@ -23,7 +23,8 @@ public class GetStreamTodoItemsQueryHandler : StreamRequestHandlerBase<GetStream
 
         await foreach (var entity in _repository
                            .AsAsyncEnumerable(specification)
-                           .WithCancellation(cancellationToken))
+                           .WithCancellation(cancellationToken)
+                           .ConfigureAwait(false))
         {
             yield return await entity
                 .BuildAdapter(Mapper.Config)

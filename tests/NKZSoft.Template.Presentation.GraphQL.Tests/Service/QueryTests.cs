@@ -3,11 +3,11 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 using Common;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
-public sealed class QueryTest
+public sealed class QueryTests
 {
     private readonly GraphQLWebApplicationFactory<Program> _factory;
 
-    public QueryTest(GraphQLWebApplicationFactory<Program> factory) =>
+    public QueryTests(GraphQLWebApplicationFactory<Program> factory) =>
         _factory = factory;
 
     [Fact, Order(1)]
@@ -15,13 +15,13 @@ public sealed class QueryTest
     {
         var client = new RestClient(_factory.CreateClient());
 
-        const string query = @"
-            query {
-                todoItems {
-                    id,
-                    note
-                }
-            }";
+        const string query = "\r\n" +
+                             "            query {\r\n" +
+                             "                todoItems {\r\n" +
+                             "                    id,\r\n" +
+                             "                    note\r\n" +
+                             "                }\r\n" +
+                             "            }";
 
         var command = new ClientQueryRequest { Query = query };
         var response = await client.PostAsync(

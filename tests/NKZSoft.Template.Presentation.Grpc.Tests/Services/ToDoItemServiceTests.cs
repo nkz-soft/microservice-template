@@ -9,12 +9,12 @@ using global::Grpc.Core;
 using Models;
 
 [Collection(nameof(GrpcCollectionDefinition))]
-public sealed class ToDoItemServiceTest
+public sealed class ToDoItemServiceTests
 {
     private readonly GrpcWebApplicationFactory<Program> _factory;
     private readonly IToDoItemService _service;
 
-    public ToDoItemServiceTest(GrpcWebApplicationFactory<Program> factory)
+    public ToDoItemServiceTests(GrpcWebApplicationFactory<Program> factory)
     {
         _factory = factory;
         _service = _factory.CreateGrpcService<IToDoItemService>();
@@ -41,13 +41,13 @@ public sealed class ToDoItemServiceTest
         {
             var response = await _service.GetToDoItemById(new GetTodoItemRequest
             {
-                Id = item.Items.First().Id
+                Id = item.Items[0].Id,
             });
 
             response.Should().NotBeNull();
 
             response.Item.Should().NotBeNull();
-            response.Item!.Id.Should().Be(item.Items.First().Id);
+            response.Item!.Id.Should().Be(item.Items[0].Id);
         }
     }
 
@@ -56,8 +56,8 @@ public sealed class ToDoItemServiceTest
     {
         async Task Act() =>  await _service.GetToDoItemById(new GetTodoItemRequest
         {
-            Id = Guid.NewGuid()
-        });
+            Id = Guid.NewGuid(),
+        }).ConfigureAwait(false);
 
         await Assert.ThrowsAsync<RpcException>(Act);
     }
@@ -67,7 +67,7 @@ public sealed class ToDoItemServiceTest
     {
         var count = 0;
 
-        await foreach (var response in _service.GetToDoItems())
+        await foreach (var response in _service.GetToDoItems().ConfigureAwait(false))
         {
             response.Should().NotBeNull();
             ++count;

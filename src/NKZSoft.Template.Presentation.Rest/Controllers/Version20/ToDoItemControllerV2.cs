@@ -9,11 +9,11 @@ public class ToDoItemControllerV2 : BaseController
     }
 
     [HttpPost]
-    [ProducesResponseType(typeof(ResultDto<Guid>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<Guid>>> Create(
+    [ProducesResponseType(typeof(ResultDtoBase<Guid>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ResultDtoBase<Guid>>> Create(
         [FromBody] CreateToDoItemCommand command,
         CancellationToken cancellationToken)
         => (await Mediator.Send(command, cancellationToken)).ToResultDto();

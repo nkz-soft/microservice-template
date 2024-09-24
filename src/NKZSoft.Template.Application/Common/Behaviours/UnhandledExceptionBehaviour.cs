@@ -12,7 +12,7 @@ public sealed class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipeline
     {
         try
         {
-            return await next();
+            return await next().ConfigureAwait(false);
         }
         catch (Exception)
         {

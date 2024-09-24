@@ -1,4 +1,5 @@
-﻿global using System.Diagnostics.CodeAnalysis;
+﻿global using System.Collections.Frozen;
+global using System.Diagnostics.CodeAnalysis;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.AspNetCore.Mvc.Testing;
 global using Xunit;
@@ -11,5 +12,6 @@ global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using NKZSoft.Template.Application.Common.Interfaces;
 global using NKZSoft.Template.Common.Tests.Containers;
 global using NKZSoft.Template.Infrastructure.Core.Services;
-
-
+global using Testcontainers.PostgreSql;
+global using Testcontainers.RabbitMq;
+global using Testcontainers.Redis;

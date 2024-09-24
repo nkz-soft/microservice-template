@@ -2,12 +2,10 @@
 
 using Create;
 
-public sealed class CreateTodoItemRedisCommandValidator : AbstractValidator<CreateToDoItemCommand>
+public sealed class CreateToDoItemRedisCommandValidator : AbstractValidator<CreateToDoItemCommand>
 {
-    public CreateTodoItemRedisCommandValidator()
-    {
+    public CreateToDoItemRedisCommandValidator() =>
         RuleFor(v => v.Title)
             .MaximumLength(250)
             .NotEmpty();
-    }
 }

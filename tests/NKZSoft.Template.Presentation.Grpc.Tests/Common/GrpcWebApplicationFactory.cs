@@ -12,7 +12,7 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
         var client = CreateClient();
         var grpcChannel =  GrpcChannel.ForAddress(client.BaseAddress!, new GrpcChannelOptions
         {
-            HttpClient = client
+            HttpClient = client,
         });
         return grpcChannel.CreateGrpcService<T>();
     }
@@ -20,18 +20,18 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         base.ConfigureWebHost(builder);
-        builder.UseEnvironment(EnvironmentName);
-        builder.ConfigureServices((_, services) =>
+        builder.UseEnvironment(EnvironmentName)
+            .ConfigureServices((_, services) =>
         {
             services
                 .Replace<IDbInitializer, SeedDataContext>()
-                .Replace<ICurrentUserService>(p => AppMockFactory.CreateCurrentUserServiceMock())
-                .Replace<IOptions<PostgresConnection>>(p =>
+                .Replace(_ => AppMockFactory.CreateCurrentUserServiceMock())
+                .Replace(_ =>
                     Options.Create(new PostgresConnection()
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }

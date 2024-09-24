@@ -10,18 +10,18 @@ public sealed class SignalRWebApplicationFactory<TStartup> : BaseWebApplicationF
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         base.ConfigureWebHost(builder);
-        builder.UseEnvironment(EnvironmentName);
-        builder.ConfigureServices((_, services) =>
+        builder.UseEnvironment(EnvironmentName)
+            .ConfigureServices((_, services) =>
         {
             services
                 .Replace<IDbInitializer, SeedDataContext>()
-                .Replace<ICurrentUserService>(p => AppMockFactory.CreateCurrentUserServiceMock())
-                .Replace<IOptions<PostgresConnection>>(p =>
+                .Replace(_ => AppMockFactory.CreateCurrentUserServiceMock())
+                .Replace(_ =>
                     Options.Create(new PostgresConnection()
                     {
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
-                        LoggingEnabled = true
+                        LoggingEnabled = true,
                     }));
         });
     }
@@ -29,12 +29,11 @@ public sealed class SignalRWebApplicationFactory<TStartup> : BaseWebApplicationF
     public async Task<HubConnection> CreateConnectionAsync(string controller)
     {
         var connection = new HubConnectionBuilder()
-            .WithUrl(new Uri(Server.BaseAddress, $"{controller}"), o =>
-        {
-            o.HttpMessageHandlerFactory = _ => Server.CreateHandler();
-        })
+            .WithUrl(new Uri(Server.BaseAddress, $"{controller}"),
+                o => o.HttpMessageHandlerFactory = _ => Server.CreateHandler())
         .Build();
-        await connection.StartAsync();
+        await connection.StartAsync()
+            .ConfigureAwait(false);
         return connection;
     }
 }

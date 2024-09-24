@@ -12,4 +12,12 @@ public sealed class UnprocessableEntityException : Exception
         : base(message)
     {
     }
+
+    public UnprocessableEntityException()
+    {
+    }
+
+    public UnprocessableEntityException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 }

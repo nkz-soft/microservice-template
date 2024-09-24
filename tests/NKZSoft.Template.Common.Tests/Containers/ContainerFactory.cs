@@ -1,9 +1,5 @@
 ﻿namespace NKZSoft.Template.Common.Tests.Containers;
 
-using Testcontainers.PostgreSql;
-using Testcontainers.RabbitMq;
-using Testcontainers.Redis;
-
 public static class ContainerFactory
 {
     private const string Database = "template_db";
@@ -21,7 +17,7 @@ public static class ContainerFactory
             not null when type.IsAssignableFrom(typeof(PostgreSqlContainer)) => CreatePostgreSql(),
             not null when type.IsAssignableFrom(typeof(RabbitMqContainer)) => CreateRabbitMq(),
             not null when type.IsAssignableFrom(typeof(RedisContainer)) => CreateRedis(),
-            _ => throw new ArgumentException($"Couldn't create a container of {nameof(T)}")
+            _ => throw new NotSupportedException($"Couldn't create a container of {nameof(T)}")
         };
     }
 

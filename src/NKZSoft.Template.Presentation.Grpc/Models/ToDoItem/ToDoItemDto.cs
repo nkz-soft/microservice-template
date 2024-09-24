@@ -1,7 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Models.ToDoItem;
 
 [ProtoContract (SkipConstructor = true)]
-public sealed record ToDoItem
+public sealed record ToDoItemDto
 {
     [ProtoMember(1)]
     public Guid Id { get; init; }

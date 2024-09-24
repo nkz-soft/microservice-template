@@ -3,6 +3,7 @@
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
 global using EasyCaching.Core;
+global using EasyCaching.Core.Serialization;
 global using FluentValidation;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;

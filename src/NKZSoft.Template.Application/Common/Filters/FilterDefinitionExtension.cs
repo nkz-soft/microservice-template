@@ -8,7 +8,7 @@ public static class FilterDefinitionExtension
         {
             null => false,
             FilterFieldDefinition<string> stringValue => !string.IsNullOrEmpty(stringValue.Value),
-            var nullableValue => nullableValue.Value != null
+            var nullableValue => nullableValue.Value is not null
         };
     }
 }

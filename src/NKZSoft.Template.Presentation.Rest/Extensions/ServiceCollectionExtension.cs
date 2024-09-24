@@ -6,7 +6,7 @@ using Middleware;
 public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddRestPresentation(
-        this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
+        this IServiceCollection services, IConfiguration configuration)
     {
         var corsParams = configuration.GetSection("Cors").Get<List<string>>();
 
@@ -22,7 +22,7 @@ public static class ServiceCollectionExtension
 
         services.AddHttpContextAccessor()
             .AddSwagger(configuration, Assembly.GetExecutingAssembly())
-            .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(ServiceLifetime.Scoped, null, true)
+            .AddValidatorsFromAssemblyContaining<IApplicationDbContext>(filter:null, includeInternalTypes:true)
             .AddExceptionHandler<GlobalExceptionHandler>()
             .AddProblemDetails()
             .AddControllers(options => options.Filters.Add<CustomExceptionFilterAttribute>())

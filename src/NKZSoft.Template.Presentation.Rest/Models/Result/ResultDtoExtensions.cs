@@ -2,7 +2,7 @@ namespace NKZSoft.Template.Presentation.Rest.Models.Result;
 
 public static class ResultDtoExtensions
 {
-    public static ResultDto<T> ToResultDto<T>(this Result<T> result) =>
+    public static ResultDtoBase<T> ToResultDto<T>(this Result<T> result) =>
         new(result.Value, result.IsSuccess, TransformErrors(result.Errors));
 
     private static IEnumerable<ErrorDto> TransformErrors(IEnumerable<IError> errors) =>

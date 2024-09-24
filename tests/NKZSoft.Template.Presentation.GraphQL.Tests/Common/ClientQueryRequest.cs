@@ -36,7 +36,8 @@ internal sealed class ClientQueryRequest
                 query.Append('&');
             }
             query.Append(CultureInfo.InvariantCulture,
-                $"query={Query.Replace("\r", "").Replace("\n", "")}");
+                $"query={Query.Replace("\r", "", StringComparison.OrdinalIgnoreCase)
+                    .Replace("\n", "", StringComparison.OrdinalIgnoreCase)}");
         }
 
         if (OperationName is not null)
@@ -47,12 +48,12 @@ internal sealed class ClientQueryRequest
 
         if (Variables is not null)
         {
-            query.Append("&variables=" + JsonSerializer.Serialize(Variables));
+            query.Append("&variables=").Append(JsonSerializer.Serialize(Variables));
         }
 
         if (Extensions is not null)
         {
-            query.Append("&extensions=" + JsonSerializer.Serialize(Extensions));
+            query.Append("&extensions=").Append(JsonSerializer.Serialize(Extensions));
         }
 
         return query.ToString();

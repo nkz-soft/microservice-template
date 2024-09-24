@@ -12,19 +12,19 @@ public class ToDoItemControllerV3 : BaseController
 
     [HttpGet]
     [Route("{id}")]
-    [ProducesResponseType(typeof(ResultDto<ToDoItemDto>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<ToDoItemDto>>> GetFromRedis(Guid id, CancellationToken cancellationToken)
+    [ProducesResponseType(typeof(ResultDtoBase<ToDoItemDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ResultDtoBase<ToDoItemDto>>> GetFromRedis(Guid id, CancellationToken cancellationToken)
         => (await Mediator.Send(new GetTodoItemQueryFromRedis(id), cancellationToken)).ToResultDto();
 
     [HttpPost]
-    [ProducesResponseType(typeof(ResultDto<Guid>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<Guid>>> Create(
+    [ProducesResponseType(typeof(ResultDtoBase<Guid>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ResultDtoBase<Guid>>> Create(
         [FromBody] CreateToDoItemRedisCommand command,
         CancellationToken cancellationToken)
         => (await Mediator.Send(command, cancellationToken)).ToResultDto();

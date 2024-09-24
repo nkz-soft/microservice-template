@@ -28,7 +28,7 @@ public static class ServiceCollectionExtension
         services.AddEFSecondLevelCache(options =>
             options.UseEasyCachingCoreProvider(ProviderName, isHybridCache: false)
                 .CacheAllQueries(CacheExpirationMode.Absolute, TimeSpan.FromMinutes(30))
-                .ConfigureLogging(true)
+                .ConfigureLogging(enable:true)
                 .UseCacheKeyPrefix(EfPrefix)
         );
 
