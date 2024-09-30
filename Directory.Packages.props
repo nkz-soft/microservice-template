@@ -107,7 +107,7 @@
     <PackageVersion Include="NKZSoft.Service.Configuration.MassTransit.RabbitMq" Version="1.2.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Logger" Version="1.3.0" />
     <PackageVersion Include="NKZSoft.Service.Configuration.Swagger" Version="1.0.3" />
-    <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.1.0" />
+    <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.2.0" />
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.9.2" />
   </ItemGroup>
 </Project>
