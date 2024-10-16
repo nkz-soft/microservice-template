@@ -7,13 +7,13 @@ using Models.ToDoItem;
 public interface IToDoItemService
 {
     [OperationContract]
-    ValueTask<ToDoItemResponse> GetToDoItemById(GetTodoItemRequest request,
+    ValueTask<ToDoItemResponse> GetToDoItemByIdAsync(GetTodoItemRequest request,
         CancellationToken cancellationToken = default);
 
     [OperationContract]
-    IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItems(GetPageTodoItemsRequest request,
+    IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItemsAsync(GetPageTodoItemsRequest request,
         CancellationToken cancellationToken = default);
 
     [OperationContract]
-    IAsyncEnumerable<ToDoItemResponse> GetToDoItems(CancellationToken cancellationToken = default);
+    IAsyncEnumerable<ToDoItemResponse> GetToDoItemsAsync(CancellationToken cancellationToken = default);
 }

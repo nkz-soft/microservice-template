@@ -12,7 +12,7 @@ public sealed class CreateToDoItemTests : TestBase
     [Fact]
     public async Task ShouldCreateTodoItem()
     {
-        var command = new CreateToDoItemCommand(ToDoItemTitle, null);
+        var command = new CreateToDoItemCommand(ToDoItemTitle, ListId: null);
         var result = await Mediator.Send(command);
 
         result.Should().NotBeNull();

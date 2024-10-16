@@ -7,24 +7,18 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 using Common;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
-public sealed class MutationTests
+public sealed class MutationTests(GraphQLWebApplicationFactory<Program> factory)
 {
-    private readonly GraphQLWebApplicationFactory<Program> _factory;
-
-    public MutationTests(GraphQLWebApplicationFactory<Program> factory) =>
-        _factory = factory;
-
-
     [Fact, Order(1)]
     public async Task CreateToDoItemsTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
-        const string query = @"mutation {
-              createToDoItem(input: {title: ""Test"", listId: null}) {
-                    uUID
-                }
-            }";
+        const string query = "mutation {\r\n" +
+                             "              createToDoItem(input: {title: \"Test\", listId: null}) {\r\n" +
+                             "                    uUID\r\n" +
+                             "                }\r\n" +
+                             "            }";
 
         var command = new ClientQueryRequest { Query = query };
 

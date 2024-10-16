@@ -1,16 +1,10 @@
 ﻿namespace NKZSoft.Template.Application.Common.Paging;
 
-public sealed class SortDescriptor
+public sealed class SortDescriptor(string field, EnumSortDirection direction = EnumSortDirection.Asc)
 {
-    public SortDescriptor(string field, EnumSortDirection direction = EnumSortDirection.Asc)
-    {
-        Field = field;
-        Direction = direction;
-    }
+    public string Field { get; init; } = field;
 
-    public string Field { get; init; }
+    public EnumSortDirection Direction { get; init; } = direction;
 
-    public EnumSortDirection Direction { get; init; }
-
-    public override string ToString() => $"{Field}:{Direction.ToString()}";
+    public override string ToString() => $"{Field}:{Direction}";
 }

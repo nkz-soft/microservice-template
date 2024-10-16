@@ -6,7 +6,7 @@ public class GetTodoItemQueryFromRedisValidator : AbstractValidator<GetTodoItemQ
 {
     public GetTodoItemQueryFromRedisValidator()
     {
-        RuleFor(x => x.Id)
+        RuleFor(query => query.Id)
             .NotEmpty().WithMessage("Id is required.");
     }
 }

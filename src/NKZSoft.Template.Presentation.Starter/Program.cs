@@ -18,12 +18,12 @@ builder.Services
     .AddOptions()
     .AddNgpSqlPersistence(configuration, (provider, optionsBuilder)
         => optionsBuilder.AddInterceptors(provider.GetRequiredService<SecondLevelCacheInterceptor>()))
-        .AddEFCoreRedisCache(configuration)
+        .AddEfCoreRedisCache(configuration)
     .AddApplication()
     .AddCoreInfrastructure()
-    .AddRestPresentation(configuration, builder.Environment)
+    .AddRestPresentation(configuration)
 //#if (EnableGrpc)
-    .AddGrpcPresentation(configuration)
+    .AddGrpcPresentation()
 //#endif
 //#if (EnableGraphQL)
     .AddGraphQLPresentation()
@@ -38,16 +38,13 @@ builder.Services
     .AddHealthChecks();
 
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(b => b
+    .ConfigureResource(resourceBuilder => resourceBuilder
         .AddService(
             serviceName: Assembly.GetExecutingAssembly().GetName().Name!,
             serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString(),
             serviceInstanceId: Environment.MachineName))
-    .WithTracing(b => b
-        .AddAspNetCoreInstrumentation(options =>
-        {
-            options.RecordException = true;
-        })
+    .WithTracing(trackerBuilder => trackerBuilder
+        .AddAspNetCoreInstrumentation(options => options.RecordException = true)
         .AddRestOpenTelemetry()
         .AddNgpSqlPersistenceOpenTelemetry()
         .AddMassTransitOpenTelemetry()
@@ -57,18 +54,19 @@ builder.Services.AddOpenTelemetry()
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+var scope = app.Services.CreateAsyncScope();
+await using (scope.ConfigureAwait(false))
 {
     try
     {
         var context = scope.ServiceProvider.GetRequiredService<IApplicationDbContext>();
-        await context.MigrateAsync();
-        await context.SeedAsync();
+        await context.MigrateAsync().ConfigureAwait(false);
+        await context.SeedAsync().ConfigureAwait(false);
     }
-    catch (Exception ex)
+    catch (Exception exception)
     {
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-        logger.MigrationError(ex);
+        logger.MigrationError(exception);
     }
 }
 
@@ -95,12 +93,12 @@ app.MapHealthChecks("/ready", new HealthCheckOptions { Predicate = _ => false })
 app.MapHealthChecks("/health/info", new HealthCheckOptions
 {
     Predicate = _ => true,
-    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
 });
 
-app.Run();
+await app.RunAsync().ConfigureAwait(false);
 
 //We need public access to the class for tests
 #pragma warning disable CS1591
-public partial class Program {}
+public partial class Program;
 #pragma warning restore CS1591

@@ -16,10 +16,11 @@ public class ToDoItemService : IToDoItemService
         _mapper = mapper.ThrowIfNull();
     }
 
-    public async ValueTask<ToDoItemResponse> GetToDoItemById(GetTodoItemRequest request,
+    public async ValueTask<ToDoItemResponse> GetToDoItemByIdAsync(GetTodoItemRequest request,
         CancellationToken cancellationToken = default)
     {
-        var result = await _mediator.Send(new GetTodoItemQuery(request.Id), cancellationToken);
+        var result = await _mediator.Send(new GetTodoItemQuery(request.Id), cancellationToken)
+            .ConfigureAwait(false);
 
         return await result
             .BuildAdapter(_mapper.Config)
@@ -27,11 +28,13 @@ public class ToDoItemService : IToDoItemService
             .ConfigureAwait(false);
     }
 
-    public async IAsyncEnumerable<ToDoItemResponse> GetToDoItems(
+    public async IAsyncEnumerable<ToDoItemResponse> GetToDoItemsAsync(
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var stream =  _mediator.CreateStream(new GetStreamTodoItemsQuery(), cancellationToken);
-        await foreach (var item in stream.WithCancellation(cancellationToken))
+        var stream =  _mediator
+            .CreateStream(new GetStreamTodoItemsQuery(), cancellationToken);
+
+        await foreach (var item in stream.WithCancellation(cancellationToken).ConfigureAwait(false))
         {
             yield return  await item.BuildAdapter(_mapper.Config)
                 .AdaptToTypeAsync<ToDoItemResponse>()
@@ -39,14 +42,16 @@ public class ToDoItemService : IToDoItemService
         }
     }
 
-    public async IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItems(GetPageTodoItemsRequest request,
+    public async IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItemsAsync(GetPageTodoItemsRequest request,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var pageContext = new PageContext<ToDoItemFilter>(request.PageIndex, request.PageSize);
 
         while (!cancellationToken.IsCancellationRequested)
         {
-            var items = await _mediator.Send(GetPageTodoItemsQuery.Create(pageContext), cancellationToken);
+            var items = await _mediator
+                .Send(GetPageTodoItemsQuery.Create(pageContext), cancellationToken)
+                .ConfigureAwait(false);
 
             if (items.IsFailed || !items.Value.Data.Any())
             {

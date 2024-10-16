@@ -2,15 +2,13 @@
 
 using Common;
 using Configuration;
-using EasyCaching.Core.Serialization;
-using EasyCaching.Redis;
 
-public class ToDoItemRedisRepository : IToDoItemRedisRepository, IRedisRepository
+public class ToDoListRedisRepository : IToDoItemRedisRepository, IRedisRepository
 {
     private readonly IEasyCachingProviderFactory _factory;
     private readonly IEasyCachingSerializer _serializer;
 
-    public ToDoItemRedisRepository(IEasyCachingProviderFactory factory,
+    public ToDoListRedisRepository(IEasyCachingProviderFactory factory,
         IEasyCachingSerializer serializer)
     {
         _factory = factory.ThrowIfNull(nameof(factory));
@@ -27,7 +25,8 @@ public class ToDoItemRedisRepository : IToDoItemRedisRepository, IRedisRepositor
         redisDatabase.ThrowIfNull(nameof(redisDatabase));
 
         await redisDatabase!.StringSetAsync(entity.Id.ToString(),
-            _serializer.Serialize(entity));
+            _serializer.Serialize(entity))
+            .ConfigureAwait(false);
     }
 
     public async Task DeleteAsync(ToDoItem entity, CancellationToken cancellationToken = default)
@@ -35,19 +34,21 @@ public class ToDoItemRedisRepository : IToDoItemRedisRepository, IRedisRepositor
         entity.ThrowIfNull(nameof(entity));
 
         var provider = _factory.GetCachingProvider(RedisConfigurationSection.ProviderName);
-        await provider.RemoveAsync(entity.Id.ToString(), cancellationToken);
+        await provider.RemoveAsync(entity.Id.ToString(), cancellationToken).ConfigureAwait(false);
     }
 
-    public async Task<ToDoItem?> GetAsyncById(Guid id, CancellationToken cancellationToken = default)
+    public async Task<ToDoItem?> GetAsyncByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var provider = _factory.GetCachingProvider(RedisConfigurationSection.ProviderName);
-        var cacheValue = await provider.GetAsync<ToDoItem>(id.ToString(), cancellationToken);
+        var cacheValue = await provider.GetAsync<ToDoItem>(id.ToString(), cancellationToken)
+            .ConfigureAwait(false);
         return cacheValue.HasValue ?  cacheValue.Value : null;
     }
 
     public async Task DeleteAllAsync(IEnumerable<Guid> ids, CancellationToken cancellationToken = default)
     {
         var provider = _factory.GetCachingProvider(RedisConfigurationSection.ProviderName);
-        await provider.RemoveAllAsync(ids.Select(x => x.ToString()), cancellationToken);
+        await provider.RemoveAllAsync(ids.Select(guid => guid.ToString()), cancellationToken)
+            .ConfigureAwait(false);
     }
 }

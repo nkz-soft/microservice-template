@@ -1,6 +1,6 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL.Database.Configurations;
 
-public class ToDoListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
+public class ToDoItemListConfiguration : AuditableConfiguration<ToDoList>, IEntityTypeConfiguration<ToDoList>
 {
     public override void Configure(EntityTypeBuilder<ToDoList> builder)
     {
@@ -8,9 +8,9 @@ public class ToDoListConfiguration : AuditableConfiguration<ToDoList>, IEntityTy
 
         builder.ToTable("ToDoLists");
 
-        builder.HasKey(e => e.Id);
+        builder.HasKey(entity => entity.Id);
 
-        builder.Property(e => e.Title)
+        builder.Property(entity => entity.Title)
             .IsRequired()
             .HasMaxLength(256);
 

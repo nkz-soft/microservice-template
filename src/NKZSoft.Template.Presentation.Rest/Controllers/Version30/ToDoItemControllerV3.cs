@@ -2,7 +2,7 @@
 
 using Application.TodoItems.Commands.CreateInRedis;
 
-[ApiVersion(VersionController.Version30)]
+[ApiVersion(VersionController.VersionThree)]
 [Route("api/v{version:apiVersion}/to-do-items")]
 public class ToDoItemControllerV3 : BaseController
 {
@@ -12,20 +12,22 @@ public class ToDoItemControllerV3 : BaseController
 
     [HttpGet]
     [Route("{id}")]
-    [ProducesResponseType(typeof(ResultDto<ToDoItemDto>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<ToDoItemDto>>> GetFromRedis(Guid id, CancellationToken cancellationToken)
-        => (await Mediator.Send(new GetTodoItemQueryFromRedis(id), cancellationToken)).ToResultDto();
+    [ProducesResponseType(typeof(ResultDtoBase<ToDoItemDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ResultDtoBase<ToDoItemDto>>> GetFromRedisAsync(Guid id, CancellationToken cancellationToken)
+        => (await Mediator.Send(new GetTodoItemQueryFromRedis(id), cancellationToken).ConfigureAwait(false))
+            .ToResultDto();
 
     [HttpPost]
-    [ProducesResponseType(typeof(ResultDto<Guid>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(typeof(ResultDto<Unit>), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<ResultDto<Guid>>> Create(
+    [ProducesResponseType(typeof(ResultDtoBase<Guid>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status401Unauthorized)]
+    [ProducesResponseType(typeof(ResultDtoBase<Unit>), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ResultDtoBase<Guid>>> CreateAsync(
         [FromBody] CreateToDoItemRedisCommand command,
         CancellationToken cancellationToken)
-        => (await Mediator.Send(command, cancellationToken)).ToResultDto();
+        => (await Mediator.Send(command, cancellationToken).ConfigureAwait(false))
+            .ToResultDto();
 }

@@ -2,7 +2,7 @@
 
 using Consumers;
 
-public static class ServiceCollectionExtension
+public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds MassTransit and its dependencies to the <see cref="IServiceCollection"/>, and allows consumers, sagas, and activities to be configured

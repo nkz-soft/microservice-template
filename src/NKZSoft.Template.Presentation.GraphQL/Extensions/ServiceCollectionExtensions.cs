@@ -3,7 +3,7 @@
 using Common;
 using Services;
 
-public static class ServiceCollectionExtension
+public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds a GraphQL server configuration to the DI.

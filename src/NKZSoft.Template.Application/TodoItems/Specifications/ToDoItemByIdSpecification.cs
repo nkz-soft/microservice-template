@@ -4,7 +4,7 @@ public sealed class ToDoItemByIdSpecification : Specification<ToDoItem>, ISingle
 {
     public ToDoItemByIdSpecification(Guid id, bool noTracking = false)
     {
-        Query.Where(i => i.Id == id);
+        Query.Where(item => item.Id == id);
         if (noTracking)
         {
             Query.AsNoTracking();

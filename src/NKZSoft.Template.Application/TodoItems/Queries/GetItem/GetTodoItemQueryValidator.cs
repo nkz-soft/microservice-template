@@ -4,7 +4,7 @@ internal sealed class GetTodoItemQueryValidator : AbstractValidator<GetTodoItemQ
 {
     public GetTodoItemQueryValidator()
     {
-        RuleFor(x => x.Id)
+        RuleFor(query => query.Id)
             .NotEmpty().WithMessage("Id is required.");
     }
 }

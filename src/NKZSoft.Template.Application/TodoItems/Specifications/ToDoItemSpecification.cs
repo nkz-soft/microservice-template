@@ -9,10 +9,10 @@ using Models;
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
     private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
-        new Dictionary<string, Expression<Func<ToDoItem, object>>>
+        new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
         {
-            { nameof(ToDoItemFilter.Id), c => c.Id },
-            { nameof(ToDoItemFilter.Title), c => c.Title },
+            { nameof(ToDoItemFilter.Id), item => item.Id },
+            { nameof(ToDoItemFilter.Title), item => item.Title },
         }.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
 
     private ToDoItemSpecification()
@@ -31,12 +31,12 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 
     public static Specification<ToDoItem> Create(IPageContext<ToDoItemFilter> pageContext)
     {
-        var specification =  new ToDoItemSpecification();
+        var specification = new ToDoItemSpecification();
 
         var specificationBuilder = specification.Query;
 
         Filter(specificationBuilder, pageContext.Filter);
-        specification.Sort(specificationBuilder, pageContext.ListSort);
+        Sort(specificationBuilder, pageContext.ListSort);
 
         if (pageContext.PageIndex != 0)
         {
@@ -56,16 +56,16 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
     {
         if (filter.Title.HasValue())
         {
-            specificationBuilder.Where(x => x.Title == filter.Title.Value);
+            specificationBuilder.Where(item => item.Title == filter.Title.Value);
         }
 
         if (filter.Id.HasValue())
         {
-            specificationBuilder.Where(x => x.Id == filter.Id.Value);
+            specificationBuilder.Where(item => item.Id == filter.Id.Value);
         }
     }
 
-    private ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
+    private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         IEnumerable<SortDescriptor> sorts)
     {
         var sortDescriptors = sorts as SortDescriptor[] ?? sorts.ToArray();
@@ -78,7 +78,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
         return Sort(specificationBuilder, new SortDescriptor(nameof(ToDoItemFilter.Id)));
     }
 
-    private ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
+    private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         SortDescriptor sort)
     {
         if (SortExpressions.TryGetValue(sort.Field, out var se))

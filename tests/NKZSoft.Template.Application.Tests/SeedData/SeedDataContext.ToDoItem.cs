@@ -1,6 +1,5 @@
-using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-
 namespace NKZSoft.Template.Application.Tests.SeedData;
+using Domain.AggregatesModel.ToDoAggregates.Entities;
 
 public sealed partial class SeedDataContext
 {

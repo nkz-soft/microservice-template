@@ -2,7 +2,7 @@
 
 public sealed class CollectionViewModel<T>
 {
-    public CollectionViewModel() => Data = new HashSet<T>();
+    public CollectionViewModel() => Data = [];
 
     public CollectionViewModel(IEnumerable<T> list, int count)
     {

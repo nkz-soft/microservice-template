@@ -3,16 +3,12 @@
 using Common.Extensions;
 using Events.ToDoItem.Create;
 
-public sealed class ToDoItemCreatedIntegrationEventConsumer : IConsumer<ToDoItemCreatedIntegrationEvent>
+public sealed class ToDoItemCreatedIntegrationEventConsumer(ILogger<ToDoItemCreatedIntegrationEventConsumer> logger)
+    : IConsumer<ToDoItemCreatedIntegrationEvent>
 {
-    private readonly ILogger<ToDoItemCreatedIntegrationEventConsumer> _logger;
-
-    public ToDoItemCreatedIntegrationEventConsumer(ILogger<ToDoItemCreatedIntegrationEventConsumer> logger) =>
-        _logger = logger;
-
     public Task Consume(ConsumeContext<ToDoItemCreatedIntegrationEvent> context)
     {
-        _logger.ConsumeIntegrationEvent(context.Message.ToString());
+        logger.ConsumeIntegrationEvent(context.Message.ToString());
         return Task.CompletedTask;
     }
 }

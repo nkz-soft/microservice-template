@@ -36,22 +36,23 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
         UpdateEntities(currentUser);
 
-        var result = await base.SaveChangesAsync(cancellationToken);
-        await DispatchDomainEventsAsync();
+        var result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+        await DispatchDomainEventsAsync().ConfigureAwait(false);
 
         return result;
     }
 
-    public async Task MigrateAsync() => await AppDbContext.Database.MigrateAsync();
+    public async Task MigrateAsync() => await AppDbContext.Database.MigrateAsync().ConfigureAwait(false);
 
-    public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this);
+    public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this).ConfigureAwait(false);
 
     private async Task DispatchDomainEventsAsync()
     {
         var domainEntities = ChangeTracker
             .Entries<IEntity>()
-            .Where(x => x.Entity.DomainEvents.Count != 0);
-        await _mediator.DispatchDomainEventsAsync(domainEntities);
+            .Where(entry => entry.Entity.DomainEvents.Count != 0);
+        await _mediator.DispatchDomainEventsAsync(domainEntities)
+            .ConfigureAwait(false);
     }
 
     private void UpdateEntities(ICurrentUser currentUser)
@@ -63,13 +64,13 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
                 entry.State = EntityState.Added;
             }
 
-            switch (entry.State)
+            switch (entry)
             {
-                case EntityState.Added:
+                case { State: EntityState.Added,}:
                     entry.Entity.CreatedBy = currentUser?.Id?.ToString(CultureInfo.InvariantCulture);
                     entry.Entity.Created = _dateTime.Now;
                     break;
-                case EntityState.Modified:
+                case { State: EntityState.Modified,}:
                     entry.Entity.ModifiedBy = currentUser?.Id?.ToString(CultureInfo.InvariantCulture);
                     entry.Entity.Modified = _dateTime.Now;
                     break;

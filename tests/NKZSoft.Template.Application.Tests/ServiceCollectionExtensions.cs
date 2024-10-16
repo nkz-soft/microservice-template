@@ -1,13 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace NKZSoft.Template.Application.Tests;
+﻿namespace NKZSoft.Template.Application.Tests;
 
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection Remove<TService>(this IServiceCollection services)
     {
-        var serviceDescriptor = services.FirstOrDefault(d =>
-            d.ServiceType == typeof(TService));
+        var serviceDescriptor = services.FirstOrDefault(descriptor =>
+            descriptor.ServiceType == typeof(TService));
 
         if (serviceDescriptor != null)
         {

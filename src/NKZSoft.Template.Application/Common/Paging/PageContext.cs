@@ -6,18 +6,20 @@ public sealed record PageContext<T> : IPageContext<T>,
     IIncrementOperators<PageContext<T>>, IDecrementOperators<PageContext<T>>
     where T : class, new()
 {
+#pragma warning disable AV1553
     public PageContext(
         int pageIndex,
         int pageSize,
         T? filter = null,
         IEnumerable<SortDescriptor>? listSort = null,
         IEnumerable<GroupDescriptor>? listGroup = null)
+#pragma warning restore AV1553
     {
         PageIndex = pageIndex;
         PageSize = pageSize;
         Filter = filter ?? new T();
-        ListSort = listSort ?? Enumerable.Empty<SortDescriptor>();
-        ListGroup = listGroup ?? Enumerable.Empty<GroupDescriptor>();
+        ListSort = listSort ?? [];
+        ListGroup = listGroup ?? [];
     }
 
     public int PageIndex { get; private set; }
@@ -32,15 +34,15 @@ public sealed record PageContext<T> : IPageContext<T>,
 
     public bool IsValid() => PageIndex > 0 && PageSize > 0;
 
-    public static PageContext<T> operator ++(PageContext<T> obj)
+    public static PageContext<T> operator ++(PageContext<T> value)
     {
-        obj.PageIndex++;
-        return obj;
+        value.PageIndex++;
+        return value;
     }
 
-    public static PageContext<T> operator --(PageContext<T> obj)
+    public static PageContext<T> operator --(PageContext<T> value)
     {
-        obj.PageIndex--;
-        return obj;
+        value.PageIndex--;
+        return value;
     }
 }

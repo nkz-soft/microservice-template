@@ -5,15 +5,14 @@ using Events;
 
 public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
 {
-    //for Hot Chocolate only
-    //see https://stackoverflow.com/questions/56995658/in-graphql-hotchocolate-can-you-have-optional-parameters-or-use-a-constructor
-    public ToDoItem(): base(Guid.NewGuid())
-    {}
+    /// <summary>
+    /// for Hot Chocolate only
+    /// see https://stackoverflow.com/questions/56995658/in-graphql-hotchocolate-can-you-have-optional-parameters-or-use-a-constructor
+    /// </summary>
+    public ToDoItem() : base(Guid.NewGuid())
+    { }
 
-    public ToDoItem(string title) : this(title, null)
-    {
-        Title = title;
-    }
+    public ToDoItem(string title) : this(title, note: null) => Title = title;
 
     public ToDoItem(string title, string? note) : base(Guid.NewGuid())
     {
@@ -23,7 +22,7 @@ public sealed class ToDoItem : BaseAuditableEntity<Guid, string>, IAggregateRoot
         AddCreateDomainEvent();
     }
 
-    public string Title { get; set; }  = default!;
+    public string Title { get; set; } = default!;
 
     public string? Note { get; set; }
 

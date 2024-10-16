@@ -4,7 +4,7 @@ public interface IToDoItemRedisRepository
 {
     public Task AddAsync(ToDoItem entity, CancellationToken cancellationToken = default);
 
-    public Task<ToDoItem?> GetAsyncById(Guid id, CancellationToken cancellationToken = default);
+    public Task<ToDoItem?> GetAsyncByIdAsync(Guid id, CancellationToken cancellationToken = default);
 
     public Task DeleteAsync(ToDoItem entity, CancellationToken cancellationToken = default);
 

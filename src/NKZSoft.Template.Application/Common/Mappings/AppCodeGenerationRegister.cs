@@ -1,11 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace NKZSoft.Template.Application.Common.Mappings;
+﻿namespace NKZSoft.Template.Application.Common.Mappings;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class AppCodeGenerationRegister : ICodeGenerationRegister
 {
-    //TODO Add async support
-    //see https://github.com/MapsterMapper/Mapster/wiki/Async
     public void Register(CodeGenerationConfig config)
     {
         config.AdaptTo("[name]Dto").ForType<ToDoItem>()

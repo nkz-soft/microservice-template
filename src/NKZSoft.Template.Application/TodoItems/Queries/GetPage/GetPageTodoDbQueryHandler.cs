@@ -4,19 +4,18 @@ using NKZSoft.Template.Application.Models;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Paging;
-using Common.Repositories;
 using Common.Repositories.PostgreSql;
 
-internal sealed class GetPageTodoDbQueryHandler :
-    PagingDbQueryHandlerDb<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>
+internal sealed class GetPageTodoDbQueryHandler(
+    IToDoItemRepository repository,
+    IApplicationDbContext context,
+    ICurrentUserService currentUserService,
+    IMapper mapper)
+    :
+        PagingDbQueryHandlerDb<GetPageTodoItemsQuery, Result<CollectionViewModel<ToDoItemDto>>, ToDoItemDto>(context,
+            mapper, currentUserService)
 {
-    private readonly IToDoItemRepository _repository;
-
-    public GetPageTodoDbQueryHandler(
-        IToDoItemRepository repository,
-        IApplicationDbContext context,
-        ICurrentUserService currentUserService, IMapper mapper) : base(context, mapper, currentUserService) =>
-        _repository = repository.ThrowIfNull();
+    private readonly IToDoItemRepository _repository = repository.ThrowIfNull();
 
     public override async Task<Result<CollectionViewModel<ToDoItemDto>>> Handle(GetPageTodoItemsQuery request,
         CancellationToken cancellationToken)

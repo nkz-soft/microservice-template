@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
+#pragma warning disable MA0048, AV1706
 
 namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
 {
@@ -18,12 +18,9 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true)
+                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ToDoLists", x => x.Id);
-                });
+                constraints: table => table.PrimaryKey("PK_ToDoLists", x => x.Id));
 
             migrationBuilder.CreateTable(
                 name: "ToDoItems",
@@ -36,7 +33,7 @@ namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     Modified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true)
+                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
                 },
                 constraints: table =>
                 {

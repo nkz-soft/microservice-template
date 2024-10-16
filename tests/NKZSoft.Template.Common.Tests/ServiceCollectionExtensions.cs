@@ -18,8 +18,8 @@ public static class ServiceCollectionExtensions
     private static bool TryGetService<TService>(this IServiceCollection services,
         [NotNullWhen(true)] out ServiceDescriptor? serviceDescriptor)
     {
-        serviceDescriptor = services.FirstOrDefault(d =>
-            d.ServiceType == typeof(TService));
+        serviceDescriptor = services.FirstOrDefault(descriptor =>
+            descriptor.ServiceType == typeof(TService));
         return serviceDescriptor != null;
     }
 }

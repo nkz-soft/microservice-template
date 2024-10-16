@@ -1,6 +1,5 @@
-﻿using NKZSoft.Template.Application.TodoItems.Commands.Update;
-
-namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
+﻿namespace NKZSoft.Template.Application.Tests.TodoItems.Commands;
+using NKZSoft.Template.Application.TodoItems.Commands.Update;
 
 [Collection("QueryCollection")]
 public sealed class UpdateToDoItemTests : TestBase
@@ -13,15 +12,15 @@ public sealed class UpdateToDoItemTests : TestBase
     }
 
     [Fact]
-    public async Task ShouldUpdateTodoItem()
+    public async Task ShouldUpdateTodoItemAsync()
     {
-        var createCommand = new CreateToDoItemCommand(ToDoItemTitle, null);
+        var createCommand = new CreateToDoItemCommand(ToDoItemTitle, ListId:null);
         var createResult = await Mediator.Send(createCommand);
 
         createResult.Should().NotBeNull();
         createResult.IsSuccess.Should().BeTrue();
 
-        var updateCommand = new UpdateTodoItemCommand(createResult.Value, ToDoItemUpdatedTitle, ToDoItemUpdatedTitle);
+        var updateCommand = new UpdateToDoItemCommand(createResult.Value, ToDoItemUpdatedTitle, ToDoItemUpdatedTitle);
         await Mediator.Send(updateCommand);
     }
 }

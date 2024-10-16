@@ -1,6 +1,6 @@
 namespace NKZSoft.Template.Common.Extensions;
 
-public static partial class LoggerExtension
+public static partial class LoggerExtensions
 {
     [LoggerMessage(1, LogLevel.Information, "Integration event has been consumed: {Message}.")]
     internal static partial void ConsumeIntegrationEvent(this ILogger logger, string message);

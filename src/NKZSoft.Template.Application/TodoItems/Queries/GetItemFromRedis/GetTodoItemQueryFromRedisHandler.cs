@@ -4,9 +4,7 @@ using Application.Models;
 using Common.Exceptions;
 using Common.Handlers;
 using Common.Interfaces;
-using Common.Repositories;
 using Common.Repositories.Redis;
-using GetItem;
 
 public class GetTodoItemQueryFromRedisHandler : HandlerBase<GetTodoItemQueryFromRedis, Result<ToDoItemDto>>
 {
@@ -20,7 +18,7 @@ public class GetTodoItemQueryFromRedisHandler : HandlerBase<GetTodoItemQueryFrom
 
     public override async Task<Result<ToDoItemDto>> Handle(GetTodoItemQueryFromRedis request, CancellationToken cancellationToken)
     {
-        var entity = await _repository.GetAsyncById(request.Id, cancellationToken)
+        var entity = await _repository.GetAsyncByIdAsync(request.Id, cancellationToken)
             .ConfigureAwait(false);
         entity.ThrowIfNull(new NotFoundException());
 

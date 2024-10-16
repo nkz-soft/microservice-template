@@ -1,11 +1,10 @@
+namespace NKZSoft.Template.Application.Tests.Common;
 using Microsoft.EntityFrameworkCore;
 using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Application.Tests.SeedData;
+using SeedData;
 using NKZSoft.Template.Common.Tests;
-using NKZSoft.Template.Infrastructure.Core.Services;
-using NKZSoft.Template.Persistence.PostgreSQL;
-
-namespace NKZSoft.Template.Application.Tests.Common;
+using Infrastructure.Core.Services;
+using Persistence.PostgreSQL;
 
 public static class ApplicationDbContextFactory
 {
@@ -22,8 +21,8 @@ public static class ApplicationDbContextFactory
             new MachineDateTime(),
             AppMockFactory.CreateMediatorMock());
 
-        await context.Database.EnsureCreatedAsync();
-        await context.SeedAsync();
+        await context.Database.EnsureCreatedAsync().ConfigureAwait(false);
+        await context.SeedAsync().ConfigureAwait(false);
 
         return context;
     }
