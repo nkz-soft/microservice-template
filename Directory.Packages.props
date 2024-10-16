@@ -14,7 +14,7 @@
     <PackageVersion Include="HotChocolate.AspNetCore" Version="13.9.14" />
     <PackageVersion Include="HotChocolate.Data" Version="13.9.14" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.9.14" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.4" />
     <PackageVersion Include="OpenTelemetry" Version="1.9.0" />
@@ -40,7 +40,7 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -54,7 +54,7 @@
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="4.8.2" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.2" />
     <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0" />
     <PackageVersion Include="Ardalis.Specification" Version="8.0.0" />
     <PackageVersion Include="Scrutor" Version="4.2.2" />
