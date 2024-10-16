@@ -1,10 +1,9 @@
-﻿using NKZSoft.Template.Common.Tests;
-
-namespace NKZSoft.Template.Application.Tests;
+﻿namespace NKZSoft.Template.Application.Tests;
+using NKZSoft.Template.Common.Tests;
 
 internal static class Startup
 {
-    public static async void ConfigureServices(IServiceCollection services)
+    public static async Task ConfigureServices(IServiceCollection services)
     {
         services.AddApplication();
         services.TryAddSingleton(AppMockFactory.CreateCurrentUserServiceMock());

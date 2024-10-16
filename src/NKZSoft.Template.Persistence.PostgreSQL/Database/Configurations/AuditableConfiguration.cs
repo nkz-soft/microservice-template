@@ -4,14 +4,14 @@ public class AuditableConfiguration<T> where T : class, IBaseAuditableEntity<str
 {
     public virtual void Configure(EntityTypeBuilder<T> builder)
     {
-        builder.Property(e => e.Created)
+        builder.Property(entity => entity.Created)
             .IsRequired();
 
-        builder.Property(e => e.CreatedBy)
+        builder.Property(entity => entity.CreatedBy)
             .IsRequired();
 
-        builder.Property(e => e.Modified);
+        builder.Property(entity => entity.Modified);
 
-        builder.Property(e => e.ModifiedBy);
+        builder.Property(entity => entity.ModifiedBy);
     }
 }

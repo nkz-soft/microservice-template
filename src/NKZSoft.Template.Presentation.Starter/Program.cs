@@ -18,7 +18,7 @@ builder.Services
     .AddOptions()
     .AddNgpSqlPersistence(configuration, (provider, optionsBuilder)
         => optionsBuilder.AddInterceptors(provider.GetRequiredService<SecondLevelCacheInterceptor>()))
-        .AddEFCoreRedisCache(configuration)
+        .AddEfCoreRedisCache(configuration)
     .AddApplication()
     .AddCoreInfrastructure()
     .AddRestPresentation(configuration)
@@ -38,12 +38,12 @@ builder.Services
     .AddHealthChecks();
 
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(b => b
+    .ConfigureResource(resourceBuilder => resourceBuilder
         .AddService(
             serviceName: Assembly.GetExecutingAssembly().GetName().Name!,
             serviceVersion: Assembly.GetExecutingAssembly().GetName().Version?.ToString(),
             serviceInstanceId: Environment.MachineName))
-    .WithTracing(b => b
+    .WithTracing(trackerBuilder => trackerBuilder
         .AddAspNetCoreInstrumentation(options => options.RecordException = true)
         .AddRestOpenTelemetry()
         .AddNgpSqlPersistenceOpenTelemetry()
@@ -63,10 +63,10 @@ await using (scope.ConfigureAwait(false))
         await context.MigrateAsync().ConfigureAwait(false);
         await context.SeedAsync().ConfigureAwait(false);
     }
-    catch (Exception ex)
+    catch (Exception exception)
     {
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-        logger.MigrationError(ex);
+        logger.MigrationError(exception);
     }
 }
 

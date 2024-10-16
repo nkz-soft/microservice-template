@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
-using Interfaces;
 using NKZSoft.Template.Common.Extensions;
 
 public sealed class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull

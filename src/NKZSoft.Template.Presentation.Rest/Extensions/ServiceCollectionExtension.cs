@@ -12,7 +12,7 @@ public static class ServiceCollectionExtension
 
         ArgumentNullException.ThrowIfNull(corsParams);
 
-        services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+        services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
         {
             builder.WithOrigins(corsParams.ToArray())
                 .AllowAnyMethod()

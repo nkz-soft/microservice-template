@@ -28,7 +28,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
     public async Task InitializeAsync()
     {
         await Task.WhenAll
-            (Containers.Select(c => c.Value.StartAsync()))
+            (Containers.Select(pair => pair.Value.StartAsync()))
                 .ConfigureAwait(false);
 
         var scope = Services.CreateAsyncScope();
@@ -48,7 +48,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
     public new async Task DisposeAsync()
     {
         await base.DisposeAsync().ConfigureAwait(false);
-        await Task.WhenAll(Containers.Select(c => c.Value.DisposeAsync().AsTask()))
+        await Task.WhenAll(Containers.Select(pair => pair.Value.DisposeAsync().AsTask()))
             .ConfigureAwait(false);
     }
 

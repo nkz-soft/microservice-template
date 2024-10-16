@@ -2,9 +2,8 @@
 
 internal sealed class QueryType<T> : ObjectType<T> where T : IEntity
 {
-    /// <summary>
+    /// <inheritdoc/>
     /// see https://github.com/ChilliCream/hotchocolate/issues/1975
-    /// </summary>
     protected override void Configure(IObjectTypeDescriptor<T> descriptor) =>
-        descriptor.Ignore(x => x.DomainEvents);
+        descriptor.Ignore(entity => entity.DomainEvents);
 }

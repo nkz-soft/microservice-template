@@ -1,7 +1,5 @@
-﻿using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
-using NKZSoft.Template.Persistence.PostgreSQL;
-
-namespace NKZSoft.Template.Application.Tests.SeedData;
+﻿namespace NKZSoft.Template.Application.Tests.SeedData;
+using Domain.AggregatesModel.ToDoAggregates.Entities;
 
 using Application.Common.Interfaces;
 

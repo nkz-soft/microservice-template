@@ -5,7 +5,7 @@ public static class ModelBuilderExtension
     public static void DataTimeConfigure(this ModelBuilder modelBuilder)
     {
         var dateTimeConverter = new ValueConverter<DateTime, DateTime>(
-            x => x, x => DateTime.SpecifyKind(x, DateTimeKind.Utc));
+            time => time, dateTime => DateTime.SpecifyKind(dateTime, DateTimeKind.Utc));
 
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {

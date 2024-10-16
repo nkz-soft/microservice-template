@@ -37,7 +37,7 @@ public class ToDoListRedisRepository : IToDoItemRedisRepository, IRedisRepositor
         await provider.RemoveAsync(entity.Id.ToString(), cancellationToken).ConfigureAwait(false);
     }
 
-    public async Task<ToDoItem?> GetAsyncById(Guid id, CancellationToken cancellationToken = default)
+    public async Task<ToDoItem?> GetAsyncByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var provider = _factory.GetCachingProvider(RedisConfigurationSection.ProviderName);
         var cacheValue = await provider.GetAsync<ToDoItem>(id.ToString(), cancellationToken)
@@ -48,7 +48,7 @@ public class ToDoListRedisRepository : IToDoItemRedisRepository, IRedisRepositor
     public async Task DeleteAllAsync(IEnumerable<Guid> ids, CancellationToken cancellationToken = default)
     {
         var provider = _factory.GetCachingProvider(RedisConfigurationSection.ProviderName);
-        await provider.RemoveAllAsync(ids.Select(x => x.ToString()), cancellationToken)
+        await provider.RemoveAllAsync(ids.Select(guid => guid.ToString()), cancellationToken)
             .ConfigureAwait(false);
     }
 }

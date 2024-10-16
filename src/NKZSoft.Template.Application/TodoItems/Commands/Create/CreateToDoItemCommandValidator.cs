@@ -3,7 +3,7 @@
 public sealed class CreateToDoItemCommandValidator : AbstractValidator<CreateToDoItemCommand>
 {
     public CreateToDoItemCommandValidator() =>
-        RuleFor(v => v.Title)
+        RuleFor(command => command.Title)
             .MaximumLength(250)
             .NotEmpty();
 }

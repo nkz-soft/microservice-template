@@ -8,7 +8,7 @@ public static class MediatorExtension
         var enumerable = entityEntries.ToList();
 
         var domainEvents = enumerable
-            .SelectMany(x => x.Entity.DomainEvents)
+            .SelectMany(entry => entry.Entity.DomainEvents)
             .ToList();
 
         enumerable

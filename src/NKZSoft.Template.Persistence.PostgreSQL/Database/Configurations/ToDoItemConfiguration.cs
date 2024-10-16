@@ -8,13 +8,13 @@ public class ToDoItemConfiguration : AuditableConfiguration<ToDoItem>, IEntityTy
 
         builder.ToTable("ToDoItems");
 
-        builder.HasKey(e => e.Id);
+        builder.HasKey(entity => entity.Id);
 
-        builder.Property(e => e.Title)
+        builder.Property(entity => entity.Title)
             .IsRequired()
             .HasMaxLength(256);
 
-        builder.Property(e => e.Note)
+        builder.Property(entity => entity.Note)
             .HasMaxLength(512);
     }
 }

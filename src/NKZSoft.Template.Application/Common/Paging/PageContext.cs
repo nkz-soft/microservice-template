@@ -8,16 +8,42 @@ public sealed record PageContext<T> : IPageContext<T>,
 {
     public PageContext(
         int pageIndex,
+        int pageSize) : this(pageIndex, pageSize, new T(), [], [])
+    {}
+
+    public PageContext(
+        int pageIndex,
         int pageSize,
-        T? filter = null,
-        IEnumerable<SortDescriptor>? listSort = null,
-        IEnumerable<GroupDescriptor>? listGroup = null)
+        T filter) : this(pageIndex, pageSize, filter, [], [])
+    {}
+
+    public PageContext(
+        int pageIndex,
+        int pageSize,
+        T filter,
+        IEnumerable<SortDescriptor> listSort)
+            : this(pageIndex, pageSize, filter, listSort, [])
+    {}
+
+    public PageContext(
+        int pageIndex,
+        int pageSize,
+        IEnumerable<SortDescriptor> listSort)
+        : this(pageIndex, pageSize, new T(), listSort, [])
+    {}
+
+    public PageContext(
+        int pageIndex,
+        int pageSize,
+        T filter,
+        IEnumerable<SortDescriptor> listSort,
+        IEnumerable<GroupDescriptor> listGroup)
     {
         PageIndex = pageIndex;
         PageSize = pageSize;
-        Filter = filter ?? new T();
-        ListSort = listSort ?? Enumerable.Empty<SortDescriptor>();
-        ListGroup = listGroup ?? Enumerable.Empty<GroupDescriptor>();
+        Filter = filter;
+        ListSort = listSort;
+        ListGroup = listGroup;
     }
 
     public int PageIndex { get; private set; }

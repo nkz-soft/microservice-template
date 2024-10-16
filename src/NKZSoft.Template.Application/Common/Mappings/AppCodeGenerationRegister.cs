@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace NKZSoft.Template.Application.Common.Mappings;
+﻿namespace NKZSoft.Template.Application.Common.Mappings;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class AppCodeGenerationRegister : ICodeGenerationRegister
 {

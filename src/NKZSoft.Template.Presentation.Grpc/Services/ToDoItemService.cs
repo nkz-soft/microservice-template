@@ -16,7 +16,7 @@ public class ToDoItemService : IToDoItemService
         _mapper = mapper.ThrowIfNull();
     }
 
-    public async ValueTask<ToDoItemResponse> GetToDoItemById(GetTodoItemRequest request,
+    public async ValueTask<ToDoItemResponse> GetToDoItemByIdAsync(GetTodoItemRequest request,
         CancellationToken cancellationToken = default)
     {
         var result = await _mediator.Send(new GetTodoItemQuery(request.Id), cancellationToken)
@@ -28,7 +28,7 @@ public class ToDoItemService : IToDoItemService
             .ConfigureAwait(false);
     }
 
-    public async IAsyncEnumerable<ToDoItemResponse> GetToDoItems(
+    public async IAsyncEnumerable<ToDoItemResponse> GetToDoItemsAsync(
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var stream =  _mediator
@@ -42,7 +42,7 @@ public class ToDoItemService : IToDoItemService
         }
     }
 
-    public async IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItems(GetPageTodoItemsRequest request,
+    public async IAsyncEnumerable<ToDoItemsResponse> GetRageToDoItemsAsync(GetPageTodoItemsRequest request,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var pageContext = new PageContext<ToDoItemFilter>(request.PageIndex, request.PageSize);

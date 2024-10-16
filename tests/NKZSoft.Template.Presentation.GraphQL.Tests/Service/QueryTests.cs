@@ -3,17 +3,12 @@ namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 using Common;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
-public sealed class QueryTests
+public sealed class QueryTests(GraphQLWebApplicationFactory<Program> factory)
 {
-    private readonly GraphQLWebApplicationFactory<Program> _factory;
-
-    public QueryTests(GraphQLWebApplicationFactory<Program> factory) =>
-        _factory = factory;
-
     [Fact, Order(1)]
     public async Task GetTodoItemsTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
         const string query = "\r\n" +
                              "            query {\r\n" +

@@ -10,7 +10,7 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
     public T CreateGrpcService<T>() where T : class
     {
         var client = CreateClient();
-        var grpcChannel =  GrpcChannel.ForAddress(client.BaseAddress!, new GrpcChannelOptions
+        var grpcChannel = GrpcChannel.ForAddress(client.BaseAddress!, new GrpcChannelOptions
         {
             HttpClient = client,
         });
@@ -21,9 +21,7 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
     {
         base.ConfigureWebHost(builder);
         builder.UseEnvironment(EnvironmentName)
-            .ConfigureServices((_, services) =>
-        {
-            services
+            .ConfigureServices((_, services) => services
                 .Replace<IDbInitializer, SeedDataContext>()
                 .Replace(_ => AppMockFactory.CreateCurrentUserServiceMock())
                 .Replace(_ =>
@@ -32,7 +30,6 @@ public sealed class GrpcWebApplicationFactory<TStartup> : BaseWebApplicationFact
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
                         LoggingEnabled = true,
-                    }));
-        });
+                    })));
     }
 }

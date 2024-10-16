@@ -1,11 +1,10 @@
+namespace NKZSoft.Template.Application.Tests.Common;
 using Microsoft.EntityFrameworkCore;
 using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Application.Tests.SeedData;
+using SeedData;
 using NKZSoft.Template.Common.Tests;
-using NKZSoft.Template.Infrastructure.Core.Services;
-using NKZSoft.Template.Persistence.PostgreSQL;
-
-namespace NKZSoft.Template.Application.Tests.Common;
+using Infrastructure.Core.Services;
+using Persistence.PostgreSQL;
 
 public static class ApplicationDbContextFactory
 {

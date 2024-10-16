@@ -9,15 +9,11 @@ using NKZSoft.Template.Presentation.Rest.Models.Result;
 using RestSharp;
 
 [Collection(nameof(RestCollectionDefinition))]
-public sealed class ToDoItemControllerTests
+public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> factory)
 {
     private const string ApiUrlBaseV1 = "api/v1/to-do-items";
     private const string ApiUrlBaseV2 = "api/v2/to-do-items";
     private const string ApiUrlBaseV3 = "api/v3/to-do-items";
-
-    private readonly RestWebApplicationFactory<Program> _factory;
-
-    public ToDoItemControllerTests(RestWebApplicationFactory<Program> factory) => _factory = factory;
 
     private static class Get
     {
@@ -35,7 +31,7 @@ public sealed class ToDoItemControllerTests
     [Fact, Order(1)]
     public async Task<ResultDtoBase<CollectionViewModel<ToDoItemDto>>> GetPageTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
         var command = new PageContext<ToDoItemFilter>(1, 10);
 
@@ -58,7 +54,7 @@ public sealed class ToDoItemControllerTests
         var items = await GetPageTestAsync();
         var firstItem = items.Data.Data.First();
 
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<ToDoItemDto>>(
             new RestRequest(Get.GetToDoItem(firstItem.Id)));
@@ -75,7 +71,7 @@ public sealed class ToDoItemControllerTests
     [Fact, Order(3)]
     public async Task GetByIdNotFoundTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<Unit>>(
             new RestRequest(Get.GetToDoItem(Guid.NewGuid())));
@@ -88,9 +84,9 @@ public sealed class ToDoItemControllerTests
     [Fact, Order(4)]
     public async Task CreateTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
-        var command = new CreateToDoItemCommand("TestNote", ListId:null) ;
+        var command = new CreateToDoItemCommand("TestNote", ListId: null);
 
         var response = await client.PostAsync<ResultDtoBase<Guid>>(
             new RestRequest(Post.CreateToDoItem()).AddJsonBody(command));
@@ -103,9 +99,9 @@ public sealed class ToDoItemControllerTests
     [Fact, Order(5)]
     public async Task<Guid> CreateRedisTestAsync()
     {
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
-        var command = new CreateToDoItemCommand("TestRedisNote", ListId:null) ;
+        var command = new CreateToDoItemCommand("TestRedisNote", ListId: null);
 
         var response = await client.PostAsync<ResultDtoBase<Guid>>(
             new RestRequest(Post.CreateRedisToDoItem()).AddJsonBody(command));
@@ -121,7 +117,7 @@ public sealed class ToDoItemControllerTests
     {
         var id = await CreateRedisTestAsync();
 
-        var client = new RestClient(_factory.CreateClient());
+        var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<ToDoItemDto>>(
             new RestRequest(Get.GetRedisToDoItem(id)));

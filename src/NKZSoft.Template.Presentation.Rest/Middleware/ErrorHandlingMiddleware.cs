@@ -14,15 +14,15 @@ public class ErrorHandlingMiddleware
         _logger = logger;
     }
 
-    public async Task Invoke(HttpContext httpContext, CancellationToken cancellationToken = default)
+    public async Task InvokeAsync(HttpContext httpContext, CancellationToken cancellationToken = default)
     {
         try
         {
             await _next(httpContext).ConfigureAwait(false);
         }
-        catch (Exception ex)
+        catch (Exception exception)
         {
-            await HandleExceptionAsync(httpContext, _logger, ex, cancellationToken).ConfigureAwait(false);
+            await HandleExceptionAsync(httpContext, _logger, exception, cancellationToken).ConfigureAwait(false);
         }
     }
 

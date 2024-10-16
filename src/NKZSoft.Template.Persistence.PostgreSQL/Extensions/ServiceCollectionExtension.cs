@@ -9,6 +9,7 @@ public static class ServiceCollectionExtension
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the MassTransits to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing settings to be used.</param>
+    /// <param name="optionsBuilder"></param>
     /// <returns>The <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection AddNgpSqlPersistence(this IServiceCollection services,
         IConfiguration configuration,
@@ -26,8 +27,8 @@ public static class ServiceCollectionExtension
         services.TryAddScoped<IDbInitializer, DbInitializer>();
         services.TryAddScoped<ApplicationDbContextFactory>();
 
-        services.TryAddScoped<IApplicationDbContext>(p =>
-            p.GetRequiredService<ApplicationDbContextFactory>().CreateDbContext());
+        services.TryAddScoped<IApplicationDbContext>(provider =>
+            provider.GetRequiredService<ApplicationDbContextFactory>().CreateDbContext());
 
         services.Scan(scan => scan
             .FromAssemblies(Assembly.GetExecutingAssembly())
@@ -71,7 +72,7 @@ public static class ServiceCollectionExtension
 
     private static DbContextOptionsBuilder EnableDbLogging(this DbContextOptionsBuilder builder) => builder
             .LogTo(
-                msg => Log.Logger.Information(msg),
+                msg => Log.Logger.Information("{Msg}",msg),
                 new[] { DbLoggerCategory.Database.Name })
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging();

@@ -11,9 +11,7 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
     {
         base.ConfigureWebHost(builder);
         builder.UseEnvironment(EnvironmentName)
-            .ConfigureServices((_, services) =>
-        {
-            services
+            .ConfigureServices((_, services) => services
                 .Replace<IDbInitializer, SeedDataContext>()
                 .Replace(_ => AppMockFactory.CreateCurrentUserServiceMock())
                 .Replace(_ =>
@@ -22,7 +20,6 @@ public sealed class GraphQLWebApplicationFactory<TStartup> : BaseWebApplicationF
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
                         LoggingEnabled = true,
-                    }));
-        });
+                    })));
     }
 }

@@ -1,7 +1,6 @@
-﻿using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Application.Tests.SeedData;
-
-namespace NKZSoft.Template.Application.Tests.Common;
+﻿namespace NKZSoft.Template.Application.Tests.Common;
+using NKZSoft.Template.Application.Common.Interfaces;
+using SeedData;
 
 public class TestBase
 {

@@ -3,8 +3,6 @@
 using Common;
 using Configuration;
 using Repositories;
-using EasyCaching.Core;
-using EasyCaching.Core.Configurations;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtension
@@ -16,7 +14,7 @@ public static class ServiceCollectionExtension
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the MassTransits to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing settings to be used.</param>
-    /// <returns>The <see cref="IServiceCollection"/>.</returns>"></param>
+    /// <returns>The <see cref="IServiceCollection"/>.</returns>">
     /// <returns></returns>
     public static IServiceCollection AddRedisPersistence(this IServiceCollection services,
         IConfiguration configuration)

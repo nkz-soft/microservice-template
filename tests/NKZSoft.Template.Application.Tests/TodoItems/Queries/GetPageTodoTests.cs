@@ -66,9 +66,7 @@ public sealed class GetPageTodoTests : TestBase
     {
         var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>(pageIndex,
             pageSize,
-            filter:null,
-            new[] { new SortDescriptor("title", EnumSortDirection.Desc) }
-            ));
+            [new SortDescriptor("title", EnumSortDirection.Desc),]));
 
         var result = await Mediator.Send(command);
 

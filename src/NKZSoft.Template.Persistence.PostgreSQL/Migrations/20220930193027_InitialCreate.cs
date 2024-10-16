@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
-#pragma warning disable MA0048
+#pragma warning disable MA0048, AV1706
 
 namespace NKZSoft.Template.Persistence.PostgreSQL.Migrations
 {

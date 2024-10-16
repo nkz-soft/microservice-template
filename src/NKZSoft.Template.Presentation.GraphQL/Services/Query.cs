@@ -12,7 +12,7 @@ public sealed class Query
     [UseFiltering]
     [UseSorting]
 #pragma warning disable CA1822, MA0038
-    public async Task<IQueryable<ToDoItem>> GetTodoItems([Service] IMediator mediator, CancellationToken token) =>
+    public async Task<IQueryable<ToDoItem>> GetTodoItemsAsync([Service] IMediator mediator, CancellationToken token) =>
         await mediator.Send(new GetAllToDoItemsQuery(), token).ConfigureAwait(false);
 #pragma warning restore CA1822, MA0038
 }

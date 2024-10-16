@@ -36,7 +36,7 @@ public class MappingConfig : IRegister
 
         config.NewConfig<IError, ErrorResponse>()
             .MapToConstructor(value:true)
-            .ConstructUsing(x => new ErrorResponse(x.Message, TransformErrorCode(x)));
+            .ConstructUsing(error => new ErrorResponse(error.Message, TransformErrorCode(error)));
     }
 
     private static string? TransformErrorCode(IReason error)

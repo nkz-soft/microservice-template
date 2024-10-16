@@ -8,9 +8,9 @@ public class ToDoItemListConfiguration : AuditableConfiguration<ToDoList>, IEnti
 
         builder.ToTable("ToDoLists");
 
-        builder.HasKey(e => e.Id);
+        builder.HasKey(entity => entity.Id);
 
-        builder.Property(e => e.Title)
+        builder.Property(entity => entity.Title)
             .IsRequired()
             .HasMaxLength(256);
 

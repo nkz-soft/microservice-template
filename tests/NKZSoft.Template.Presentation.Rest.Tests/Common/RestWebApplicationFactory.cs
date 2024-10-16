@@ -11,9 +11,7 @@ public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFact
     {
         base.ConfigureWebHost(builder);
         builder.UseEnvironment(EnvironmentName)
-            .ConfigureServices((_, services) =>
-        {
-            services
+            .ConfigureServices((_, services) => services
                 .Replace<IDbInitializer, SeedDataContext>()
                 .Replace(_ => AppMockFactory.CreateCurrentUserServiceMock())
                 .Replace(_ =>
@@ -22,7 +20,6 @@ public sealed class RestWebApplicationFactory<TStartup> : BaseWebApplicationFact
                         ConnectionString = GetContainer<PostgreSqlContainer>().GetConnectionString(),
                         HealthCheckEnabled = false,
                         LoggingEnabled = true,
-                    }));
-        });
+                    })));
     }
 }

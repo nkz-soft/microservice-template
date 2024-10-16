@@ -5,13 +5,13 @@ public class PagingQueryValidator<T, TCM, TF> : AbstractValidator<T>
 {
     protected PagingQueryValidator()
     {
-        RuleFor(x => x.PageContext).NotNull()
+        RuleFor(pageContext => pageContext.PageContext).NotNull()
             .NotEmpty().WithMessage("PageContext is required.");
 
-        RuleFor(x => x.PageContext.PageIndex)
+        RuleFor(pageContext => pageContext.PageContext.PageIndex)
             .GreaterThanOrEqualTo(1).WithMessage("PageIndex at least greater than or equal to 1.");
 
-        RuleFor(x => x.PageContext.PageSize)
+        RuleFor(pageContext => pageContext.PageContext.PageSize)
             .GreaterThanOrEqualTo(1).WithMessage("PageSize at least greater than or equal to 1.");
     }
 }

@@ -1,15 +1,13 @@
 ﻿namespace NKZSoft.Template.Domain.Common;
 
-public abstract class BaseEntity<TKey> : IPkEntity<TKey>
+public abstract class BaseEntity<TKey>(TKey id) : IPkEntity<TKey>
 {
-    private readonly List<INotification> _domainEvents = new();
+    private readonly List<INotification> _domainEvents = [];
 
-    protected BaseEntity(TKey id) => Id = id;
-
-    public TKey Id { get; }
+    public TKey Id { get; } = id;
 
     [NotMapped]
-    public bool IsNew => EqualityComparer<TKey>.Default.Equals(Id, default(TKey));
+    public bool IsNew => EqualityComparer<TKey>.Default.Equals(Id, default);
 
     [NotMapped]
     public IReadOnlyCollection<INotification> DomainEvents => _domainEvents.AsReadOnly();

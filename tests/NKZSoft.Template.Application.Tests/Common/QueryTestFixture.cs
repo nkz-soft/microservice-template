@@ -1,9 +1,7 @@
-using NKZSoft.Template.Application.Common.Interfaces;
-using NKZSoft.Template.Application.Tests.SeedData;
-using NKZSoft.Template.Common;
-using NKZSoft.Template.Common.Tests;
-
 namespace NKZSoft.Template.Application.Tests.Common;
+using NKZSoft.Template.Application.Common.Interfaces;
+using SeedData;
+using NKZSoft.Template.Common;
 
 public sealed class QueryTestFixture : IDisposable
 {

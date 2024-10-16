@@ -25,7 +25,7 @@ public sealed class ToDoItemServiceTests
     {
         var count = 0;
 
-        await foreach (var response in _service.GetRageToDoItems(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
+        await foreach (var response in _service.GetRageToDoItemsAsync(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
         {
             response.Items.Should().HaveCount(2);
             ++count;
@@ -37,9 +37,10 @@ public sealed class ToDoItemServiceTests
     [Fact, Order(2)]
     public async Task GetPageItemByIdTestAsync()
     {
-        await foreach(var item in _service.GetRageToDoItems(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
+        await foreach (var item in _service.GetRageToDoItemsAsync
+                           (new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
         {
-            var response = await _service.GetToDoItemById(new GetTodoItemRequest
+            var response = await _service.GetToDoItemByIdAsync(new GetTodoItemRequest
             {
                 Id = item.Items[0].Id,
             });
@@ -54,12 +55,12 @@ public sealed class ToDoItemServiceTests
     [Fact, Order(3)]
     public async Task GetItemByNoIdTestAsync()
     {
-        async Task Act() =>  await _service.GetToDoItemById(new GetTodoItemRequest
+        await Assert.ThrowsAsync<RpcException>(ActAsync);
+
+        async Task ActAsync() => await _service.GetToDoItemByIdAsync(new GetTodoItemRequest
         {
             Id = Guid.NewGuid(),
         }).ConfigureAwait(false);
-
-        await Assert.ThrowsAsync<RpcException>(Act);
     }
 
     [Fact, Order(4)]
@@ -67,7 +68,7 @@ public sealed class ToDoItemServiceTests
     {
         var count = 0;
 
-        await foreach (var response in _service.GetToDoItems().ConfigureAwait(false))
+        await foreach (var response in _service.GetToDoItemsAsync().ConfigureAwait(false))
         {
             response.Should().NotBeNull();
             ++count;

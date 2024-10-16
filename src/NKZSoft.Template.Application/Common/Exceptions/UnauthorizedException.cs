@@ -15,6 +15,5 @@ public sealed class UnauthorizedException : Exception
     {
     }
 
-    public static UnauthorizedException Response(string message)
-        => new UnauthorizedException(message);
+    public static UnauthorizedException Response(string message) => new(message);
 }

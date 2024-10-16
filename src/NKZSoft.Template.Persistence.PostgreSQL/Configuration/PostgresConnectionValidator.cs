@@ -4,6 +4,6 @@ internal sealed class PostgresConnectionValidator : AbstractValidator<PostgresCo
 {
     public PostgresConnectionValidator()
     {
-        RuleFor(x => x.ConnectionString).NotEmpty();
+        RuleFor(connection => connection.ConnectionString).NotEmpty();
     }
 }

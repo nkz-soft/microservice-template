@@ -25,5 +25,5 @@ public sealed class ValidationException : Exception
     {
     }
 
-    public IList<KeyValuePair<string, string>> Failures { get; } = new List<KeyValuePair<string, string>>();
+    public IList<KeyValuePair<string, string>> Failures { get; } = [];
 }

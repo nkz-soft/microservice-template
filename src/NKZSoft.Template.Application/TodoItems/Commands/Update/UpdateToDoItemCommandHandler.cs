@@ -1,7 +1,6 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Update;
 
 using Common.Exceptions;
-using Common.Repositories;
 using Common.Repositories.PostgreSql;
 
 public sealed class UpdateToDoItemCommandHandler : IRequestHandler<UpdateToDoItemCommand>

@@ -6,7 +6,7 @@ public sealed class Mutation
 {
     [UseMutationConvention]
 #pragma warning disable CA1822, MA0038
-    public async Task<Guid> CreateToDoItem([Service] IMediator mediator,
+    public async Task<Guid> CreateToDoItemAsync([Service] IMediator mediator,
         string title,
         int? listId,
         CancellationToken token) =>

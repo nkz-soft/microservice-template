@@ -3,7 +3,7 @@
 using Common;
 using Configuration;
 
-public static class ServiceCollectionExtension
+public static class ServiceCollectionExtensions
 {
     private const string ProviderName = "EFCoreCahce";
     private const string SerializerName = "proto";
@@ -16,7 +16,7 @@ public static class ServiceCollectionExtension
     /// <param name="services">The <see cref="IServiceCollection"/> to add the MassTransits to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing settings to be used.</param>
     /// <returns>The <see cref="IServiceCollection"/>.</returns>
-    public static IServiceCollection AddEFCoreRedisCache(
+    public static IServiceCollection AddEfCoreRedisCache(
         this IServiceCollection services, IConfiguration configuration)
     {
         services.ThrowIfNull();
@@ -28,7 +28,7 @@ public static class ServiceCollectionExtension
         services.AddEFSecondLevelCache(options =>
             options.UseEasyCachingCoreProvider(ProviderName, isHybridCache: false)
                 .CacheAllQueries(CacheExpirationMode.Absolute, TimeSpan.FromMinutes(30))
-                .ConfigureLogging(enable:true)
+                .ConfigureLogging(enable: true)
                 .UseCacheKeyPrefix(EfPrefix)
         );
 

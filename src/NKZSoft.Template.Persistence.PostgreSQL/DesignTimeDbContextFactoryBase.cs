@@ -12,7 +12,8 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
     {
         var basePath = Directory
             .GetDirectories($"{Directory.GetCurrentDirectory()}{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}")
-            .FirstOrDefault(s => s.Contains("Starter", StringComparison.OrdinalIgnoreCase));
+            .FirstOrDefault(assemblyPath => assemblyPath
+                                .Contains("Starter", StringComparison.OrdinalIgnoreCase));
 
         ArgumentNullException.ThrowIfNull(basePath);
 
@@ -46,7 +47,7 @@ public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbCo
             throw new ArgumentException($"Connection string '{ConnectionStringName}' is null or empty.", nameof(connectionString));
         }
 
-        Console.WriteLine($"DesignTimeDbContextFactoryBase.Create(string): Connection string: '{connectionString}'.");
+        Console.WriteLine($"DesignTimeDbContextFactoryBase.CreateAsync(string): Connection string: '{connectionString}'.");
 
         var optionsBuilder = new DbContextOptionsBuilder<TContext>();
 

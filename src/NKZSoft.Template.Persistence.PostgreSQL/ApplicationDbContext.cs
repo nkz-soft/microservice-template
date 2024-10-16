@@ -50,7 +50,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         var domainEntities = ChangeTracker
             .Entries<IEntity>()
-            .Where(x => x.Entity.DomainEvents.Count != 0);
+            .Where(entry => entry.Entity.DomainEvents.Count != 0);
         await _mediator.DispatchDomainEventsAsync(domainEntities)
             .ConfigureAwait(false);
     }
@@ -64,13 +64,13 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
                 entry.State = EntityState.Added;
             }
 
-            switch (entry.State)
+            switch (entry)
             {
-                case EntityState.Added:
+                case { State: EntityState.Added,}:
                     entry.Entity.CreatedBy = currentUser?.Id?.ToString(CultureInfo.InvariantCulture);
                     entry.Entity.Created = _dateTime.Now;
                     break;
-                case EntityState.Modified:
+                case { State: EntityState.Modified,}:
                     entry.Entity.ModifiedBy = currentUser?.Id?.ToString(CultureInfo.InvariantCulture);
                     entry.Entity.Modified = _dateTime.Now;
                     break;

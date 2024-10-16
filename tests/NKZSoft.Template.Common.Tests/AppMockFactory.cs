@@ -16,13 +16,15 @@ public static class AppMockFactory
             };
 
         return MockRepositoryInstance
-            .Of<ICurrentUserService>().First(x => x.CurrentUser == currentUser);
+            .Of<ICurrentUserService>()
+            .First(currentUserService => currentUserService.CurrentUser == currentUser);
     }
 
     public static IMediator CreateMediatorMock()
     {
         var mediator = MockRepositoryInstance.Create<IMediator>();
-        mediator.Setup(x => x.Publish(It.IsAny<object>(), It.IsAny<CancellationToken>()))
+        mediator.Setup(mockMediator => mockMediator.Publish(It.IsAny<object>(),
+                           It.IsAny<CancellationToken>()))
             .Verifiable(string.Empty);
 
         return MockRepositoryInstance.Of<IMediator>().First();

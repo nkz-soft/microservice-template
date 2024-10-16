@@ -2,13 +2,13 @@
 
 using Common.Behaviours;
 
-public static class DependencyInjection
+public static class DependencyInjectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.ThrowIfNull();
 
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), filter:null, includeInternalTypes:true);
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), filter: null, includeInternalTypes: true);
         services.AddMediatR(cfg =>
             cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
