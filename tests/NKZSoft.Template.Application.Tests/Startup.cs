@@ -3,7 +3,9 @@ using NKZSoft.Template.Common.Tests;
 
 internal static class Startup
 {
-    public static async Task ConfigureServices(IServiceCollection services)
+#pragma warning disable VSTHRD100
+    public static async void ConfigureServices(IServiceCollection services)
+#pragma warning restore VSTHRD100
     {
         services.AddApplication();
         services.TryAddSingleton(AppMockFactory.CreateCurrentUserServiceMock());
@@ -12,4 +14,5 @@ internal static class Startup
         services.TryAddScoped<IToDoItemRepository, ToDoItemRepository>();
         services.TryAddScoped<IToDoListRepository, ToDoListRepository>();
     }
+
 }
