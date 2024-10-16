@@ -6,44 +6,20 @@ public sealed record PageContext<T> : IPageContext<T>,
     IIncrementOperators<PageContext<T>>, IDecrementOperators<PageContext<T>>
     where T : class, new()
 {
-    public PageContext(
-        int pageIndex,
-        int pageSize) : this(pageIndex, pageSize, new T(), [], [])
-    {}
-
+#pragma warning disable AV1553
     public PageContext(
         int pageIndex,
         int pageSize,
-        T filter) : this(pageIndex, pageSize, filter, [], [])
-    {}
-
-    public PageContext(
-        int pageIndex,
-        int pageSize,
-        T filter,
-        IEnumerable<SortDescriptor> listSort)
-            : this(pageIndex, pageSize, filter, listSort, [])
-    {}
-
-    public PageContext(
-        int pageIndex,
-        int pageSize,
-        IEnumerable<SortDescriptor> listSort)
-        : this(pageIndex, pageSize, new T(), listSort, [])
-    {}
-
-    public PageContext(
-        int pageIndex,
-        int pageSize,
-        T filter,
-        IEnumerable<SortDescriptor> listSort,
-        IEnumerable<GroupDescriptor> listGroup)
+        T? filter = null,
+        IEnumerable<SortDescriptor>? listSort = null,
+        IEnumerable<GroupDescriptor>? listGroup = null)
+#pragma warning restore AV1553
     {
         PageIndex = pageIndex;
         PageSize = pageSize;
-        Filter = filter;
-        ListSort = listSort;
-        ListGroup = listGroup;
+        Filter = filter ?? new T();
+        ListSort = listSort ?? [];
+        ListGroup = listGroup ?? [];
     }
 
     public int PageIndex { get; private set; }

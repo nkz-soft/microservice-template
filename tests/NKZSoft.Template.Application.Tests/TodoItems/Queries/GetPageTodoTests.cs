@@ -64,9 +64,11 @@ public sealed class GetPageTodoTests : TestBase
     [InlineData(1, 10, "TestItem_5")]
     public async Task ShouldReturnItemPageSorting(int pageIndex, int pageSize, string title)
     {
-        var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>(pageIndex,
+        var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>(
+            pageIndex,
             pageSize,
-            [new SortDescriptor("title", EnumSortDirection.Desc),]));
+            filter: null,
+            listSort: [new SortDescriptor("title", EnumSortDirection.Desc),]));
 
         var result = await Mediator.Send(command);
 
