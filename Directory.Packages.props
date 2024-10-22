@@ -10,10 +10,10 @@
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
     <PackageVersion Include="FluentValidation" Version="11.10.0" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="14.0.0" />
-    <PackageVersion Include="HotChocolate.Diagnostics" Version="13.9.14" />
-    <PackageVersion Include="HotChocolate.AspNetCore" Version="13.9.14" />
+    <PackageVersion Include="HotChocolate.Diagnostics" Version="14.0.0" />
+    <PackageVersion Include="HotChocolate.AspNetCore" Version="14.0.0" />
     <PackageVersion Include="HotChocolate.Data" Version="14.0.0" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="13.9.14" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.4" />
@@ -112,7 +112,7 @@
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.163" />
     <PackageVersion Include="Roslynator.Analyzers" Version="4.12.5" />
     <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.12.5" />
-    <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.12.5"/>
+    <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.12.5" />
     <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.11.20" />
     <PackageVersion Include="AsyncAwaitBestPractices" Version="8.0.0" />
     <PackageVersion Include="SerilogAnalyzer" Version="0.15.0" />
