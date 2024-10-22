@@ -123,12 +123,12 @@
       },
       "Scrutor": {
         "type": "Direct",
-        "requested": "[4.2.2, )",
-        "resolved": "4.2.2",
-        "contentHash": "t5VIYA7WJXoJJo7s4DoHakMGwTu+MeEnZumMOhTCH7kz9xWha24G7dJNxWrHPlu0ZdZAS4jDZCxxAnyaBh7uYw==",
+        "requested": "[5.0.1, )",
+        "resolved": "5.0.1",
+        "contentHash": "lODLSduex32544jZZom2bN73mg4DfyGCNdywismPv2D2Hslv4jaq1Y+apV24xTW65tDMXskZHwVFSg2xIs3jtQ==",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.DependencyModel": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
+          "Microsoft.Extensions.DependencyModel": "8.0.1"
         }
       },
       "SerilogAnalyzer": {
@@ -150,6 +150,14 @@
         "type": "Transitive",
         "resolved": "7.0.2",
         "contentHash": "agsaQ92GDrOFh2u2nEYU/YvRfHIRCshmagLqyRPFZqKB6jkRl6Cb5jV2Dm7nBjpvpFStffTl7G88Y9DuoJSudw=="
+      },
+      "BananaCakePop.Middleware": {
+        "type": "Transitive",
+        "resolved": "16.0.3",
+        "contentHash": "gwWk5ykS1uum2/++x3UnGhmjs+4itxce1lW5YnKdb8JeG4QxAMzSWVGh3B1ehiKJNAuvNtbfBwp2BAQvOsq02g==",
+        "dependencies": {
+          "Yarp.ReverseProxy": "2.1.0"
+        }
       },
       "CacheManager.Core": {
         "type": "Transitive",
@@ -2314,7 +2322,7 @@
           "Npgsql.OpenTelemetry": "[8.0.4, )",
           "OpenTelemetry.Api": "[1.9.0, )",
           "OpenTelemetry.Instrumentation.EntityFrameworkCore": "[1.0.0-beta.12, )",
-          "Scrutor": "[4.2.2, )",
+          "Scrutor": "[5.0.1, )",
           "Serilog": "[4.0.1, )",
           "Serilog.Extensions.Logging": "[8.0.0, )"
         }
@@ -2331,7 +2339,7 @@
           "NKZSoft.FluentValidation.Options": "[1.2.1, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
-          "Scrutor": "[4.2.2, )",
+          "Scrutor": "[5.0.1, )",
           "StackExchange.Redis": "[2.8.16, )"
         }
       },

@@ -57,7 +57,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0" />
     <PackageVersion Include="Ardalis.Specification" Version="8.0.0" />
-    <PackageVersion Include="Scrutor" Version="4.2.2" />
+    <PackageVersion Include="Scrutor" Version="5.0.1" />
     <PackageVersion Include="MediatR" Version="12.4.1" />
     <PackageVersion Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageVersion Include="MassTransit" Version="8.2.5" />
@@ -71,15 +71,15 @@
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageVersion Include="Google.Protobuf" Version="3.28.2" />
     <PackageVersion Include="protobuf-net" Version="3.2.30" />
-    <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
-    <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
+    <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.2.2" />
+    <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.2.2" />
     <PackageVersion Include="protobuf-net.Reflection" Version="3.2.12" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.66.0" />
     <PackageVersion Include="Serilog" Version="4.0.1" />
     <PackageVersion Include="Serilog.Extensions.Logging" Version="8.0.0" />
     <PackageVersion Include="Serilog.Extensions.Hosting" Version="8.0.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
-    <PackageVersion Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="8.0.3" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.8" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
