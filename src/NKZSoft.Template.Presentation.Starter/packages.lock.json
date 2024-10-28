@@ -105,9 +105,9 @@
       },
       "Roslynator.Analyzers": {
         "type": "Direct",
-        "requested": "[4.12.5, )",
-        "resolved": "4.12.5",
-        "contentHash": "yv7GB4pD7g9SH+hR/tXiahPij4WHicO8McJ63pFKYTT4jxPxiA3pUix8der+mt2QmtJc5yuaIAnnzV9t/T8i4g=="
+        "requested": "[4.12.9, )",
+        "resolved": "4.12.9",
+        "contentHash": "X6lDpN/D5wuinq37KIx+l3GSUe9No+8bCjGBTI5sEEtxapLztkHg6gzNVhMXpXw8P+/5gFYxTXJ5Pf8O4iNz/w=="
       },
       "Roslynator.CodeAnalysis.Analyzers": {
         "type": "Direct",
@@ -151,14 +151,6 @@
         "resolved": "7.0.2",
         "contentHash": "agsaQ92GDrOFh2u2nEYU/YvRfHIRCshmagLqyRPFZqKB6jkRl6Cb5jV2Dm7nBjpvpFStffTl7G88Y9DuoJSudw=="
       },
-      "BananaCakePop.Middleware": {
-        "type": "Transitive",
-        "resolved": "16.0.3",
-        "contentHash": "gwWk5ykS1uum2/++x3UnGhmjs+4itxce1lW5YnKdb8JeG4QxAMzSWVGh3B1ehiKJNAuvNtbfBwp2BAQvOsq02g==",
-        "dependencies": {
-          "Yarp.ReverseProxy": "2.1.0"
-        }
-      },
       "CacheManager.Core": {
         "type": "Transitive",
         "resolved": "1.2.0",
@@ -201,10 +193,10 @@
       },
       "Grpc.AspNetCore.Server": {
         "type": "Transitive",
-        "resolved": "2.51.0",
-        "contentHash": "D/4ZZSNtH0aNvoenCwGxT0KXOQvF1wcET59UZlnL0caKuxSQtNtc8ucIBHPzcSqQwZU7jGM6YO69P3fJjNrFaA==",
+        "resolved": "2.66.0",
+        "contentHash": "SogFEs8bLvcRtEWMdueOJeMxiaLryvyivWtmBwz/vLtS5xlN4Zrfv+npMbn1PS4iT99AqBY+R+bRxdIFfvfeIA==",
         "dependencies": {
-          "Grpc.Net.Common": "2.51.0"
+          "Grpc.Net.Common": "2.66.0"
         }
       },
       "Grpc.Core.Api": {
@@ -1198,10 +1190,11 @@
       },
       "protobuf-net.Grpc": {
         "type": "Transitive",
-        "resolved": "1.1.1",
-        "contentHash": "uThFb/iUplzuXEa/cztJaNGpKLRQRb515STtQX99IS1MKh8Qsunw6MjjU+9rjo8s9UymR6lN9Ab6xT3adBlyDg==",
+        "resolved": "1.2.2",
+        "contentHash": "ywpDWMKewrojQQyAKicELuTuaH+heEQfcuB+aJdENN9OfNOIuWLnwLdnHOzJ1162hD/1trzYDFMV5g8vmTxJTQ==",
         "dependencies": {
-          "Grpc.Core.Api": "2.51.0",
+          "Grpc.Core.Api": "2.66.0",
+          "System.IO.Pipelines": "8.0.0",
           "protobuf-net": "2.4.8"
         }
       },
@@ -1216,13 +1209,13 @@
       },
       "protobuf-net.Grpc.Reflection": {
         "type": "Transitive",
-        "resolved": "1.1.1",
-        "contentHash": "CmOxuVSk9Xk1mTZN6ZZ9WvqvX+YiqqL6Hb0RfaRTZU4j827ZfCt+VjYm+SQb7WxEK0mUlsSXwHM2lYDD0Y9rAg==",
+        "resolved": "1.2.2",
+        "contentHash": "rI6npMBrGHCbeWL8OZdW71+7h+27A950Omz2HwBicWYFlSs9WtNjPVDgmC/LPRrxfP8wZQEfu2z6C+0cZBEqmw==",
         "dependencies": {
-          "protobuf-net": "3.1.33",
-          "protobuf-net.Core": "3.1.33",
-          "protobuf-net.Grpc": "1.1.1",
-          "protobuf-net.Reflection": "3.1.33"
+          "protobuf-net": "3.2.30",
+          "protobuf-net.Core": "3.2.30",
+          "protobuf-net.Grpc": "1.2.2",
+          "protobuf-net.Reflection": "3.2.12"
         }
       },
       "RabbitMQ.Client": {
@@ -2363,8 +2356,8 @@
           "OpenTelemetry.Instrumentation.GrpcNetClient": "[1.0.0-rc9.14, )",
           "System.ServiceModel.Primitives": "[8.0.0, )",
           "protobuf-net": "[3.2.30, )",
-          "protobuf-net.Grpc.AspNetCore": "[1.1.1, )",
-          "protobuf-net.Grpc.AspNetCore.Reflection": "[1.1.1, )",
+          "protobuf-net.Grpc.AspNetCore": "[1.2.2, )",
+          "protobuf-net.Grpc.AspNetCore.Reflection": "[1.2.2, )",
           "protobuf-net.Reflection": "[3.2.12, )"
         }
       },
@@ -2582,7 +2575,7 @@
       },
       "HotChocolate.Diagnostics": {
         "type": "CentralTransitive",
-        "requested": "[13.9.14, )",
+        "requested": "[14.0.0, )",
         "resolved": "14.0.0",
         "contentHash": "oKvvsJZTyQmEH01HlpzdVV1YbpyHcYAektlO/E5/6jS5V1lqQikH0nwE91AkvFBFuGdeNU5JjYw6zU8a1+S2Xg==",
         "dependencies": {
@@ -2971,22 +2964,22 @@
       },
       "protobuf-net.Grpc.AspNetCore": {
         "type": "CentralTransitive",
-        "requested": "[1.1.1, )",
-        "resolved": "1.1.1",
-        "contentHash": "swwy9K9KlwlkXTYpTE9Hva9Qty9PFM081nr3bz7SVnmlNBvYcJFFMVkFuSHYOuVAtR7wvANtDsRj0+bc7zehXQ==",
+        "requested": "[1.2.2, )",
+        "resolved": "1.2.2",
+        "contentHash": "pgWnFOD6FwazC5OQaKWv93eMaoKfGGcdRRwaVg8m52+KAJobjDFbYpPwVCQ68Lw8am6hAcM8UvPRL9XiIA9wiQ==",
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.51.0",
-          "protobuf-net.Grpc": "1.1.1"
+          "Grpc.AspNetCore.Server": "2.66.0",
+          "protobuf-net.Grpc": "1.2.2"
         }
       },
       "protobuf-net.Grpc.AspNetCore.Reflection": {
         "type": "CentralTransitive",
-        "requested": "[1.1.1, )",
-        "resolved": "1.1.1",
-        "contentHash": "raZQ0LwjbgbF05NcqECFk8dUWdDuVAraL2+xqaJ16X7AAgJ+ar0ieYrImXNRn81N4pQjS1cQBllvdDqOobXlPw==",
+        "requested": "[1.2.2, )",
+        "resolved": "1.2.2",
+        "contentHash": "3tRHt3YOimHGoAzC+cGO5suPv5eSlvXNWDFFbMTmK+ecwpnZITG3XxE7m5qKF5TP0h3VKOXipah5cQuPLmk8DQ==",
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.51.0",
-          "protobuf-net.Grpc.Reflection": "1.1.1"
+          "Grpc.AspNetCore.Server": "2.66.0",
+          "protobuf-net.Grpc.Reflection": "1.2.2"
         }
       },
       "protobuf-net.Reflection": {
