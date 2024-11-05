@@ -823,12 +823,8 @@
       },
       "Microsoft.Extensions.DependencyModel": {
         "type": "Transitive",
-        "resolved": "8.0.1",
-        "contentHash": "5Ou6varcxLBzQ+Agfm0k0pnH7vrEITYlXMDuE6s7ZHlZHz6/G8XJ3iISZDr5rfwfge6RnXJ1+Wc479mMn52vjA==",
-        "dependencies": {
-          "System.Text.Encodings.Web": "8.0.0",
-          "System.Text.Json": "8.0.4"
-        }
+        "resolved": "8.0.2",
+        "contentHash": "mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw=="
       },
       "Microsoft.Extensions.Diagnostics": {
         "type": "Transitive",
@@ -1350,11 +1346,11 @@
       },
       "Serilog.Settings.Configuration": {
         "type": "Transitive",
-        "resolved": "8.0.2",
-        "contentHash": "hn8HCAmupon7N0to20EwGeNJ+L3iRzjGzAHIl8+8CCFlEkVedHvS6NMYMb0VPNMsDgDwOj4cPBPV6Fc2hb0/7w==",
+        "resolved": "8.0.4",
+        "contentHash": "pkxvq0umBKK8IKFJc1aV5S/HGRG/NIxJ6FV42KaTPLfDmBOAbBUB1m5gqqlGxzEa1MgDDWtQlWJdHTSxVWNx+Q==",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "8.0.0",
-          "Microsoft.Extensions.DependencyModel": "8.0.1",
+          "Microsoft.Extensions.DependencyModel": "8.0.2",
           "Serilog": "3.1.1"
         }
       },
@@ -2114,8 +2110,8 @@
       },
       "System.Text.Json": {
         "type": "Transitive",
-        "resolved": "8.0.4",
-        "contentHash": "bAkhgDJ88XTsqczoxEMliSrpijKZHhbJQldhAmObj/RbrN3sU5dcokuXmWJWsdQAhiMJ9bTayWsL1C9fbbCRhw==",
+        "resolved": "8.0.0",
+        "contentHash": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
         }
@@ -2255,7 +2251,7 @@
         "type": "Project",
         "dependencies": {
           "AspNetCore.HealthChecks.Redis": "[8.0.1, )",
-          "EFCoreSecondLevelCacheInterceptor": "[4.8.3, )",
+          "EFCoreSecondLevelCacheInterceptor": "[4.8.4, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
           "FluentValidation": "[11.10.0, )",
@@ -2293,7 +2289,7 @@
         "type": "Project",
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": "[8.0.2, )",
-          "EFCoreSecondLevelCacheInterceptor": "[4.8.3, )",
+          "EFCoreSecondLevelCacheInterceptor": "[4.8.4, )",
           "FluentValidation.AspNetCore": "[11.3.0, )",
           "MediatR": "[12.4.1, )",
           "Microsoft.EntityFrameworkCore.Relational": "[8.0.10, )",
@@ -2316,7 +2312,7 @@
           "OpenTelemetry.Api": "[1.9.0, )",
           "OpenTelemetry.Instrumentation.EntityFrameworkCore": "[1.0.0-beta.12, )",
           "Scrutor": "[5.0.1, )",
-          "Serilog": "[4.0.1, )",
+          "Serilog": "[4.1.0, )",
           "Serilog.Extensions.Logging": "[8.0.0, )"
         }
       },
@@ -2365,7 +2361,7 @@
         "type": "Project",
         "dependencies": {
           "FluentValidation.AspNetCore": "[11.3.0, )",
-          "NKZSoft.Service.Configuration.Logger": "[1.3.0, )",
+          "NKZSoft.Service.Configuration.Logger": "[1.3.2, )",
           "NKZSoft.Service.Configuration.Swagger": "[1.0.3, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
@@ -2469,15 +2465,16 @@
       },
       "EFCoreSecondLevelCacheInterceptor": {
         "type": "CentralTransitive",
-        "requested": "[4.8.3, )",
-        "resolved": "4.8.3",
-        "contentHash": "GUn2NDE12z7obdlm+OICaP6qzZ0vYYOvULR5VRAck2dtwuehBhxqInAiOAoi+FL8SuwZeSxCZZXk/6K1yr3Q2w==",
+        "requested": "[4.8.4, )",
+        "resolved": "4.8.4",
+        "contentHash": "WxldD8QDgapbyPM9xQrnUjGrsEyJp6bNXshXfeaH+25EYlXUR9MvlAk/pJ/nPjxKFyftDF0Ydfp0l/CzF/RBWA==",
         "dependencies": {
           "AsyncKeyedLock": "7.0.2",
           "CacheManager.Core": "1.2.0",
           "EasyCaching.Core": "1.9.2",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.0",
+          "Microsoft.Extensions.Caching.Memory": "8.0.1",
           "System.IO.Hashing": "8.0.0"
         }
       },
@@ -2614,7 +2611,7 @@
       },
       "MassTransit": {
         "type": "CentralTransitive",
-        "requested": "[8.2.5, )",
+        "requested": "[8.3.0, )",
         "resolved": "8.2.3",
         "contentHash": "gh6xXWOs/dTVQsJF+40bMKNYxNr915GuyF9goi+Fa+EMLbeVxTVXBXV+h5WlGm0S4yaX0qLGEKSPPcCzYCvFLg==",
         "dependencies": {
@@ -2650,7 +2647,7 @@
       },
       "MassTransit.RabbitMQ": {
         "type": "CentralTransitive",
-        "requested": "[8.2.5, )",
+        "requested": "[8.3.0, )",
         "resolved": "8.2.3",
         "contentHash": "vCb9byv0tlSbWPneQlkJyY46SmpNLf/DHYKzgBLcxG1NiDbL6b4sVhjCXojY31MOkpjLcU2iduTuuT+uyqlx7w==",
         "dependencies": {
@@ -2835,15 +2832,15 @@
       },
       "NKZSoft.Service.Configuration.Logger": {
         "type": "CentralTransitive",
-        "requested": "[1.3.0, )",
-        "resolved": "1.3.0",
-        "contentHash": "R1QVhRgPDkJUTfitwjBMflGzrp+OT5u12GIXmK6aT5RnQnSq26f5DAgcCky0TuNWYeBJWyk3a4mdFUR3vIfI3w==",
+        "requested": "[1.3.2, )",
+        "resolved": "1.3.2",
+        "contentHash": "9D0ibouWjzGw5aVUgDBFOrNhFtkL62VPV5UZAXXd8kN4NNS3qkQYnyukRNVwKWT34PMJFCUjeBV7wp8iSPr6OQ==",
         "dependencies": {
-          "Serilog": "4.0.0",
+          "Serilog": "4.1.0",
           "Serilog.Enrichers.CorrelationId": "3.0.1",
           "Serilog.Enrichers.Sensitive": "1.7.3",
           "Serilog.Extensions.Logging": "8.0.0",
-          "Serilog.Settings.Configuration": "8.0.2",
+          "Serilog.Settings.Configuration": "8.0.4",
           "Serilog.Sinks.Console": "6.0.0",
           "Serilog.Sinks.File": "6.0.0"
         }
@@ -2993,9 +2990,9 @@
       },
       "Serilog": {
         "type": "CentralTransitive",
-        "requested": "[4.0.1, )",
-        "resolved": "4.0.1",
-        "contentHash": "pzeDRXdpSLSsgBHpZcmpIDxqMy845Ab4s+dfnBg0sN9h8q/4Wo3vAoe0QCGPze1Q06EVtEPupS+UvLm8iXQmTQ=="
+        "requested": "[4.1.0, )",
+        "resolved": "4.1.0",
+        "contentHash": "u1aZI8HZ62LWlq5dZLFwm6jMax/sUwnWZSw5lkPsCt518cJBxFKoNmc7oSxe5aA5BgSkzy9rzwFGR/i/acnSPw=="
       },
       "Serilog.Extensions.Logging": {
         "type": "CentralTransitive",
