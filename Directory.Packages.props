@@ -9,11 +9,11 @@
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.2" />
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
     <PackageVersion Include="FluentValidation" Version="11.10.0" />
-    <PackageVersion Include="HotChocolate.Abstractions" Version="14.0.0" />
+    <PackageVersion Include="HotChocolate.Abstractions" Version="14.1.0" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="14.0.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="14.0.0" />
-    <PackageVersion Include="HotChocolate.Data" Version="14.0.0" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.0.0" />
+    <PackageVersion Include="HotChocolate.Data" Version="14.1.0" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.1.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.1" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="8.0.4" />
