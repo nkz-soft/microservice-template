@@ -8,7 +8,7 @@ using Models;
 
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
-    private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
+    private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> _sortExpressions =
         new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
         {
             { nameof(ToDoItemFilter.Id), item => item.Id },
@@ -70,23 +70,16 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
     {
         var sortDescriptors = sorts as SortDescriptor[] ?? sorts.ToArray();
 
-        if (sortDescriptors.Length != 0)
-        {
-            return sortDescriptors.Aggregate(specificationBuilder, Sort);
-        }
-
-        return Sort(specificationBuilder, new SortDescriptor(nameof(ToDoItemFilter.Id)));
+        return sortDescriptors.Length != 0 ? sortDescriptors.Aggregate(specificationBuilder, Sort) : Sort(specificationBuilder, new SortDescriptor(nameof(ToDoItemFilter.Id)));
     }
 
     private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         SortDescriptor sort)
     {
-        if (SortExpressions.TryGetValue(sort.Field, out var se))
-        {
-            return sort.Direction == EnumSortDirection.Desc
+        return _sortExpressions.TryGetValue(sort.Field, out var se)
+            ? (ISpecificationBuilder<ToDoItem>)(sort.Direction == EnumSortDirection.Desc
                 ? specificationBuilder.OrderByDescending(se!)
-                : specificationBuilder.OrderBy(se!);
-        }
-        throw new BadRequestException($"Invalid field name {sort.Field}.");
+                : specificationBuilder.OrderBy(se!))
+            : throw new BadRequestException($"Invalid field name {sort.Field}.");
     }
 }

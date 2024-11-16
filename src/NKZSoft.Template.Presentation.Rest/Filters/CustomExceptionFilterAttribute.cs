@@ -1,5 +1,7 @@
 namespace NKZSoft.Template.Presentation.Rest.Filters;
 
+using NKZSoft.Template.Common.Extensions;
+
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
 {

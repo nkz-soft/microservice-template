@@ -12,10 +12,6 @@ public static class ErrorResponseExtensions
 
     private static string? TransformErrorCode(IReason error)
     {
-        if (error.Metadata?.TryGetValue("ErrorCode", out var errorCode) != null && errorCode != null)
-        {
-            return errorCode as string;
-        }
-        return null;
+        return error.Metadata?.TryGetValue("ErrorCode", out var errorCode) != null && errorCode != null ? errorCode as string : null;
     }
 }

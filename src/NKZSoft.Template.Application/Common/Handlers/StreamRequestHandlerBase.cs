@@ -1,6 +1,7 @@
 namespace NKZSoft.Template.Application.Common.Handlers;
 
 using Interfaces;
+using NKZSoft.Template.Common.Extensions;
 
 public abstract class StreamRequestHandlerBase<TRequest, TResponse> : IStreamRequestHandler<TRequest, TResponse>
     where TRequest : IStreamRequest<TResponse>

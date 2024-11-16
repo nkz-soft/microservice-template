@@ -5,6 +5,7 @@ using Common.Handlers;
 using Common.Interfaces;
 using Common.Repositories.PostgreSql;
 using NKZSoft.Template.Application.Models;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class GetTodoItemDbQueryHandler(
     IToDoItemRepository repository,

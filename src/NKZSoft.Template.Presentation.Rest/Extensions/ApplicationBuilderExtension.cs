@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Presentation.Rest.Extensions;
 
+using NKZSoft.Template.Common.Extensions;
+
 public static class ApplicationBuilderExtension
 {
     public static IApplicationBuilder UseRestPresentation(

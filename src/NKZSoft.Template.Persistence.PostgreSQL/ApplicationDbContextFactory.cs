@@ -1,5 +1,7 @@
 ﻿namespace NKZSoft.Template.Persistence.PostgreSQL;
 
+using NKZSoft.Template.Common.Extensions;
+
 public class ApplicationDbContextFactory : IDbContextFactory<ApplicationDbContext>
 {
     private readonly IDbContextFactory<ApplicationDbContext> _pooledFactory;

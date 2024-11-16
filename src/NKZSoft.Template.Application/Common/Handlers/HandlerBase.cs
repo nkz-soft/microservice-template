@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.Common.Handlers;
 
 using Interfaces;
+using NKZSoft.Template.Common.Extensions;
 
 public abstract class HandlerBase<TQ, TM> : IRequestHandler<TQ, TM>
     where TQ : IRequest<TM>

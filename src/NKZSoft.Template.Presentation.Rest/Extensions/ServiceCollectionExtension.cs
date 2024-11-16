@@ -14,7 +14,7 @@ public static class ServiceCollectionExtension
 
         services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
         {
-            builder.WithOrigins(corsParams.ToArray())
+            builder.WithOrigins([.. corsParams])
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials();

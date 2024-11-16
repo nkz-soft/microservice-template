@@ -35,7 +35,7 @@ public class ErrorHandlingMiddleware
 
         const HttpStatusCode code = HttpStatusCode.InternalServerError;
         var resultDto = new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false,
-            Errors:new[] { new ErrorDto(exception.Message, code.ToString()) });
+            Errors: [new ErrorDto(exception.Message, code.ToString()),]);
 
         var result = JsonSerializer.Serialize(resultDto);
         context.Response.ContentType = "application/json";

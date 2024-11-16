@@ -2,9 +2,9 @@
 
 public static class AppMockFactory
 {
-    private static readonly Lazy<MockRepository> MockRepository = new Lazy<MockRepository>(() => new MockRepository(MockBehavior.Default));
+    private static readonly Lazy<MockRepository> _mockRepository = new(() => new MockRepository(MockBehavior.Default));
 
-    private static MockRepository MockRepositoryInstance => MockRepository.Value;
+    private static MockRepository MockRepositoryInstance => _mockRepository.Value;
 
     public static ICurrentUserService CreateCurrentUserServiceMock()
     {

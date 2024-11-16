@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.Create;
 
 using Common.Repositories.PostgreSql;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class CreateToDoItemCommandHandler(IToDoItemRepository repository)
     : IRequestHandler<CreateToDoItemCommand, Result<Guid>>

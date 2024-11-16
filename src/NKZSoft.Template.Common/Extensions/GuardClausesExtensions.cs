@@ -1,4 +1,4 @@
-﻿namespace NKZSoft.Template.Common;
+﻿namespace NKZSoft.Template.Common.Extensions;
 
 public static class GuardClausesExtensions
 {

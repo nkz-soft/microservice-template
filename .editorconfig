@@ -154,6 +154,18 @@ csharp_space_between_method_declaration_parameter_list_parentheses = false
 csharp_space_between_parentheses = false
 csharp_space_between_square_brackets = false
 
+# Namespace declaration preferences (IDE0160 and IDE0161)
+csharp_style_namespace_declarations = file_scoped
+# 'var' preferences (IDE0007 and IDE0008)
+csharp_style_var_for_built_in_types = true
+csharp_style_var_elsewhere = true
+csharp_style_var_when_type_is_apparent = true
+
+# 'using' directive placement (IDE0065)
+csharp_using_directive_placement = inside_namespace
+
+# Use primary constructor (IDE0290)
+csharp_style_prefer_primary_constructors = false
 
 ##################################################################################
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/

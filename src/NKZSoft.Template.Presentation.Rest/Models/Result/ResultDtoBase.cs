@@ -11,7 +11,7 @@ public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
         {
             listErrors.Add(new ErrorDto(value, key));
         }
-        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, listErrors.ToArray());
+        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, [.. listErrors]);
     }
     public static ResultDtoBase<Unit> CreateFromErrors(string errors, HttpStatusCode statusCode)
     {
@@ -19,7 +19,7 @@ public record ResultDtoBase(bool IsSuccess, IEnumerable<ErrorDto> Errors)
         {
             new(errors, statusCode.ToString()),
         };
-        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, listErrors.ToArray());
+        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, [.. listErrors]);
     }
 }
 
