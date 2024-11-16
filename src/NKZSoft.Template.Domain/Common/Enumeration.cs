@@ -51,12 +51,7 @@ public abstract class Enumeration : IComparable
 
     public static bool operator ==(Enumeration? left, Enumeration? right)
     {
-        if (left is null)
-        {
-            return right is null;
-        }
-
-        return left.Equals(right);
+        return left is null ? right is null : left.Equals(right);
     }
 
     public static bool operator !=(Enumeration left, Enumeration right) => !(left == right);

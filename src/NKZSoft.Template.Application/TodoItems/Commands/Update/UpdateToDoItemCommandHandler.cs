@@ -2,6 +2,7 @@
 
 using Common.Exceptions;
 using Common.Repositories.PostgreSql;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class UpdateToDoItemCommandHandler : IRequestHandler<UpdateToDoItemCommand>
 {

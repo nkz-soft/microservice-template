@@ -5,6 +5,7 @@ using Common.Exceptions;
 using Common.Handlers;
 using Common.Interfaces;
 using Common.Repositories.Redis;
+using NKZSoft.Template.Common.Extensions;
 
 public class GetTodoItemQueryFromRedisHandler : HandlerBase<GetTodoItemQueryFromRedis, Result<ToDoItemDto>>
 {

@@ -1,5 +1,4 @@
 ﻿namespace NKZSoft.Template.Presentation.Grpc.Services;
-
 using Models;
 using Models.ToDoItem;
 

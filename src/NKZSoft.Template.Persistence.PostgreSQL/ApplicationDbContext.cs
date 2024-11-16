@@ -1,14 +1,13 @@
-﻿using NKZSoft.Template.Persistence.PostgreSQL.Common;
-using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
-
-namespace NKZSoft.Template.Persistence.PostgreSQL;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL;
+using NKZSoft.Template.Common.Extensions;
+using Common;
+using Extensions;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     private ICurrentUserService _currentUserService = null!;
     private IDateTime _dateTime = null!;
     private IMediator _mediator = null!;
-    private IDbInitializer _dbInitializer = null!;
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -17,7 +16,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public void InitContext(ICurrentUserService currentUserService, IDbInitializer dbInitializer, IDateTime dateTime, IMediator mediator)
     {
-        _dbInitializer = dbInitializer.ThrowIfNull();
+        DbInitializer = dbInitializer.ThrowIfNull();
         _currentUserService = currentUserService.ThrowIfNull();
         _dateTime = dateTime.ThrowIfNull();
         _mediator = mediator.ThrowIfNull();
@@ -28,7 +27,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public DbContext AppDbContext => this;
 
-    public IDbInitializer DbInitializer => _dbInitializer;
+    public IDbInitializer? DbInitializer { get; private set; }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
@@ -44,7 +43,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public async Task MigrateAsync() => await AppDbContext.Database.MigrateAsync().ConfigureAwait(false);
 
-    public async Task SeedAsync() => await  _dbInitializer.SeedAsync(this).ConfigureAwait(false);
+    public async Task SeedAsync() => await DbInitializer!.SeedAsync(this).ConfigureAwait(false);
 
     private async Task DispatchDomainEventsAsync()
     {

@@ -1,9 +1,9 @@
 ﻿namespace NKZSoft.Template.Persistence.Redis.Extensions;
 
-using Common;
 using Configuration;
 using Repositories;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using NKZSoft.Template.Common.Extensions;
 
 public static class ServiceCollectionExtension
 {
@@ -47,7 +47,7 @@ public static class ServiceCollectionExtension
 
         services.Scan(scan => scan
             .FromAssemblies(Assembly.GetExecutingAssembly())
-            .AddClasses(classes => classes.AssignableTo(typeof(IRedisRepository)))
+            .AddClasses(classes => classes.AssignableTo<IRedisRepository>())
             .AsMatchingInterface()
             .WithScopedLifetime());
 

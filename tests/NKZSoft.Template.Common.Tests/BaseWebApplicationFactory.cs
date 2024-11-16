@@ -54,11 +54,8 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
 
     protected T GetContainer<T>() where T : class
     {
-        if (!Containers.TryGetValue(typeof(T), out var container))
-        {
-            throw new NotSupportedException($"Couldn't find any container of {nameof(T)}");
-        }
-
-        return (container as T)!;
+        return !Containers.TryGetValue(typeof(T), out var container) ?
+                   throw new NotSupportedException($"Couldn't find any container of {nameof(T)}") :
+                   (container as T)!;
     }
 }
