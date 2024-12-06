@@ -32,9 +32,9 @@
       },
       "Meziantou.Analyzer": {
         "type": "Direct",
-        "requested": "[2.0.163, )",
-        "resolved": "2.0.163",
-        "contentHash": "vN0YmOkuvPLukMsefLHYCWYaLPzpc6SfoR74aPwuLeK8QdxgxkavywQ1q/II0shLEEaN1RhlMjmL1RxMPW853w=="
+        "requested": "[2.0.182, )",
+        "resolved": "2.0.182",
+        "contentHash": "/QgftLQfuCwP7P9neBMYjfOoUEezFAhlCXAZudO27Q9JTQZilQ2qjLzYG4UD4FBlLNz7zTON0ca6lCzzf/zO5A=="
       },
       "Microsoft.SourceLink.GitHub": {
         "type": "Direct",
