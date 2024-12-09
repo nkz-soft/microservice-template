@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application;
 
 using Common.Behaviours;
+using NKZSoft.Template.Common.Extensions;
 
 public static class DependencyInjectionExtensions
 {

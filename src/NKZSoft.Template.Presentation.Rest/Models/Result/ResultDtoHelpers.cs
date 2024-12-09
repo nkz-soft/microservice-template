@@ -6,8 +6,8 @@ internal static class ResultDtoHelpers
     {
         var listErrors = new List<ErrorDto>(1)
         {
-            new ErrorDto(errors, statusCode.ToString()),
+            new(errors, statusCode.ToString()),
         };
-        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, listErrors.ToArray());
+        return new ResultDtoBase<Unit>(Unit.Value, IsSuccess:false, [.. listErrors]);
     }
 }

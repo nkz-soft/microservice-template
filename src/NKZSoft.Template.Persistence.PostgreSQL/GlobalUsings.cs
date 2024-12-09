@@ -17,7 +17,6 @@ global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.Extensions.Options;
 global using NKZSoft.FluentValidation.Options;
 global using NKZSoft.Template.Application.Common.Interfaces;
-global using NKZSoft.Template.Common;
 global using NKZSoft.Template.Domain.AggregatesModel.ToDoAggregates.Entities;
 global using NKZSoft.Template.Domain.Common;
 global using Npgsql;

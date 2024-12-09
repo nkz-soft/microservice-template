@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.TodoItems.Commands.CreateInRedis;
 
 using Common.Repositories.Redis;
+using NKZSoft.Template.Common.Extensions;
 
 public sealed class CreateToDoItemRedisCommandHandler(IToDoItemRedisRepository repository)
     : IRequestHandler<CreateToDoItemRedisCommand, Result<Guid>>

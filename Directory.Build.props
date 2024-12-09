@@ -30,7 +30,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <NoWarn>$(NoWarn);NETSDK1206;xUnit1028;CS1591</NoWarn>
+    <NoWarn>$(NoWarn);NETSDK1206;xUnit1028;CS1591;NU1902;NU1903;NU1904</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

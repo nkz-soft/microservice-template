@@ -1,7 +1,7 @@
 ﻿namespace NKZSoft.Template.EFCore.Caching.Redis.Extensions;
 
-using Common;
 using Configuration;
+using NKZSoft.Template.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {
