@@ -131,6 +131,17 @@ csharp_style_inlined_variable_declaration = true:suggestion
 csharp_style_throw_expression = true:suggestion
 csharp_style_conditional_delegate_call = true:suggestion
 
+csharp_style_namespace_declarations = file_scoped
+csharp_using_directive_placement = inside_namespace
+
+csharp_style_var_for_built_in_types = true
+csharp_style_var_when_type_is_apparent = true
+csharp_style_var_elsewhere = true
+
+dotnet_style_prefer_conditional_expression_over_return = false
+
+csharp_style_prefer_primary_constructors = false
+
 # Space preferences
 csharp_space_after_cast = false
 csharp_space_after_colon_in_inheritance_clause = true
@@ -153,7 +164,6 @@ csharp_space_between_method_declaration_name_and_open_parenthesis = false
 csharp_space_between_method_declaration_parameter_list_parentheses = false
 csharp_space_between_parentheses = false
 csharp_space_between_square_brackets = false
-
 
 ##################################################################################
 # https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/

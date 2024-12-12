@@ -57,10 +57,13 @@ public sealed class ToDoItemServiceTests
     {
         await Assert.ThrowsAsync<RpcException>(ActAsync);
 
-        async Task ActAsync() => await _service.GetToDoItemByIdAsync(new GetTodoItemRequest
+        async Task ActAsync()
         {
-            Id = Guid.NewGuid(),
-        }).ConfigureAwait(false);
+            await _service.GetToDoItemByIdAsync(new GetTodoItemRequest
+            {
+                Id = Guid.NewGuid(),
+            }).ConfigureAwait(false);
+        }
     }
 
     [Fact, Order(4)]

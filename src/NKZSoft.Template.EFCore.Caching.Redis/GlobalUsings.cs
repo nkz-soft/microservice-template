@@ -8,3 +8,4 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Options;
 global using NKZSoft.FluentValidation.Options;
 global using StackExchange.Redis;
+global using NKZSoft.Template.Common.Extensions;

@@ -25,7 +25,7 @@ If you're using this repository for your learning, samples or your project, plea
 ### Installing as a template
 
 ```bash
-dotnet new install  .\ 
+dotnet new install  .\
 ```
 
 Creating a new application
@@ -36,7 +36,7 @@ dotnet new nkz-template -o My.NewApp
 Also you can change the contents of the generated application by using the parameters.
 
 ```bash
-dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false --EnableSignalR false --EnableRedisStorage false 
+dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false --EnableSignalR false --EnableRedisStorage false
 ```
 
 ![image](https://raw.githubusercontent.com/nkz-soft/microservice-template/main/.github/images/wizard.png)
@@ -47,15 +47,15 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 
 ## Plan
 
+- [x] .NET 9
 - [x] REST API samples
 - [x] GRPC API samples
 - [x] Improve integration tests to use Testcontainers
 - [x] GraphQL API samples
 - [x] MassTransit and RabbitMq
 - [x] Minimal hosting model
-- [x] Migrate to .NET 8
 - [x] HealthCheck
-- [x] Websocket (SignalR) 
+- [x] Websocket (SignalR)
 - [x] GRPC Error handling in interceptors
 - [x] Enabling Central Package Management
 - [x] Uses Chiseled Ubuntu image
@@ -67,7 +67,7 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 
 ## Technologies used
 
-[NET Core 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0): .NET Core, including ASP.NET Core
+[NET Core 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0): .NET Core, including ASP.NET Core
 
 [EntityFrameworkCore](https://github.com/dotnet/efcore): EF Core is a modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations.
 

@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -30,7 +30,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <NoWarn>$(NoWarn);NETSDK1206;xUnit1028;CS1591</NoWarn>
+    <NoWarn>$(NoWarn);NU1902;NU1903;NU1904;NETSDK1206;xUnit1028;CS1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
