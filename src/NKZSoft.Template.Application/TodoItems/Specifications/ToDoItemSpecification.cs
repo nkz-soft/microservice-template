@@ -8,7 +8,7 @@ using Models;
 
 internal sealed class ToDoItemSpecification : Specification<ToDoItem>
 {
-    private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> SortExpressions =
+    private static readonly FrozenDictionary<string, Expression<Func<ToDoItem, object>>> _sortExpressions =
         new Dictionary<string, Expression<Func<ToDoItem, object>>>(StringComparer.OrdinalIgnoreCase)
         {
             { nameof(ToDoItemFilter.Id), item => item.Id },
@@ -81,7 +81,7 @@ internal sealed class ToDoItemSpecification : Specification<ToDoItem>
     private static ISpecificationBuilder<ToDoItem> Sort(ISpecificationBuilder<ToDoItem> specificationBuilder,
         SortDescriptor sort)
     {
-        if (SortExpressions.TryGetValue(sort.Field, out var se))
+        if (_sortExpressions.TryGetValue(sort.Field, out var se))
         {
             return sort.Direction == EnumSortDirection.Desc
                 ? specificationBuilder.OrderByDescending(se!)

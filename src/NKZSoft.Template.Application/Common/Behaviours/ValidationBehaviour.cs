@@ -1,6 +1,7 @@
 ﻿namespace NKZSoft.Template.Application.Common.Behaviours;
 
 using Exceptions;
+using Template.Common.Extensions;
 
 public sealed class ValidationBehaviour<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators)
     : IPipelineBehavior<TRequest, TResponse>

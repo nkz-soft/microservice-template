@@ -1,15 +1,15 @@
-﻿using NKZSoft.Template.Persistence.PostgreSQL.Common;
-using NKZSoft.Template.Persistence.PostgreSQL.Extensions;
-
-namespace NKZSoft.Template.Persistence.PostgreSQL;
+﻿namespace NKZSoft.Template.Persistence.PostgreSQL;
+using Common;
+using Extensions;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     private ICurrentUserService _currentUserService = null!;
     private IDateTime _dateTime = null!;
     private IMediator _mediator = null!;
+#pragma warning disable IDE0032
     private IDbInitializer _dbInitializer = null!;
-
+#pragma warning restore IDE0032
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {

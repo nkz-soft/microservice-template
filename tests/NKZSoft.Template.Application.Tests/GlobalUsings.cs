@@ -12,3 +12,4 @@ global using NKZSoft.Template.Application.TodoItems.Commands.Delete;
 global using NKZSoft.Template.Application.TodoItems.Models;
 global using NKZSoft.Template.Application.TodoItems.Queries.GetPage;
 global using NKZSoft.Template.Persistence.PostgreSQL.Repositories;
+global using NKZSoft.Template.Common.Extensions;

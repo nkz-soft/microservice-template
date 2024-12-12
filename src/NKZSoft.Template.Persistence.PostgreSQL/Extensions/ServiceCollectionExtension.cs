@@ -73,7 +73,7 @@ public static class ServiceCollectionExtension
     private static DbContextOptionsBuilder EnableDbLogging(this DbContextOptionsBuilder builder) => builder
             .LogTo(
                 msg => Log.Logger.Information("{Msg}",msg),
-                new[] { DbLoggerCategory.Database.Name })
+                [DbLoggerCategory.Database.Name,])
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging();
 }

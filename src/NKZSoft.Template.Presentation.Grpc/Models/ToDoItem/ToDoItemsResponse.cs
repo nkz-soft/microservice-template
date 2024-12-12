@@ -6,5 +6,5 @@ using Result;
 public sealed record ToDoItemsResponse : ResultResponse
 {
     [ProtoMember(1)]
-    public ToDoItemDto[] Items { get; init; } = Array.Empty<ToDoItemDto>();
+    public ToDoItemDto[] Items { get; init; } = [];
 }

@@ -2,6 +2,7 @@
 global using FluentValidation;
 global using EasyCaching.Core;
 global using System.Reflection;
+global using NKZSoft.Template.Common.Extensions;
 global using StackExchange.Redis;
 global using Microsoft.Extensions.Options;
 global using EasyCaching.Core.Serialization;

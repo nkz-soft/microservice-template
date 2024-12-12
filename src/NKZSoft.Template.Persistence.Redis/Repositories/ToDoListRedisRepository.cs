@@ -1,6 +1,5 @@
 ﻿namespace NKZSoft.Template.Persistence.Redis.Repositories;
 
-using Common;
 using Configuration;
 
 public class ToDoListRedisRepository : IToDoItemRedisRepository, IRedisRepository
