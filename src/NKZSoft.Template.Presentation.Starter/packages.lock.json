@@ -104,9 +104,9 @@
       },
       "Roslynator.Analyzers": {
         "type": "Direct",
-        "requested": "[4.12.9, )",
-        "resolved": "4.12.9",
-        "contentHash": "X6lDpN/D5wuinq37KIx+l3GSUe9No+8bCjGBTI5sEEtxapLztkHg6gzNVhMXpXw8P+/5gFYxTXJ5Pf8O4iNz/w=="
+        "requested": "[4.12.10, )",
+        "resolved": "4.12.10",
+        "contentHash": "Wecq3nfhTvnJPxX87hKbjMdX1xeCAMJf9rdBX3nQLTntQs9v0fFbUB2eQSSOArXMuFh7MxjLWaL4+b6XMi1NDA=="
       },
       "Roslynator.CodeAnalysis.Analyzers": {
         "type": "Direct",
@@ -2321,7 +2321,7 @@
           "NKZSoft.Template.Application": "[1.0.0, )",
           "OpenTelemetry": "[1.10.0, )",
           "OpenTelemetry.Instrumentation.GrpcNetClient": "[1.0.0-rc9.14, )",
-          "System.ServiceModel.Primitives": "[8.1.0, )",
+          "System.ServiceModel.Primitives": "[8.1.1, )",
           "protobuf-net": "[3.2.45, )",
           "protobuf-net.Grpc.AspNetCore": "[1.2.2, )",
           "protobuf-net.Grpc.AspNetCore.Reflection": "[1.2.2, )",
@@ -2996,9 +2996,9 @@
       },
       "System.ServiceModel.Primitives": {
         "type": "CentralTransitive",
-        "requested": "[8.1.0, )",
-        "resolved": "8.1.0",
-        "contentHash": "/NGnzQSp2lmTlCfKzcD2PVKRnx6bQCbEqlb5sXo31TA2C7oA8g5I7Wfjk8dNRNUo1uSqZUcj3htED6tWA/mX9w==",
+        "requested": "[8.1.1, )",
+        "resolved": "8.1.1",
+        "contentHash": "v+jwURtpzg1eI5RDARP9AAQg5GmtNu6rWAOVTauL74cB8jcuP6DB8PVpz1IPTRavX6qlFAKkS+X+9QR5S84QyA==",
         "dependencies": {
           "Microsoft.Extensions.ObjectPool": "8.0.10",
           "System.Security.Cryptography.Xml": "8.0.2"
