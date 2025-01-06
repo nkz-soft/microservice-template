@@ -2219,7 +2219,7 @@
       "nkzsoft.template.efcore.caching.redis": {
         "type": "Project",
         "dependencies": {
-          "AspNetCore.HealthChecks.Redis": "[8.0.1, )",
+          "AspNetCore.HealthChecks.Redis": "[9.0.0, )",
           "EFCoreSecondLevelCacheInterceptor": "[4.9.0, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
@@ -2288,7 +2288,7 @@
       "nkzsoft.template.persistence.redis": {
         "type": "Project",
         "dependencies": {
-          "AspNetCore.HealthChecks.Redis": "[8.0.1, )",
+          "AspNetCore.HealthChecks.Redis": "[9.0.0, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
           "Microsoft.Extensions.Configuration.Abstractions": "[9.0.0, )",
@@ -2305,7 +2305,7 @@
         "type": "Project",
         "dependencies": {
           "HotChocolate.AspNetCore": "[14.3.0, )",
-          "HotChocolate.Data": "[14.2.0, )",
+          "HotChocolate.Data": "[14.3.0, )",
           "HotChocolate.Data.EntityFramework": "[14.2.0, )",
           "HotChocolate.Diagnostics": "[14.3.0, )",
           "NKZSoft.Template.Application": "[1.0.0, )"
@@ -2392,11 +2392,11 @@
       },
       "AspNetCore.HealthChecks.Redis": {
         "type": "CentralTransitive",
-        "requested": "[8.0.1, )",
-        "resolved": "8.0.1",
-        "contentHash": "45jqq4ydvmm7yKpTf0jEpUuYloe2vlytN9dasmqwmQyorpNbjdvWuyvSmjVZM5nBa5e5ryF5MU+F7bXv6Zp2vQ==",
+        "requested": "[9.0.0, )",
+        "resolved": "9.0.0",
+        "contentHash": "yNH0h8GLRbAf+PU5HNVLZ5hNeyq9mDVmRKO9xuZsme/znUYoBJlQvI0gq45gaZNlLncCHkMhR4o90MuT+gxxPw==",
         "dependencies": {
-          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.11",
           "StackExchange.Redis": "2.7.4"
         }
       },
@@ -2517,13 +2517,13 @@
       },
       "HotChocolate.Data": {
         "type": "CentralTransitive",
-        "requested": "[14.2.0, )",
-        "resolved": "14.2.0",
-        "contentHash": "QCFtwWRW5b/B5Xs2o4U9N2kdJ37hSgJT21GxFN28ZkBmMlDWRBO9keP6X1I1My/RNIwGHvGTvI9Um712kRJtaA==",
+        "requested": "[14.3.0, )",
+        "resolved": "14.3.0",
+        "contentHash": "XB1sXx6QhTmR795DsB23qiPOwTrJ5FhCugWzc1gn4Dl3FjeMxbVXOccDv0EXu31GM7IcpukV1NCB4Sv7VjCbtg==",
         "dependencies": {
-          "HotChocolate.Execution": "14.2.0",
-          "HotChocolate.Pagination.Batching": "14.2.0",
-          "HotChocolate.Types.CursorPagination": "14.2.0"
+          "HotChocolate.Execution": "14.3.0",
+          "HotChocolate.Pagination.Batching": "14.3.0",
+          "HotChocolate.Types.CursorPagination": "14.3.0"
         }
       },
       "HotChocolate.Data.EntityFramework": {
