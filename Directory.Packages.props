@@ -8,56 +8,58 @@
     <PackageVersion Include="EasyCaching.Core" Version="1.9.2" />
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.2" />
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
+    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor.CacheManager.Core" Version="5.0.0" />
+    <PackageVersion Include="EFCoreSecondLevelCacheInterceptor.EasyCaching.Core" Version="5.0.0" />
     <PackageVersion Include="FluentValidation" Version="11.11.0" />
     <PackageVersion Include="HotChocolate.Abstractions" Version="14.3.0" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="14.3.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="14.3.0" />
     <PackageVersion Include="HotChocolate.Data" Version="14.3.0" />
-    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.2.0" />
-    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
+    <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.3.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.2" />
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="9.0.2" />
-    <PackageVersion Include="OpenTelemetry" Version="1.10.0" />
-    <PackageVersion Include="OpenTelemetry.Api" Version="1.10.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.10.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.10.0" />
-    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.10.0" />
+    <PackageVersion Include="OpenTelemetry" Version="1.11.0" />
+    <PackageVersion Include="OpenTelemetry.Api" Version="1.11.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.11.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.11.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.10.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.12" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.10.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.MassTransit" Version="1.0.0-beta.3" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
-    <PackageVersion Include="StackExchange.Redis" Version="2.8.22" />
+    <PackageVersion Include="StackExchange.Redis" Version="2.8.24" />
     <PackageVersion Include="System.ServiceModel.Primitives" Version="8.1.1" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="8.0.2" />
     <PackageVersion Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.1" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="4.9.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.1" />
     <PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0" />
     <PackageVersion Include="Ardalis.Specification" Version="8.0.0" />
-    <PackageVersion Include="Scrutor" Version="5.0.2" />
+    <PackageVersion Include="Scrutor" Version="6.0.1" />
     <PackageVersion Include="MediatR" Version="12.4.1" />
     <PackageVersion Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageVersion Include="MassTransit" Version="8.3.0" />
@@ -69,7 +71,7 @@
     <PackageVersion Include="Mapster" Version="7.4.0" />
     <PackageVersion Include="Mapster.Async" Version="2.0.1" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.1" />
-    <PackageVersion Include="Google.Protobuf" Version="3.29.1" />
+    <PackageVersion Include="Google.Protobuf" Version="3.29.3" />
     <PackageVersion Include="protobuf-net" Version="3.2.45" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.2.2" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.2.2" />
@@ -81,12 +83,12 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="9.0.0" />
     <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.1" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="Xunit.Extensions.Ordering" Version="1.4.5" />
     <PackageVersion Include="Xunit.DependencyInjection" Version="9.7.1" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0">
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
@@ -95,7 +97,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="FluentAssertions" Version="7.0.0" />
+    <PackageVersion Include="FluentAssertions" Version="8.0.0" />
     <PackageVersion Include="Respawn" Version="6.2.1" />
     <PackageVersion Include="Moq" Version="4.20.72" />
     <PackageVersion Include="Testcontainers" Version="4.1.0" />
@@ -111,7 +113,7 @@
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.9.2" />
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.186" />
     <PackageVersion Include="Roslynator.Analyzers" Version="4.12.10" />
-    <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.12.9" />
+    <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.12.10" />
     <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.12.10" />
     <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.12.19" />
     <PackageVersion Include="AsyncAwaitBestPractices" Version="9.0.0" />
