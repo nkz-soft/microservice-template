@@ -2,7 +2,6 @@ global using Xunit;
 global using Grpc.Net.Client;
 global using FluentAssertions;
 global using ProtoBuf.Grpc.Client;
-global using Xunit.Extensions.Ordering;
 global using Microsoft.AspNetCore.Hosting;
 global using NKZSoft.Template.Common.Tests;
 global using NKZSoft.Template.Presentation.Grpc.Services;

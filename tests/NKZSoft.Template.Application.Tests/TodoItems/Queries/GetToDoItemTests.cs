@@ -16,7 +16,7 @@ public sealed class GetToDoItemTests : TestBase
         var firstEntity = Context.Set<ToDoItem>().First();
 
         var command = new GetTodoItemQuery(firstEntity.Id);
-        var result = await Mediator.Send(command);
+        var result = await Mediator.Send(command, TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result.IsSuccess.Should().BeTrue();

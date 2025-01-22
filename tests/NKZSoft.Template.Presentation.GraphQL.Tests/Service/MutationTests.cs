@@ -1,10 +1,12 @@
-﻿[assembly: CollectionBehavior(DisableTestParallelization = true)]
-[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
-[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
+﻿using NKZSoft.Template.Common.Tests.Ordering;
+
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer(typeof(TestCaseOrderer))]
 
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 
 using Common;
+using Template.Common.Tests.Ordering;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
 public sealed class MutationTests(GraphQLWebApplicationFactory<Program> factory)
@@ -24,7 +26,7 @@ public sealed class MutationTests(GraphQLWebApplicationFactory<Program> factory)
 
         var response = await client.PostAsync(
             new RestRequest(ClientQueryRequest.GraphqlUrlBase)
-                .AddJsonBody(command));
+                .AddJsonBody(command), TestContext.Current.CancellationToken);
 
         response.IsSuccessStatusCode.Should().BeTrue();
     }

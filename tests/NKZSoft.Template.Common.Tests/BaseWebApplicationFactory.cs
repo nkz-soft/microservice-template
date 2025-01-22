@@ -25,7 +25,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         }.ToFrozenDictionary();
     }
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         await Task.WhenAll
             (Containers.Select(pair => pair.Value.StartAsync()))
@@ -45,7 +45,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         }
     }
 
-    public new async Task DisposeAsync()
+    public new async ValueTask DisposeAsync()
     {
         await base.DisposeAsync().ConfigureAwait(false);
         await Task.WhenAll(Containers.Select(pair => pair.Value.DisposeAsync().AsTask()))

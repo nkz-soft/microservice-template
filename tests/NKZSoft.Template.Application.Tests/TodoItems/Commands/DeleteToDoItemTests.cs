@@ -12,12 +12,12 @@ public sealed class DeleteToDoItemTests : TestBase
     public async Task ShouldDeleteTodoItem()
     {
         var createCommand = new CreateToDoItemCommand(ToDoItemTitle, ListId:null);
-        var createResult = await Mediator.Send(createCommand);
+        var createResult = await Mediator.Send(createCommand, TestContext.Current.CancellationToken);
 
         createResult.Should().NotBeNull();
         createResult.IsSuccess.Should().BeTrue();
 
         var deleteCommand = new DeleteToDoItemCommand(createResult.Value);
-        await Mediator.Send(deleteCommand);
+        await Mediator.Send(deleteCommand, TestContext.Current.CancellationToken);
     }
 }

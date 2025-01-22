@@ -16,7 +16,7 @@ public sealed class GetPageTodoTests : TestBase
     public async Task ShouldReturnItemPage(int pageIndex, int pageSize)
     {
         var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>(pageIndex, pageSize));
-        var result = await Mediator.Send(command);
+        var result = await Mediator.Send(command, TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result.IsSuccess.Should().BeTrue();
@@ -33,7 +33,7 @@ public sealed class GetPageTodoTests : TestBase
         var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>
             (pageIndex, pageSize, ToDoItemFilter.CreateBuilder().Id(firstEntity.Id).Build()));
 
-        var result = await Mediator.Send(command);
+        var result = await Mediator.Send(command, TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result.IsSuccess.Should().BeTrue();
@@ -50,7 +50,7 @@ public sealed class GetPageTodoTests : TestBase
         var command = new GetPageTodoItemsQuery(new PageContext<ToDoItemFilter>(pageIndex, pageSize,
             ToDoItemFilter.CreateBuilder().Title(title).Build()));
 
-        var result = await Mediator.Send(command);
+        var result = await Mediator.Send(command,TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result.IsSuccess.Should().BeTrue();
@@ -70,7 +70,7 @@ public sealed class GetPageTodoTests : TestBase
             filter: null,
             listSort: [new SortDescriptor("title", EnumSortDirection.Desc),]));
 
-        var result = await Mediator.Send(command);
+        var result = await Mediator.Send(command, TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result.IsSuccess.Should().BeTrue();

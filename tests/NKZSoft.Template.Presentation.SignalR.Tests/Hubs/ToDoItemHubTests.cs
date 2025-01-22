@@ -1,10 +1,12 @@
+using NKZSoft.Template.Common.Tests.Ordering;
+
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
-[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
-[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
+[assembly: TestCaseOrderer(typeof(TestCaseOrderer))]
 
 namespace NKZSoft.Template.Presentation.SignalR.Tests.Hubs;
 
 using Common;
+using Template.Common.Tests.Ordering;
 
 [Collection(nameof(SignalRCollectionDefinition))]
 public sealed class ToDoItemHubTests(SignalRWebApplicationFactory<Program> factory)
@@ -21,11 +23,11 @@ public sealed class ToDoItemHubTests(SignalRWebApplicationFactory<Program> facto
             new ToDoItemDto(Guid.NewGuid(), "Test", "Description",
                 string.Empty, DateTime.Now, string.Empty, Modified: null, Deleted: null), CancellationToken.None);
 
-        await Task.Delay(500);
+        await Task.Delay(500, TestContext.Current.CancellationToken);
 
         result.Should().NotBeNull();
         result!.Title.Should().Be("Test");
 
-        await connection.StopAsync();
+        await connection.StopAsync(TestContext.Current.CancellationToken);
     }
 }

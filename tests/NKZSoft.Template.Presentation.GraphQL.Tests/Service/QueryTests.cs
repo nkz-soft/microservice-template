@@ -1,6 +1,7 @@
 namespace NKZSoft.Template.Presentation.GraphQL.Tests.Service;
 
 using Common;
+using Template.Common.Tests.Ordering;
 
 [Collection(nameof(GraphQlCollectionDefinition))]
 public sealed class QueryTests(GraphQLWebApplicationFactory<Program> factory)
@@ -21,7 +22,7 @@ public sealed class QueryTests(GraphQLWebApplicationFactory<Program> factory)
         var command = new ClientQueryRequest { Query = query };
         var response = await client.PostAsync(
             new RestRequest(ClientQueryRequest.GraphqlUrlBase)
-                .AddJsonBody(command));
+                .AddJsonBody(command), TestContext.Current.CancellationToken);
 
         response.IsSuccessStatusCode.Should().BeTrue();
     }
