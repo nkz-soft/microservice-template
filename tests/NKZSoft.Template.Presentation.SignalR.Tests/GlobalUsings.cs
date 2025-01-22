@@ -1,6 +1,5 @@
 ﻿global using Xunit;
 global using FluentAssertions;
-global using Xunit.Extensions.Ordering;
 global using Microsoft.AspNetCore.Hosting;
 global using NKZSoft.Template.Common.Tests;
 global using Microsoft.AspNetCore.SignalR.Client;

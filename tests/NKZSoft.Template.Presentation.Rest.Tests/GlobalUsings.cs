@@ -1,6 +1,5 @@
 ﻿global using Microsoft.AspNetCore.Hosting;
 global using Xunit;
-global using Xunit.Extensions.Ordering;
 global using FluentAssertions;
 global using MediatR;
 

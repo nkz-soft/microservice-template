@@ -25,7 +25,7 @@ public class BaseWebApplicationFactory<TStartup> : WebApplicationFactory<TStartu
         }.ToFrozenDictionary();
     }
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         await Task.WhenAll
             (Containers.Select(pair => pair.Value.StartAsync()))

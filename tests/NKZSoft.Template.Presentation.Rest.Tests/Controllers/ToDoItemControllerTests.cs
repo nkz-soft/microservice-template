@@ -1,12 +1,11 @@
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
-[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
-[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
 
 namespace NKZSoft.Template.Presentation.Rest.Tests.Controllers;
 
 using Common;
 using NKZSoft.Template.Presentation.Rest.Models.Result;
 using RestSharp;
+using Template.Common.Tests.Ordering;
 
 [Collection(nameof(RestCollectionDefinition))]
 public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> factory)
@@ -36,7 +35,8 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var command = new PageContext<ToDoItemFilter>(1, 10);
 
         var response = await client.PostAsync<ResultDtoBase<CollectionViewModel<ToDoItemDto>>>(
-            new RestRequest (Post.GetPageToDoItem()).AddJsonBody(command));
+            new RestRequest (Post.GetPageToDoItem()).AddJsonBody(command),
+            TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<CollectionViewModel<ToDoItemDto>>>();
@@ -57,7 +57,8 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<ToDoItemDto>>(
-            new RestRequest(Get.GetToDoItem(firstItem.Id)));
+            new RestRequest(Get.GetToDoItem(firstItem.Id)),
+            TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<ToDoItemDto>>();
@@ -74,7 +75,7 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<Unit>>(
-            new RestRequest(Get.GetToDoItem(Guid.NewGuid())));
+            new RestRequest(Get.GetToDoItem(Guid.NewGuid())), TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<Unit>>();
@@ -89,7 +90,8 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var command = new CreateToDoItemCommand("TestNote", ListId: null);
 
         var response = await client.PostAsync<ResultDtoBase<Guid>>(
-            new RestRequest(Post.CreateToDoItem()).AddJsonBody(command));
+            new RestRequest(Post.CreateToDoItem()).AddJsonBody(command),
+            TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<Guid>>();
@@ -104,7 +106,8 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var command = new CreateToDoItemCommand("TestRedisNote", ListId: null);
 
         var response = await client.PostAsync<ResultDtoBase<Guid>>(
-            new RestRequest(Post.CreateRedisToDoItem()).AddJsonBody(command));
+            new RestRequest(Post.CreateRedisToDoItem()).AddJsonBody(command),
+            TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<Guid>>();
@@ -120,7 +123,8 @@ public sealed class ToDoItemControllerTests(RestWebApplicationFactory<Program> f
         var client = new RestClient(factory.CreateClient());
 
         var response = await client.GetAsync<ResultDtoBase<ToDoItemDto>>(
-            new RestRequest(Get.GetRedisToDoItem(id)));
+            new RestRequest(Get.GetRedisToDoItem(id)),
+            TestContext.Current.CancellationToken);
 
         response.Should().NotBeNull();
         response.Should().BeOfType<ResultDtoBase<ToDoItemDto>>();

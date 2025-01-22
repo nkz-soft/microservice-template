@@ -1,12 +1,11 @@
 ﻿[assembly: CollectionBehavior(DisableTestParallelization = true)]
-[assembly: TestCaseOrderer("Xunit.Extensions.Ordering.TestCaseOrderer", "Xunit.Extensions.Ordering")]
-[assembly: TestCollectionOrderer("Xunit.Extensions.Ordering.CollectionOrderer", "Xunit.Extensions.Ordering")]
 
 namespace NKZSoft.Template.Presentation.Grpc.Tests.Services;
 
 using Common;
 using global::Grpc.Core;
 using Models;
+using Template.Common.Tests.Ordering;
 
 [Collection(nameof(GrpcCollectionDefinition))]
 public sealed class ToDoItemServiceTests
@@ -25,7 +24,8 @@ public sealed class ToDoItemServiceTests
     {
         var count = 0;
 
-        await foreach (var response in _service.GetRageToDoItemsAsync(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 2 }))
+        await foreach (var response in _service.GetRageToDoItemsAsync(new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 2 },
+                           TestContext.Current.CancellationToken))
         {
             response.Items.Should().HaveCount(2);
             ++count;
@@ -38,12 +38,14 @@ public sealed class ToDoItemServiceTests
     public async Task GetPageItemByIdTestAsync()
     {
         await foreach (var item in _service.GetRageToDoItemsAsync
-                           (new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 1 }))
+                           (new GetPageTodoItemsRequest { PageIndex = 1, PageSize = 1 },
+                               TestContext.Current.CancellationToken))
         {
             var response = await _service.GetToDoItemByIdAsync(new GetTodoItemRequest
             {
                 Id = item.Items[0].Id,
-            });
+            },
+            TestContext.Current.CancellationToken);
 
             response.Should().NotBeNull();
 
@@ -71,7 +73,7 @@ public sealed class ToDoItemServiceTests
     {
         var count = 0;
 
-        await foreach (var response in _service.GetToDoItemsAsync().ConfigureAwait(false))
+        await foreach (var response in _service.GetToDoItemsAsync(TestContext.Current.CancellationToken).ConfigureAwait(false))
         {
             response.Should().NotBeNull();
             ++count;

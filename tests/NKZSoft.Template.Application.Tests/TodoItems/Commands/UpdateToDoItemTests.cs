@@ -15,12 +15,12 @@ public sealed class UpdateToDoItemTests : TestBase
     public async Task ShouldUpdateTodoItemAsync()
     {
         var createCommand = new CreateToDoItemCommand(ToDoItemTitle, ListId:null);
-        var createResult = await Mediator.Send(createCommand);
+        var createResult = await Mediator.Send(createCommand, TestContext.Current.CancellationToken);
 
         createResult.Should().NotBeNull();
         createResult.IsSuccess.Should().BeTrue();
 
         var updateCommand = new UpdateToDoItemCommand(createResult.Value, ToDoItemUpdatedTitle, ToDoItemUpdatedTitle);
-        await Mediator.Send(updateCommand);
+        await Mediator.Send(updateCommand, TestContext.Current.CancellationToken);
     }
 }
