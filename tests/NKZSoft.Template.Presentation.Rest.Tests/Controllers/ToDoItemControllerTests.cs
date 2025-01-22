@@ -1,8 +1,12 @@
+using NKZSoft.Template.Common.Tests.Ordering;
+
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCollectionOrderer(typeof(TestCaseOrderer))]
 
 namespace NKZSoft.Template.Presentation.Rest.Tests.Controllers;
 
 using Common;
+using Grpc.Models.ToDoItem;
 using NKZSoft.Template.Presentation.Rest.Models.Result;
 using RestSharp;
 using Template.Common.Tests.Ordering;

@@ -5,7 +5,7 @@ using Xunit.Internal;
 using Xunit.Sdk;
 using Xunit.v3;
 
-internal class TestCaseOrderer : ITestCaseOrderer
+public class TestCaseOrderer : ITestCaseOrderer
 {
     public IReadOnlyCollection<TTestCase> OrderTestCases<TTestCase>(IReadOnlyCollection<TTestCase> testCases) where TTestCase : notnull, ITestCase
     {
