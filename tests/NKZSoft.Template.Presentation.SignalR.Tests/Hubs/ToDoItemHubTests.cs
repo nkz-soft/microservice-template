@@ -1,7 +1,7 @@
 using NKZSoft.Template.Common.Tests.Ordering;
 
-[assembly: TestCollectionOrderer(typeof(TestCaseOrderer))]
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: TestCaseOrderer(typeof(TestCaseOrderer))]
 
 namespace NKZSoft.Template.Presentation.SignalR.Tests.Hubs;
 

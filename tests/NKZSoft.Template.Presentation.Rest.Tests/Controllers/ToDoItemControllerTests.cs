@@ -1,7 +1,7 @@
 using NKZSoft.Template.Common.Tests.Ordering;
 
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
-[assembly: TestCollectionOrderer(typeof(TestCaseOrderer))]
+[assembly: TestCaseOrderer(typeof(TestCaseOrderer))]
 
 namespace NKZSoft.Template.Presentation.Rest.Tests.Controllers;
 
