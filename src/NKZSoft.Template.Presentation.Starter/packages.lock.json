@@ -64,20 +64,20 @@
       },
       "OpenTelemetry.Exporter.Console": {
         "type": "Direct",
-        "requested": "[1.11.0, )",
-        "resolved": "1.11.0",
-        "contentHash": "AnVpMXsqkn5ayvNWt5o50HbS/xVQGoE9RJnI+h289roagrS6+MQLcjN2ZAb+Wj05f4HEwN7UsHer/Wr/NuCYJA==",
+        "requested": "[1.11.1, )",
+        "resolved": "1.11.1",
+        "contentHash": "UzhxozZG2/OdPltkF9X0Xivh0tcEMjjCjaMpB8YVkTtdGDMTLnw4b9i8QaB5SRkOWwezO6jEXCQRHObJik528Q==",
         "dependencies": {
-          "OpenTelemetry": "1.11.0"
+          "OpenTelemetry": "1.11.1"
         }
       },
       "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
         "type": "Direct",
-        "requested": "[1.11.0, )",
-        "resolved": "1.11.0",
-        "contentHash": "owMYXg0WwbRKXgAZSQ7yoKwiOaz6j2bDozvm+p632fyUcIPr02yRqiRilO5uzTBvb2V6sUQppZ4I7mDRspwoYQ==",
+        "requested": "[1.11.1, )",
+        "resolved": "1.11.1",
+        "contentHash": "UiZBa+2b396Oxx9RX7h4ch+yZvX8nezxVkihPLU6zdEUfJbbVY2mNypJKEoW2Vh4xCaCp0fB6na3Kti+KfTVaw==",
         "dependencies": {
-          "OpenTelemetry": "1.11.0"
+          "OpenTelemetry": "1.11.1"
         }
       },
       "OpenTelemetry.Extensions.Hosting": {
@@ -101,21 +101,21 @@
       },
       "Roslynator.Analyzers": {
         "type": "Direct",
-        "requested": "[4.12.10, )",
-        "resolved": "4.12.10",
-        "contentHash": "Wecq3nfhTvnJPxX87hKbjMdX1xeCAMJf9rdBX3nQLTntQs9v0fFbUB2eQSSOArXMuFh7MxjLWaL4+b6XMi1NDA=="
+        "requested": "[4.12.11, )",
+        "resolved": "4.12.11",
+        "contentHash": "yvsRYT5EVtcT+V8ZW+5cxd1O9Sgf8PbC7DlQL/T5NA4g5yjaFe+WQ7evpy92Lj29m2E+XayBsO2TnCWKZlPWaA=="
       },
       "Roslynator.CodeAnalysis.Analyzers": {
         "type": "Direct",
-        "requested": "[4.12.10, )",
-        "resolved": "4.12.10",
-        "contentHash": "P/8rraJ0lDO792C8VajyKsaljMR4pWheoSv6bJnCspydf8gNZe+r2JJNis0IxMO2a8vLOyB+8CMIaVLIUndSNQ=="
+        "requested": "[4.12.11, )",
+        "resolved": "4.12.11",
+        "contentHash": "IUh5LVaCrhFpuNMbtEEZkMzzdn1bkPXiIn5dMkT7zY3m4Y64s2Vh2tpGE7IdJcmnEaIHdmLVkE1WaE0H8IXtcQ=="
       },
       "Roslynator.Formatting.Analyzers": {
         "type": "Direct",
-        "requested": "[4.12.10, )",
-        "resolved": "4.12.10",
-        "contentHash": "Yz0OhQtuECTPBMoURxcv1XKgquVpUcUOpRGac8tormJSJzbMYK8qvVSvjIvQkQOrfYPLFa8aak5200BEAq/X9Q=="
+        "requested": "[4.12.11, )",
+        "resolved": "4.12.11",
+        "contentHash": "+6Rlz0wY5Rc1eceHytRjM3+Hg9kt8zDPfGOeutv2Yy62rQgyFhvFAAdOT+SP64jEj9MTIjiasO5W965NBWxi7g=="
       },
       "Scrutor": {
         "type": "Direct",
@@ -1169,8 +1169,8 @@
       },
       "protobuf-net.Core": {
         "type": "Transitive",
-        "resolved": "3.2.45",
-        "contentHash": "PMWatW2NrT1uTXD7etJ4VdQ0wWZLFrIfdRGppD2QX7nzZ0+kIzqhq551u6ZiXJHWJgG4hWFEkSnUnt2aB6posg==",
+        "resolved": "3.2.46",
+        "contentHash": "kRPJ71Bpj0nK2iRSnH6XTPCA0+Nal5xoVBKwFqgd5n/yVA7Iie/3KwvcmC+aFjTymh+Kibn4q4fnceIOJrKRlA==",
         "dependencies": {
           "System.Collections.Immutable": "7.0.0"
         }
@@ -2260,7 +2260,7 @@
           "NKZSoft.Template.Domain": "[1.0.0, )",
           "NKZSoft.Template.EFCore.Caching.Redis": "[1.0.0, )",
           "NKZSoft.Template.Infrastructure.Core": "[1.0.0, )",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "[9.0.2, )",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "[9.0.3, )",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "[1.1.0, )",
           "Npgsql.OpenTelemetry": "[9.0.2, )",
           "OpenTelemetry.Api": "[1.11.1, )",
@@ -2305,10 +2305,10 @@
           "OpenTelemetry": "[1.11.1, )",
           "OpenTelemetry.Instrumentation.GrpcNetClient": "[1.0.0-rc9.14, )",
           "System.ServiceModel.Primitives": "[8.1.1, )",
-          "protobuf-net": "[3.2.45, )",
+          "protobuf-net": "[3.2.46, )",
           "protobuf-net.Grpc.AspNetCore": "[1.2.2, )",
           "protobuf-net.Grpc.AspNetCore.Reflection": "[1.2.2, )",
-          "protobuf-net.Reflection": "[3.2.12, )"
+          "protobuf-net.Reflection": "[3.2.46, )"
         }
       },
       "nkzsoft.template.presentation.rest": {
@@ -2322,7 +2322,7 @@
           "NKZSoft.Template.Infrastructure.Core": "[1.0.0, )",
           "NKZSoft.Template.Persistence.PostgreSQL": "[1.0.0, )",
           "OpenTelemetry.Api": "[1.11.1, )",
-          "OpenTelemetry.Instrumentation.Http": "[1.10.0, )"
+          "OpenTelemetry.Instrumentation.Http": "[1.11.0, )"
         }
       },
       "nkzsoft.template.presentation.signalr": {
@@ -2833,12 +2833,12 @@
       },
       "Npgsql.EntityFrameworkCore.PostgreSQL": {
         "type": "CentralTransitive",
-        "requested": "[9.0.2, )",
-        "resolved": "9.0.2",
-        "contentHash": "cYdOGplIvr9KgsG8nJ8xnzBTImeircbgetlzS1OmepS5dAQW6PuGpVrLOKBNEwEvGYZPsV8037X5vZ/Dmpwz7Q==",
+        "requested": "[9.0.3, )",
+        "resolved": "9.0.3",
+        "contentHash": "1A6HpMPbzK+quxdtug1aDHI4BSRTgpi7OaDt8WQh7SFJd2sSQ0nNTZ7sYrwyxVf4AdKdN7XJL9tpiiJjRUaa4g==",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "[9.0.0, 10.0.0)",
-          "Microsoft.EntityFrameworkCore.Relational": "[9.0.0, 10.0.0)",
+          "Microsoft.EntityFrameworkCore": "[9.0.1, 10.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[9.0.1, 10.0.0)",
           "Npgsql": "9.0.2"
         }
       },
@@ -2897,22 +2897,22 @@
       },
       "OpenTelemetry.Instrumentation.Http": {
         "type": "CentralTransitive",
-        "requested": "[1.10.0, )",
-        "resolved": "1.10.0",
-        "contentHash": "W6NtQ4BSJgMlCKJB6tHD2Y4v5h+1N48qp9l+BGa35G3+qU2tlqgitxg6Ruu7ijKwDsc10UAAovU4lAVyQTJ/1Q==",
+        "requested": "[1.11.0, )",
+        "resolved": "1.11.0",
+        "contentHash": "1ncYPNmMaYNPX664uo3FlmSVGETBKQbBvarbGgB5ZynERTFmCsZ7UqefvVe3vnPYOIAGOjbMAbprYF2BfMielg==",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "9.0.0",
           "Microsoft.Extensions.Options": "9.0.0",
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "[1.10.0, 2.0.0)"
+          "OpenTelemetry.Api.ProviderBuilderExtensions": "[1.11.1, 2.0.0)"
         }
       },
       "protobuf-net": {
         "type": "CentralTransitive",
-        "requested": "[3.2.45, )",
-        "resolved": "3.2.45",
-        "contentHash": "5UZ/ukUHcGbFSl7vNMrHsfjqdxusdd9w7w0fCEXzf3UUtsrGNVCzV5SmF+sCHAbnRV2qPcD1ixiDP7Aj8lX/HA==",
+        "requested": "[3.2.46, )",
+        "resolved": "3.2.46",
+        "contentHash": "kNr1fnLWTVNvK93SC1CFrV3TyNDrtrqtoAv7+V4WX3c/tckzmIISW0Hl5TV5GgIYL5rrFeUEYWNHQZDCHpSMzQ==",
         "dependencies": {
-          "protobuf-net.Core": "3.2.45"
+          "protobuf-net.Core": "3.2.46"
         }
       },
       "protobuf-net.Grpc.AspNetCore": {
@@ -2937,11 +2937,11 @@
       },
       "protobuf-net.Reflection": {
         "type": "CentralTransitive",
-        "requested": "[3.2.12, )",
-        "resolved": "3.2.12",
-        "contentHash": "bpNTENWPqP2mx1sJJ5C6qZ2xP+f/E3dQF9MYY+xZ+RHxe3sLg+sPyBSCcJDTCY0e4dVIwQ/02gS8m4tVClDoKQ==",
+        "requested": "[3.2.46, )",
+        "resolved": "3.2.46",
+        "contentHash": "Z4WWJKufqwclKzNcnsA+VrItXHoKU4/GQeH79t/p/ux6c7B0wJcC2Wcj2xI5xGv7WYwgwNQIlY1gWi3xg/h5MQ==",
         "dependencies": {
-          "protobuf-net.Core": "3.2.12"
+          "protobuf-net.Core": "3.2.46"
         }
       },
       "Serilog": {
