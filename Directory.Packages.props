@@ -5,6 +5,7 @@
   <ItemGroup>
     <PackageVersion Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+    <PackageVersion Include="AwesomeAssertions" Version="8.0.0" />
     <PackageVersion Include="EasyCaching.Core" Version="1.9.2" />
     <PackageVersion Include="EasyCaching.Redis" Version="1.9.2" />
     <PackageVersion Include="EasyCaching.Serialization.MessagePack" Version="1.9.0" />
@@ -21,12 +22,12 @@
     <PackageVersion Include="Npgsql.OpenTelemetry" Version="9.0.2" />
     <PackageVersion Include="OpenTelemetry" Version="1.11.1" />
     <PackageVersion Include="OpenTelemetry.Api" Version="1.11.1" />
-    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.11.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.11.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.1" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.11.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.12" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.10.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.11.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.MassTransit" Version="1.0.0-beta.3" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc9.14" />
     <PackageVersion Include="StackExchange.Redis" Version="2.8.24" />
@@ -51,7 +52,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.1" />
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor" Version="4.9.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
@@ -72,10 +73,10 @@
     <PackageVersion Include="Mapster.Async" Version="2.0.1" />
     <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageVersion Include="Google.Protobuf" Version="3.29.3" />
-    <PackageVersion Include="protobuf-net" Version="3.2.45" />
+    <PackageVersion Include="protobuf-net" Version="3.2.46" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore" Version="1.2.2" />
     <PackageVersion Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.2.2" />
-    <PackageVersion Include="protobuf-net.Reflection" Version="3.2.12" />
+    <PackageVersion Include="protobuf-net.Reflection" Version="3.2.46" />
     <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.67.0" />
     <PackageVersion Include="Serilog" Version="4.2.0" />
     <PackageVersion Include="Serilog.Extensions.Logging" Version="9.0.0" />
@@ -112,9 +113,9 @@
     <PackageVersion Include="NKZSoft.Service.Configuration.Grpc" Version="1.3.0" />
     <PackageVersion Include="EasyCaching.Serialization.Json" Version="1.9.2" />
     <PackageVersion Include="Meziantou.Analyzer" Version="2.0.186" />
-    <PackageVersion Include="Roslynator.Analyzers" Version="4.12.10" />
-    <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.12.10" />
-    <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.12.10" />
+    <PackageVersion Include="Roslynator.Analyzers" Version="4.12.11" />
+    <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.12.11" />
+    <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.12.11" />
     <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.12.19" />
     <PackageVersion Include="AsyncAwaitBestPractices" Version="9.0.0" />
     <PackageVersion Include="SerilogAnalyzer" Version="0.15.0" />
