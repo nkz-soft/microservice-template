@@ -12,10 +12,10 @@
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor.CacheManager.Core" Version="5.0.0" />
     <PackageVersion Include="EFCoreSecondLevelCacheInterceptor.EasyCaching.Core" Version="5.0.0" />
     <PackageVersion Include="FluentValidation" Version="11.11.0" />
-    <PackageVersion Include="HotChocolate.Abstractions" Version="14.3.0" />
+    <PackageVersion Include="HotChocolate.Abstractions" Version="15.0.3" />
     <PackageVersion Include="HotChocolate.Diagnostics" Version="14.3.0" />
     <PackageVersion Include="HotChocolate.AspNetCore" Version="14.3.0" />
-    <PackageVersion Include="HotChocolate.Data" Version="14.3.0" />
+    <PackageVersion Include="HotChocolate.Data" Version="15.0.3" />
     <PackageVersion Include="HotChocolate.Data.EntityFramework" Version="14.3.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
     <PackageVersion Include="NKZSoft.FluentValidation.Options" Version="1.2.2" />
