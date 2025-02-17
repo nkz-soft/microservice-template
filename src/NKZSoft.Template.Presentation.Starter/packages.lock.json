@@ -1079,8 +1079,8 @@
       },
       "Microsoft.Extensions.Primitives": {
         "type": "Transitive",
-        "resolved": "9.0.1",
-        "contentHash": "bHtTesA4lrSGD1ZUaMIx6frU3wyy0vYtTa/hM6gGQu5QNrydObv8T5COiGUWsisflAfmsaFOe9Xvw5NSO99z0g=="
+        "resolved": "9.0.2",
+        "contentHash": "puBMtKe/wLuYa7H6docBkLlfec+h8L35DXqsDKKJgW0WY5oCwJ3cBJKcDaZchv6knAyqOMfsl6VUbaR++E5LXA=="
       },
       "Microsoft.Net.Http.Headers": {
         "type": "Transitive",
@@ -2240,7 +2240,7 @@
           "EasyCaching.Serialization.Json": "[1.9.2, )",
           "FluentValidation": "[11.11.0, )",
           "FluentValidation.AspNetCore": "[11.3.0, )",
-          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.1, )",
+          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.2, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[9.0.2, )",
           "NKZSoft.FluentValidation.Options": "[1.2.2, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
@@ -2261,7 +2261,7 @@
         "type": "Project",
         "dependencies": {
           "AspNetCore.HealthChecks.Rabbitmq": "[8.0.2, )",
-          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.1, )",
+          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.2, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[9.0.2, )",
           "NKZSoft.Service.Configuration.MassTransit.RabbitMq": "[1.2.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
@@ -2278,7 +2278,7 @@
           "MediatR": "[12.4.1, )",
           "Microsoft.EntityFrameworkCore.Relational": "[9.0.1, )",
           "Microsoft.EntityFrameworkCore.Relational.Design": "[1.1.6, )",
-          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.1, )",
+          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.2, )",
           "Microsoft.Extensions.Configuration.Binder": "[9.0.1, )",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "[9.0.1, )",
           "Microsoft.Extensions.Configuration.FileExtensions": "[9.0.1, )",
@@ -2306,7 +2306,7 @@
           "AspNetCore.HealthChecks.Redis": "[9.0.0, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
-          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.1, )",
+          "Microsoft.Extensions.Configuration.Abstractions": "[9.0.2, )",
           "Microsoft.Extensions.Configuration.FileExtensions": "[9.0.1, )",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[9.0.2, )",
           "NKZSoft.FluentValidation.Options": "[1.2.2, )",
@@ -2719,11 +2719,11 @@
       },
       "Microsoft.Extensions.Configuration.Abstractions": {
         "type": "CentralTransitive",
-        "requested": "[9.0.1, )",
-        "resolved": "9.0.1",
-        "contentHash": "+4hfFIY1UjBCXFTTOd+ojlDPq6mep3h5Vq5SYE3Pjucr7dNXmq4S/6P/LoVnZFz2e/5gWp/om4svUFgznfULcA==",
+        "requested": "[9.0.2, )",
+        "resolved": "9.0.2",
+        "contentHash": "I0O/270E/lUNqbBxlRVjxKOMZyYjP88dpEgQTveml+h2lTzAP4vbawLVwjS9SC7lKaU893bwyyNz0IVJYsm9EA==",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.1"
+          "Microsoft.Extensions.Primitives": "9.0.2"
         }
       },
       "Microsoft.Extensions.Configuration.Binder": {
