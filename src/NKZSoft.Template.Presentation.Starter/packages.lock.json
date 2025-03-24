@@ -53,22 +53,22 @@
       },
       "OpenTelemetry": {
         "type": "Direct",
-        "requested": "[1.11.1, )",
-        "resolved": "1.11.1",
-        "contentHash": "F+HBI2bE7RKmb8Bj0kBtZIVzCfpTe1ZyY6kYP/jny1+9oq7IdBnNsVXZlPev9OqQzRp3iXpJ1UsnN1YOEwdtkQ==",
+        "requested": "[1.11.2, )",
+        "resolved": "1.11.2",
+        "contentHash": "FwonkaCVW8M9DLTHmAeJ+znsQCeOVvF4vSBworyq6f55RJB62LFmK7h7SG2aNERTknxP5RoGSwGOBPcVEgC07w==",
         "dependencies": {
           "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.0",
           "Microsoft.Extensions.Logging.Configuration": "9.0.0",
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.11.1"
+          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.11.2"
         }
       },
       "OpenTelemetry.Exporter.Console": {
         "type": "Direct",
-        "requested": "[1.11.1, )",
-        "resolved": "1.11.1",
-        "contentHash": "UzhxozZG2/OdPltkF9X0Xivh0tcEMjjCjaMpB8YVkTtdGDMTLnw4b9i8QaB5SRkOWwezO6jEXCQRHObJik528Q==",
+        "requested": "[1.11.2, )",
+        "resolved": "1.11.2",
+        "contentHash": "d0XCfZiLsxufXz4b6SnVoQFL5j4nCq6AOUypYZKiSj1eqVS+MgApkuPA0JkIrEduVgLh70DdBbdFGfloD00Atw==",
         "dependencies": {
-          "OpenTelemetry": "1.11.1"
+          "OpenTelemetry": "1.11.2"
         }
       },
       "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
@@ -1182,11 +1182,11 @@
       },
       "OpenTelemetry.Api.ProviderBuilderExtensions": {
         "type": "Transitive",
-        "resolved": "1.11.1",
-        "contentHash": "vMdNMQeW55jXIa/Kybec/br6jC+rWybniTi6DCW5lz1kGghKso+J+FC3uBgiq0/pTqusfeDbO5PEHGM/r5z8Ow==",
+        "resolved": "1.11.2",
+        "contentHash": "Y1aag4WT9f3rF8jQWwub5DsFVXpM/5NQsfYg6lmsNQrtJ6TcRqQu2PubcHXeIX2N6TA7XF3ffQAgeJklsSLeoQ==",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "OpenTelemetry.Api": "1.11.1"
+          "OpenTelemetry.Api": "1.11.2"
         }
       },
       "Pipelines.Sockets.Unofficial": {
@@ -2266,7 +2266,7 @@
           "NKZSoft.Service.Configuration.MassTransit.RabbitMq": "[1.2.0, )",
           "NKZSoft.Template.Common": "[1.0.0, )",
           "NKZSoft.Template.Events": "[1.0.0, )",
-          "OpenTelemetry.Api": "[1.11.1, )"
+          "OpenTelemetry.Api": "[1.11.2, )"
         }
       },
       "nkzsoft.template.persistence.postgresql": {
@@ -2293,7 +2293,7 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "[9.0.3, )",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "[1.1.0, )",
           "Npgsql.OpenTelemetry": "[9.0.2, )",
-          "OpenTelemetry.Api": "[1.11.1, )",
+          "OpenTelemetry.Api": "[1.11.2, )",
           "OpenTelemetry.Instrumentation.EntityFrameworkCore": "[1.0.0-beta.12, )",
           "Scrutor": "[6.0.1, )",
           "Serilog": "[4.2.0, )",
@@ -2332,7 +2332,7 @@
           "Google.Protobuf": "[3.29.3, )",
           "NKZSoft.Service.Configuration.Grpc": "[1.3.0, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
-          "OpenTelemetry": "[1.11.1, )",
+          "OpenTelemetry": "[1.11.2, )",
           "OpenTelemetry.Instrumentation.GrpcNetClient": "[1.0.0-rc9.14, )",
           "System.ServiceModel.Primitives": "[8.1.1, )",
           "protobuf-net": "[3.2.46, )",
@@ -2351,7 +2351,7 @@
           "NKZSoft.Template.Common": "[1.0.0, )",
           "NKZSoft.Template.Infrastructure.Core": "[1.0.0, )",
           "NKZSoft.Template.Persistence.PostgreSQL": "[1.0.0, )",
-          "OpenTelemetry.Api": "[1.11.1, )",
+          "OpenTelemetry.Api": "[1.11.2, )",
           "OpenTelemetry.Instrumentation.Http": "[1.11.0, )"
         }
       },
@@ -2902,9 +2902,9 @@
       },
       "OpenTelemetry.Api": {
         "type": "CentralTransitive",
-        "requested": "[1.11.1, )",
-        "resolved": "1.11.1",
-        "contentHash": "KaBjGMqrqQv41mIkvPUvmAG7yxDlI6qchKhjXlOF3ZwsdcRRLrdrkiDLIJ90iZgUoKVdP8fE1fCri9nc+ug0Cg==",
+        "requested": "[1.11.2, )",
+        "resolved": "1.11.2",
+        "contentHash": "jgSd/FvtxPPc6nLaZnFj+bulHM2iQjy+NBCY5MbQjH6vkW/SfcXD9NMP3pKCmdF+SbZpgL+EoLQc+PmcnYYLlA==",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "9.0.0"
         }
