@@ -108,3 +108,7 @@ dotnet new nkz-template -o My.NewApp1 --EnableGraphQL false --EnableGrpc false -
 [OpenTelemetry .NET](https://github.com/open-telemetry/opentelemetry-dotnet): The .NET OpenTelemetry client.
 
 [Jaeger](https://github.com/jaegertracing/jaeger): Jaeger, is a distributed tracing platform created by Uber Technologies and donated to Cloud Native Computing Foundation. It can be used for monitoring microservices-based distributed systems.
+
+## SAST Tools
+
+[PVS-Studio](https://pvs-studio.com/en/pvs-studio/?utm_source=website&utm_medium=github&utm_campaign=open_source) - static analyzer for C, C++, C#, and Java code.
