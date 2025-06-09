@@ -146,11 +146,6 @@
         "resolved": "7.1.4",
         "contentHash": "HocUaicNUIQ8TN6WNJMWKrZzI/H6awBu0ZjzEdnXnkTtfeYywBGwfs0fksIwR7CWSTI/0GhuF7VhZi9gJTHy7Q=="
       },
-      "CacheManager.Core": {
-        "type": "Transitive",
-        "resolved": "1.2.0",
-        "contentHash": "tmgwGDJlPNdSTb94Bx/0D3fDlkP+HIa80d1nCrXs+NjTgZR8JaQcslH+PHP2ebxPkM4CnijQVEMD+Dk8CvR41w=="
-      },
       "ChilliCream.Nitro.App": {
         "type": "Transitive",
         "resolved": "23.0.4",
@@ -2224,7 +2219,7 @@
         "type": "Project",
         "dependencies": {
           "AspNetCore.HealthChecks.Redis": "[9.0.0, )",
-          "EFCoreSecondLevelCacheInterceptor": "[4.9.0, )",
+          "EFCoreSecondLevelCacheInterceptor": "[5.2.1, )",
           "EasyCaching.Redis": "[1.9.2, )",
           "EasyCaching.Serialization.Json": "[1.9.2, )",
           "FluentValidation": "[11.11.0, )",
@@ -2262,7 +2257,7 @@
         "type": "Project",
         "dependencies": {
           "AspNetCore.HealthChecks.NpgSql": "[9.0.0, )",
-          "EFCoreSecondLevelCacheInterceptor": "[4.9.0, )",
+          "EFCoreSecondLevelCacheInterceptor": "[5.2.1, )",
           "FluentValidation.AspNetCore": "[11.3.0, )",
           "MediatR": "[12.4.1, )",
           "Microsoft.EntityFrameworkCore.Relational": "[9.0.1, )",
@@ -2438,13 +2433,11 @@
       },
       "EFCoreSecondLevelCacheInterceptor": {
         "type": "CentralTransitive",
-        "requested": "[4.9.0, )",
-        "resolved": "4.9.0",
-        "contentHash": "kwMDOLYTruKMunT560K/ASalm86TxjAz4Tqv28XWqdM/XfEHmADMeiAPdx10hTjjvKo17x9vxtkbga8GldwH/g==",
+        "requested": "[5.2.1, )",
+        "resolved": "5.2.1",
+        "contentHash": "yGg1wMSoyaWYJ4uvfaX5ruhK+nLimJFd0L4NUhATSCqcKve1U4qc7sG1Sg12MKXkASQnVI1VJgy6pqbAumV6Sg==",
         "dependencies": {
           "AsyncKeyedLock": "7.1.4",
-          "CacheManager.Core": "1.2.0",
-          "EasyCaching.Core": "1.9.2",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
           "System.IO.Hashing": "9.0.0"
