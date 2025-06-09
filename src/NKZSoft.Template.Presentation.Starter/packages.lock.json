@@ -2209,7 +2209,7 @@
           "Microsoft.AspNetCore.Http.Abstractions": "[2.3.0, )",
           "Microsoft.Extensions.Logging.Abstractions": "[9.0.2, )",
           "Testcontainers.PostgreSql": "[4.1.0, )",
-          "Testcontainers.RabbitMq": "[4.1.0, )",
+          "Testcontainers.RabbitMq": "[4.2.0, )",
           "Testcontainers.Redis": "[4.1.0, )"
         }
       },
@@ -3013,9 +3013,9 @@
       },
       "Testcontainers": {
         "type": "CentralTransitive",
-        "requested": "[4.1.0, )",
-        "resolved": "4.1.0",
-        "contentHash": "5oudr81h9084amKZrjVIWdVWycR2YhqT9ePnN/ID7xinwx3ZLAI4EhYiyurfrDMvWcHJp5+c9x+qPRxOcq1IXQ==",
+        "requested": "[4.2.0, )",
+        "resolved": "4.2.0",
+        "contentHash": "GzxvSJQvasxWLty1BWBSIqc3Rmymv5zorLCWWLo5AfoDCXAVQf5GDl7F9wBOWRs7qnuP5bha8FAzSvMotLJeAg==",
         "dependencies": {
           "Docker.DotNet.Enhanced": "3.126.1",
           "Docker.DotNet.Enhanced.X509": "3.126.1",
@@ -3035,11 +3035,11 @@
       },
       "Testcontainers.RabbitMq": {
         "type": "CentralTransitive",
-        "requested": "[4.1.0, )",
-        "resolved": "4.1.0",
-        "contentHash": "sEVqO+LECKgiE1B71CztwFscmiiVkdXz+Lp5mB5/B2ngOFgLhEq1AC6NLCQXCqMhB6GS6cWB16Ep7ceaHBe2yw==",
+        "requested": "[4.2.0, )",
+        "resolved": "4.2.0",
+        "contentHash": "i7Wa0TLroxfR8Ezc8niodyqBlw5S1yTQmya+59LoIfIh6+H209dzEmvl81hArZmg+kDaZzre47nokI5v8bFLNg==",
         "dependencies": {
-          "Testcontainers": "4.1.0"
+          "Testcontainers": "4.2.0"
         }
       },
       "Testcontainers.Redis": {
