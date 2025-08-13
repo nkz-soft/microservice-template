@@ -25,9 +25,9 @@
       },
       "Google.Protobuf": {
         "type": "Direct",
-        "requested": "[3.29.3, )",
-        "resolved": "3.29.3",
-        "contentHash": "t7nZFFUFwigCwZ+nIXHDLweXvwIpsOXi+P7J7smPT/QjI3EKxnCzTQOhBqyEh6XEzc/pNH+bCFOOSjatrPt6Tw=="
+        "requested": "[3.31.1, )",
+        "resolved": "3.31.1",
+        "contentHash": "gSnJbUmGiOTdWddPhqzrEscHq9Ls6sqRDPB9WptckyjTUyx70JOOAaDLkFff8gManZNN3hllQ4aQInnQyq/Z/A=="
       },
       "Meziantou.Analyzer": {
         "type": "Direct",
@@ -2318,7 +2318,7 @@
       "nkzsoft.template.presentation.grpc": {
         "type": "Project",
         "dependencies": {
-          "Google.Protobuf": "[3.29.3, )",
+          "Google.Protobuf": "[3.31.1, )",
           "NKZSoft.Service.Configuration.Grpc": "[1.3.0, )",
           "NKZSoft.Template.Application": "[1.0.0, )",
           "OpenTelemetry": "[1.11.2, )",
