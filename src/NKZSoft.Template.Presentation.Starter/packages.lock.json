@@ -2488,7 +2488,7 @@
       },
       "Grpc.Net.ClientFactory": {
         "type": "CentralTransitive",
-        "requested": "[2.67.0, )",
+        "requested": "[2.71.0, )",
         "resolved": "2.67.0",
         "contentHash": "owkRL6j8ZXvLnn8SsFGCRiWoe/2wGv+u+TASAylzUtGbHLnw7IiFRoeTs0IgpCNTETvlMLVb0gHDiLGo+mJZ6g==",
         "dependencies": {
