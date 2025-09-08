@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/nightly/aspnet:9.0-noble-chiseled
+FROM mcr.microsoft.com/dotnet/nightly/aspnet:10.0-noble-chiseled
 EXPOSE 8080
 EXPOSE 8081
 
